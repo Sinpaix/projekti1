@@ -95,6 +95,9 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Kiinnitys.cs" />
+    <Compile Include="Models\Tarve.cs" />
+    <Compile Include="Models\Tyonimike.cs" />
     <Compile Include="Models\Tyontekija.cs" />
     <Compile Include="Models\Tyotehtava.cs" />
     <Compile Include="Models\Tyovuoro.cs" />
