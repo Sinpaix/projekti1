@@ -212,3 +212,36 @@ values
 (6, 2, 5),
 (9, 3, 4),
 (7, 3, 5);
+
+/*CREATE VIEW Tyovuorolista
+AS
+SELECT k.Tyontekija_idtyontekija as 'Työntekijä ID', tv.alkaa as 'Vuoro alkaa', tv.loppuu as 'Vuoro päättyy', tt.paikka as 'Paikka', tt.tehtava as 'Tehtävä',
+t.etunimi as 'Etunimi', t.sukunimi as 'Sukunimi', t.puhelin as 'Puhelinnumero', tn.nimike as 'Tyonimike'
+FROM Kiinnitys k 
+JOIN Tyotehtava tt
+ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava
+JOIN Tyontekija t
+ON k.Tyontekija_idTyontekija = t.idTyontekija
+JOIN Tyovuoro tv ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro
+JOIN Tyonimike tn ON t.Tyonimike_idnimike = tn.idnimike
+WHERE (tv.alkaa BETWEEN '2021-11-17' AND '2021-11-18')
+ORDER BY tv.alkaa, t.sukunimi
+*/
+
+/*
+CREATE VIEW Tyovuorosuunnitelma
+AS 
+SELECT k.Tyontekija_idtyontekija as 'Työntekijä ID', tv.alkaa as 'Vuoro alkaa', tv.loppuu as 'Vuoro päättyy', tt.paikka as 'Paikka', tt.tehtava as 'Tehtävä',
+t.etunimi as 'Etunimi', t.sukunimi as 'Sukunimi', t.puhelin as 'Puhelinnumero', tn.nimike as 'Tyonimike'
+FROM Kiinnitys k 
+JOIN Tyotehtava tt
+ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava
+JOIN Tyontekija t
+ON k.Tyontekija_idTyontekija = t.idTyontekija
+JOIN Tyovuoro tv ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro
+JOIN Tyonimike tn ON t.Tyonimike_idnimike = tn.idnimike
+WHERE (tv.alkaa BETWEEN '2021-11-17' AND '2021-11-18')
+AND
+(t.idtyontekija = 3)
+ORDER BY tv.alkaa, t.sukunimi
+*/
