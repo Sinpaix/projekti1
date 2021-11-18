@@ -13,14 +13,20 @@ namespace Projekti1
 {
     public partial class MainForm : Form
     {
+        private List<Tyontekija> tyontekijat = new List<Tyontekija>();
+        private List<Tyovuoro> tyovuorot = new List<Tyovuoro>();
+        private List<Tyotehtava> tyotehtavat = new List<Tyotehtava>();
+
+        private Controller contr = new Controller();
+
         public MainForm()
         {
             InitializeComponent();
+
+            // Tähän funktiot millä ladataan tarvittavat tiedot tietokannasta heti kun ohjelma ajetaan
+            tyontekijat = contr.LataaTyontekijat();
+
         }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

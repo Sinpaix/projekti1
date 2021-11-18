@@ -27,5 +27,10 @@ namespace Projekti1.Models
             Email = email;
             Tyonimike_idnimike = tyonimike_idnimike;
         }
+
+        public override string ToString()
+        {
+            return $"{Etunimi}  {Sukunimi}";
+        }
     }
 }

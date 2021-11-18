@@ -45,6 +45,7 @@ namespace Projekti1
             this.lblpuh = new System.Windows.Forms.Label();
             this.lblsnimi = new System.Windows.Forms.Label();
             this.lblenimi = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -80,7 +81,6 @@ namespace Projekti1
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -117,7 +117,7 @@ namespace Projekti1
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage1.Size = new System.Drawing.Size(1597, 1331);
+            this.tabPage1.Size = new System.Drawing.Size(1867, 1331);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Työntekijähallinta";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -266,6 +266,16 @@ namespace Projekti1
             this.lblenimi.Size = new System.Drawing.Size(90, 29);
             this.lblenimi.TabIndex = 0;
             this.lblenimi.Text = "Etunimi";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1867, 1331);
+            this.tabPage2.TabIndex = 4;
+            this.tabPage2.Text = "Työntekijöiden kiinnitys";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -473,7 +483,7 @@ namespace Projekti1
             this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage4.Size = new System.Drawing.Size(1597, 1331);
+            this.tabPage4.Size = new System.Drawing.Size(1867, 1331);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Työntekijän vuorolista";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -512,7 +522,6 @@ namespace Projekti1
             this.label11.Size = new System.Drawing.Size(14, 20);
             this.label11.TabIndex = 5;
             this.label11.Text = "-";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // dateTimePicker3
             // 
@@ -567,7 +576,7 @@ namespace Projekti1
             this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage5.Size = new System.Drawing.Size(1597, 1331);
+            this.tabPage5.Size = new System.Drawing.Size(1867, 1331);
             this.tabPage5.TabIndex = 3;
             this.tabPage5.Text = "Työvuorolista";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -630,16 +639,6 @@ namespace Projekti1
             this.label12.Size = new System.Drawing.Size(215, 20);
             this.label12.TabIndex = 0;
             this.label12.Text = "Näytä työvuorolista ajalta:";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1867, 1331);
-            this.tabPage2.TabIndex = 4;
-            this.tabPage2.Text = "Työntekijöiden kiinnitys";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

@@ -9,6 +9,10 @@ namespace Projekti1
 {
     class Controller
     {
+        public List<Tyontekija> LataaTyontekijat()
+        {
+            return DAO.GetTyontekijat();
+        }
 
     }
 }
