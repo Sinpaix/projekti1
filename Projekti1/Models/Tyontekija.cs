@@ -13,19 +13,19 @@ namespace Projekti1.Models
         public string Sukunimi { get; set; }
         public string Puhelin { get; set; }
         public string Email { get; set; }
-        public int Nimike_idnimike { get; set; }
+        public int Tyonimike_idnimike { get; set; }
 
         public Tyontekija()
         {
         }
 
-        public Tyontekija(string etunimi, string sukunimi, string puhelin, string email, int nimike_idnimike)
+        public Tyontekija(string etunimi, string sukunimi, string puhelin, string email, int tyonimike_idnimike)
         {
             Etunimi = etunimi;
             Sukunimi = sukunimi;
             Puhelin = puhelin;
             Email = email;
-            Nimike_idnimike = nimike_idnimike;
+            Tyonimike_idnimike = tyonimike_idnimike;
         }
     }
 }
