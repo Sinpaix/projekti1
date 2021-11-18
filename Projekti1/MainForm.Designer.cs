@@ -48,9 +48,30 @@ namespace Projekti1
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -61,20 +82,20 @@ namespace Projekti1
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1605, 1364);
+            this.tabControl1.Size = new System.Drawing.Size(1427, 1091);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage1.Size = new System.Drawing.Size(1597, 1331);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1419, 1062);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Työntekijähallinta";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -95,19 +116,19 @@ namespace Projekti1
             this.panel1.Controls.Add(this.lblsnimi);
             this.panel1.Controls.Add(this.lblenimi);
             this.panel1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(15, 9);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(13, 7);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 660);
+            this.panel1.Size = new System.Drawing.Size(503, 528);
             this.panel1.TabIndex = 1;
             // 
             // btnpoista
             // 
             this.btnpoista.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpoista.Location = new System.Drawing.Point(30, 483);
-            this.btnpoista.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnpoista.Location = new System.Drawing.Point(27, 386);
+            this.btnpoista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnpoista.Name = "btnpoista";
-            this.btnpoista.Size = new System.Drawing.Size(117, 45);
+            this.btnpoista.Size = new System.Drawing.Size(104, 36);
             this.btnpoista.TabIndex = 2;
             this.btnpoista.Text = "Poista";
             this.btnpoista.UseVisualStyleBackColor = true;
@@ -115,10 +136,10 @@ namespace Projekti1
             // btntyhjenna
             // 
             this.btntyhjenna.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btntyhjenna.Location = new System.Drawing.Point(30, 429);
-            this.btntyhjenna.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btntyhjenna.Location = new System.Drawing.Point(27, 343);
+            this.btntyhjenna.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btntyhjenna.Name = "btntyhjenna";
-            this.btntyhjenna.Size = new System.Drawing.Size(117, 45);
+            this.btntyhjenna.Size = new System.Drawing.Size(104, 36);
             this.btntyhjenna.TabIndex = 2;
             this.btntyhjenna.Text = "Tyhjennä";
             this.btntyhjenna.UseVisualStyleBackColor = true;
@@ -126,151 +147,333 @@ namespace Projekti1
             // btnlisaa
             // 
             this.btnlisaa.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlisaa.Location = new System.Drawing.Point(30, 375);
-            this.btnlisaa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnlisaa.Location = new System.Drawing.Point(27, 300);
+            this.btnlisaa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnlisaa.Name = "btnlisaa";
-            this.btnlisaa.Size = new System.Drawing.Size(117, 45);
+            this.btnlisaa.Size = new System.Drawing.Size(104, 36);
             this.btnlisaa.TabIndex = 2;
             this.btnlisaa.Text = "Lisää";
             this.btnlisaa.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(240, 269);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox5.Location = new System.Drawing.Point(213, 215);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(304, 36);
+            this.textBox5.Size = new System.Drawing.Size(271, 32);
             this.textBox5.TabIndex = 1;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(240, 195);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox4.Location = new System.Drawing.Point(213, 156);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(304, 36);
+            this.textBox4.Size = new System.Drawing.Size(271, 32);
             this.textBox4.TabIndex = 1;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(240, 137);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox3.Location = new System.Drawing.Point(213, 110);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(304, 36);
+            this.textBox3.Size = new System.Drawing.Size(271, 32);
             this.textBox3.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(240, 74);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox2.Location = new System.Drawing.Point(213, 59);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(304, 36);
+            this.textBox2.Size = new System.Drawing.Size(271, 32);
             this.textBox2.TabIndex = 1;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(240, 12);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Location = new System.Drawing.Point(213, 10);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(304, 36);
+            this.textBox1.Size = new System.Drawing.Size(271, 32);
             this.textBox1.TabIndex = 1;
             // 
             // lblnimike
             // 
             this.lblnimike.AutoSize = true;
-            this.lblnimike.Location = new System.Drawing.Point(24, 274);
+            this.lblnimike.Location = new System.Drawing.Point(21, 219);
             this.lblnimike.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblnimike.Name = "lblnimike";
-            this.lblnimike.Size = new System.Drawing.Size(84, 29);
+            this.lblnimike.Size = new System.Drawing.Size(71, 24);
             this.lblnimike.TabIndex = 0;
             this.lblnimike.Text = "Nimike";
             // 
             // lblemail
             // 
             this.lblemail.AutoSize = true;
-            this.lblemail.Location = new System.Drawing.Point(24, 208);
+            this.lblemail.Location = new System.Drawing.Point(21, 166);
             this.lblemail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblemail.Name = "lblemail";
-            this.lblemail.Size = new System.Drawing.Size(69, 29);
+            this.lblemail.Size = new System.Drawing.Size(59, 24);
             this.lblemail.TabIndex = 0;
             this.lblemail.Text = "Email";
             // 
             // lblpuh
             // 
             this.lblpuh.AutoSize = true;
-            this.lblpuh.Location = new System.Drawing.Point(24, 149);
+            this.lblpuh.Location = new System.Drawing.Point(21, 119);
             this.lblpuh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblpuh.Name = "lblpuh";
-            this.lblpuh.Size = new System.Drawing.Size(169, 29);
+            this.lblpuh.Size = new System.Drawing.Size(143, 24);
             this.lblpuh.TabIndex = 0;
             this.lblpuh.Text = "Puhelinnumero";
             // 
             // lblsnimi
             // 
             this.lblsnimi.AutoSize = true;
-            this.lblsnimi.Location = new System.Drawing.Point(24, 86);
+            this.lblsnimi.Location = new System.Drawing.Point(21, 69);
             this.lblsnimi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblsnimi.Name = "lblsnimi";
-            this.lblsnimi.Size = new System.Drawing.Size(107, 29);
+            this.lblsnimi.Size = new System.Drawing.Size(91, 24);
             this.lblsnimi.TabIndex = 0;
             this.lblsnimi.Text = "Sukunimi";
             // 
             // lblenimi
             // 
             this.lblenimi.AutoSize = true;
-            this.lblenimi.Location = new System.Drawing.Point(24, 25);
+            this.lblenimi.Location = new System.Drawing.Point(21, 20);
             this.lblenimi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblenimi.Name = "lblenimi";
-            this.lblenimi.Size = new System.Drawing.Size(90, 29);
+            this.lblenimi.Size = new System.Drawing.Size(77, 24);
             this.lblenimi.TabIndex = 0;
             this.lblenimi.Text = "Etunimi";
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage2.Controls.Add(this.panel2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage2.Size = new System.Drawing.Size(1597, 1331);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1419, 1062);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vuorojen syöttö";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage3.Size = new System.Drawing.Size(1597, 1331);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Size = new System.Drawing.Size(1419, 1062);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Työntekijän vuorolista";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage4.Size = new System.Drawing.Size(1597, 1331);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Size = new System.Drawing.Size(1419, 1062);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Vuorojen syöttö";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // frmMainForm
+            // panel2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.listBox4);
+            this.panel2.Controls.Add(this.listBox3);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.listBox2);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.listBox1);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(15, 10);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(941, 581);
+            this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(41, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Syötä vuoro";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(42, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Päivämäärä";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(42, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Alkaa:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(42, 199);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Loppuu:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(207, 76);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(234, 22);
+            this.dateTimePicker1.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(45, 284);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 17);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Paikka";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(207, 284);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(234, 84);
+            this.listBox1.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(48, 401);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 17);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Tehtävä";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(207, 401);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(234, 84);
+            this.listBox2.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(51, 513);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 17);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Määrä";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(207, 513);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(234, 22);
+            this.textBox8.TabIndex = 12;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(505, 111);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(374, 374);
+            this.dataGridView1.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(502, 79);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(139, 17);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Vapaat työntekijät";
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 16;
+            this.listBox3.Location = new System.Drawing.Point(207, 129);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(234, 52);
+            this.listBox3.TabIndex = 15;
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.ItemHeight = 16;
+            this.listBox4.Location = new System.Drawing.Point(207, 199);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(234, 68);
+            this.listBox4.TabIndex = 16;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(548, 513);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 40);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Tallenna";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(697, 513);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 40);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Tyhjennä";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1605, 908);
+            this.ClientSize = new System.Drawing.Size(1427, 726);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmMainForm";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Työvuorosuunnittelu";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -296,6 +499,24 @@ namespace Projekti1
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblnimike;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }
 
