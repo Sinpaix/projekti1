@@ -9,10 +9,23 @@ namespace Projekti1
 {
     class Controller
     {
+        // Työntekijä
         public List<Tyontekija> LataaTyontekijat()
         {
             return DAO.GetTyontekijat();
         }
 
+
+        // Tarve
+        public List<Tarve> LataaTarpeet()
+        {
+            return DAO.GetTarpeet();
+        }
+
+        // Tyovuorot
+        public List<Tyovuoro> LataaTyovuorot()
+        {
+            return DAO.GetTyovuorot();
+        }
     }
 }

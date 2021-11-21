@@ -17,8 +17,9 @@ namespace Projekti1.Models
         {
         }
 
-        public Tyotehtava(string tehtava, string paikka, int tyonimike_idnimike) : this()
+        public Tyotehtava(int idtyotehtava, string tehtava, string paikka, int tyonimike_idnimike) : this()
         {
+            Idtyotehtava = idtyotehtava;
             Tehtava = tehtava;
             Paikka = paikka;
             Tyonimike_idnimike = tyonimike_idnimike;

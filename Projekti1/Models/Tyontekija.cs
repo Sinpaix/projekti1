@@ -28,6 +28,16 @@ namespace Projekti1.Models
             Tyonimike_idnimike = tyonimike_idnimike;
         }
 
+        public Tyontekija(int idtyontekija, string etunimi, string sukunimi, string puhelin, string email, int tyonimike_idnimike)
+        {
+            Idtyontekija = idtyontekija;
+            Etunimi = etunimi;
+            Sukunimi = sukunimi;
+            Puhelin = puhelin;
+            Email = email;
+            Tyonimike_idnimike = tyonimike_idnimike;
+        }
+
         public override string ToString()
         {
             return $"{Etunimi}  {Sukunimi}";

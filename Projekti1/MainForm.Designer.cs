@@ -81,9 +81,16 @@ namespace Projekti1
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lwVuorot = new System.Windows.Forms.ListView();
+            this.tyovuoroID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tehtavaID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.maara = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -93,6 +100,7 @@ namespace Projekti1
             this.tabPage5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -269,6 +277,8 @@ namespace Projekti1
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -640,6 +650,54 @@ namespace Projekti1
             this.label12.TabIndex = 0;
             this.label12.Text = "Näytä työvuorolista ajalta:";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lwVuorot);
+            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(884, 487);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Vuorot";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(1149, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(710, 487);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Vapaat henkilöt";
+            // 
+            // lwVuorot
+            // 
+            this.lwVuorot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.tyovuoroID,
+            this.tehtavaID,
+            this.maara});
+            this.lwVuorot.HideSelection = false;
+            this.lwVuorot.Location = new System.Drawing.Point(6, 25);
+            this.lwVuorot.Name = "lwVuorot";
+            this.lwVuorot.Size = new System.Drawing.Size(872, 456);
+            this.lwVuorot.TabIndex = 0;
+            this.lwVuorot.UseCompatibleStateImageBehavior = false;
+            this.lwVuorot.View = System.Windows.Forms.View.Details;
+            // 
+            // tyovuoroID
+            // 
+            this.tyovuoroID.Text = "Työvuoro ID";
+            this.tyovuoroID.Width = 200;
+            // 
+            // tehtavaID
+            // 
+            this.tehtavaID.Text = "Tehtävä ID";
+            this.tehtavaID.Width = 200;
+            // 
+            // maara
+            // 
+            this.maara.Text = "Määrä";
+            this.maara.Width = 100;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -654,6 +712,7 @@ namespace Projekti1
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -666,6 +725,7 @@ namespace Projekti1
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -724,6 +784,12 @@ namespace Projekti1
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ListView lwVuorot;
+        private System.Windows.Forms.ColumnHeader tyovuoroID;
+        private System.Windows.Forms.ColumnHeader tehtavaID;
+        private System.Windows.Forms.ColumnHeader maara;
     }
 }
 

@@ -16,8 +16,9 @@ namespace Projekti1.Models
         {
         }
 
-        public Tyovuoro(DateTime alkaa, DateTime loppuu) : this()
+        public Tyovuoro(int idtyovuoro, DateTime alkaa, DateTime loppuu) : this()
         {
+            Idtyovuoro = idtyovuoro;
             Alkaa = alkaa;
             Loppuu = loppuu;
         }
