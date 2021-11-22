@@ -53,11 +53,15 @@ namespace Projekti1
         {
             lwVuorot.Items.Clear();
 
-            foreach (Tyovuoro t in tyovuorot)
+            foreach (Tarve t in tarpeet)
             {
-                lwVuorot.Items.Add(new ListViewItem(new string[] { t.Idtyovuoro.ToString(),
+                lwVuorot.Items.Add(new ListViewItem(new string[] { t.TyovuoroID.ToString(),
                 t.Alkaa.ToString(),
-                t.Loppuu.ToString() }));
+                t.Loppuu.ToString(),
+                t.Tehtava,
+                t.Paikka,
+                t.Nimike,
+                t.Maara.ToString()}));
             }
         }
 

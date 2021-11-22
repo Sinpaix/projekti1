@@ -8,18 +8,26 @@ namespace Projekti1.Models
 {
     class Tarve
     {
-        public int Tyovuoro_idtyovuoro { get; set; }
-        public int Tyotehtava_idtehtava { get; set; }
+        public int TyovuoroID { get; set; }
+        public DateTime Alkaa { get; set; }
+        public DateTime Loppuu { get; set; }
+        public string Tehtava { get; set; }
+        public string Paikka { get; set; }
+        public string Nimike { get; set; }
         public int Maara { get; set; }
 
         public Tarve()
         {
         }
 
-        public Tarve(int tyovuoro_idtyovuoro, int tyotehtava_idtehtava, int maara) : this()
+        public Tarve(int tyovuoroID, DateTime alkaa, DateTime loppuu, string tehtava, string paikka, string nimike, int maara)
         {
-            Tyovuoro_idtyovuoro = tyovuoro_idtyovuoro;
-            Tyotehtava_idtehtava = tyotehtava_idtehtava;
+            TyovuoroID = tyovuoroID;
+            Alkaa = alkaa;
+            Loppuu = loppuu;
+            Tehtava = tehtava;
+            Paikka = paikka;
+            Nimike = nimike;
             Maara = maara;
         }
     }
