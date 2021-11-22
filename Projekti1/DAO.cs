@@ -259,6 +259,49 @@ namespace Projekti1
             }
             return tyonimikkeet;
         }
+
+        public static List<Tyotehtava> GetTyotehtavat()
+        {
+            List<Tyotehtava> tyotehtavat = new List<Tyotehtava>();
+
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+                string sql = 
+                "SELECT idtehtava, tehtava, paikka, Tyonimike_idnimike FROM tyotehtava";
+
+                //"SELECT idtehtava, tehtava, paikka, tn.nimike " +
+                //"FROM tyotehtava, tyonimike tn " +
+                //"WHERE Tyonimike_idnimike = idnimike ";
+
+                //SELECT idtehtava, tehtava, paikka, tn.nimike
+                //FROM tyotehtava, tyonimike tn
+                //WHERE Tyonimike_idnimike = idnimike;
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Tyotehtava tt = new Tyotehtava(int.Parse(rdr[0].ToString()), rdr[1].ToString(), rdr[2].ToString(), int.Parse(rdr[3].ToString()));
+                    tyotehtavat.Add(tt);
+                }
+                rdr.Close();
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return tyotehtavat;
+        }
     }
 }
 

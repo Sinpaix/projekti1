@@ -30,12 +30,14 @@ namespace Projekti1
             tyontekijat = contr.LataaTyontekijat();
             tarpeet = contr.LataaTarpeet();
             tyovuorot = contr.LataaTyovuorot();
+            tyotehtavat = contr.LoadTyotehtavat();
             
 
 
             // Laitetaan haetut tiedot ohjelman näytöille
             PopulateTarveListView();
             PopulateTyontekijaListView();
+            PopulatedTyotehtavaDGW();
 
         }
 
@@ -140,6 +142,15 @@ namespace Projekti1
 
                 }
             }
+        }
+
+        private void PopulatedTyotehtavaDGW()
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = tyotehtavat;
+            dgwTehtavat.DataSource = source;
+            dgwTehtavat.Columns[0].Visible = false; // Piilotetaan ID 
+
         }
     }
 }

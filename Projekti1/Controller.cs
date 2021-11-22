@@ -15,7 +15,6 @@ namespace Projekti1
             return DAO.GetTyontekijat();
         }
 
-
         // Tarve
         public List<Tarve> LataaTarpeet()
         {
@@ -46,6 +45,12 @@ namespace Projekti1
         public List<Tyonimike> LoadTyonimikkeet()
         {
             return DAO.GetTyonimikkeet();
+        }
+
+        //Tyotehtävät
+        public List<Tyotehtava> LoadTyotehtavat()
+        {
+            return DAO.GetTyotehtavat();
         }
     }
 }

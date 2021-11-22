@@ -448,7 +448,7 @@ namespace Projekti1
             this.dgwTehtavat.Name = "dgwTehtavat";
             this.dgwTehtavat.RowHeadersWidth = 51;
             this.dgwTehtavat.RowTemplate.Height = 24;
-            this.dgwTehtavat.Size = new System.Drawing.Size(324, 362);
+            this.dgwTehtavat.Size = new System.Drawing.Size(367, 362);
             this.dgwTehtavat.TabIndex = 13;
             // 
             // label7
