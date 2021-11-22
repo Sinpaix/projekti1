@@ -30,10 +30,12 @@ namespace Projekti1
             tyontekijat = contr.LataaTyontekijat();
             tarpeet = contr.LataaTarpeet();
             tyovuorot = contr.LataaTyovuorot();
+            
 
 
             // Laitetaan haetut tiedot ohjelman näytöille
             PopulateTarveListView();
+            PopulateTyontekijaListView();
 
         }
 
@@ -51,5 +53,93 @@ namespace Projekti1
             }
         }
 
+
+        private void PopulateTyontekijaListView()
+        {
+            //tyhjennetään lista
+            this.listView1.Items.Clear();
+            //lisätään kaikki näyttelijät listaan
+            foreach (var item in tyontekijat)
+            {
+                //lisätään listalla uusi listviewitem
+                //alustetaan uusi listviewitem käyttämällä muodostinta joka ottaa vastaan string taulukon
+                //alustetaan uusi string taulukko ja asetetaan samalla arvot taulukolle, jokainen luokan instanssi omana alkiona
+
+                this.listView1.Items.Add(new ListViewItem(new string[] { item.Idtyontekija.ToString(), item.Etunimi, item.Sukunimi, item.Puhelin, item.Email }));
+            }
+        }
+
+        private void lisaabtn_Click(object sender, EventArgs e)
+        {
+            // avaa työntekijäform ja luodaan uuden työntekijän tiedot
+            // palauta luodun työntekijän tiedot
+
+            TyontekijaForm tyontekijaForm = new TyontekijaForm(null);
+            DialogResult result = tyontekijaForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                // käyttäjä painoi tallenna nappia --> tallenna uusi työntekijä
+                Tyontekija createdTyontekija = tyontekijaForm.GetTyontekija();
+                int count = contr.AddTyontekija(createdTyontekija);
+                if (count > 0)
+                {
+
+
+                    MessageBox.Show("Työntekijä lisätty");
+
+                    // haetaan kannasta työntekijät. Näin saadaan id
+
+                    tyontekijat = contr.LataaTyontekijat();
+                    PopulateTyontekijaListView();
+                }
+            }
+        }
+
+        private void poistabtn_Click(object sender, EventArgs e)
+        {
+            // poista valittu työntekijä
+            if (this.listView1.SelectedIndices.Count > 0)
+            {
+                int selectedIndex = this.listView1.SelectedIndices[0];
+                //poistaa työntekijälistalta objekti valitusta indeksistä
+                Tyontekija a = tyontekijat[selectedIndex];
+                int count = contr.RemoveTyontekija(a);
+                if (count > 0)
+                {
+                    MessageBox.Show("Työntekijä poistettu");
+                    tyontekijat.RemoveAt(selectedIndex);
+                    PopulateTyontekijaListView();
+                }
+            }
+        }
+
+        private void muokkaabtn_Click(object sender, EventArgs e)
+        {
+
+            // hae listalta valitun tiedot
+            // huom listview componentille asetettu että voi valita vain yhden kerrallaan
+            if (this.listView1.SelectedIndices.Count > 0)
+            {
+                int selectedIndex = this.listView1.SelectedIndices[0];
+
+                //avaa työntekijä form ja välitä sinne tiedot muokattavaksi
+                Tyontekija selectedTyontekija = tyontekijat[selectedIndex];
+                TyontekijaForm tyontekijaForm = new TyontekijaForm(selectedTyontekija);
+                DialogResult result = tyontekijaForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    // käyttäjä painoi tallenna nappia --> päivitetään tiedot kannassa
+
+                    int count = contr.EditTyontekija(selectedTyontekija);
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Työntekijä päivitetty");
+
+                        PopulateTyontekijaListView();
+                    }
+
+                }
+            }
+        }
     }
 }

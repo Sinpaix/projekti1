@@ -27,5 +27,25 @@ namespace Projekti1
         {
             return DAO.GetTyovuorot();
         }
+
+        public int RemoveTyontekija(Tyontekija a)
+        {
+            return DAO.DeleteTyontekija(a);
+        }
+
+        public int AddTyontekija(Tyontekija a)
+        {
+            return DAO.InsertTyontekija(a);
+        }
+
+        public int EditTyontekija(Tyontekija a)
+        {
+            return DAO.UpdateTyontekija(a);
+        }
+
+        public List<Tyonimike> LoadTyonimikkeet()
+        {
+            return DAO.GetTyonimikkeet();
+        }
     }
 }

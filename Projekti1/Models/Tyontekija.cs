@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekti1.Models
 {
-    class Tyontekija
+   public class Tyontekija
     {
         public int Idtyontekija { get; set; }
         public string Etunimi { get; set; }

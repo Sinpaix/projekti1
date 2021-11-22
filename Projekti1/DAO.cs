@@ -11,8 +11,8 @@ namespace Projekti1
     class DAO
     {
         static MySqlConnection conn = null;
-        static string myConnectionString = "server=127.0.0.1;uid=root;" +
-             "pwd=root;database=sairaalakanta";
+        static string myConnectionString = "server=127.0.0.1;uid=ryhmä9;" +
+             "pwd=ryhmä9;database=sairaalakanta";
 
         // Työntekijöiden hakeminen tietokannasta
         public static List<Tyontekija> GetTyontekijat()
@@ -25,13 +25,13 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = "SELECT etunimi, sukunimi, puhelin, email, Tyonimike_idnimike FROM tyontekija";
+                string sql = "SELECT idtyontekija, etunimi, sukunimi, puhelin, email, tyonimike_idnimike FROM Tyontekija";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Tyontekija t = new Tyontekija(rdr[0].ToString(), rdr[1].ToString(), rdr[2].ToString(), rdr[3].ToString(), int.Parse(rdr[4].ToString()));
-                    tyontekijat.Add(t);
+                    Tyontekija a = new Tyontekija(int.Parse(rdr[0].ToString()), rdr[1].ToString(), rdr[2].ToString(), rdr[3].ToString(), rdr[4].ToString(), int.Parse(rdr[5].ToString()));
+                    tyontekijat.Add(a);
                 }
                 rdr.Close();
 
@@ -47,6 +47,7 @@ namespace Projekti1
             }
             return tyontekijat;
         }
+    
 
         // Työvuorotarpeiden haku tietokannasta
         public static List<Tarve> GetTarpeet()
@@ -116,5 +117,148 @@ namespace Projekti1
             return tyovuorot;
         }
 
+        // työntekijän lisäys
+        public static int InsertTyontekija(Tyontekija tyontekija)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "INSERT INTO Tyontekija(etunimi, sukunimi, puhelin, email, tyonimike_idnimike) values (?etunimi, ?sukunimi, ?puhelin, ?email, ?tyonimike_idnimike)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?etunimi", MySqlDbType.VarChar).Value = tyontekija.Etunimi;
+                cmd.Parameters.Add("?sukunimi", MySqlDbType.VarChar).Value = tyontekija.Sukunimi;
+                cmd.Parameters.Add("?puhelin", MySqlDbType.VarChar).Value = tyontekija.Puhelin;
+                cmd.Parameters.Add("?email", MySqlDbType.VarChar).Value = tyontekija.Email;
+                cmd.Parameters.Add("?tyonimike_idnimike", MySqlDbType.Int64).Value = tyontekija.Tyonimike_idnimike;
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("Työntekijä {0} {1} lisätty", tyontekija.Etunimi, tyontekija.Sukunimi);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
+
+        // työntekijän päivitys
+        public static int UpdateTyontekija(Tyontekija tyontekija)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "UPDATE Tyontekija SET etunimi = ?etunimi, sukunimi = ?sukunimi, puhelin = ?puhelin, email = ?email, tyonimike_idnimike = ?tyonimike_idnimike WHERE idtyontekija = ?id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?id", MySqlDbType.Int64).Value = tyontekija.Idtyontekija;
+                cmd.Parameters.Add("?etunimi", MySqlDbType.VarChar).Value = tyontekija.Etunimi;
+                cmd.Parameters.Add("?sukunimi", MySqlDbType.VarChar).Value = tyontekija.Sukunimi;
+                cmd.Parameters.Add("?puhelin", MySqlDbType.VarChar).Value = tyontekija.Puhelin;
+                cmd.Parameters.Add("?email", MySqlDbType.VarChar).Value = tyontekija.Email;
+                cmd.Parameters.Add("?tyonimike_idnimike", MySqlDbType.Int64).Value = tyontekija.Tyonimike_idnimike;
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("Työntekijä {0} päivitetty", tyontekija.Idtyontekija);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
+
+        public static int DeleteTyontekija(Tyontekija a)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "DELETE FROM Tyontekija WHERE idtyontekija = ?id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?id", MySqlDbType.Int64).Value = a.Idtyontekija;
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("Työntekijät id:llä {0} poistettu", a.Idtyontekija);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
+
+        // työnimikkeiden haku
+        public static List<Tyonimike> GetTyonimikkeet()
+        {
+            List<Tyonimike> tyonimikkeet = new List<Tyonimike>();
+
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+                string sql = "SELECT nimike FROM Tyonimike";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Tyonimike a = new Tyonimike(rdr[0].ToString());
+                    tyonimikkeet.Add(a);
+                }
+                rdr.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return tyonimikkeet;
+        }
     }
 }
+
