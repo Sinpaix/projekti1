@@ -52,5 +52,10 @@ namespace Projekti1
         {
             return DAO.GetTyotehtavat();
         }
+
+        public int AddTyotehtava(Tyotehtava tt)
+        {
+            return DAO.InsertTyotehtava(tt); 
+        }
     }
 }

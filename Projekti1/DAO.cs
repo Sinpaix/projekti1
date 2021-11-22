@@ -302,6 +302,42 @@ namespace Projekti1
             }
             return tyotehtavat;
         }
+
+        public static int InsertTyotehtava(Tyotehtava tyotehtava)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "INSERT INTO  tyotehtava (idtehtava, tehtava, paikka, Tyonimike_idnimike) values (?idtehtava, ?tehtava, ?paikka, ?Tyonimike_idnimike)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?idtehtava", MySqlDbType.VarChar).Value = tyotehtava.Idtyotehtava;
+                cmd.Parameters.Add("?tehtava", MySqlDbType.VarChar).Value = tyotehtava.Tehtava;
+                cmd.Parameters.Add("?paikka", MySqlDbType.VarChar).Value = tyotehtava.Paikka;
+                cmd.Parameters.Add("?Tyonimike_idnimike", MySqlDbType.VarChar).Value = tyotehtava.Tyonimike_idnimike;
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("tyotehtava {0} {1} {2} {3} inserted", tyotehtava.Idtyotehtava, tyotehtava.Tehtava, tyotehtava.Paikka, tyotehtava.Tyonimike_idnimike);
+
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
     }
 }
 

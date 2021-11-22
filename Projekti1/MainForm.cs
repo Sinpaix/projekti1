@@ -20,6 +20,8 @@ namespace Projekti1
         private List<Kiinnitys> kiinnitykset = new List<Kiinnitys>();
         private List<Tyonimike> nimikkeet = new List<Tyonimike>();
 
+        private Tyotehtava tyotehtava;
+
         private Controller contr = new Controller();
 
         public MainForm()
@@ -38,6 +40,9 @@ namespace Projekti1
             PopulateTarveListView();
             PopulateTyontekijaListView();
             PopulatedTyotehtavaDGW();
+
+            //Syötetyt tiedot
+            FillFieldsTehtava();
 
         }
 
@@ -150,7 +155,72 @@ namespace Projekti1
             source.DataSource = tyotehtavat;
             dgwTehtavat.DataSource = source;
             dgwTehtavat.Columns[0].Visible = false; // Piilotetaan ID 
+        }
 
+        private void FillFieldsTehtava()
+        {
+            if (null != this.tyotehtava)
+            {
+                this.tbTehtava.Text = tyotehtava.Tehtava;
+                this.comboPaikka.Text = tyotehtava.Paikka;
+                this.tbNimike.Text = tyotehtava.Tyonimike_idnimike.ToString();
+                //this.comboNimike.Text = tyotehtava.
+            }
+        }
+
+        private void AddTyotehtava()
+        {
+            if (false == this.ValidateChildren())
+            {
+                // tietoja ei ollut syötetty halutulla tavalla
+                // HUOM! tämä return-lause ei estä Dialog-tyylisen lomakkeen sulkeutumista!!
+                // lomakkeen avannut sovellus saa edelleen buttonSave-nappiin liitetyn DialogResult-vastauksen
+                return;
+            }
+          
+            string sTehtava = this.tbTehtava.Text;
+            string sPaikka = this.comboPaikka.Text;
+            string sNimikeid = this.tbNimike.Text;
+
+            if (null == tyotehtava)
+            {
+                // luodaan uusi tehtävä
+                // Id ei tiedossa, koska tulee kannasta
+                tyotehtava = new Tyotehtava(0, sTehtava, sPaikka, int.Parse(sNimikeid));
+            }
+            else
+            {
+                MessageBox.Show("ei toimi");
+
+                // muokataan olemassa olevaa tehtävää
+                tyotehtava.Tehtava = this.tbTehtava.Text;
+                tyotehtava.Paikka = this.comboPaikka.Text;
+                tyotehtava.Tyonimike_idnimike = int.Parse(this.tbNimike.Text);
+
+            }
+            Tyotehtava createdTyotehtava = GetTyotehtava();
+
+            int count = contr.AddTyotehtava(createdTyotehtava);
+
+            if (count > 0)
+            {
+                //MessageBox.Show("tehtävä lisätty");
+
+                // Haetaan kannasta työtehtävät. Näin saadaan ID
+                tyotehtavat = contr.LoadTyotehtavat();
+
+            }
+        }
+
+        private Tyotehtava GetTyotehtava()
+        {
+            return tyotehtava;
+        }
+
+        private void btnTallenna_Click(object sender, EventArgs e)
+        {
+            AddTyotehtava();
+            PopulatedTyotehtavaDGW();
         }
     }
 }
