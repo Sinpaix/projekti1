@@ -69,10 +69,9 @@ namespace Projekti1
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtpPvm = new System.Windows.Forms.DateTimePicker();
+            this.dtpPvmAlkaa = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -91,6 +90,7 @@ namespace Projekti1
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.tbNimike = new System.Windows.Forms.TextBox();
+            this.dtpPvmLoppuu = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -321,10 +321,10 @@ namespace Projekti1
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.dtpPvm);
+            this.panel2.Controls.Add(this.dtpPvmLoppuu);
+            this.panel2.Controls.Add(this.dtpPvmAlkaa);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(11, 8);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
@@ -334,7 +334,7 @@ namespace Projekti1
             // 
             // numMaara
             // 
-            this.numMaara.Location = new System.Drawing.Point(135, 432);
+            this.numMaara.Location = new System.Drawing.Point(136, 410);
             this.numMaara.Name = "numMaara";
             this.numMaara.Size = new System.Drawing.Size(63, 20);
             this.numMaara.TabIndex = 22;
@@ -345,7 +345,7 @@ namespace Projekti1
             this.comboNimike.Items.AddRange(new object[] {
             "Osasto A",
             "Osasto B"});
-            this.comboNimike.Location = new System.Drawing.Point(133, 302);
+            this.comboNimike.Location = new System.Drawing.Point(136, 331);
             this.comboNimike.Name = "comboNimike";
             this.comboNimike.Size = new System.Drawing.Size(199, 21);
             this.comboNimike.TabIndex = 21;
@@ -356,7 +356,7 @@ namespace Projekti1
             this.comboPaikka.Items.AddRange(new object[] {
             "Osasto A",
             "Osasto B"});
-            this.comboPaikka.Location = new System.Drawing.Point(132, 252);
+            this.comboPaikka.Location = new System.Drawing.Point(135, 281);
             this.comboPaikka.Name = "comboPaikka";
             this.comboPaikka.Size = new System.Drawing.Size(199, 21);
             this.comboPaikka.TabIndex = 21;
@@ -366,7 +366,7 @@ namespace Projekti1
             this.panel1.Controls.Add(this.rbloppuu06);
             this.panel1.Controls.Add(this.rbloppuu22);
             this.panel1.Controls.Add(this.rbloppuu14);
-            this.panel1.Location = new System.Drawing.Point(133, 133);
+            this.panel1.Location = new System.Drawing.Point(135, 160);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(198, 47);
             this.panel1.TabIndex = 20;
@@ -411,7 +411,7 @@ namespace Projekti1
             // 
             this.rbalkaa22.AutoSize = true;
             this.rbalkaa22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbalkaa22.Location = new System.Drawing.Point(269, 101);
+            this.rbalkaa22.Location = new System.Drawing.Point(271, 92);
             this.rbalkaa22.Name = "rbalkaa22";
             this.rbalkaa22.Size = new System.Drawing.Size(62, 21);
             this.rbalkaa22.TabIndex = 19;
@@ -423,7 +423,7 @@ namespace Projekti1
             // 
             this.rbalkaa14.AutoSize = true;
             this.rbalkaa14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbalkaa14.Location = new System.Drawing.Point(201, 101);
+            this.rbalkaa14.Location = new System.Drawing.Point(203, 92);
             this.rbalkaa14.Name = "rbalkaa14";
             this.rbalkaa14.Size = new System.Drawing.Size(62, 21);
             this.rbalkaa14.TabIndex = 19;
@@ -435,7 +435,7 @@ namespace Projekti1
             // 
             this.rbalkaa06.AutoSize = true;
             this.rbalkaa06.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbalkaa06.Location = new System.Drawing.Point(133, 101);
+            this.rbalkaa06.Location = new System.Drawing.Point(135, 92);
             this.rbalkaa06.Name = "rbalkaa06";
             this.rbalkaa06.Size = new System.Drawing.Size(62, 21);
             this.rbalkaa06.TabIndex = 19;
@@ -479,7 +479,7 @@ namespace Projekti1
             // tbTehtava
             // 
             this.tbTehtava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTehtava.Location = new System.Drawing.Point(133, 201);
+            this.tbTehtava.Location = new System.Drawing.Point(136, 230);
             this.tbTehtava.Margin = new System.Windows.Forms.Padding(2);
             this.tbTehtava.Name = "tbTehtava";
             this.tbTehtava.Size = new System.Drawing.Size(199, 23);
@@ -489,7 +489,7 @@ namespace Projekti1
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(34, 432);
+            this.label7.Location = new System.Drawing.Point(35, 410);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 17);
@@ -500,7 +500,7 @@ namespace Projekti1
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(31, 207);
+            this.label6.Location = new System.Drawing.Point(34, 236);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 17);
@@ -511,7 +511,7 @@ namespace Projekti1
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(32, 306);
+            this.label8.Location = new System.Drawing.Point(35, 335);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 17);
@@ -522,27 +522,27 @@ namespace Projekti1
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 256);
+            this.label5.Location = new System.Drawing.Point(34, 285);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "Paikka";
             // 
-            // dtpPvm
+            // dtpPvmAlkaa
             // 
-            this.dtpPvm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpPvm.Location = new System.Drawing.Point(133, 64);
-            this.dtpPvm.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpPvm.Name = "dtpPvm";
-            this.dtpPvm.Size = new System.Drawing.Size(198, 23);
-            this.dtpPvm.TabIndex = 4;
+            this.dtpPvmAlkaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPvmAlkaa.Location = new System.Drawing.Point(133, 64);
+            this.dtpPvmAlkaa.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpPvmAlkaa.Name = "dtpPvmAlkaa";
+            this.dtpPvmAlkaa.Size = new System.Drawing.Size(198, 23);
+            this.dtpPvmAlkaa.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(32, 150);
+            this.label4.Location = new System.Drawing.Point(33, 138);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 17);
@@ -553,23 +553,12 @@ namespace Projekti1
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 105);
+            this.label3.Location = new System.Drawing.Point(34, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Alkaa";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 64);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Päivämäärä";
             // 
             // label1
             // 
@@ -751,11 +740,20 @@ namespace Projekti1
             // tbNimike
             // 
             this.tbNimike.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNimike.Location = new System.Drawing.Point(132, 342);
+            this.tbNimike.Location = new System.Drawing.Point(135, 371);
             this.tbNimike.Margin = new System.Windows.Forms.Padding(2);
             this.tbNimike.Name = "tbNimike";
             this.tbNimike.Size = new System.Drawing.Size(199, 23);
             this.tbNimike.TabIndex = 12;
+            // 
+            // dtpPvmLoppuu
+            // 
+            this.dtpPvmLoppuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPvmLoppuu.Location = new System.Drawing.Point(133, 132);
+            this.dtpPvmLoppuu.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpPvmLoppuu.Name = "dtpPvmLoppuu";
+            this.dtpPvmLoppuu.Size = new System.Drawing.Size(198, 23);
+            this.dtpPvmLoppuu.TabIndex = 4;
             // 
             // MainForm
             // 
@@ -805,10 +803,9 @@ namespace Projekti1
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtpPvm;
+        private System.Windows.Forms.DateTimePicker dtpPvmAlkaa;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
@@ -854,6 +851,7 @@ namespace Projekti1
         private System.Windows.Forms.ComboBox comboNimike;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbNimike;
+        private System.Windows.Forms.DateTimePicker dtpPvmLoppuu;
     }
 }
 

@@ -57,5 +57,10 @@ namespace Projekti1
         {
             return DAO.InsertTyotehtava(tt); 
         }
+
+        public int AddTyovuoro(Tyovuoro tv)
+        {
+            return DAO.InsertTyovuoro(tv);
+        }
     }
 }

@@ -338,6 +338,40 @@ namespace Projekti1
             }
             return count;
         }
+
+        public static int InsertTyovuoro(Tyovuoro tyovuoro)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "INSERT INTO  tyovuoro (idtyovuoro, alkaa, loppuu) values (?idtyovuoro, ?alkaa, ?loppuu)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?idtyovuoro", MySqlDbType.VarChar).Value = tyovuoro.Idtyovuoro;
+                cmd.Parameters.Add("?alkaa", MySqlDbType.VarChar).Value = tyovuoro.Alkaa;
+                cmd.Parameters.Add("?loppuu", MySqlDbType.VarChar).Value = tyovuoro.Loppuu;
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("tyovuoro {0} {1} {2} inserted", tyovuoro.Idtyovuoro, tyovuoro.Alkaa, tyovuoro.Loppuu);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
     }
 }
 
