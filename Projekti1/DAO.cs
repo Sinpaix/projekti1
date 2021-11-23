@@ -25,12 +25,12 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = "SELECT idtyontekija, etunimi, sukunimi, puhelin, email, tyonimike_idnimike FROM Tyontekija";
+                string sql = "SELECT idtyontekija, etunimi, sukunimi, puhelin, email, nimike, Tyonimike_idnimike FROM Tyontekija t JOIN tyonimike tn ON t.Tyonimike_idnimike = tn.idnimike";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Tyontekija a = new Tyontekija(int.Parse(rdr[0].ToString()), rdr[1].ToString(), rdr[2].ToString(), rdr[3].ToString(), rdr[4].ToString(), int.Parse(rdr[5].ToString()));
+                    Tyontekija a = new Tyontekija(int.Parse(rdr[0].ToString()), rdr[1].ToString(), rdr[2].ToString(), rdr[3].ToString(), rdr[4].ToString(), rdr[5].ToString(), int.Parse(rdr[6].ToString()));
                     tyontekijat.Add(a);
                 }
                 rdr.Close();

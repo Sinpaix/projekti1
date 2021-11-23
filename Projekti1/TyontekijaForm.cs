@@ -50,7 +50,7 @@ namespace Projekti1
                 this.textBox3.Text = tyontekija.Sukunimi;
                 this.textBox4.Text = tyontekija.Puhelin;
                 this.textBox5.Text = tyontekija.Email;
-                this.comboBox1.Text = tyonimike.Nimike;
+                this.comboBox1.Text = tyontekija.Nimike;
             }
         }
 
@@ -74,7 +74,7 @@ namespace Projekti1
             {
                 // luodaan uusi työntekijä
                 // id ei tiedossa koska tulee kannasta
-                tyontekija = new Tyontekija(0, etunimi, sukunimi, puhelin, email, idnimike);
+                tyontekija = new Tyontekija(etunimi, sukunimi, puhelin, email, idnimike);
             }
             else
             {

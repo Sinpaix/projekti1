@@ -20,7 +20,7 @@ namespace Projekti1.Models
         {
         }
 
-        public Tarve(int tyovuoroID, DateTime alkaa, DateTime loppuu, string tehtava, string paikka, string nimike, int maara)
+        public Tarve(int tyovuoroID, DateTime alkaa, DateTime loppuu, string tehtava, string paikka, string nimike, int maara) : this()
         {
             TyovuoroID = tyovuoroID;
             Alkaa = alkaa;

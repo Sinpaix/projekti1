@@ -48,7 +48,7 @@ namespace Projekti1
         }
 
 
-        // Esitetään työvuorot-taulun tiedot listviewissä
+        // Esitetään tarve-taulun tiedot listviewissä
         public void PopulateTarveListView()
         {
             lwVuorot.Items.Clear();
@@ -77,7 +77,7 @@ namespace Projekti1
                 //alustetaan uusi listviewitem käyttämällä muodostinta joka ottaa vastaan string taulukon
                 //alustetaan uusi string taulukko ja asetetaan samalla arvot taulukolle, jokainen luokan instanssi omana alkiona
 
-                this.listView1.Items.Add(new ListViewItem(new string[] { item.Idtyontekija.ToString(), item.Etunimi, item.Sukunimi, item.Puhelin, item.Email }));
+                this.listView1.Items.Add(new ListViewItem(new string[] { item.Idtyontekija.ToString(), item.Etunimi, item.Sukunimi, item.Puhelin, item.Email, item.Nimike }));
             }
         }
 

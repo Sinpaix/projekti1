@@ -49,6 +49,10 @@ namespace Projekti1
             this.tyovuoroID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Aloitus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Lopetus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Tehtava = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Paikka = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Maara = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.numMaara = new System.Windows.Forms.NumericUpDown();
@@ -91,10 +95,6 @@ namespace Projekti1
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.Tehtava = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Paikka = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Nimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Maara = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -192,6 +192,7 @@ namespace Projekti1
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(9, 20);
             this.listView1.MultiSelect = false;
@@ -232,7 +233,7 @@ namespace Projekti1
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1867, 1330);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Työntekijöiden kiinnitys";
@@ -289,6 +290,25 @@ namespace Projekti1
             // 
             this.Lopetus.Text = "Lopetus";
             this.Lopetus.Width = 150;
+            // 
+            // Tehtava
+            // 
+            this.Tehtava.Text = "Tehtävä";
+            this.Tehtava.Width = 120;
+            // 
+            // Paikka
+            // 
+            this.Paikka.Text = "Paikka";
+            this.Paikka.Width = 75;
+            // 
+            // Nimike
+            // 
+            this.Nimike.Text = "Nimike";
+            this.Nimike.Width = 100;
+            // 
+            // Maara
+            // 
+            this.Maara.Text = "Määrä";
             // 
             // tabPage3
             // 
@@ -737,25 +757,6 @@ namespace Projekti1
             this.label12.Size = new System.Drawing.Size(215, 20);
             this.label12.TabIndex = 0;
             this.label12.Text = "Näytä työvuorolista ajalta:";
-            // 
-            // Tehtava
-            // 
-            this.Tehtava.Text = "Tehtävä";
-            this.Tehtava.Width = 120;
-            // 
-            // Paikka
-            // 
-            this.Paikka.Text = "Paikka";
-            this.Paikka.Width = 75;
-            // 
-            // Nimike
-            // 
-            this.Nimike.Text = "Nimike";
-            this.Nimike.Width = 100;
-            // 
-            // Maara
-            // 
-            this.Maara.Text = "Määrä";
             // 
             // MainForm
             // 
