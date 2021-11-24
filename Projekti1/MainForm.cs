@@ -160,6 +160,8 @@ namespace Projekti1
             source.DataSource = tyotehtavat;
             dgwTehtavat.DataSource = source;
             dgwTehtavat.Columns[0].Visible = false; // Piilotetaan ID 
+            dgwTehtavat.Columns[3].Visible = false; // Piilotetaan nimikeID 
+
         }
 
         private void FillFieldsTehtava()
@@ -169,7 +171,7 @@ namespace Projekti1
                 this.tbTehtava.Text = tyotehtava.Tehtava;
                 this.comboPaikka.Text = tyotehtava.Paikka;
                 this.tbNimike.Text = tyotehtava.Tyonimike_idnimike.ToString();
-                //this.comboNimike.Text = tyotehtava.
+                //this.comboNimike.Text = tyotehtava.Nimike;
             }
         }
 
@@ -179,12 +181,13 @@ namespace Projekti1
             string sTehtava = this.tbTehtava.Text;
             string sPaikka = this.comboPaikka.Text;
             string sNimikeid = this.tbNimike.Text;
+            string sNimike = this.comboNimike.Text;
 
             if (null == tyotehtava)
             {
                 // luodaan uusi tehtävä
                 // Id ei tiedossa, koska tulee kannasta
-                tyotehtava = new Tyotehtava(0, sTehtava, sPaikka, int.Parse(sNimikeid));
+                tyotehtava = new Tyotehtava(0, sTehtava, sPaikka, int.Parse(sNimikeid), sNimike);
             }
             else
             {

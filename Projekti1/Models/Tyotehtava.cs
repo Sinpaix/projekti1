@@ -12,17 +12,19 @@ namespace Projekti1.Models
         public string Tehtava { get; set; }
         public string Paikka { get; set; }
         public int Tyonimike_idnimike { get; set; }
+        public string Nimike { get; set; }
 
         public Tyotehtava()
         {
         }
 
-        public Tyotehtava(int idtyotehtava, string tehtava, string paikka, int tyonimike_idnimike) : this()
+        public Tyotehtava(int idtyotehtava, string tehtava, string paikka, int tyonimike_idnimike, string nimike)
         {
             Idtyotehtava = idtyotehtava;
             Tehtava = tehtava;
             Paikka = paikka;
             Tyonimike_idnimike = tyonimike_idnimike;
+            Nimike = nimike;
         }
     }
 }

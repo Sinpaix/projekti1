@@ -271,8 +271,8 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = 
-                "SELECT idtehtava, tehtava, paikka, Tyonimike_idnimike FROM tyotehtava";
+                string sql =
+                "SELECT idtehtava, tehtava, paikka, Tyonimike_idnimike, nimike FROM tyotehtava, tyonimike WHERE Tyonimike_idnimike = idnimike;";
 
                 //"SELECT idtehtava, tehtava, paikka, tn.nimike " +
                 //"FROM tyotehtava, tyonimike tn " +
@@ -286,7 +286,7 @@ namespace Projekti1
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Tyotehtava tt = new Tyotehtava(int.Parse(rdr[0].ToString()), rdr[1].ToString(), rdr[2].ToString(), int.Parse(rdr[3].ToString()));
+                    Tyotehtava tt = new Tyotehtava(int.Parse(rdr[0].ToString()), rdr[1].ToString(), rdr[2].ToString(), int.Parse(rdr[3].ToString()), rdr[4].ToString());
                     tyotehtavat.Add(tt);
                 }
                 rdr.Close();
