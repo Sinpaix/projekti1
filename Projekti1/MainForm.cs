@@ -171,7 +171,7 @@ namespace Projekti1
                 this.tbTehtava.Text = tyotehtava.Tehtava;
                 this.comboPaikka.Text = tyotehtava.Paikka;
                 this.tbNimike.Text = tyotehtava.Tyonimike_idnimike.ToString();
-                //this.comboNimike.Text = tyotehtava.Nimike;
+                this.comboNimike.Text = tyotehtava.Nimike;
             }
         }
 

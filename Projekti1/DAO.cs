@@ -274,14 +274,6 @@ namespace Projekti1
                 string sql =
                 "SELECT idtehtava, tehtava, paikka, Tyonimike_idnimike, nimike FROM tyotehtava, tyonimike WHERE Tyonimike_idnimike = idnimike;";
 
-                //"SELECT idtehtava, tehtava, paikka, tn.nimike " +
-                //"FROM tyotehtava, tyonimike tn " +
-                //"WHERE Tyonimike_idnimike = idnimike ";
-
-                //SELECT idtehtava, tehtava, paikka, tn.nimike
-                //FROM tyotehtava, tyonimike tn
-                //WHERE Tyonimike_idnimike = idnimike;
-
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
