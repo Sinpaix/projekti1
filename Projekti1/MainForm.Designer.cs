@@ -115,16 +115,18 @@ namespace Projekti1
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1250, 886);
+            this.tabControl1.Size = new System.Drawing.Size(1250, 677);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -133,7 +135,7 @@ namespace Projekti1
             this.tabPage1.Controls.Add(this.listView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1242, 860);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Työntekijähallinta";
@@ -145,9 +147,9 @@ namespace Projekti1
             this.groupBox3.Controls.Add(this.poistabtn);
             this.groupBox3.Controls.Add(this.muokkaabtn);
             this.groupBox3.Location = new System.Drawing.Point(417, 90);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(166, 182);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
@@ -156,7 +158,7 @@ namespace Projekti1
             // lisaabtn
             // 
             this.lisaabtn.Location = new System.Drawing.Point(23, 122);
-            this.lisaabtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lisaabtn.Margin = new System.Windows.Forms.Padding(2);
             this.lisaabtn.Name = "lisaabtn";
             this.lisaabtn.Size = new System.Drawing.Size(121, 25);
             this.lisaabtn.TabIndex = 2;
@@ -167,7 +169,7 @@ namespace Projekti1
             // poistabtn
             // 
             this.poistabtn.Location = new System.Drawing.Point(23, 73);
-            this.poistabtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.poistabtn.Margin = new System.Windows.Forms.Padding(2);
             this.poistabtn.Name = "poistabtn";
             this.poistabtn.Size = new System.Drawing.Size(121, 29);
             this.poistabtn.TabIndex = 1;
@@ -178,7 +180,7 @@ namespace Projekti1
             // muokkaabtn
             // 
             this.muokkaabtn.Location = new System.Drawing.Point(23, 31);
-            this.muokkaabtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.muokkaabtn.Margin = new System.Windows.Forms.Padding(2);
             this.muokkaabtn.Name = "muokkaabtn";
             this.muokkaabtn.Size = new System.Drawing.Size(121, 27);
             this.muokkaabtn.TabIndex = 0;
@@ -198,7 +200,7 @@ namespace Projekti1
             this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(6, 13);
-            this.listView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(390, 346);
@@ -236,9 +238,9 @@ namespace Projekti1
             this.tabPage2.Controls.Add(this.groupBox2);
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(1242, 860);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Työntekijöiden kiinnitys";
@@ -247,9 +249,9 @@ namespace Projekti1
             // groupBox2
             // 
             this.groupBox2.Location = new System.Drawing.Point(9, 325);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(640, 317);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -259,9 +261,9 @@ namespace Projekti1
             // 
             this.groupBox1.Controls.Add(this.lwVuorot);
             this.groupBox1.Location = new System.Drawing.Point(5, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(761, 317);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -280,7 +282,7 @@ namespace Projekti1
             this.lwVuorot.FullRowSelect = true;
             this.lwVuorot.HideSelection = false;
             this.lwVuorot.Location = new System.Drawing.Point(4, 16);
-            this.lwVuorot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lwVuorot.Margin = new System.Windows.Forms.Padding(2);
             this.lwVuorot.Name = "lwVuorot";
             this.lwVuorot.Size = new System.Drawing.Size(751, 298);
             this.lwVuorot.TabIndex = 0;
@@ -325,8 +327,8 @@ namespace Projekti1
             this.tabPage3.Controls.Add(this.panel2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage3.Size = new System.Drawing.Size(1242, 860);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1242, 651);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "Vuorojen syöttö";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -355,7 +357,7 @@ namespace Projekti1
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(11, 8);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(802, 580);
             this.panel2.TabIndex = 0;
@@ -471,7 +473,7 @@ namespace Projekti1
             // btnTyhjenna
             // 
             this.btnTyhjenna.Location = new System.Drawing.Point(147, 481);
-            this.btnTyhjenna.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTyhjenna.Margin = new System.Windows.Forms.Padding(2);
             this.btnTyhjenna.Name = "btnTyhjenna";
             this.btnTyhjenna.Size = new System.Drawing.Size(88, 32);
             this.btnTyhjenna.TabIndex = 18;
@@ -481,7 +483,7 @@ namespace Projekti1
             // btnTallenna
             // 
             this.btnTallenna.Location = new System.Drawing.Point(35, 481);
-            this.btnTallenna.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTallenna.Margin = new System.Windows.Forms.Padding(2);
             this.btnTallenna.Name = "btnTallenna";
             this.btnTallenna.Size = new System.Drawing.Size(88, 32);
             this.btnTallenna.TabIndex = 17;
@@ -494,7 +496,7 @@ namespace Projekti1
             this.dgwTehtavat.AllowUserToOrderColumns = true;
             this.dgwTehtavat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgwTehtavat.Location = new System.Drawing.Point(364, 64);
-            this.dgwTehtavat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgwTehtavat.Margin = new System.Windows.Forms.Padding(2);
             this.dgwTehtavat.Name = "dgwTehtavat";
             this.dgwTehtavat.RowHeadersWidth = 51;
             this.dgwTehtavat.RowTemplate.Height = 24;
@@ -505,7 +507,7 @@ namespace Projekti1
             // 
             this.tbNimike.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNimike.Location = new System.Drawing.Point(135, 371);
-            this.tbNimike.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbNimike.Margin = new System.Windows.Forms.Padding(2);
             this.tbNimike.Name = "tbNimike";
             this.tbNimike.Size = new System.Drawing.Size(199, 23);
             this.tbNimike.TabIndex = 12;
@@ -514,7 +516,7 @@ namespace Projekti1
             // 
             this.tbTehtava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbTehtava.Location = new System.Drawing.Point(136, 230);
-            this.tbTehtava.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTehtava.Margin = new System.Windows.Forms.Padding(2);
             this.tbTehtava.Name = "tbTehtava";
             this.tbTehtava.Size = new System.Drawing.Size(199, 23);
             this.tbTehtava.TabIndex = 12;
@@ -567,7 +569,7 @@ namespace Projekti1
             // 
             this.dtpPvmLoppuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpPvmLoppuu.Location = new System.Drawing.Point(133, 132);
-            this.dtpPvmLoppuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpPvmLoppuu.Margin = new System.Windows.Forms.Padding(2);
             this.dtpPvmLoppuu.Name = "dtpPvmLoppuu";
             this.dtpPvmLoppuu.Size = new System.Drawing.Size(198, 23);
             this.dtpPvmLoppuu.TabIndex = 4;
@@ -576,7 +578,7 @@ namespace Projekti1
             // 
             this.dtpPvmAlkaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpPvmAlkaa.Location = new System.Drawing.Point(133, 64);
-            this.dtpPvmAlkaa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpPvmAlkaa.Margin = new System.Windows.Forms.Padding(2);
             this.dtpPvmAlkaa.Name = "dtpPvmAlkaa";
             this.dtpPvmAlkaa.Size = new System.Drawing.Size(198, 23);
             this.dtpPvmAlkaa.TabIndex = 4;
@@ -619,7 +621,7 @@ namespace Projekti1
             this.tabPage4.Controls.Add(this.panel3);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1242, 860);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Työntekijän vuorolista";
@@ -635,7 +637,7 @@ namespace Projekti1
             this.panel3.Controls.Add(this.listBox5);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Location = new System.Drawing.Point(7, 6);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(475, 441);
             this.panel3.TabIndex = 0;
@@ -644,7 +646,7 @@ namespace Projekti1
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(28, 232);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
@@ -664,7 +666,7 @@ namespace Projekti1
             // dateTimePicker3
             // 
             this.dateTimePicker3.Location = new System.Drawing.Point(268, 175);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(174, 20);
             this.dateTimePicker3.TabIndex = 4;
@@ -672,7 +674,7 @@ namespace Projekti1
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(28, 175);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(168, 20);
             this.dateTimePicker2.TabIndex = 3;
@@ -692,7 +694,7 @@ namespace Projekti1
             // 
             this.listBox5.FormattingEnabled = true;
             this.listBox5.Location = new System.Drawing.Point(104, 36);
-            this.listBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox5.Margin = new System.Windows.Forms.Padding(2);
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(338, 69);
             this.listBox5.TabIndex = 1;
@@ -713,7 +715,7 @@ namespace Projekti1
             this.tabPage5.Controls.Add(this.panel4);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1242, 860);
             this.tabPage5.TabIndex = 3;
             this.tabPage5.Text = "Työvuorolista";
@@ -727,7 +729,7 @@ namespace Projekti1
             this.panel4.Controls.Add(this.dateTimePicker4);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Location = new System.Drawing.Point(7, 6);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(464, 467);
             this.panel4.TabIndex = 0;
@@ -736,7 +738,7 @@ namespace Projekti1
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Location = new System.Drawing.Point(20, 109);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 24;
@@ -756,7 +758,7 @@ namespace Projekti1
             // dateTimePicker5
             // 
             this.dateTimePicker5.Location = new System.Drawing.Point(266, 54);
-            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker5.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker5.Name = "dateTimePicker5";
             this.dateTimePicker5.Size = new System.Drawing.Size(174, 20);
             this.dateTimePicker5.TabIndex = 2;
@@ -764,7 +766,7 @@ namespace Projekti1
             // dateTimePicker4
             // 
             this.dateTimePicker4.Location = new System.Drawing.Point(20, 54);
-            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker4.Name = "dateTimePicker4";
             this.dateTimePicker4.Size = new System.Drawing.Size(174, 20);
             this.dateTimePicker4.TabIndex = 1;
