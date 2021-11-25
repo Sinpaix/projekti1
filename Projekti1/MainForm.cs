@@ -171,9 +171,9 @@ namespace Projekti1
             BindingSource source = new BindingSource();
             source.DataSource = tyotehtavat;
             dgwTehtavat.DataSource = source;
-            dgwTehtavat.Columns[0].Visible = false; // Piilotetaan työvuoron ID 
+            //dgwTehtavat.Columns[0].Visible = false; // Piilotetaan työvuoron ID 
             dgwTehtavat.Columns[3].Visible = false; // Piilotetaan tehtävän ID 
-            dgwTehtavat.Columns[6].Visible = false; // Piilotetaan nimikkeen ID 
+            //dgwTehtavat.Columns[6].Visible = false; // Piilotetaan nimikkeen ID 
 
         }
 
@@ -183,7 +183,7 @@ namespace Projekti1
             {
                 this.tbTehtava.Text = tyotehtava.Tehtava;
                 this.comboPaikka.Text = tyotehtava.Paikka;
-                this.tbNimike.Text = tyotehtava.Tyonimike_idnimike.ToString();
+                //this.tbNimike.Text = tyotehtava.Tyonimike_idnimike.ToString();
                 this.comboNimike.Text = tyotehtava.Nimike;
             }
         }
@@ -252,13 +252,14 @@ namespace Projekti1
 
         private void AddTyovuoro()
         {
-            if (false == this.ValidateChildren())
-            {
-                // tietoja ei ollut syötetty halutulla tavalla
-                // HUOM! tämä return-lause ei estä Dialog-tyylisen lomakkeen sulkeutumista!!
-                // lomakkeen avannut sovellus saa edelleen buttonSave-nappiin liitetyn DialogResult-vastauksen
-                return;
-            }
+            //if (false == this.ValidateChildren())
+            //{
+            //    // tietoja ei ollut syötetty halutulla tavalla
+            //    // HUOM! tämä return-lause ei estä Dialog-tyylisen lomakkeen sulkeutumista!!
+            //    // lomakkeen avannut sovellus saa edelleen buttonSave-nappiin liitetyn DialogResult-vastauksen
+            //    return;
+            //}
+
 
             //string vuoroAlkaa = dtpPvmAlkaa.Value.ToString("yyyy-MM-dd")+" "+comboAlkaa.Text;
             //string vuoroLoppuu = dtpPvmLoppuu.Value.ToString("yyyy-MM-dd")+" "+comboLoppuu.Text;

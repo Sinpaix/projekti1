@@ -62,7 +62,7 @@ namespace Projekti1
             this.comboLoppuu = new System.Windows.Forms.ComboBox();
             this.comboAlkaa = new System.Windows.Forms.ComboBox();
             this.comboPaikka = new System.Windows.Forms.ComboBox();
-            this.btnTyhjenna = new System.Windows.Forms.Button();
+            this.btnMuokkaa = new System.Windows.Forms.Button();
             this.btnTallenna = new System.Windows.Forms.Button();
             this.dgwTehtavat = new System.Windows.Forms.DataGridView();
             this.tbNimike = new System.Windows.Forms.TextBox();
@@ -92,6 +92,7 @@ namespace Projekti1
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnPoista = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -352,7 +353,8 @@ namespace Projekti1
             this.panel2.Controls.Add(this.comboLoppuu);
             this.panel2.Controls.Add(this.comboAlkaa);
             this.panel2.Controls.Add(this.comboPaikka);
-            this.panel2.Controls.Add(this.btnTyhjenna);
+            this.panel2.Controls.Add(this.btnPoista);
+            this.panel2.Controls.Add(this.btnMuokkaa);
             this.panel2.Controls.Add(this.btnTallenna);
             this.panel2.Controls.Add(this.dgwTehtavat);
             this.panel2.Controls.Add(this.tbNimike);
@@ -611,15 +613,15 @@ namespace Projekti1
             this.comboPaikka.Size = new System.Drawing.Size(201, 24);
             this.comboPaikka.TabIndex = 21;
             // 
-            // btnTyhjenna
+            // btnMuokkaa
             // 
-            this.btnTyhjenna.Location = new System.Drawing.Point(147, 481);
-            this.btnTyhjenna.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTyhjenna.Name = "btnTyhjenna";
-            this.btnTyhjenna.Size = new System.Drawing.Size(88, 32);
-            this.btnTyhjenna.TabIndex = 18;
-            this.btnTyhjenna.Text = "Tyhjennä";
-            this.btnTyhjenna.UseVisualStyleBackColor = true;
+            this.btnMuokkaa.Location = new System.Drawing.Point(147, 481);
+            this.btnMuokkaa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMuokkaa.Name = "btnMuokkaa";
+            this.btnMuokkaa.Size = new System.Drawing.Size(88, 32);
+            this.btnMuokkaa.TabIndex = 18;
+            this.btnMuokkaa.Text = "Muokkaa";
+            this.btnMuokkaa.UseVisualStyleBackColor = true;
             // 
             // btnTallenna
             // 
@@ -931,6 +933,16 @@ namespace Projekti1
             this.label12.TabIndex = 0;
             this.label12.Text = "Näytä työvuorolista ajalta:";
             // 
+            // btnPoista
+            // 
+            this.btnPoista.Location = new System.Drawing.Point(260, 481);
+            this.btnPoista.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPoista.Name = "btnPoista";
+            this.btnPoista.Size = new System.Drawing.Size(88, 32);
+            this.btnPoista.TabIndex = 18;
+            this.btnPoista.Text = "Poista";
+            this.btnPoista.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -972,7 +984,7 @@ namespace Projekti1
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnTyhjenna;
+        private System.Windows.Forms.Button btnMuokkaa;
         private System.Windows.Forms.Button btnTallenna;
         private System.Windows.Forms.DataGridView dgwTehtavat;
         private System.Windows.Forms.Label label7;
@@ -1028,6 +1040,7 @@ namespace Projekti1
         private System.Windows.Forms.ComboBox comboLoppuu;
         private System.Windows.Forms.TextBox tbvuoroloppuu;
         private System.Windows.Forms.TextBox tbvuoroalkaa;
+        private System.Windows.Forms.Button btnPoista;
     }
 }
 

@@ -271,18 +271,22 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = "SELECT Tyovuoro_idtyovuoro, alkaa, loppuu, idtehtava, tehtava, paikka, Tyonimike_idnimike, nimike, maara " +
-                    "FROM tarve t JOIN tyovuoro tv ON t.Tyovuoro_idtyovuoro = tv.idtyovuoro " +
-                    "JOIN tyotehtava tt ON t.Tyotehtava_idtehtava = tt.idtehtava " +
-                    "JOIN tyonimike tn ON tt.Tyonimike_idnimike = tn.idnimike";
+                string sql =
 
+                    "SELECT idtehtava, tehtava, paikka, Tyonimike_idnimike, nimike FROM tyotehtava, tyonimike WHERE Tyonimike_idnimike = idnimike ORDER BY idtehtava";
+
+                //"SELECT Tyovuoro_idtyovuoro, alkaa, loppuu, idtehtava, tehtava, paikka, Tyonimike_idnimike, nimike, maara " +
+                //    "FROM tarve t JOIN tyovuoro tv ON t.Tyovuoro_idtyovuoro = tv.idtyovuoro " +
+                //    "JOIN tyotehtava tt ON t.Tyotehtava_idtehtava = tt.idtehtava " +
+                //    "JOIN tyonimike tn ON tt.Tyonimike_idnimike = tn.idnimike";
+                //(int.Parse(rdr[0].ToString()), DateTime.Parse(rdr[1].ToString()), DateTime.Parse(rdr[2].ToString()), int.Parse(rdr[3].ToString()), rdr[4].ToString(), rdr[5].ToString(),
+                //int.Parse(rdr[6].ToString()), (rdr[7].ToString()), int.Parse(rdr[8].ToString()))
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Tyotehtava tt = new Tyotehtava(int.Parse(rdr[0].ToString()), DateTime.Parse(rdr[1].ToString()), DateTime.Parse(rdr[2].ToString()), int.Parse(rdr[3].ToString()), rdr[4].ToString(), rdr[5].ToString(),
-                        int.Parse(rdr[6].ToString()), (rdr[7].ToString()), int.Parse(rdr[8].ToString()));
+                    Tyotehtava tt = new Tyotehtava(int.Parse(rdr[0].ToString()), rdr[1].ToString(), rdr[2].ToString(), int.Parse(rdr[3].ToString()), (rdr[4].ToString()));
                     tyotehtavat.Add(tt);
                 }
                 rdr.Close();
