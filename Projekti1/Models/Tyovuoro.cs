@@ -12,9 +12,6 @@ namespace Projekti1.Models
         public DateTime Alkaa { get; set; }
         public DateTime Loppuu { get; set; }
 
-        public string VuoroAlkaa { get; set; }
-        public string VuoroLoppuu { get; set; }
-
         public Tyovuoro()
         {
         }
@@ -26,11 +23,6 @@ namespace Projekti1.Models
             Loppuu = loppuu;
         }
 
-        public Tyovuoro(int idtyovuoro, string vuoroAlkaa, string vuoroLoppuu)
-        {
-            Idtyovuoro = idtyovuoro;
-            VuoroAlkaa = vuoroAlkaa;
-            VuoroLoppuu = vuoroLoppuu;
-        }
+     
     }
 }
