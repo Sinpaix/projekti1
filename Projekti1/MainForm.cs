@@ -234,7 +234,7 @@ namespace Projekti1
 
         private void btnTallenna_Click(object sender, EventArgs e)
         {
-            AddTyovuoro();    /*EI TOIMI*/
+            //AddTyovuoro();    /*EI TOIMI*/
             AddTyotehtava();
             PopulatedTyotehtavaDGW();
             
@@ -244,7 +244,7 @@ namespace Projekti1
         {
             if (null != this.tyovuoro)
             {
-                tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text); 
+                tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
                 tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
             }
         }
