@@ -58,13 +58,6 @@ namespace Projekti1
             this.numMaara = new System.Windows.Forms.NumericUpDown();
             this.comboNimike = new System.Windows.Forms.ComboBox();
             this.comboPaikka = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.rbloppuu06 = new System.Windows.Forms.RadioButton();
-            this.rbloppuu22 = new System.Windows.Forms.RadioButton();
-            this.rbloppuu14 = new System.Windows.Forms.RadioButton();
-            this.rbalkaa22 = new System.Windows.Forms.RadioButton();
-            this.rbalkaa14 = new System.Windows.Forms.RadioButton();
-            this.rbalkaa06 = new System.Windows.Forms.RadioButton();
             this.btnTyhjenna = new System.Windows.Forms.Button();
             this.btnTallenna = new System.Windows.Forms.Button();
             this.dgwTehtavat = new System.Windows.Forms.DataGridView();
@@ -95,6 +88,8 @@ namespace Projekti1
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -103,7 +98,6 @@ namespace Projekti1
             this.tabPage3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMaara)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwTehtavat)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -337,11 +331,9 @@ namespace Projekti1
             // 
             this.panel2.Controls.Add(this.numMaara);
             this.panel2.Controls.Add(this.comboNimike);
+            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.comboPaikka);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.rbalkaa22);
-            this.panel2.Controls.Add(this.rbalkaa14);
-            this.panel2.Controls.Add(this.rbalkaa06);
             this.panel2.Controls.Add(this.btnTyhjenna);
             this.panel2.Controls.Add(this.btnTallenna);
             this.panel2.Controls.Add(this.dgwTehtavat);
@@ -372,9 +364,9 @@ namespace Projekti1
             // comboNimike
             // 
             this.comboNimike.FormattingEnabled = true;
-            this.comboNimike.Location = new System.Drawing.Point(136, 331);
+            this.comboNimike.Location = new System.Drawing.Point(133, 331);
             this.comboNimike.Name = "comboNimike";
-            this.comboNimike.Size = new System.Drawing.Size(199, 21);
+            this.comboNimike.Size = new System.Drawing.Size(202, 21);
             this.comboNimike.TabIndex = 21;
             // 
             // comboPaikka
@@ -383,92 +375,10 @@ namespace Projekti1
             this.comboPaikka.Items.AddRange(new object[] {
             "Osasto A",
             "Osasto B"});
-            this.comboPaikka.Location = new System.Drawing.Point(135, 281);
+            this.comboPaikka.Location = new System.Drawing.Point(133, 281);
             this.comboPaikka.Name = "comboPaikka";
-            this.comboPaikka.Size = new System.Drawing.Size(199, 21);
+            this.comboPaikka.Size = new System.Drawing.Size(201, 21);
             this.comboPaikka.TabIndex = 21;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.rbloppuu06);
-            this.panel1.Controls.Add(this.rbloppuu22);
-            this.panel1.Controls.Add(this.rbloppuu14);
-            this.panel1.Location = new System.Drawing.Point(135, 160);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(198, 47);
-            this.panel1.TabIndex = 20;
-            // 
-            // rbloppuu06
-            // 
-            this.rbloppuu06.AutoSize = true;
-            this.rbloppuu06.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbloppuu06.Location = new System.Drawing.Point(0, 15);
-            this.rbloppuu06.Name = "rbloppuu06";
-            this.rbloppuu06.Size = new System.Drawing.Size(62, 21);
-            this.rbloppuu06.TabIndex = 19;
-            this.rbloppuu06.TabStop = true;
-            this.rbloppuu06.Text = "06:00";
-            this.rbloppuu06.UseVisualStyleBackColor = true;
-            // 
-            // rbloppuu22
-            // 
-            this.rbloppuu22.AutoSize = true;
-            this.rbloppuu22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbloppuu22.Location = new System.Drawing.Point(136, 15);
-            this.rbloppuu22.Name = "rbloppuu22";
-            this.rbloppuu22.Size = new System.Drawing.Size(62, 21);
-            this.rbloppuu22.TabIndex = 19;
-            this.rbloppuu22.TabStop = true;
-            this.rbloppuu22.Text = "22:00";
-            this.rbloppuu22.UseVisualStyleBackColor = true;
-            // 
-            // rbloppuu14
-            // 
-            this.rbloppuu14.AutoSize = true;
-            this.rbloppuu14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbloppuu14.Location = new System.Drawing.Point(68, 15);
-            this.rbloppuu14.Name = "rbloppuu14";
-            this.rbloppuu14.Size = new System.Drawing.Size(62, 21);
-            this.rbloppuu14.TabIndex = 19;
-            this.rbloppuu14.TabStop = true;
-            this.rbloppuu14.Text = "14:00";
-            this.rbloppuu14.UseVisualStyleBackColor = true;
-            // 
-            // rbalkaa22
-            // 
-            this.rbalkaa22.AutoSize = true;
-            this.rbalkaa22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbalkaa22.Location = new System.Drawing.Point(271, 92);
-            this.rbalkaa22.Name = "rbalkaa22";
-            this.rbalkaa22.Size = new System.Drawing.Size(62, 21);
-            this.rbalkaa22.TabIndex = 19;
-            this.rbalkaa22.TabStop = true;
-            this.rbalkaa22.Text = "22:00";
-            this.rbalkaa22.UseVisualStyleBackColor = true;
-            // 
-            // rbalkaa14
-            // 
-            this.rbalkaa14.AutoSize = true;
-            this.rbalkaa14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbalkaa14.Location = new System.Drawing.Point(203, 92);
-            this.rbalkaa14.Name = "rbalkaa14";
-            this.rbalkaa14.Size = new System.Drawing.Size(62, 21);
-            this.rbalkaa14.TabIndex = 19;
-            this.rbalkaa14.TabStop = true;
-            this.rbalkaa14.Text = "14:00";
-            this.rbalkaa14.UseVisualStyleBackColor = true;
-            // 
-            // rbalkaa06
-            // 
-            this.rbalkaa06.AutoSize = true;
-            this.rbalkaa06.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbalkaa06.Location = new System.Drawing.Point(135, 92);
-            this.rbalkaa06.Name = "rbalkaa06";
-            this.rbalkaa06.Size = new System.Drawing.Size(62, 21);
-            this.rbalkaa06.TabIndex = 19;
-            this.rbalkaa06.TabStop = true;
-            this.rbalkaa06.Text = "06:00";
-            this.rbalkaa06.UseVisualStyleBackColor = true;
             // 
             // btnTyhjenna
             // 
@@ -506,19 +416,19 @@ namespace Projekti1
             // tbNimike
             // 
             this.tbNimike.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNimike.Location = new System.Drawing.Point(135, 371);
+            this.tbNimike.Location = new System.Drawing.Point(133, 371);
             this.tbNimike.Margin = new System.Windows.Forms.Padding(2);
             this.tbNimike.Name = "tbNimike";
-            this.tbNimike.Size = new System.Drawing.Size(199, 23);
+            this.tbNimike.Size = new System.Drawing.Size(202, 23);
             this.tbNimike.TabIndex = 12;
             // 
             // tbTehtava
             // 
             this.tbTehtava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTehtava.Location = new System.Drawing.Point(136, 230);
+            this.tbTehtava.Location = new System.Drawing.Point(133, 230);
             this.tbTehtava.Margin = new System.Windows.Forms.Padding(2);
             this.tbTehtava.Name = "tbTehtava";
-            this.tbTehtava.Size = new System.Drawing.Size(199, 23);
+            this.tbTehtava.Size = new System.Drawing.Size(202, 23);
             this.tbTehtava.TabIndex = 12;
             // 
             // label7
@@ -571,7 +481,7 @@ namespace Projekti1
             this.dtpPvmLoppuu.Location = new System.Drawing.Point(133, 132);
             this.dtpPvmLoppuu.Margin = new System.Windows.Forms.Padding(2);
             this.dtpPvmLoppuu.Name = "dtpPvmLoppuu";
-            this.dtpPvmLoppuu.Size = new System.Drawing.Size(198, 23);
+            this.dtpPvmLoppuu.Size = new System.Drawing.Size(202, 23);
             this.dtpPvmLoppuu.TabIndex = 4;
             // 
             // dtpPvmAlkaa
@@ -580,7 +490,7 @@ namespace Projekti1
             this.dtpPvmAlkaa.Location = new System.Drawing.Point(133, 64);
             this.dtpPvmAlkaa.Margin = new System.Windows.Forms.Padding(2);
             this.dtpPvmAlkaa.Name = "dtpPvmAlkaa";
-            this.dtpPvmAlkaa.Size = new System.Drawing.Size(198, 23);
+            this.dtpPvmAlkaa.Size = new System.Drawing.Size(202, 23);
             this.dtpPvmAlkaa.TabIndex = 4;
             // 
             // label4
@@ -782,6 +692,216 @@ namespace Projekti1
             this.label12.TabIndex = 0;
             this.label12.Text = "Näytä työvuorolista ajalta:";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "06:00",
+            "06:15",
+            "06:30",
+            "06:45",
+            "07:00",
+            "07:15",
+            "07:30",
+            "07:45",
+            "08:00",
+            "08:15",
+            "08:30",
+            "08:45",
+            "09:00",
+            "09:15",
+            "09:30",
+            "09:45",
+            "10:00",
+            "10:15",
+            "10:30",
+            "10:45",
+            "11:00",
+            "11:15",
+            "11:30",
+            "11:45",
+            "12:00",
+            "12:15",
+            "12:30",
+            "12:45",
+            "13:00",
+            "13:15",
+            "13:30",
+            "13:45",
+            "14:00",
+            "14:15",
+            "14:30",
+            "14:45",
+            "15:00",
+            "15:15",
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15",
+            "16:30",
+            "16:45",
+            "17:00",
+            "17:15",
+            "17:30",
+            "17:45",
+            "18:00",
+            "18:15",
+            "18:30",
+            "18:45",
+            "19:00",
+            "19:15",
+            "19:30",
+            "19:45",
+            "20:00",
+            "20:15",
+            "20:30",
+            "20:45",
+            "21:00",
+            "21:15",
+            "21:30",
+            "21:45",
+            "22:00",
+            "22:15",
+            "22:30",
+            "22:45",
+            "23:00",
+            "23:15",
+            "23:30",
+            "23:45",
+            "00:00",
+            "00:15",
+            "00:30",
+            "00:45",
+            "01:00",
+            "01:15",
+            "01:30",
+            "01:45",
+            "02:00",
+            "02:15",
+            "02:30",
+            "02:45",
+            "03:00",
+            "03:15",
+            "03:30",
+            "03:45",
+            "04:00",
+            "04:15",
+            "04:30",
+            "04:45",
+            "05:00",
+            "05:15",
+            "05:30",
+            "05:45"});
+            this.comboBox1.Location = new System.Drawing.Point(133, 92);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(202, 21);
+            this.comboBox1.TabIndex = 21;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "06:00",
+            "06:15",
+            "06:30",
+            "06:45",
+            "07:00",
+            "07:15",
+            "07:30",
+            "07:45",
+            "08:00",
+            "08:15",
+            "08:30",
+            "08:45",
+            "09:00",
+            "09:15",
+            "09:30",
+            "09:45",
+            "10:00",
+            "10:15",
+            "10:30",
+            "10:45",
+            "11:00",
+            "11:15",
+            "11:30",
+            "11:45",
+            "12:00",
+            "12:15",
+            "12:30",
+            "12:45",
+            "13:00",
+            "13:15",
+            "13:30",
+            "13:45",
+            "14:00",
+            "14:15",
+            "14:30",
+            "14:45",
+            "15:00",
+            "15:15",
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15",
+            "16:30",
+            "16:45",
+            "17:00",
+            "17:15",
+            "17:30",
+            "17:45",
+            "18:00",
+            "18:15",
+            "18:30",
+            "18:45",
+            "19:00",
+            "19:15",
+            "19:30",
+            "19:45",
+            "20:00",
+            "20:15",
+            "20:30",
+            "20:45",
+            "21:00",
+            "21:15",
+            "21:30",
+            "21:45",
+            "22:00",
+            "22:15",
+            "22:30",
+            "22:45",
+            "23:00",
+            "23:15",
+            "23:30",
+            "23:45",
+            "00:00",
+            "00:15",
+            "00:30",
+            "00:45",
+            "01:00",
+            "01:15",
+            "01:30",
+            "01:45",
+            "02:00",
+            "02:15",
+            "02:30",
+            "02:45",
+            "03:00",
+            "03:15",
+            "03:30",
+            "03:45",
+            "04:00",
+            "04:15",
+            "04:30",
+            "04:45",
+            "05:00",
+            "05:15",
+            "05:30",
+            "05:45"});
+            this.comboBox2.Location = new System.Drawing.Point(133, 160);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(202, 21);
+            this.comboBox2.TabIndex = 21;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -800,8 +920,6 @@ namespace Projekti1
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMaara)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgwTehtavat)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -866,13 +984,6 @@ namespace Projekti1
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ComboBox comboPaikka;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton rbloppuu06;
-        private System.Windows.Forms.RadioButton rbloppuu22;
-        private System.Windows.Forms.RadioButton rbloppuu14;
-        private System.Windows.Forms.RadioButton rbalkaa22;
-        private System.Windows.Forms.RadioButton rbalkaa14;
-        private System.Windows.Forms.RadioButton rbalkaa06;
         private System.Windows.Forms.TextBox tbTehtava;
         private System.Windows.Forms.NumericUpDown numMaara;
         private System.Windows.Forms.ComboBox comboNimike;
@@ -883,6 +994,8 @@ namespace Projekti1
         private System.Windows.Forms.ColumnHeader Paikka;
         private System.Windows.Forms.ColumnHeader Nimike;
         private System.Windows.Forms.ColumnHeader Maara;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 

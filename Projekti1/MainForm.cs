@@ -18,7 +18,7 @@ namespace Projekti1
         private List<Tyotehtava> tyotehtavat = new List<Tyotehtava>();
         private List<Tarve> tarpeet = new List<Tarve>();
         private List<Kiinnitys> kiinnitykset = new List<Kiinnitys>();
-        private List<Tyonimike> nimikkeet = new List<Tyonimike>();
+        private List<Tyonimike> tyonimikkeet = new List<Tyonimike>();
 
         private Tyotehtava tyotehtava;
         private Tyovuoro tyovuoro;
@@ -34,6 +34,7 @@ namespace Projekti1
             tarpeet = contr.LataaTarpeet();
             tyovuorot = contr.LataaTyovuorot();
             tyotehtavat = contr.LoadTyotehtavat();
+            tyonimikkeet = contr.LoadTyonimikkeet();
             
 
 
@@ -41,10 +42,20 @@ namespace Projekti1
             PopulateTarveListView();
             PopulateTyontekijaListView();
             PopulatedTyotehtavaDGW();
+            PopulateTyonimikkeetCombobox();
 
             //Syötetyt tiedot
             FillFieldsTehtava();
 
+        }
+
+        private void PopulateTyonimikkeetCombobox()
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = tyonimikkeet;
+            comboNimike.DataSource = source;
+            comboNimike.DisplayMember = "nimike";
+            comboNimike.ValueMember = "idnimike";
         }
 
 
