@@ -235,7 +235,7 @@ namespace Projekti1
 
         private void btnTallenna_Click(object sender, EventArgs e)
         {
-            //AddTyovuoro();    /*EI TOIMI*/
+            AddTyovuoro();    /*EI TOIMI*/
             AddTyotehtava();
             PopulatedTyotehtavaDGW();
             
@@ -245,8 +245,8 @@ namespace Projekti1
         {
             if (null != this.tyovuoro)
             {
-                tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
-                tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
+                //tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
+                //tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
             }
         }
 
@@ -261,30 +261,34 @@ namespace Projekti1
             //}
 
 
-            //string vuoroAlkaa = dtpPvmAlkaa.Value.ToString("yyyy-MM-dd")+" "+comboAlkaa.Text;
-            //string vuoroLoppuu = dtpPvmLoppuu.Value.ToString("yyyy-MM-dd")+" "+comboLoppuu.Text;
+            dtpPvmAlkaa.Format = DateTimePickerFormat.Custom;
+            dtpPvmAlkaa.CustomFormat = "yyyy-MM-dd";
+            dtpPvmLoppuu.CustomFormat = "yyyy-MM-dd";
 
-            if (null == tyovuoro)
-            {
-                // luodaan uusi vuoro
-                // Id ei tiedossa, koska tulee kannasta
-                tyovuoro = new Tyovuoro(
-                    0,
-                    tyovuoro.Alkaa = dtpPvmAlkaa.Value,
-                    tyovuoro.Loppuu = dtpPvmLoppuu.Value);
+            DateTime vuoroAlkaa = DateTime.Parse(dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
+            DateTime vuoroLoppuu = DateTime.Parse(dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
 
+            
+                if (null == tyovuoro)
+                {
+                    // luodaan uusi vuoro
+                    // Id ei tiedossa, koska tulee kannasta
+                    tyovuoro = new Tyovuoro(0,
+                        tyovuoro.Alkaa = vuoroAlkaa,
+                        tyovuoro.Loppuu = vuoroLoppuu);
 
-                    //tyovuoro.Alkaa = DateTime.Parse(dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text),
-                    //tyovuoro.Loppuu = DateTime.Parse(dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text));
-            }
-            else
-            {
-                MessageBox.Show("ei toimi");
+                }
+                else
+                {
+                    MessageBox.Show("ei toimi");
 
-                // muokataan olemassa olevaa vuoroa
-                //tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
-                //tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
-            }
+                    // muokataan olemassa olevaa vuoroa
+                    //tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
+                    //tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
+                }
+            
+         
+           
 
             Tyovuoro createdTyovuoro = LataaTyovuorot();
 

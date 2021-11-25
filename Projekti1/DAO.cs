@@ -353,7 +353,7 @@ namespace Projekti1
                 string sql = "INSERT INTO  tyovuoro (idtyovuoro, alkaa, loppuu) values (?idtyovuoro, ?alkaa, ?loppuu)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                cmd.Parameters.Add("?idtyovuoro", MySqlDbType.VarChar).Value = tyovuoro.Idtyovuoro;
+                cmd.Parameters.Add("?idtyovuoro", MySqlDbType.Int32).Value = tyovuoro.Idtyovuoro;
                 cmd.Parameters.Add("?alkaa", MySqlDbType.DateTime).Value = tyovuoro.Alkaa;
                 cmd.Parameters.Add("?loppuu", MySqlDbType.DateTime).Value = tyovuoro.Loppuu;
 
