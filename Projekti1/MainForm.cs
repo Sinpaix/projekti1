@@ -171,8 +171,9 @@ namespace Projekti1
             BindingSource source = new BindingSource();
             source.DataSource = tyotehtavat;
             dgwTehtavat.DataSource = source;
-            dgwTehtavat.Columns[0].Visible = false; // Piilotetaan ID 
-            dgwTehtavat.Columns[3].Visible = false; // Piilotetaan nimikeID 
+            dgwTehtavat.Columns[0].Visible = false; // Piilotetaan työvuoron ID 
+            dgwTehtavat.Columns[3].Visible = false; // Piilotetaan tehtävän ID 
+            dgwTehtavat.Columns[6].Visible = false; // Piilotetaan nimikkeen ID 
 
         }
 

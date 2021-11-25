@@ -54,6 +54,8 @@ namespace Projekti1
             this.Nimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Maara = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tbvuoroloppuu = new System.Windows.Forms.TextBox();
+            this.tbvuoroalkaa = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.numMaara = new System.Windows.Forms.NumericUpDown();
             this.comboNimike = new System.Windows.Forms.ComboBox();
@@ -90,8 +92,6 @@ namespace Projekti1
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.tbvuoroalkaa = new System.Windows.Forms.TextBox();
-            this.tbvuoroloppuu = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -331,6 +331,20 @@ namespace Projekti1
             this.tabPage3.Text = "Vuorojen syöttö";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // tbvuoroloppuu
+            // 
+            this.tbvuoroloppuu.Location = new System.Drawing.Point(261, 593);
+            this.tbvuoroloppuu.Name = "tbvuoroloppuu";
+            this.tbvuoroloppuu.Size = new System.Drawing.Size(244, 20);
+            this.tbvuoroloppuu.TabIndex = 1;
+            // 
+            // tbvuoroalkaa
+            // 
+            this.tbvuoroalkaa.Location = new System.Drawing.Point(11, 593);
+            this.tbvuoroalkaa.Name = "tbvuoroalkaa";
+            this.tbvuoroalkaa.Size = new System.Drawing.Size(244, 20);
+            this.tbvuoroalkaa.TabIndex = 1;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.numMaara);
@@ -356,7 +370,7 @@ namespace Projekti1
             this.panel2.Location = new System.Drawing.Point(11, 8);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(802, 580);
+            this.panel2.Size = new System.Drawing.Size(1224, 580);
             this.panel2.TabIndex = 0;
             // 
             // numMaara
@@ -627,13 +641,13 @@ namespace Projekti1
             this.dgwTehtavat.AllowUserToResizeRows = false;
             this.dgwTehtavat.BackgroundColor = System.Drawing.Color.White;
             this.dgwTehtavat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwTehtavat.Location = new System.Drawing.Point(364, 64);
+            this.dgwTehtavat.Location = new System.Drawing.Point(364, 21);
             this.dgwTehtavat.Margin = new System.Windows.Forms.Padding(2);
             this.dgwTehtavat.Name = "dgwTehtavat";
             this.dgwTehtavat.ReadOnly = true;
             this.dgwTehtavat.RowHeadersWidth = 60;
             this.dgwTehtavat.RowTemplate.Height = 24;
-            this.dgwTehtavat.Size = new System.Drawing.Size(396, 449);
+            this.dgwTehtavat.Size = new System.Drawing.Size(846, 542);
             this.dgwTehtavat.TabIndex = 13;
             // 
             // tbNimike
@@ -916,20 +930,6 @@ namespace Projekti1
             this.label12.Size = new System.Drawing.Size(155, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "Näytä työvuorolista ajalta:";
-            // 
-            // tbvuoroalkaa
-            // 
-            this.tbvuoroalkaa.Location = new System.Drawing.Point(883, 101);
-            this.tbvuoroalkaa.Name = "tbvuoroalkaa";
-            this.tbvuoroalkaa.Size = new System.Drawing.Size(244, 20);
-            this.tbvuoroalkaa.TabIndex = 1;
-            // 
-            // tbvuoroloppuu
-            // 
-            this.tbvuoroloppuu.Location = new System.Drawing.Point(883, 168);
-            this.tbvuoroloppuu.Name = "tbvuoroloppuu";
-            this.tbvuoroloppuu.Size = new System.Drawing.Size(244, 20);
-            this.tbvuoroloppuu.TabIndex = 1;
             // 
             // MainForm
             // 
