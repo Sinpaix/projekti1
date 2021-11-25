@@ -13,6 +13,7 @@ namespace Projekti1.Models
         public string Paikka { get; set; }
         public int Tyonimike_idnimike { get; set; }
         public string Nimike { get; set; }
+        //public int MyProperty { get; set; }
 
         public Tyotehtava()
         {
@@ -24,6 +25,14 @@ namespace Projekti1.Models
             Tehtava = tehtava;
             Paikka = paikka;
             Tyonimike_idnimike = tyonimike_idnimike;
+            Nimike = nimike;
+        }
+
+        public Tyotehtava(int idtyotehtava, string tehtava, string paikka, string nimike)
+        {
+            Idtyotehtava = idtyotehtava;
+            Tehtava = tehtava;
+            Paikka = paikka;
             Nimike = nimike;
         }
     }

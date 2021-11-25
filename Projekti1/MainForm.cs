@@ -46,6 +46,7 @@ namespace Projekti1
 
             //Syötetyt tiedot
             FillFieldsTehtava();
+            FillFieldsTyovuoro();
 
         }
 
@@ -186,6 +187,7 @@ namespace Projekti1
             }
         }
 
+
         private void AddTyotehtava()
         {
 
@@ -232,75 +234,85 @@ namespace Projekti1
 
         private void btnTallenna_Click(object sender, EventArgs e)
         {
+            //AddTyovuoro();    EI TOIMI
             AddTyotehtava();
             PopulatedTyotehtavaDGW();
+            
         }
 
-        //private void AddTyovuoro()
-        //{
-        //    if (false == this.ValidateChildren())
-        //    {
-        //        // tietoja ei ollut syötetty halutulla tavalla
-        //        // HUOM! tämä return-lause ei estä Dialog-tyylisen lomakkeen sulkeutumista!!
-        //        // lomakkeen avannut sovellus saa edelleen buttonSave-nappiin liitetyn DialogResult-vastauksen
-        //        return;
-        //    }
+        private void FillFieldsTyovuoro()
+        {
+            if (null != this.tyovuoro)
+            {
+                tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text); 
+                tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
+            }
+        }
 
-        //    DateTime sAlkaa = 0;
-        //    DateTime sLoppuu = 0;
+        private void AddTyovuoro()
+        {
+            if (false == this.ValidateChildren())
+            {
+                // tietoja ei ollut syötetty halutulla tavalla
+                // HUOM! tämä return-lause ei estä Dialog-tyylisen lomakkeen sulkeutumista!!
+                // lomakkeen avannut sovellus saa edelleen buttonSave-nappiin liitetyn DialogResult-vastauksen
+                return;
+            }
 
-        //    if (rbalkaa06.Checked == true)
-        //        sAlkaa = DateTime.Parse(dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + rbalkaa06.Text);
+            //string vuoroAlkaa = dtpPvmAlkaa.Value.ToString("yyyy-MM-dd")+" "+comboAlkaa.Text;
+            //string vuoroLoppuu = dtpPvmLoppuu.Value.ToString("yyyy-MM-dd")+" "+comboLoppuu.Text;
 
-        //    if (rbalkaa14.Checked == true)
-        //        sAlkaa = DateTime.Parse(dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + rbalkaa14.Text);
+            if (null == tyovuoro)
+            {
+                // luodaan uusi vuoro
+                // Id ei tiedossa, koska tulee kannasta
+                tyovuoro = new Tyovuoro(
+                    0,
+                    tyovuoro.Alkaa = dtpPvmAlkaa.Value,
+                    tyovuoro.Loppuu = dtpPvmLoppuu.Value);
 
-        //    if (rbalkaa22.Checked == true)
-        //        sAlkaa = DateTime.Parse(dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + rbalkaa22.Text);
 
-        //    if (rbloppuu06.Checked == true)
-        //        sLoppuu = DateTime.Parse(dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + rbloppuu06.Text);
+                    //tyovuoro.Alkaa = DateTime.Parse(dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text),
+                    //tyovuoro.Loppuu = DateTime.Parse(dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text));
+            }
+            else
+            {
+                MessageBox.Show("ei toimi");
 
-        //    if (rbloppuu14.Checked == true)
-        //        sLoppuu = DateTime.Parse(dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + rbloppuu14.Text);
+                // muokataan olemassa olevaa vuoroa
+                //tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
+                //tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
+            }
 
-        //    if (rbloppuu22.Checked == true)
-        //        sLoppuu = DateTime.Parse(dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + rbloppuu22.Text);
+            Tyovuoro createdTyovuoro = LataaTyovuorot();
 
-        //    if (null == tyovuoro)
-        //    {
-        //        // luodaan uusi tehtävä
-        //        // Id ei tiedossa, koska tulee kannasta
-        //        tyovuoro = new Tyovuoro(0, sAlkaa, sLoppuu);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("ei toimi");
+            int count = contr.AddTyovuoro(createdTyovuoro);
 
-        //        // muokataan olemassa olevaa tehtävää
-        //        tyotehtava.Tehtava = this.tbTehtava.Text;
-        //        tyotehtava.Paikka = this.comboPaikka.Text;
-        //        tyotehtava.Tyonimike_idnimike = int.Parse(this.tbNimike.Text);
+            if (count > 0)
+            {
+                MessageBox.Show("vuoro lisätty");
 
-        //    }
-        //    Tyovuoro createdTyovuoro = GetTyovuorot();
+                // Haetaan kannasta työtehtävät. Näin saadaan ID
+                tyovuorot = contr.LataaTyovuorot();
 
-        //    int count = contr.AddTyovuoro(createdTyovuoro);
+            }
+        }
 
-        //    if (count > 0)
-        //    {
-        //        //MessageBox.Show("tehtävä lisätty");
+        private Tyovuoro LataaTyovuorot()
+        {
+            return tyovuoro;
+        }
 
-        //        // Haetaan kannasta työtehtävät. Näin saadaan ID
-        //        tyovuorot = contr.LataaTyovuorot();
+        private void Testi()
+        {
 
-        //    }
-        //}
+            tbvuoroalkaa.Text = dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text;
+            tbvuoroloppuu.Text = dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text;
+        }
 
-    
-        //private Tyovuoro GetTyovuorot()
-        //{
-        //    return tyovuorot;
-        //}
+        private void dtpPvmAlkaa_ValueChanged(object sender, EventArgs e)
+        {
+            Testi();
+        }
     }
 }

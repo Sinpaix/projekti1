@@ -346,8 +346,8 @@ namespace Projekti1
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 cmd.Parameters.Add("?idtyovuoro", MySqlDbType.VarChar).Value = tyovuoro.Idtyovuoro;
-                cmd.Parameters.Add("?alkaa", MySqlDbType.VarChar).Value = tyovuoro.Alkaa;
-                cmd.Parameters.Add("?loppuu", MySqlDbType.VarChar).Value = tyovuoro.Loppuu;
+                cmd.Parameters.Add("?alkaa", MySqlDbType.DateTime).Value = tyovuoro.Alkaa;
+                cmd.Parameters.Add("?loppuu", MySqlDbType.DateTime).Value = tyovuoro.Loppuu;
 
                 count = cmd.ExecuteNonQuery();
                 if (count > 0)
