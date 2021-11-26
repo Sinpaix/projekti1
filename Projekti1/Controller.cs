@@ -27,6 +27,11 @@ namespace Projekti1
             return DAO.GetTyovuorot();
         }
 
+        public int EditTyotehtava(Tyotehtava tt)
+        {
+            return DAO.UpdateTyotehtava(tt);
+        }
+
         public int RemoveTyontekija(Tyontekija a)
         {
             return DAO.DeleteTyontekija(a);

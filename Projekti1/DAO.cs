@@ -340,6 +340,43 @@ namespace Projekti1
             return count;
         }
 
+        public static int UpdateTyotehtava(Tyotehtava tyotehtava)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "UPDATE tyotehtava SET idtehtava = ?idtehtava, tehtava = ?tehtava, paikka = ?paikka, Tyonimike_idnimike = ?Tyonimike_idnimike  WHERE idtehtava = ?idtehtava";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?idtehtava", MySqlDbType.Int64).Value = tyotehtava.Idtyotehtava;
+                cmd.Parameters.Add("?tehtava", MySqlDbType.VarChar).Value = tyotehtava.Tehtava;
+                cmd.Parameters.Add("?paikka", MySqlDbType.VarChar).Value = tyotehtava.Paikka;
+                cmd.Parameters.Add("?Tyonimike_idnimike", MySqlDbType.VarChar).Value = tyotehtava.Tyonimike_idnimike;
+                
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("Tehtävä {0} päivitetty", tyotehtava.Idtyotehtava);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
+
         public static int InsertTyovuoro(Tyovuoro tyovuoro)
         {
             int count = 0;
