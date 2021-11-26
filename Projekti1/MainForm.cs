@@ -205,24 +205,26 @@ namespace Projekti1
             }
             else
             {
-                MessageBox.Show("ei toimi");
+                MessageBox.Show("ei toimi?");
 
                 // muokataan olemassa olevaa tehtävää
-                tyotehtava.Tehtava = this.tbTehtava.Text;
-                tyotehtava.Paikka = this.comboPaikka.Text;
-                tyotehtava.Tyonimike_idnimike = int.Parse(this.tbNimike.Text);
+
+                //tyotehtava.Tehtava = this.tbTehtava.Text;
+                //tyotehtava.Paikka = this.comboPaikka.Text;
+                //tyotehtava.Tyonimike_idnimike = int.Parse(this.tbNimike.Text);
+
+                //TÄHÄN TYÖTEHTÄVÄN MUUTOSKOODI??
 
             }
-
             Tyotehtava createdTyotehtava = GetTyotehtava();
 
             int count = contr.AddTyotehtava(createdTyotehtava);
 
             if (count > 0)
             {
-                //MessageBox.Show("tehtävä lisätty");
+                MessageBox.Show("tehtävä lisätty");
 
-                // Haetaan kannasta työtehtävät. Näin saadaan ID
+                // Haetaan kannasta työtehtävät.
                 tyotehtavat = contr.LoadTyotehtavat();
 
             }
@@ -235,7 +237,7 @@ namespace Projekti1
 
         private void btnTallenna_Click(object sender, EventArgs e)
         {
-            AddTyovuoro();    /*EI TOIMI*/
+            //AddTyovuoro();    /*EI TOIMI*/
             AddTyotehtava();
             PopulatedTyotehtavaDGW();
             
@@ -329,9 +331,17 @@ namespace Projekti1
                 string paikka = dgwTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
                 string nimike = dgwTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
 
+                Tyotehtava tyotehtava = new Tyotehtava();
+                tyotehtava.Tehtava = tehtava;
+                tyotehtava.Paikka = paikka;
+                tyotehtava.Tyonimike_idnimike = int.Parse(nimike);
+
                 tbTehtava.Text = tehtava;
                 comboPaikka.Text = paikka;
                 tbNimike.Text = nimike;
+
+                
+
             }
         }
     }
