@@ -62,6 +62,7 @@ namespace Projekti1
             this.comboLoppuu = new System.Windows.Forms.ComboBox();
             this.comboAlkaa = new System.Windows.Forms.ComboBox();
             this.comboPaikka = new System.Windows.Forms.ComboBox();
+            this.btnPoista = new System.Windows.Forms.Button();
             this.btnMuokkaa = new System.Windows.Forms.Button();
             this.btnTallenna = new System.Windows.Forms.Button();
             this.dgwTehtavat = new System.Windows.Forms.DataGridView();
@@ -92,7 +93,6 @@ namespace Projekti1
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnPoista = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -613,6 +613,16 @@ namespace Projekti1
             this.comboPaikka.Size = new System.Drawing.Size(201, 24);
             this.comboPaikka.TabIndex = 21;
             // 
+            // btnPoista
+            // 
+            this.btnPoista.Location = new System.Drawing.Point(260, 481);
+            this.btnPoista.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPoista.Name = "btnPoista";
+            this.btnPoista.Size = new System.Drawing.Size(88, 32);
+            this.btnPoista.TabIndex = 18;
+            this.btnPoista.Text = "Poista";
+            this.btnPoista.UseVisualStyleBackColor = true;
+            // 
             // btnMuokkaa
             // 
             this.btnMuokkaa.Location = new System.Drawing.Point(147, 481);
@@ -622,6 +632,7 @@ namespace Projekti1
             this.btnMuokkaa.TabIndex = 18;
             this.btnMuokkaa.Text = "Muokkaa";
             this.btnMuokkaa.UseVisualStyleBackColor = true;
+            this.btnMuokkaa.Click += new System.EventHandler(this.btnMuokkaa_Click);
             // 
             // btnTallenna
             // 
@@ -932,16 +943,6 @@ namespace Projekti1
             this.label12.Size = new System.Drawing.Size(155, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "Näytä työvuorolista ajalta:";
-            // 
-            // btnPoista
-            // 
-            this.btnPoista.Location = new System.Drawing.Point(260, 481);
-            this.btnPoista.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPoista.Name = "btnPoista";
-            this.btnPoista.Size = new System.Drawing.Size(88, 32);
-            this.btnPoista.TabIndex = 18;
-            this.btnPoista.Text = "Poista";
-            this.btnPoista.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

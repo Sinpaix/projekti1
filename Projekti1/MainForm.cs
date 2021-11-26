@@ -320,5 +320,19 @@ namespace Projekti1
         {
             Testi();
         }
+
+        private void btnMuokkaa_Click(object sender, EventArgs e)
+        {
+            if (this.dgwTehtavat.SelectedRows.Count > 0)
+            {
+                string tehtava = dgwTehtavat.SelectedRows[0].Cells[1].Value + string.Empty;
+                string paikka = dgwTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
+                string nimike = dgwTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
+
+                tbTehtava.Text = tehtava;
+                comboPaikka.Text = paikka;
+                tbNimike.Text = nimike;
+            }
+        }
     }
 }
