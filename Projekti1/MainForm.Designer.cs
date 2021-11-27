@@ -109,6 +109,12 @@ namespace Projekti1
             this.btn_Kiinnita = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPoistaKiinnitys = new System.Windows.Forms.Button();
+            this.btn_ValitseTyontekija = new System.Windows.Forms.Button();
+            this.btn_ValitseVuoro = new System.Windows.Forms.Button();
+            this.btn_PeruutaVuoro = new System.Windows.Forms.Button();
+            this.btn_PeruutaTyontekija = new System.Windows.Forms.Button();
+            this.tb_vuorovalittu = new System.Windows.Forms.TextBox();
+            this.tb_tyontekijavalittu = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -956,6 +962,7 @@ namespace Projekti1
             this.lwVapaatHenkilot.TabIndex = 1;
             this.lwVapaatHenkilot.UseCompatibleStateImageBehavior = false;
             this.lwVapaatHenkilot.View = System.Windows.Forms.View.Details;
+            this.lwVapaatHenkilot.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lwVapaatHenkilot_ItemSelectionChanged);
             // 
             // lw_henkiloID
             // 
@@ -1036,31 +1043,98 @@ namespace Projekti1
             // btn_Kiinnita
             // 
             this.btn_Kiinnita.Enabled = false;
-            this.btn_Kiinnita.Location = new System.Drawing.Point(17, 19);
+            this.btn_Kiinnita.Location = new System.Drawing.Point(34, 385);
             this.btn_Kiinnita.Name = "btn_Kiinnita";
             this.btn_Kiinnita.Size = new System.Drawing.Size(147, 55);
             this.btn_Kiinnita.TabIndex = 3;
             this.btn_Kiinnita.Text = "Kiinnitä";
             this.btn_Kiinnita.UseVisualStyleBackColor = true;
+            this.btn_Kiinnita.Click += new System.EventHandler(this.btn_Kiinnita_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.tb_tyontekijavalittu);
+            this.panel1.Controls.Add(this.tb_vuorovalittu);
+            this.panel1.Controls.Add(this.btn_PeruutaTyontekija);
+            this.panel1.Controls.Add(this.btn_PeruutaVuoro);
+            this.panel1.Controls.Add(this.btn_ValitseVuoro);
+            this.panel1.Controls.Add(this.btn_ValitseTyontekija);
             this.panel1.Controls.Add(this.btnPoistaKiinnitys);
             this.panel1.Controls.Add(this.btn_Kiinnita);
-            this.panel1.Location = new System.Drawing.Point(1035, 526);
+            this.panel1.Location = new System.Drawing.Point(1027, 526);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 166);
+            this.panel1.Size = new System.Drawing.Size(759, 456);
             this.panel1.TabIndex = 4;
             // 
             // btnPoistaKiinnitys
             // 
             this.btnPoistaKiinnitys.Enabled = false;
-            this.btnPoistaKiinnitys.Location = new System.Drawing.Point(17, 98);
+            this.btnPoistaKiinnitys.Location = new System.Drawing.Point(187, 385);
             this.btnPoistaKiinnitys.Name = "btnPoistaKiinnitys";
             this.btnPoistaKiinnitys.Size = new System.Drawing.Size(147, 55);
             this.btnPoistaKiinnitys.TabIndex = 4;
             this.btnPoistaKiinnitys.Text = "Poista";
             this.btnPoistaKiinnitys.UseVisualStyleBackColor = true;
+            // 
+            // btn_ValitseTyontekija
+            // 
+            this.btn_ValitseTyontekija.Enabled = false;
+            this.btn_ValitseTyontekija.Location = new System.Drawing.Point(34, 90);
+            this.btn_ValitseTyontekija.Name = "btn_ValitseTyontekija";
+            this.btn_ValitseTyontekija.Size = new System.Drawing.Size(147, 55);
+            this.btn_ValitseTyontekija.TabIndex = 5;
+            this.btn_ValitseTyontekija.Text = "Valitse Työntekijä";
+            this.btn_ValitseTyontekija.UseVisualStyleBackColor = true;
+            this.btn_ValitseTyontekija.Click += new System.EventHandler(this.btn_ValitseTyontekija_Click);
+            // 
+            // btn_ValitseVuoro
+            // 
+            this.btn_ValitseVuoro.Enabled = false;
+            this.btn_ValitseVuoro.Location = new System.Drawing.Point(34, 19);
+            this.btn_ValitseVuoro.Name = "btn_ValitseVuoro";
+            this.btn_ValitseVuoro.Size = new System.Drawing.Size(147, 55);
+            this.btn_ValitseVuoro.TabIndex = 6;
+            this.btn_ValitseVuoro.Text = "Valitse vuoro";
+            this.btn_ValitseVuoro.UseVisualStyleBackColor = true;
+            this.btn_ValitseVuoro.Click += new System.EventHandler(this.btn_ValitseVuoro_Click);
+            // 
+            // btn_PeruutaVuoro
+            // 
+            this.btn_PeruutaVuoro.Enabled = false;
+            this.btn_PeruutaVuoro.Location = new System.Drawing.Point(187, 19);
+            this.btn_PeruutaVuoro.Name = "btn_PeruutaVuoro";
+            this.btn_PeruutaVuoro.Size = new System.Drawing.Size(147, 55);
+            this.btn_PeruutaVuoro.TabIndex = 7;
+            this.btn_PeruutaVuoro.Text = "Peruuta";
+            this.btn_PeruutaVuoro.UseVisualStyleBackColor = true;
+            this.btn_PeruutaVuoro.Click += new System.EventHandler(this.btn_PeruutaVuoro_Click);
+            // 
+            // btn_PeruutaTyontekija
+            // 
+            this.btn_PeruutaTyontekija.Enabled = false;
+            this.btn_PeruutaTyontekija.Location = new System.Drawing.Point(187, 90);
+            this.btn_PeruutaTyontekija.Name = "btn_PeruutaTyontekija";
+            this.btn_PeruutaTyontekija.Size = new System.Drawing.Size(147, 55);
+            this.btn_PeruutaTyontekija.TabIndex = 8;
+            this.btn_PeruutaTyontekija.Text = "Peruuta";
+            this.btn_PeruutaTyontekija.UseVisualStyleBackColor = true;
+            this.btn_PeruutaTyontekija.Click += new System.EventHandler(this.btn_PeruutaTyontekija_Click);
+            // 
+            // tb_vuorovalittu
+            // 
+            this.tb_vuorovalittu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_vuorovalittu.Location = new System.Drawing.Point(340, 33);
+            this.tb_vuorovalittu.Name = "tb_vuorovalittu";
+            this.tb_vuorovalittu.Size = new System.Drawing.Size(198, 19);
+            this.tb_vuorovalittu.TabIndex = 9;
+            // 
+            // tb_tyontekijavalittu
+            // 
+            this.tb_tyontekijavalittu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_tyontekijavalittu.Location = new System.Drawing.Point(340, 104);
+            this.tb_tyontekijavalittu.Name = "tb_tyontekijavalittu";
+            this.tb_tyontekijavalittu.Size = new System.Drawing.Size(198, 19);
+            this.tb_tyontekijavalittu.TabIndex = 10;
             // 
             // MainForm
             // 
@@ -1094,6 +1168,7 @@ namespace Projekti1
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1180,6 +1255,12 @@ namespace Projekti1
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnPoistaKiinnitys;
         private System.Windows.Forms.Button btn_Kiinnita;
+        private System.Windows.Forms.Button btn_PeruutaTyontekija;
+        private System.Windows.Forms.Button btn_PeruutaVuoro;
+        private System.Windows.Forms.Button btn_ValitseVuoro;
+        private System.Windows.Forms.Button btn_ValitseTyontekija;
+        private System.Windows.Forms.TextBox tb_tyontekijavalittu;
+        private System.Windows.Forms.TextBox tb_vuorovalittu;
     }
 }
 

@@ -120,6 +120,43 @@ namespace Projekti1
             return kiinnitykset;
         }
 
+        // Kiinnityksen vieminen tietokantaan
+        public static int InsertKiinnitys(Kiinnitys k)
+        {
+
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "INSERT INTO Kiinnitys(Tyontekija_idtyontekija, Tarve_Tyovuoro_idtyovuoro, Tarve_Tyotehtava_idtehtava) VALUES (?Tyontekija_idtyontekija, ?Tarve_Tyovuoro_idtyovuoro, ?Tarve_Tyotehtava_idtehtava)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?Tyontekija_idtyontekija", MySqlDbType.Int32).Value = k.IDtyontekija;
+                cmd.Parameters.Add("?Tarve_Tyovuoro_idtyovuoro", MySqlDbType.Int32).Value = k.IDtyovuoro;
+                cmd.Parameters.Add("?Tarve_Tyotehtava_idtehtava", MySqlDbType.Int32).Value = k.IDtehtava;
+
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("Kiinnitys {0}, {1} {2} lisätty", k.IDtyontekija, k.IDtyovuoro, k.IDtehtava);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
 
         // Työvuorojen haku tietokannasta
         public static List<Tyovuoro> GetTyovuorot()

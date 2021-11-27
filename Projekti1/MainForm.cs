@@ -25,6 +25,10 @@ namespace Projekti1
 
         private Controller contr = new Controller();
 
+        // kiinnityksen apuoliot
+        private Tarve valittuVuoro = null;
+        private Tyontekija valittuTyontekija = null;
+
         public MainForm()
         {
             InitializeComponent();
@@ -125,6 +129,7 @@ namespace Projekti1
         // Kun käyttäjä klikkaa haluttua vuorotarvetta, näytetään vastaavat työntekijät ja kyseiseen vuoroon kiinnitetyt työntekijät
         private void lwVuorot_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
+            btn_ValitseVuoro.Enabled = true;
             string nimike = "";
             int tyovuoroID = int.MinValue;
             int tehtavaID = int.MinValue;
@@ -142,6 +147,77 @@ namespace Projekti1
 
             PopulateVapaatTyontekijat(nimike);
             PopulateKiinnitykset(tyovuoroID, tehtavaID);
+        }
+
+        // Kun käyttäjä klikkaa haluttua vapaata työntekijä, mahdollistetaan napin painaminen
+        private void lwVapaatHenkilot_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            btn_ValitseTyontekija.Enabled = true;
+        }
+
+        private void btn_ValitseVuoro_Click(object sender, EventArgs e)
+        {
+            btn_ValitseVuoro.Enabled = false;
+            btn_PeruutaVuoro.Enabled = true;
+            tb_vuorovalittu.Text = "Vuoro valittu";
+
+            if (lwVuorot.SelectedIndices.Count > 0)
+            {
+                // Haetaan valittu rivi tarve-taulukosta
+                int valittuIndeksi = lwVuorot.SelectedIndices[0];
+                valittuVuoro = tarpeet[valittuIndeksi];
+
+            }
+
+            if (tb_tyontekijavalittu.Text != "")
+            {
+                btn_Kiinnita.Enabled = true;
+            }
+        }
+
+        // Luodaan uusi kiinnitys valituilla vuorolla ja työntekijällä sekä tallennetaan se kantaan
+        private void btn_Kiinnita_Click(object sender, EventArgs e)
+        {
+            Kiinnitys k = new Kiinnitys(
+                valittuTyontekija.Idtyontekija, valittuVuoro.TyovuoroID, valittuVuoro.TehtavaID, valittuTyontekija.Etunimi, valittuTyontekija.Sukunimi, valittuTyontekija.Nimike);
+
+            int count = contr.LisaaKiinnitys(k);
+            if (count > 0)
+            {
+                MessageBox.Show("Kiinnitys lisätty");
+                kiinnitykset = contr.LataaKiinnitykset();
+            }
+
+        }
+
+        // Nappien funktioita
+        private void btn_ValitseTyontekija_Click(object sender, EventArgs e)
+        {
+            btn_ValitseTyontekija.Enabled = false;
+            btn_PeruutaTyontekija.Enabled = true;
+            tb_tyontekijavalittu.Text = "Työntekijä valittu";
+
+            valittuTyontekija = tyontekijat[0]; // tämä pitää muuttaa niin että tulee valinnan mukaan listviewistä
+
+
+            if (tb_vuorovalittu.Text != "")
+            {
+                btn_Kiinnita.Enabled = true;
+            }
+        }
+
+        private void btn_PeruutaVuoro_Click(object sender, EventArgs e)
+        {
+            valittuVuoro = null;
+            btn_PeruutaVuoro.Enabled = false;
+            tb_vuorovalittu.Text = null;
+        }
+
+        private void btn_PeruutaTyontekija_Click(object sender, EventArgs e)
+        {
+            valittuTyontekija = null;
+            btn_PeruutaTyontekija.Enabled = false;
+            tb_tyontekijavalittu.Text = null;
         }
 
         /// <summary>
@@ -445,6 +521,6 @@ namespace Projekti1
             }
         }
 
-        
+
     }
 }
