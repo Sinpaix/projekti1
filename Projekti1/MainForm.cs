@@ -187,6 +187,13 @@ namespace Projekti1
                 MessageBox.Show("Kiinnitys lisätty");
                 kiinnitykset = contr.LataaKiinnitykset();
             }
+            btn_ValitseTyontekija.Enabled = false;
+            btn_PeruutaTyontekija.Enabled = false;
+            tb_tyontekijavalittu.Text = null;
+            btn_ValitseVuoro.Enabled = false;
+            btn_PeruutaVuoro.Enabled = false;
+            tb_vuorovalittu.Text = null;
+            btn_Kiinnita.Enabled = false;
 
         }
 
