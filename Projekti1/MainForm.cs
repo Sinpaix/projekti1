@@ -40,6 +40,7 @@ namespace Projekti1
 
             // Laitetaan haetut tiedot ohjelman näytöille
             PopulateTarveListView();
+            
             PopulateTyontekijaListView();
             PopulatedTyotehtavaDGW();
             PopulateTyonimikkeetCombobox();
@@ -59,7 +60,10 @@ namespace Projekti1
             comboNimike.ValueMember = "idnimike";
         }
 
-
+        /// <summary>
+        /// Tästä alkaa kiinnitys-välilehden koodit
+        /// </summary>
+        /// 
         // Esitetään tarve-taulun tiedot listviewissä
         public void PopulateTarveListView()
         {
@@ -77,7 +81,45 @@ namespace Projekti1
             }
         }
 
+        public void PopulateVapaatTyontekijat(string nimike)
+        {
+            lwVapaatHenkilot.Items.Clear();
 
+            foreach (Tyontekija t in tyontekijat)
+            {
+                if (t.Nimike == nimike)
+                {
+                    lwVapaatHenkilot.Items.Add(new ListViewItem(new string[]
+                    {
+                    t.Idtyontekija.ToString(),
+                    t.Etunimi,
+                    t.Sukunimi,
+                    t.Nimike
+                    }));
+                }
+                
+            }
+
+        }
+
+        // Kun käyttäjä klikkaa haluttua vuorotarvetta, näytetään vastaavat työntekijät
+        private void lwVuorot_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            string nimike = "";
+
+            if (lwVuorot.SelectedIndices.Count > 0)
+            {
+                int valittuIndeksi = lwVuorot.SelectedIndices[0];
+                Tarve t = tarpeet[valittuIndeksi];
+                nimike = t.Nimike;
+            }
+
+            PopulateVapaatTyontekijat(nimike);
+        }
+
+        /// <summary>
+        /// Tästä alkaa työntekijän hallinta-välilehden koodit
+        /// </summary>
         private void PopulateTyontekijaListView()
         {
             //tyhjennetään lista
@@ -376,6 +418,6 @@ namespace Projekti1
             }
         }
 
-       
+        
     }
 }
