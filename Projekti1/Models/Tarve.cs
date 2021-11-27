@@ -11,6 +11,7 @@ namespace Projekti1.Models
         public int TyovuoroID { get; set; }
         public DateTime Alkaa { get; set; }
         public DateTime Loppuu { get; set; }
+        public int TehtavaID { get; set; }
         public string Tehtava { get; set; }
         public string Paikka { get; set; }
         public string Nimike { get; set; }
@@ -20,11 +21,12 @@ namespace Projekti1.Models
         {
         }
 
-        public Tarve(int tyovuoroID, DateTime alkaa, DateTime loppuu, string tehtava, string paikka, string nimike, int maara) : this()
+        public Tarve(int tyovuoroID, DateTime alkaa, DateTime loppuu, int tehtavaID, string tehtava, string paikka, string nimike, int maara) : this()
         {
             TyovuoroID = tyovuoroID;
             Alkaa = alkaa;
             Loppuu = loppuu;
+            TehtavaID = tehtavaID;
             Tehtava = tehtava;
             Paikka = paikka;
             Nimike = nimike;

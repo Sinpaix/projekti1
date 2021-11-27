@@ -35,12 +35,13 @@ namespace Projekti1
             tyovuorot = contr.LataaTyovuorot();
             tyotehtavat = contr.LoadTyotehtavat();
             tyonimikkeet = contr.LoadTyonimikkeet();
-            
+            kiinnitykset = contr.LataaKiinnitykset();
+
 
 
             // Laitetaan haetut tiedot ohjelman näytöille
             PopulateTarveListView();
-            
+
             PopulateTyontekijaListView();
             PopulatedTyotehtavaDGW();
             PopulateTyonimikkeetCombobox();
@@ -91,30 +92,56 @@ namespace Projekti1
                 {
                     lwVapaatHenkilot.Items.Add(new ListViewItem(new string[]
                     {
-                    t.Idtyontekija.ToString(),
-                    t.Etunimi,
-                    t.Sukunimi,
-                    t.Nimike
+                        t.Idtyontekija.ToString(),
+                        t.Etunimi,
+                        t.Sukunimi,
+                        t.Nimike
                     }));
                 }
-                
+
             }
 
         }
 
-        // Kun käyttäjä klikkaa haluttua vuorotarvetta, näytetään vastaavat työntekijät
+        public void PopulateKiinnitykset(int tyovuoroID, int tehtavaID)
+        {
+            lwKiinnitykset.Items.Clear();
+
+            foreach (Kiinnitys k in kiinnitykset)
+            {
+                if (k.IDtyovuoro ==  tyovuoroID && k.IDtehtava == tehtavaID)
+                {
+                    lwKiinnitykset.Items.Add(new ListViewItem(new string[]{
+                        k.IDtyovuoro.ToString(),
+                        k.IDtehtava.ToString(),
+                        k.Etunimi,
+                        k.Sukunimi,
+                        k.Nimike
+                    }));
+                }
+            }
+        }
+
+        // Kun käyttäjä klikkaa haluttua vuorotarvetta, näytetään vastaavat työntekijät ja kyseiseen vuoroon kiinnitetyt työntekijät
         private void lwVuorot_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             string nimike = "";
+            int tyovuoroID = int.MinValue;
+            int tehtavaID = int.MinValue;
 
             if (lwVuorot.SelectedIndices.Count > 0)
             {
+                // Haetaan valittu rivi tarve-taulukosta
                 int valittuIndeksi = lwVuorot.SelectedIndices[0];
                 Tarve t = tarpeet[valittuIndeksi];
                 nimike = t.Nimike;
+                tyovuoroID = t.TyovuoroID;
+                tehtavaID = t.TehtavaID;
+                
             }
 
             PopulateVapaatTyontekijat(nimike);
+            PopulateKiinnitykset(tyovuoroID, tehtavaID);
         }
 
         /// <summary>

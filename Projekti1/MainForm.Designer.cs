@@ -101,7 +101,7 @@ namespace Projekti1
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lwKiinnitykset = new System.Windows.Forms.ListView();
             this.vuoroID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.HenkiloID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TehtavaID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Etunimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Sukunimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lw_Valittu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -302,7 +302,7 @@ namespace Projekti1
             // 
             // lw_tyovuoroID
             // 
-            this.lw_tyovuoroID.Text = "ID";
+            this.lw_tyovuoroID.Text = "Vuoron ID";
             // 
             // lw_Aloitus
             // 
@@ -332,7 +332,7 @@ namespace Projekti1
             // lw_Maara
             // 
             this.lw_Maara.Text = "Määrä";
-            this.lw_Maara.Width = 100;
+            this.lw_Maara.Width = 70;
             // 
             // tabPage3
             // 
@@ -990,7 +990,7 @@ namespace Projekti1
             // 
             this.lwKiinnitykset.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.vuoroID,
-            this.HenkiloID,
+            this.TehtavaID,
             this.Etunimi,
             this.Sukunimi,
             this.Nimike});
@@ -1008,10 +1008,10 @@ namespace Projekti1
             this.vuoroID.Text = "Vuoron ID";
             this.vuoroID.Width = 100;
             // 
-            // HenkiloID
+            // TehtavaID
             // 
-            this.HenkiloID.Text = "Henkilön ID";
-            this.HenkiloID.Width = 100;
+            this.TehtavaID.Text = "Tehtävän ID";
+            this.TehtavaID.Width = 100;
             // 
             // Etunimi
             // 
@@ -1021,12 +1021,12 @@ namespace Projekti1
             // Sukunimi
             // 
             this.Sukunimi.Text = "Sukunimi";
-            this.Sukunimi.Width = 200;
+            this.Sukunimi.Width = 150;
             // 
             // lw_Valittu
             // 
             this.lw_Valittu.Text = "Kiinnitetyt";
-            this.lw_Valittu.Width = 100;
+            this.lw_Valittu.Width = 70;
             // 
             // Nimike
             // 
@@ -1167,7 +1167,7 @@ namespace Projekti1
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListView lwKiinnitykset;
         private System.Windows.Forms.ColumnHeader vuoroID;
-        private System.Windows.Forms.ColumnHeader HenkiloID;
+        private System.Windows.Forms.ColumnHeader TehtavaID;
         private System.Windows.Forms.ColumnHeader Etunimi;
         private System.Windows.Forms.ColumnHeader Sukunimi;
         private System.Windows.Forms.ListView lwVapaatHenkilot;

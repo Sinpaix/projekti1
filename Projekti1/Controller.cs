@@ -37,6 +37,12 @@ namespace Projekti1
             return DAO.GetTarpeet();
         }
 
+        // Kiinnitykset
+        public List<Kiinnitys> LataaKiinnitykset()
+        {
+            return DAO.GetKiinnitykset();
+        }
+
 
         // Tyovuorot
         public List<Tyovuoro> LataaTyovuorot()

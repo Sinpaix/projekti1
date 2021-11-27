@@ -60,15 +60,17 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = "SELECT Tyovuoro_idtyovuoro, alkaa, loppuu, tehtava, paikka, nimike, maara FROM tarve t JOIN tyovuoro tv ON t.Tyovuoro_idtyovuoro = tv.idtyovuoro JOIN tyotehtava tt ON t.Tyotehtava_idtehtava = tt.idtehtava JOIN tyonimike tn ON tt.Tyonimike_idnimike = tn.idnimike";
+                string sql = "SELECT Tyovuoro_idtyovuoro, alkaa, loppuu, idtehtava, tehtava, paikka, nimike, maara FROM tarve t JOIN tyovuoro tv ON t.Tyovuoro_idtyovuoro = tv.idtyovuoro JOIN tyotehtava tt ON t.Tyotehtava_idtehtava = tt.idtehtava JOIN tyonimike tn ON tt.Tyonimike_idnimike = tn.idnimike";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Tarve t = new Tarve(int.Parse(rdr[0].ToString()), DateTime.Parse(rdr[1].ToString()), DateTime.Parse(rdr[2].ToString()), rdr[3].ToString(), rdr[4].ToString(),
-                        rdr[5].ToString(), int.Parse(rdr[6].ToString()));
+                    Tarve t = new Tarve(int.Parse(rdr[0].ToString()), DateTime.Parse(rdr[1].ToString()), DateTime.Parse(rdr[2].ToString()), int.Parse(rdr[3].ToString()), rdr[4].ToString(), rdr[5].ToString(),
+                        rdr[6].ToString(), int.Parse(rdr[7].ToString()));
                     tarpeet.Add(t);
+
                 }
+
                 rdr.Close();
 
             }
@@ -83,6 +85,41 @@ namespace Projekti1
             }
             return tarpeet;
         }
+
+        // Kiinnitysten haku tietokannasta
+        public static List<Kiinnitys> GetKiinnitykset()
+        {
+            List<Kiinnitys> kiinnitykset = new List<Kiinnitys>();
+
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+                string sql = "SELECT Tyontekija_idtyontekija, Tarve_Tyovuoro_idtyovuoro, Tarve_Tyotehtava_idtehtava, etunimi, sukunimi, nimike FROM kiinnitys k JOIN tyontekija t ON k.Tyontekija_idtyontekija = t.idtyontekija JOIN tyotehtava tt ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava JOIN tyonimike tn ON tt.Tyonimike_idnimike = tn.idnimike;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Kiinnitys k = new Kiinnitys(int.Parse(rdr[0].ToString()), int.Parse(rdr[1].ToString()), int.Parse(rdr[2].ToString()), rdr[3].ToString(), rdr[4].ToString(), rdr[5].ToString());
+                    kiinnitykset.Add(k);
+                }
+                rdr.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return kiinnitykset;
+        }
+
 
         // Työvuorojen haku tietokannasta
         public static List<Tyovuoro> GetTyovuorot()
