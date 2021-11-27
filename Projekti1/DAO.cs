@@ -377,6 +377,39 @@ namespace Projekti1
             return count;
         }
 
+        public static int DeleteTyotehtava(Tyotehtava tt)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "DELETE FROM tyotehtava WHERE idtehtava = ?id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?id", MySqlDbType.Int64).Value = tt.Idtyotehtava;
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("Työntekijät id:llä {0} poistettu", tt.Idtyotehtava);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
+
         public static int InsertTyovuoro(Tyovuoro tyovuoro)
         {
             int count = 0;

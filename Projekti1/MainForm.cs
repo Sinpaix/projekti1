@@ -344,5 +344,32 @@ namespace Projekti1
 
             }
         }
+
+        private void btnPoista_Click(object sender, EventArgs e)
+        {
+            // poista valittu työtehtävä
+            if (this.dgwTehtavat.SelectedRows.Count > 0)
+            {
+                //int selectedIndex = this.listView1.SelectedIndices[0];
+                int rowIndex = this.dgwTehtavat.CurrentRow.Index;
+
+                //poistaa työntekijälistalta objekti valitusta indeksistä
+                Tyotehtava tt = tyotehtavat[rowIndex];
+                int count = contr.RemoveTyotehtava(tt);
+                if (count > 0)
+                {
+                    MessageBox.Show("Työtehtävä poistettu");
+                    tyontekijat.RemoveAt(rowIndex);
+                    PopulatedTyotehtavaDGW();
+                    GetTyotehtava();
+                }
+                else
+                {
+                    MessageBox.Show("Tehtävän poistaminen epäonnistui");
+                }
+
+                
+            }
+        }
     }
 }

@@ -15,23 +15,6 @@ namespace Projekti1
             return DAO.GetTyontekijat();
         }
 
-        // Tarve
-        public List<Tarve> LataaTarpeet()
-        {
-            return DAO.GetTarpeet();
-        }
-
-        // Tyovuorot
-        public List<Tyovuoro> LataaTyovuorot()
-        {
-            return DAO.GetTyovuorot();
-        }
-
-        public int EditTyotehtava(Tyotehtava tt)
-        {
-            return DAO.UpdateTyotehtava(tt);
-        }
-
         public int RemoveTyontekija(Tyontekija a)
         {
             return DAO.DeleteTyontekija(a);
@@ -47,10 +30,32 @@ namespace Projekti1
             return DAO.UpdateTyontekija(a);
         }
 
+
+        // Tarve
+        public List<Tarve> LataaTarpeet()
+        {
+            return DAO.GetTarpeet();
+        }
+
+
+        // Tyovuorot
+        public List<Tyovuoro> LataaTyovuorot()
+        {
+            return DAO.GetTyovuorot();
+        }
+
+        public int AddTyovuoro(Tyovuoro tv)
+        {
+            return DAO.InsertTyovuoro(tv);
+        }
+
+
+        //työnimikkeet
         public List<Tyonimike> LoadTyonimikkeet()
         {
             return DAO.GetTyonimikkeet();
         }
+
 
         //Tyotehtävät
         public List<Tyotehtava> LoadTyotehtavat()
@@ -62,10 +67,15 @@ namespace Projekti1
         {
             return DAO.InsertTyotehtava(tt); 
         }
-
-        public int AddTyovuoro(Tyovuoro tv)
+       
+        public int RemoveTyotehtava(Tyotehtava tt)
         {
-            return DAO.InsertTyovuoro(tv);
+            return DAO.DeleteTyotehtava(tt);
+        }
+
+        public int EditTyotehtava(Tyotehtava tt)
+        {
+            return DAO.UpdateTyotehtava(tt);
         }
     }
 }

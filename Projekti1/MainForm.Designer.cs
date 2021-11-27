@@ -622,6 +622,7 @@ namespace Projekti1
             this.btnPoista.TabIndex = 18;
             this.btnPoista.Text = "Poista";
             this.btnPoista.UseVisualStyleBackColor = true;
+            this.btnPoista.Click += new System.EventHandler(this.btnPoista_Click);
             // 
             // btnMuokkaa
             // 
