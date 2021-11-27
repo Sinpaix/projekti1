@@ -205,7 +205,7 @@ namespace Projekti1
             }
             else
             {
-                MessageBox.Show("ei toimi?");
+                //MessageBox.Show("ei toimi?");
 
                 // muokataan olemassa olevaa tehtävää
 
@@ -230,9 +230,40 @@ namespace Projekti1
             }
         }
 
+        private void DeleteTyotehtava()
+        {
+            // poista valittu työtehtävä
+            if (this.dgwTehtavat.SelectedRows.Count > 0)
+            {
+                int rowIndex = this.dgwTehtavat.CurrentRow.Index;
+
+                //poistaa tyotehtävälistasta objektin valitusta indeksistä
+                Tyotehtava tt = tyotehtavat[rowIndex];
+                int count = contr.RemoveTyotehtava(tt);
+                if (count > 0)
+                {
+                    MessageBox.Show("Työtehtävä poistettu");
+                    tyontekijat.RemoveAt(rowIndex);
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Tehtävän poistaminen epäonnistui");
+                }
+
+                tyotehtavat = contr.LoadTyotehtavat();
+                PopulatedTyotehtavaDGW();
+            }
+        }
+
         private Tyotehtava GetTyotehtava()
         {
             return tyotehtava;
+        }
+
+        private void btnPoista_Click(object sender, EventArgs e)
+        {
+            DeleteTyotehtava();
         }
 
         private void btnTallenna_Click(object sender, EventArgs e)
@@ -345,31 +376,6 @@ namespace Projekti1
             }
         }
 
-        private void btnPoista_Click(object sender, EventArgs e)
-        {
-            // poista valittu työtehtävä
-            if (this.dgwTehtavat.SelectedRows.Count > 0)
-            {
-                //int selectedIndex = this.listView1.SelectedIndices[0];
-                int rowIndex = this.dgwTehtavat.CurrentRow.Index;
-
-                //poistaa työntekijälistalta objekti valitusta indeksistä
-                Tyotehtava tt = tyotehtavat[rowIndex];
-                int count = contr.RemoveTyotehtava(tt);
-                if (count > 0)
-                {
-                    MessageBox.Show("Työtehtävä poistettu");
-                    tyontekijat.RemoveAt(rowIndex);
-                    PopulatedTyotehtavaDGW();
-                    GetTyotehtava();
-                }
-                else
-                {
-                    MessageBox.Show("Tehtävän poistaminen epäonnistui");
-                }
-
-                
-            }
-        }
+       
     }
 }
