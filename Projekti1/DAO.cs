@@ -350,12 +350,12 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = "SELECT nimike FROM Tyonimike";
+                string sql = "SELECT idnimike, nimike FROM Tyonimike";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Tyonimike a = new Tyonimike(rdr[0].ToString());
+                    Tyonimike a = new Tyonimike(int.Parse(rdr[0].ToString()), rdr[1].ToString());
                     tyonimikkeet.Add(a);
                 }
                 rdr.Close();

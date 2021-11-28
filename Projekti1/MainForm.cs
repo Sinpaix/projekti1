@@ -195,7 +195,7 @@ namespace Projekti1
 
             }
 
-            // Jos tylntekijä on jo valittu niin mahdollistetaan kiinnityksen tekeminen
+            // Jos työntekijä on jo valittu niin mahdollistetaan kiinnityksen tekeminen
             if (valittuTyontekija != null)
             {
                 btn_Kiinnita.Enabled = true;
@@ -367,6 +367,18 @@ namespace Projekti1
 
 
             PopulateTyontekijaDGW();
+        }
+
+        // lisäsin funktion mikä muuttaa nimikeid:n sitä mukaa kun droppi valikosta valitaan nimikkeen nimi
+        private void nimikecmb_SelectedValueChanged(object sender, EventArgs e)
+        {
+            foreach (Tyonimike t in tyonimikkeet)
+            {
+                if (nimikecmb.Text == t.Nimike)
+                {
+                    idnimiketb.Text = t.Idnimike.ToString();
+                }
+            }
         }
 
         private void poistabtn_Click(object sender, EventArgs e)
@@ -639,6 +651,6 @@ namespace Projekti1
             }
         }
 
-     
+
     }
 }

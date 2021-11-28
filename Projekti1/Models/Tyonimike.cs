@@ -15,8 +15,9 @@ namespace Projekti1.Models
         {
         }
 
-        public Tyonimike(string nimike) : this()
+        public Tyonimike(int idnimike, string nimike) : this()
         {
+            Idnimike = idnimike;
             Nimike = nimike;
         }
     }
