@@ -48,6 +48,11 @@ namespace Projekti1
             return DAO.InsertKiinnitys(k);
         }
 
+        public int PoistaKiinnitys(Kiinnitys k)
+        {
+            return DAO.DeleteKiinnitys(k);
+        }
+
         // Tyovuorot
         public List<Tyovuoro> LataaTyovuorot()
         {

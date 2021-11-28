@@ -43,7 +43,28 @@ namespace Projekti1
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_tyontekijavalittu = new System.Windows.Forms.TextBox();
+            this.tb_vuorovalittu = new System.Windows.Forms.TextBox();
+            this.btn_PeruutaTyontekija = new System.Windows.Forms.Button();
+            this.btn_PeruutaVuoro = new System.Windows.Forms.Button();
+            this.btn_ValitseVuoro = new System.Windows.Forms.Button();
+            this.btn_ValitseTyontekija = new System.Windows.Forms.Button();
+            this.btnPoistaKiinnitys = new System.Windows.Forms.Button();
+            this.btn_Kiinnita = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lwKiinnitykset = new System.Windows.Forms.ListView();
+            this.vuoroID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TehtavaID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Etunimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Sukunimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lwVapaatHenkilot = new System.Windows.Forms.ListView();
+            this.lw_henkiloID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lw_HenkiloEtunimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lv_HenkiloSukunimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lw_HenkiloNimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lwVuorot = new System.Windows.Forms.ListView();
             this.lw_tyovuoroID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,6 +74,7 @@ namespace Projekti1
             this.lw_Paikka = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lw_Nimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lw_Maara = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lw_Valittu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tbvuoroloppuu = new System.Windows.Forms.TextBox();
             this.tbvuoroalkaa = new System.Windows.Forms.TextBox();
@@ -93,32 +115,13 @@ namespace Projekti1
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.lwVapaatHenkilot = new System.Windows.Forms.ListView();
-            this.lw_henkiloID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lw_HenkiloEtunimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lv_HenkiloSukunimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lw_HenkiloNimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lwKiinnitykset = new System.Windows.Forms.ListView();
-            this.vuoroID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TehtavaID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Etunimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Sukunimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lw_Valittu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Nimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_Kiinnita = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPoistaKiinnitys = new System.Windows.Forms.Button();
-            this.btn_ValitseTyontekija = new System.Windows.Forms.Button();
-            this.btn_ValitseVuoro = new System.Windows.Forms.Button();
-            this.btn_PeruutaVuoro = new System.Windows.Forms.Button();
-            this.btn_PeruutaTyontekija = new System.Windows.Forms.Button();
-            this.tb_vuorovalittu = new System.Windows.Forms.TextBox();
-            this.tb_tyontekijavalittu = new System.Windows.Forms.TextBox();
+            this.tyontekijaID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -131,8 +134,6 @@ namespace Projekti1
             this.tabPage5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -149,7 +150,7 @@ namespace Projekti1
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(2089, 1042);
+            this.tabControl1.Size = new System.Drawing.Size(2785, 1389);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -259,11 +260,165 @@ namespace Projekti1
             this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(2081, 1009);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(2777, 1356);
             this.tabPage2.TabIndex = 4;
             this.tabPage2.Text = "Työntekijöiden kiinnitys";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tb_tyontekijavalittu);
+            this.panel1.Controls.Add(this.tb_vuorovalittu);
+            this.panel1.Controls.Add(this.btn_PeruutaTyontekija);
+            this.panel1.Controls.Add(this.btn_PeruutaVuoro);
+            this.panel1.Controls.Add(this.btn_ValitseVuoro);
+            this.panel1.Controls.Add(this.btn_ValitseTyontekija);
+            this.panel1.Controls.Add(this.btnPoistaKiinnitys);
+            this.panel1.Controls.Add(this.btn_Kiinnita);
+            this.panel1.Location = new System.Drawing.Point(1027, 526);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(759, 456);
+            this.panel1.TabIndex = 4;
+            // 
+            // tb_tyontekijavalittu
+            // 
+            this.tb_tyontekijavalittu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_tyontekijavalittu.Location = new System.Drawing.Point(340, 104);
+            this.tb_tyontekijavalittu.Name = "tb_tyontekijavalittu";
+            this.tb_tyontekijavalittu.Size = new System.Drawing.Size(198, 19);
+            this.tb_tyontekijavalittu.TabIndex = 10;
+            // 
+            // tb_vuorovalittu
+            // 
+            this.tb_vuorovalittu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_vuorovalittu.Location = new System.Drawing.Point(340, 33);
+            this.tb_vuorovalittu.Name = "tb_vuorovalittu";
+            this.tb_vuorovalittu.Size = new System.Drawing.Size(198, 19);
+            this.tb_vuorovalittu.TabIndex = 9;
+            // 
+            // btn_PeruutaTyontekija
+            // 
+            this.btn_PeruutaTyontekija.Enabled = false;
+            this.btn_PeruutaTyontekija.Location = new System.Drawing.Point(187, 90);
+            this.btn_PeruutaTyontekija.Name = "btn_PeruutaTyontekija";
+            this.btn_PeruutaTyontekija.Size = new System.Drawing.Size(147, 55);
+            this.btn_PeruutaTyontekija.TabIndex = 8;
+            this.btn_PeruutaTyontekija.Text = "Peruuta";
+            this.btn_PeruutaTyontekija.UseVisualStyleBackColor = true;
+            this.btn_PeruutaTyontekija.Click += new System.EventHandler(this.btn_PeruutaTyontekija_Click);
+            // 
+            // btn_PeruutaVuoro
+            // 
+            this.btn_PeruutaVuoro.Enabled = false;
+            this.btn_PeruutaVuoro.Location = new System.Drawing.Point(187, 19);
+            this.btn_PeruutaVuoro.Name = "btn_PeruutaVuoro";
+            this.btn_PeruutaVuoro.Size = new System.Drawing.Size(147, 55);
+            this.btn_PeruutaVuoro.TabIndex = 7;
+            this.btn_PeruutaVuoro.Text = "Peruuta";
+            this.btn_PeruutaVuoro.UseVisualStyleBackColor = true;
+            this.btn_PeruutaVuoro.Click += new System.EventHandler(this.btn_PeruutaVuoro_Click);
+            // 
+            // btn_ValitseVuoro
+            // 
+            this.btn_ValitseVuoro.Enabled = false;
+            this.btn_ValitseVuoro.Location = new System.Drawing.Point(34, 19);
+            this.btn_ValitseVuoro.Name = "btn_ValitseVuoro";
+            this.btn_ValitseVuoro.Size = new System.Drawing.Size(147, 55);
+            this.btn_ValitseVuoro.TabIndex = 6;
+            this.btn_ValitseVuoro.Text = "Valitse vuoro";
+            this.btn_ValitseVuoro.UseVisualStyleBackColor = true;
+            this.btn_ValitseVuoro.Click += new System.EventHandler(this.btn_ValitseVuoro_Click);
+            // 
+            // btn_ValitseTyontekija
+            // 
+            this.btn_ValitseTyontekija.Enabled = false;
+            this.btn_ValitseTyontekija.Location = new System.Drawing.Point(34, 90);
+            this.btn_ValitseTyontekija.Name = "btn_ValitseTyontekija";
+            this.btn_ValitseTyontekija.Size = new System.Drawing.Size(147, 55);
+            this.btn_ValitseTyontekija.TabIndex = 5;
+            this.btn_ValitseTyontekija.Text = "Valitse Työntekijä";
+            this.btn_ValitseTyontekija.UseVisualStyleBackColor = true;
+            this.btn_ValitseTyontekija.Click += new System.EventHandler(this.btn_ValitseTyontekija_Click);
+            // 
+            // btnPoistaKiinnitys
+            // 
+            this.btnPoistaKiinnitys.Enabled = false;
+            this.btnPoistaKiinnitys.Location = new System.Drawing.Point(187, 385);
+            this.btnPoistaKiinnitys.Name = "btnPoistaKiinnitys";
+            this.btnPoistaKiinnitys.Size = new System.Drawing.Size(147, 55);
+            this.btnPoistaKiinnitys.TabIndex = 4;
+            this.btnPoistaKiinnitys.Text = "Poista";
+            this.btnPoistaKiinnitys.UseVisualStyleBackColor = true;
+            this.btnPoistaKiinnitys.Click += new System.EventHandler(this.btnPoistaKiinnitys_Click);
+            // 
+            // btn_Kiinnita
+            // 
+            this.btn_Kiinnita.Enabled = false;
+            this.btn_Kiinnita.Location = new System.Drawing.Point(34, 385);
+            this.btn_Kiinnita.Name = "btn_Kiinnita";
+            this.btn_Kiinnita.Size = new System.Drawing.Size(147, 55);
+            this.btn_Kiinnita.TabIndex = 3;
+            this.btn_Kiinnita.Text = "Kiinnitä";
+            this.btn_Kiinnita.UseVisualStyleBackColor = true;
+            this.btn_Kiinnita.Click += new System.EventHandler(this.btn_Kiinnita_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lwKiinnitykset);
+            this.groupBox4.Location = new System.Drawing.Point(14, 500);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(982, 488);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Kiinnitykset";
+            // 
+            // lwKiinnitykset
+            // 
+            this.lwKiinnitykset.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.vuoroID,
+            this.TehtavaID,
+            this.tyontekijaID,
+            this.Etunimi,
+            this.Sukunimi,
+            this.Nimike});
+            this.lwKiinnitykset.FullRowSelect = true;
+            this.lwKiinnitykset.HideSelection = false;
+            this.lwKiinnitykset.Location = new System.Drawing.Point(12, 25);
+            this.lwKiinnitykset.Name = "lwKiinnitykset";
+            this.lwKiinnitykset.Size = new System.Drawing.Size(964, 456);
+            this.lwKiinnitykset.TabIndex = 1;
+            this.lwKiinnitykset.UseCompatibleStateImageBehavior = false;
+            this.lwKiinnitykset.View = System.Windows.Forms.View.Details;
+            this.lwKiinnitykset.SelectedIndexChanged += new System.EventHandler(this.lwKiinnitykset_SelectedIndexChanged);
+            // 
+            // vuoroID
+            // 
+            this.vuoroID.Text = "Vuoron ID";
+            this.vuoroID.Width = 100;
+            // 
+            // TehtavaID
+            // 
+            this.TehtavaID.Text = "Tehtävän ID";
+            this.TehtavaID.Width = 100;
+            // 
+            // Etunimi
+            // 
+            this.Etunimi.DisplayIndex = 2;
+            this.Etunimi.Text = "Etunimi";
+            this.Etunimi.Width = 150;
+            // 
+            // Sukunimi
+            // 
+            this.Sukunimi.DisplayIndex = 3;
+            this.Sukunimi.Text = "Sukunimi";
+            this.Sukunimi.Width = 150;
+            // 
+            // Nimike
+            // 
+            this.Nimike.DisplayIndex = 4;
+            this.Nimike.Text = "Nimike";
+            this.Nimike.Width = 150;
             // 
             // groupBox2
             // 
@@ -274,6 +429,42 @@ namespace Projekti1
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Vapaat henkilöt";
+            // 
+            // lwVapaatHenkilot
+            // 
+            this.lwVapaatHenkilot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lw_henkiloID,
+            this.lw_HenkiloEtunimi,
+            this.lv_HenkiloSukunimi,
+            this.lw_HenkiloNimike});
+            this.lwVapaatHenkilot.FullRowSelect = true;
+            this.lwVapaatHenkilot.HideSelection = false;
+            this.lwVapaatHenkilot.Location = new System.Drawing.Point(6, 26);
+            this.lwVapaatHenkilot.Name = "lwVapaatHenkilot";
+            this.lwVapaatHenkilot.Size = new System.Drawing.Size(905, 456);
+            this.lwVapaatHenkilot.TabIndex = 1;
+            this.lwVapaatHenkilot.UseCompatibleStateImageBehavior = false;
+            this.lwVapaatHenkilot.View = System.Windows.Forms.View.Details;
+            this.lwVapaatHenkilot.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lwVapaatHenkilot_ItemSelectionChanged);
+            // 
+            // lw_henkiloID
+            // 
+            this.lw_henkiloID.Text = "ID";
+            // 
+            // lw_HenkiloEtunimi
+            // 
+            this.lw_HenkiloEtunimi.Text = "Etunimi";
+            this.lw_HenkiloEtunimi.Width = 100;
+            // 
+            // lv_HenkiloSukunimi
+            // 
+            this.lv_HenkiloSukunimi.Text = "Sukunimi";
+            this.lv_HenkiloSukunimi.Width = 150;
+            // 
+            // lw_HenkiloNimike
+            // 
+            this.lw_HenkiloNimike.Text = "Nimike";
+            this.lw_HenkiloNimike.Width = 150;
             // 
             // groupBox1
             // 
@@ -339,6 +530,11 @@ namespace Projekti1
             // 
             this.lw_Maara.Text = "Määrä";
             this.lw_Maara.Width = 70;
+            // 
+            // lw_Valittu
+            // 
+            this.lw_Valittu.Text = "Kiinnitetyt";
+            this.lw_Valittu.Width = 70;
             // 
             // tabPage3
             // 
@@ -947,194 +1143,10 @@ namespace Projekti1
             this.label12.TabIndex = 0;
             this.label12.Text = "Näytä työvuorolista ajalta:";
             // 
-            // lwVapaatHenkilot
+            // tyontekijaID
             // 
-            this.lwVapaatHenkilot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.lw_henkiloID,
-            this.lw_HenkiloEtunimi,
-            this.lv_HenkiloSukunimi,
-            this.lw_HenkiloNimike});
-            this.lwVapaatHenkilot.FullRowSelect = true;
-            this.lwVapaatHenkilot.HideSelection = false;
-            this.lwVapaatHenkilot.Location = new System.Drawing.Point(6, 26);
-            this.lwVapaatHenkilot.Name = "lwVapaatHenkilot";
-            this.lwVapaatHenkilot.Size = new System.Drawing.Size(905, 456);
-            this.lwVapaatHenkilot.TabIndex = 1;
-            this.lwVapaatHenkilot.UseCompatibleStateImageBehavior = false;
-            this.lwVapaatHenkilot.View = System.Windows.Forms.View.Details;
-            this.lwVapaatHenkilot.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lwVapaatHenkilot_ItemSelectionChanged);
-            // 
-            // lw_henkiloID
-            // 
-            this.lw_henkiloID.Text = "ID";
-            // 
-            // lw_HenkiloEtunimi
-            // 
-            this.lw_HenkiloEtunimi.Text = "Etunimi";
-            this.lw_HenkiloEtunimi.Width = 100;
-            // 
-            // lv_HenkiloSukunimi
-            // 
-            this.lv_HenkiloSukunimi.Text = "Sukunimi";
-            this.lv_HenkiloSukunimi.Width = 150;
-            // 
-            // lw_HenkiloNimike
-            // 
-            this.lw_HenkiloNimike.Text = "Nimike";
-            this.lw_HenkiloNimike.Width = 150;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.lwKiinnitykset);
-            this.groupBox4.Location = new System.Drawing.Point(14, 500);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(982, 488);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Kiinnitykset";
-            // 
-            // lwKiinnitykset
-            // 
-            this.lwKiinnitykset.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.vuoroID,
-            this.TehtavaID,
-            this.Etunimi,
-            this.Sukunimi,
-            this.Nimike});
-            this.lwKiinnitykset.FullRowSelect = true;
-            this.lwKiinnitykset.HideSelection = false;
-            this.lwKiinnitykset.Location = new System.Drawing.Point(6, 26);
-            this.lwKiinnitykset.Name = "lwKiinnitykset";
-            this.lwKiinnitykset.Size = new System.Drawing.Size(960, 456);
-            this.lwKiinnitykset.TabIndex = 1;
-            this.lwKiinnitykset.UseCompatibleStateImageBehavior = false;
-            this.lwKiinnitykset.View = System.Windows.Forms.View.Details;
-            // 
-            // vuoroID
-            // 
-            this.vuoroID.Text = "Vuoron ID";
-            this.vuoroID.Width = 100;
-            // 
-            // TehtavaID
-            // 
-            this.TehtavaID.Text = "Tehtävän ID";
-            this.TehtavaID.Width = 100;
-            // 
-            // Etunimi
-            // 
-            this.Etunimi.Text = "Etunimi";
-            this.Etunimi.Width = 150;
-            // 
-            // Sukunimi
-            // 
-            this.Sukunimi.Text = "Sukunimi";
-            this.Sukunimi.Width = 150;
-            // 
-            // lw_Valittu
-            // 
-            this.lw_Valittu.Text = "Kiinnitetyt";
-            this.lw_Valittu.Width = 70;
-            // 
-            // Nimike
-            // 
-            this.Nimike.Text = "Nimike";
-            this.Nimike.Width = 150;
-            // 
-            // btn_Kiinnita
-            // 
-            this.btn_Kiinnita.Enabled = false;
-            this.btn_Kiinnita.Location = new System.Drawing.Point(34, 385);
-            this.btn_Kiinnita.Name = "btn_Kiinnita";
-            this.btn_Kiinnita.Size = new System.Drawing.Size(147, 55);
-            this.btn_Kiinnita.TabIndex = 3;
-            this.btn_Kiinnita.Text = "Kiinnitä";
-            this.btn_Kiinnita.UseVisualStyleBackColor = true;
-            this.btn_Kiinnita.Click += new System.EventHandler(this.btn_Kiinnita_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.tb_tyontekijavalittu);
-            this.panel1.Controls.Add(this.tb_vuorovalittu);
-            this.panel1.Controls.Add(this.btn_PeruutaTyontekija);
-            this.panel1.Controls.Add(this.btn_PeruutaVuoro);
-            this.panel1.Controls.Add(this.btn_ValitseVuoro);
-            this.panel1.Controls.Add(this.btn_ValitseTyontekija);
-            this.panel1.Controls.Add(this.btnPoistaKiinnitys);
-            this.panel1.Controls.Add(this.btn_Kiinnita);
-            this.panel1.Location = new System.Drawing.Point(1027, 526);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(759, 456);
-            this.panel1.TabIndex = 4;
-            // 
-            // btnPoistaKiinnitys
-            // 
-            this.btnPoistaKiinnitys.Enabled = false;
-            this.btnPoistaKiinnitys.Location = new System.Drawing.Point(187, 385);
-            this.btnPoistaKiinnitys.Name = "btnPoistaKiinnitys";
-            this.btnPoistaKiinnitys.Size = new System.Drawing.Size(147, 55);
-            this.btnPoistaKiinnitys.TabIndex = 4;
-            this.btnPoistaKiinnitys.Text = "Poista";
-            this.btnPoistaKiinnitys.UseVisualStyleBackColor = true;
-            // 
-            // btn_ValitseTyontekija
-            // 
-            this.btn_ValitseTyontekija.Enabled = false;
-            this.btn_ValitseTyontekija.Location = new System.Drawing.Point(34, 90);
-            this.btn_ValitseTyontekija.Name = "btn_ValitseTyontekija";
-            this.btn_ValitseTyontekija.Size = new System.Drawing.Size(147, 55);
-            this.btn_ValitseTyontekija.TabIndex = 5;
-            this.btn_ValitseTyontekija.Text = "Valitse Työntekijä";
-            this.btn_ValitseTyontekija.UseVisualStyleBackColor = true;
-            this.btn_ValitseTyontekija.Click += new System.EventHandler(this.btn_ValitseTyontekija_Click);
-            // 
-            // btn_ValitseVuoro
-            // 
-            this.btn_ValitseVuoro.Enabled = false;
-            this.btn_ValitseVuoro.Location = new System.Drawing.Point(34, 19);
-            this.btn_ValitseVuoro.Name = "btn_ValitseVuoro";
-            this.btn_ValitseVuoro.Size = new System.Drawing.Size(147, 55);
-            this.btn_ValitseVuoro.TabIndex = 6;
-            this.btn_ValitseVuoro.Text = "Valitse vuoro";
-            this.btn_ValitseVuoro.UseVisualStyleBackColor = true;
-            this.btn_ValitseVuoro.Click += new System.EventHandler(this.btn_ValitseVuoro_Click);
-            // 
-            // btn_PeruutaVuoro
-            // 
-            this.btn_PeruutaVuoro.Enabled = false;
-            this.btn_PeruutaVuoro.Location = new System.Drawing.Point(187, 19);
-            this.btn_PeruutaVuoro.Name = "btn_PeruutaVuoro";
-            this.btn_PeruutaVuoro.Size = new System.Drawing.Size(147, 55);
-            this.btn_PeruutaVuoro.TabIndex = 7;
-            this.btn_PeruutaVuoro.Text = "Peruuta";
-            this.btn_PeruutaVuoro.UseVisualStyleBackColor = true;
-            this.btn_PeruutaVuoro.Click += new System.EventHandler(this.btn_PeruutaVuoro_Click);
-            // 
-            // btn_PeruutaTyontekija
-            // 
-            this.btn_PeruutaTyontekija.Enabled = false;
-            this.btn_PeruutaTyontekija.Location = new System.Drawing.Point(187, 90);
-            this.btn_PeruutaTyontekija.Name = "btn_PeruutaTyontekija";
-            this.btn_PeruutaTyontekija.Size = new System.Drawing.Size(147, 55);
-            this.btn_PeruutaTyontekija.TabIndex = 8;
-            this.btn_PeruutaTyontekija.Text = "Peruuta";
-            this.btn_PeruutaTyontekija.UseVisualStyleBackColor = true;
-            this.btn_PeruutaTyontekija.Click += new System.EventHandler(this.btn_PeruutaTyontekija_Click);
-            // 
-            // tb_vuorovalittu
-            // 
-            this.tb_vuorovalittu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_vuorovalittu.Location = new System.Drawing.Point(340, 33);
-            this.tb_vuorovalittu.Name = "tb_vuorovalittu";
-            this.tb_vuorovalittu.Size = new System.Drawing.Size(198, 19);
-            this.tb_vuorovalittu.TabIndex = 9;
-            // 
-            // tb_tyontekijavalittu
-            // 
-            this.tb_tyontekijavalittu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_tyontekijavalittu.Location = new System.Drawing.Point(340, 104);
-            this.tb_tyontekijavalittu.Name = "tb_tyontekijavalittu";
-            this.tb_tyontekijavalittu.Size = new System.Drawing.Size(198, 19);
-            this.tb_tyontekijavalittu.TabIndex = 10;
+            this.tyontekijaID.Text = "Työntekijän ID";
+            this.tyontekijaID.Width = 100;
             // 
             // MainForm
             // 
@@ -1150,6 +1162,9 @@ namespace Projekti1
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
@@ -1166,9 +1181,6 @@ namespace Projekti1
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1261,6 +1273,7 @@ namespace Projekti1
         private System.Windows.Forms.Button btn_ValitseTyontekija;
         private System.Windows.Forms.TextBox tb_tyontekijavalittu;
         private System.Windows.Forms.TextBox tb_vuorovalittu;
+        private System.Windows.Forms.ColumnHeader tyontekijaID;
     }
 }
 

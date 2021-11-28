@@ -28,6 +28,7 @@ namespace Projekti1
         // kiinnityksen apuoliot
         private Tarve valittuVuoro = null;
         private Tyontekija valittuTyontekija = null;
+        private Kiinnitys valittuKiinnitys = null;
 
         public MainForm()
         {
@@ -118,6 +119,7 @@ namespace Projekti1
                     lwKiinnitykset.Items.Add(new ListViewItem(new string[]{
                         k.IDtyovuoro.ToString(),
                         k.IDtehtava.ToString(),
+                        k.IDtyontekija.ToString(),
                         k.Etunimi,
                         k.Sukunimi,
                         k.Nimike
@@ -169,7 +171,7 @@ namespace Projekti1
 
             }
 
-            if (tb_tyontekijavalittu.Text != "")
+            if (valittuTyontekija != null)
             {
                 btn_Kiinnita.Enabled = true;
             }
@@ -187,6 +189,9 @@ namespace Projekti1
                 MessageBox.Show("Kiinnitys lisätty");
                 kiinnitykset = contr.LataaKiinnitykset();
             }
+
+            PopulateKiinnitykset(valittuVuoro.TyovuoroID, valittuVuoro.TehtavaID);
+
             btn_ValitseTyontekija.Enabled = false;
             btn_PeruutaTyontekija.Enabled = false;
             tb_tyontekijavalittu.Text = null;
@@ -195,6 +200,57 @@ namespace Projekti1
             tb_vuorovalittu.Text = null;
             btn_Kiinnita.Enabled = false;
 
+        }
+
+        // Käyttäjän valitseman kiinnityksen haku
+        private void lwKiinnitykset_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnPoistaKiinnitys.Enabled = true;
+            ListView.SelectedListViewItemCollection valittu = lwKiinnitykset.SelectedItems;
+
+            int tyontekijaID = 0;
+            int vuoroID = 0;
+            int tehtavaID = 0;
+
+            foreach (ListViewItem item in valittu)
+            {
+                vuoroID = int.Parse(item.SubItems[0].Text);
+                tehtavaID = int.Parse(item.SubItems[1].Text);
+                tyontekijaID = int.Parse(item.SubItems[2].Text);
+
+            }
+
+            // Käydään kiinnitykset läpi ja valitaan oikea
+            foreach (Kiinnitys k in kiinnitykset)
+            {
+                if (k.IDtyovuoro == vuoroID && k.IDtehtava == tehtavaID && k.IDtyontekija == tyontekijaID)
+                {
+                    valittuKiinnitys = k;
+                }
+            }
+
+        }
+
+        // Poistetaan valittu kiinnitys tietokannasta ja päivitetään listview
+        private void btnPoistaKiinnitys_Click(object sender, EventArgs e)
+        {
+            int count = contr.PoistaKiinnitys(valittuKiinnitys);
+            if (count > 0)
+            {
+                MessageBox.Show("Kiinnitys poistettu");
+                kiinnitykset = contr.LataaKiinnitykset();
+
+            }
+
+            PopulateKiinnitykset(valittuKiinnitys.IDtyovuoro, valittuKiinnitys.IDtehtava);
+
+            btn_ValitseTyontekija.Enabled = false;
+            btn_PeruutaTyontekija.Enabled = false;
+            btn_ValitseVuoro.Enabled = false;
+            btn_PeruutaVuoro.Enabled = false;
+            btn_Kiinnita.Enabled = false;
+            btnPoistaKiinnitys.Enabled = false;
+            valittuKiinnitys = null;
         }
 
         // Nappien funktioita
@@ -207,7 +263,7 @@ namespace Projekti1
             valittuTyontekija = tyontekijat[0]; // tämä pitää muuttaa niin että tulee valinnan mukaan listviewistä
 
 
-            if (tb_vuorovalittu.Text != "")
+            if (valittuVuoro != null)
             {
                 btn_Kiinnita.Enabled = true;
             }
@@ -226,6 +282,8 @@ namespace Projekti1
             btn_PeruutaTyontekija.Enabled = false;
             tb_tyontekijavalittu.Text = null;
         }
+
+
 
         /// <summary>
         /// Tästä alkaa työntekijän hallinta-välilehden koodit

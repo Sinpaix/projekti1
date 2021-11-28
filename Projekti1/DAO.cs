@@ -158,6 +158,43 @@ namespace Projekti1
             return count;
         }
 
+        // Kiinnityksen poistaminen tietokannasta
+        public static int DeleteKiinnitys(Kiinnitys k)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "DELETE FROM Kiinnitys WHERE Tyontekija_idtyontekija = ?Tyontekija_idtyontekija AND Tarve_Tyovuoro_idtyovuoro = ?Tarve_Tyovuoro_idtyovuoro AND Tarve_Tyotehtava_idtehtava = ?Tarve_Tyotehtava_idtehtava";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?Tyontekija_idtyontekija", MySqlDbType.Int64).Value = k.IDtyontekija;
+                cmd.Parameters.Add("?Tarve_Tyovuoro_idtyovuoro", MySqlDbType.Int64).Value = k.IDtyovuoro;
+                cmd.Parameters.Add("?Tarve_Tyotehtava_idtehtava", MySqlDbType.Int64).Value = k.IDtehtava;
+
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("Kiinnitys poistettu");
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
+
         // Työvuorojen haku tietokannasta
         public static List<Tyovuoro> GetTyovuorot()
         {
