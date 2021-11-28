@@ -47,9 +47,12 @@ namespace Projekti1
             // Laitetaan haetut tiedot ohjelman näytöille
             PopulateTarveListView();
 
-            PopulateTyontekijaListView();
+           
             PopulatedTyotehtavaDGW();
             PopulateTyonimikkeetCombobox();
+
+            PopulateTyontekijaDGW();
+            PopulateTyonimikeCombobox();
 
             //Syötetyt tiedot
             FillFieldsTehtava();
@@ -320,92 +323,106 @@ namespace Projekti1
         /// <summary>
         /// Tästä alkaa työntekijän hallinta-välilehden koodit
         /// </summary>
-        private void PopulateTyontekijaListView()
+
+        private void PopulateTyontekijaDGW()
         {
-            //tyhjennetään lista
-            this.listView1.Items.Clear();
-            //lisätään kaikki näyttelijät listaan
-            foreach (var item in tyontekijat)
-            {
-                //lisätään listalla uusi listviewitem
-                //alustetaan uusi listviewitem käyttämällä muodostinta joka ottaa vastaan string taulukon
-                //alustetaan uusi string taulukko ja asetetaan samalla arvot taulukolle, jokainen luokan instanssi omana alkiona
+            BindingSource source = new BindingSource();
+            source.DataSource = tyontekijat;
+            tyontekijatdgv.DataSource = source;
+            tyontekijatdgv.Columns[6].Visible = false; 
 
-                this.listView1.Items.Add(new ListViewItem(new string[] { item.Idtyontekija.ToString(), item.Etunimi, item.Sukunimi, item.Puhelin, item.Email, item.Nimike }));
-            }
         }
-
+        private void PopulateTyonimikeCombobox()
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = tyonimikkeet;
+            nimikecmb.DataSource = source;
+            nimikecmb.DisplayMember = "nimike";
+            nimikecmb.ValueMember = "idnimike";
+        }
         private void lisaabtn_Click(object sender, EventArgs e)
         {
-            // avaa työntekijäform ja luodaan uuden työntekijän tiedot
-            // palauta luodun työntekijän tiedot
+            Tyontekija tyontekija = new Tyontekija();
+            tyontekija.Etunimi = etunimitb.Text;
+            tyontekija.Sukunimi = sukunimitb.Text;
+            tyontekija.Puhelin = puhelintb.Text;
+            tyontekija.Email = emailtb.Text;
+            tyontekija.Nimike = nimikecmb.Text;
+            tyontekija.Tyonimike_idnimike = int.Parse(idnimiketb.Text);
 
-            TyontekijaForm tyontekijaForm = new TyontekijaForm(null);
-            DialogResult result = tyontekijaForm.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                // käyttäjä painoi tallenna nappia --> tallenna uusi työntekijä
-                Tyontekija createdTyontekija = tyontekijaForm.GetTyontekija();
-                int count = contr.AddTyontekija(createdTyontekija);
-                if (count > 0)
-                {
+            tyontekijat.Add(tyontekija);
+
+            contr.AddTyontekija(tyontekija);
 
 
-                    MessageBox.Show("Työntekijä lisätty");
+            MessageBox.Show("Työntekijä lisätty");
 
-                    // haetaan kannasta työntekijät. Näin saadaan id
+            // haetaan kannasta työntekijät. Näin saadaan id
 
-                    tyontekijat = contr.LataaTyontekijat();
-                    PopulateTyontekijaListView();
-                }
-            }
+            tyontekijat = contr.LataaTyontekijat();
+
+
+            PopulateTyontekijaDGW();
         }
 
         private void poistabtn_Click(object sender, EventArgs e)
         {
-            // poista valittu työntekijä
-            if (this.listView1.SelectedIndices.Count > 0)
-            {
-                int selectedIndex = this.listView1.SelectedIndices[0];
-                //poistaa työntekijälistalta objekti valitusta indeksistä
-                Tyontekija a = tyontekijat[selectedIndex];
-                int count = contr.RemoveTyontekija(a);
-                if (count > 0)
-                {
-                    MessageBox.Show("Työntekijä poistettu");
-                    tyontekijat.RemoveAt(selectedIndex);
-                    PopulateTyontekijaListView();
-                }
-            }
+            int rowIndex = tyontekijatdgv.CurrentRow.Index;
+            Tyontekija tyontekija = tyontekijat.ElementAt(rowIndex);
+
+            Tyontekija a = tyontekijat[rowIndex];
+            contr.RemoveTyontekija(a);
+
+            MessageBox.Show("Työntekijä poistettu");
+
+            tyontekijat.RemoveAt(rowIndex);
+            PopulateTyontekijaDGW();
         }
 
         private void muokkaabtn_Click(object sender, EventArgs e)
         {
 
-            // hae listalta valitun tiedot
-            // huom listview componentille asetettu että voi valita vain yhden kerrallaan
-            if (this.listView1.SelectedIndices.Count > 0)
-            {
-                int selectedIndex = this.listView1.SelectedIndices[0];
+            int rowIndex = tyontekijatdgv.CurrentRow.Index;
+            Tyontekija tyontekija = tyontekijat.ElementAt(rowIndex);
 
-                //avaa työntekijä form ja välitä sinne tiedot muokattavaksi
-                Tyontekija selectedTyontekija = tyontekijat[selectedIndex];
-                TyontekijaForm tyontekijaForm = new TyontekijaForm(selectedTyontekija);
-                DialogResult result = tyontekijaForm.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    // käyttäjä painoi tallenna nappia --> päivitetään tiedot kannassa
+            idtyontekijatb.Text = tyontekija.Idtyontekija.ToString();
+            etunimitb.Text = tyontekija.Etunimi;
+            sukunimitb.Text = tyontekija.Sukunimi;
+            puhelintb.Text = tyontekija.Puhelin;
+            emailtb.Text = tyontekija.Email;
+            nimikecmb.Text = tyontekija.Nimike;
+            idnimiketb.Text = tyontekija.Tyonimike_idnimike.ToString();
+        }
 
-                    int count = contr.EditTyontekija(selectedTyontekija);
-                    if (count > 0)
-                    {
-                        MessageBox.Show("Työntekijä päivitetty");
+        private void tyhjennabtn_Click(object sender, EventArgs e)
+        {
+            idtyontekijatb.Clear();
+            etunimitb.Clear();
+            sukunimitb.Clear();
+            puhelintb.Clear();
+            emailtb.Clear();
+            idnimiketb.Clear();
+            nimikecmb.SelectedIndex = 0;
+        }
 
-                        PopulateTyontekijaListView();
-                    }
+        private void tallennabtn_Click(object sender, EventArgs e)
+        {
+            Tyontekija tyontekija = new Tyontekija();
 
-                }
-            }
+            tyontekija.Etunimi = etunimitb.Text;
+            tyontekija.Sukunimi = sukunimitb.Text;
+            tyontekija.Puhelin = puhelintb.Text;
+            tyontekija.Email = emailtb.Text;
+            tyontekija.Nimike = nimikecmb.Text;
+            tyontekija.Tyonimike_idnimike = int.Parse(idnimiketb.Text);
+
+            contr.EditTyontekija(tyontekija);
+
+            MessageBox.Show("Työntekijä päivitetty");
+
+
+
+            PopulateTyontekijaDGW();
         }
 
         private void PopulatedTyotehtavaDGW()
@@ -618,6 +635,6 @@ namespace Projekti1
             }
         }
 
-
+     
     }
 }
