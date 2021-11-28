@@ -151,6 +151,7 @@ namespace Projekti1
         {
             btn_ValitseVuoro.Enabled = true;
             btn_ValitseTyontekija.Enabled = false;
+            btnPoistaKiinnitys.Enabled = false;
 
             string nimike = "";
             int tyovuoroID = int.MinValue;
@@ -176,6 +177,7 @@ namespace Projekti1
         {
             btn_ValitseVuoro.Enabled = false;
             btn_ValitseTyontekija.Enabled = true;
+            btnPoistaKiinnitys.Enabled = false;
         }
 
         // kun käyttäjä painaa Valitse vuoro -napppia niin tallennetaan valittu vuoro
@@ -257,6 +259,8 @@ namespace Projekti1
         private void lwKiinnitykset_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnPoistaKiinnitys.Enabled = true;
+            btn_ValitseVuoro.Enabled = false;
+            btn_ValitseTyontekija.Enabled = false;
             ListView.SelectedListViewItemCollection valittu = lwKiinnitykset.SelectedItems;
 
             int tyontekijaID = 0;
