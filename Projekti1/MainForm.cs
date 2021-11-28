@@ -132,6 +132,8 @@ namespace Projekti1
         private void lwVuorot_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             btn_ValitseVuoro.Enabled = true;
+            btn_ValitseTyontekija.Enabled = false;
+
             string nimike = "";
             int tyovuoroID = int.MinValue;
             int tehtavaID = int.MinValue;
@@ -154,9 +156,11 @@ namespace Projekti1
         // Kun käyttäjä klikkaa haluttua vapaata työntekijä, mahdollistetaan napin painaminen
         private void lwVapaatHenkilot_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
+            btn_ValitseVuoro.Enabled = false;
             btn_ValitseTyontekija.Enabled = true;
         }
 
+        // kun käyttäjä painaa Valitse vuoro -napppia niin tallennetaan valittu vuoro
         private void btn_ValitseVuoro_Click(object sender, EventArgs e)
         {
             btn_ValitseVuoro.Enabled = false;
@@ -171,7 +175,37 @@ namespace Projekti1
 
             }
 
+            // Jos tylntekijä on jo valittu niin mahdollistetaan kiinnityksen tekeminen
             if (valittuTyontekija != null)
+            {
+                btn_Kiinnita.Enabled = true;
+            }
+        }
+        // kun käyttäjä painee Valitse työntekijä -nappia niin tallennetaan valittu työntekijä
+        private void btn_ValitseTyontekija_Click(object sender, EventArgs e)
+        {
+            btn_ValitseTyontekija.Enabled = false;
+            btn_PeruutaTyontekija.Enabled = true;
+            tb_tyontekijavalittu.Text = "Työntekijä valittu";
+
+            ListView.SelectedListViewItemCollection valittu = lwVapaatHenkilot.SelectedItems;
+            int valittuID = 0;
+
+            foreach (ListViewItem item in valittu)
+            {
+                valittuID = int.Parse(item.SubItems[0].Text);
+            }
+
+            foreach (Tyontekija t in tyontekijat)
+            {
+                if (t.Idtyontekija == valittuID)
+                {
+                    valittuTyontekija = t;
+                }
+            }
+
+            // Jos vuoro on jo valittu niin mahdollistetaan kiinnityksen tekeminen
+            if (valittuVuoro != null)
             {
                 btn_Kiinnita.Enabled = true;
             }
@@ -186,7 +220,6 @@ namespace Projekti1
             int count = contr.LisaaKiinnitys(k);
             if (count > 0)
             {
-                MessageBox.Show("Kiinnitys lisätty");
                 kiinnitykset = contr.LataaKiinnitykset();
             }
 
@@ -237,9 +270,7 @@ namespace Projekti1
             int count = contr.PoistaKiinnitys(valittuKiinnitys);
             if (count > 0)
             {
-                MessageBox.Show("Kiinnitys poistettu");
                 kiinnitykset = contr.LataaKiinnitykset();
-
             }
 
             PopulateKiinnitykset(valittuKiinnitys.IDtyovuoro, valittuKiinnitys.IDtehtava);
@@ -253,21 +284,7 @@ namespace Projekti1
             valittuKiinnitys = null;
         }
 
-        // Nappien funktioita
-        private void btn_ValitseTyontekija_Click(object sender, EventArgs e)
-        {
-            btn_ValitseTyontekija.Enabled = false;
-            btn_PeruutaTyontekija.Enabled = true;
-            tb_tyontekijavalittu.Text = "Työntekijä valittu";
-
-            valittuTyontekija = tyontekijat[0]; // tämä pitää muuttaa niin että tulee valinnan mukaan listviewistä
-
-
-            if (valittuVuoro != null)
-            {
-                btn_Kiinnita.Enabled = true;
-            }
-        }
+        
 
         private void btn_PeruutaVuoro_Click(object sender, EventArgs e)
         {
