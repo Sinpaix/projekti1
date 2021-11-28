@@ -87,21 +87,36 @@ namespace Projekti1
             }
         }
 
-        public void PopulateVapaatTyontekijat(string nimike)
+        public void PopulateVapaatTyontekijat(string nimike, int vuoroID)
         {
             lwVapaatHenkilot.Items.Clear();
 
+            // Kyseiseen vuoroon eli tuona päivänä kiinnitetyt työntekijät
+            List<int> varatut = new List<int>();
+
+            foreach (Kiinnitys k in kiinnitykset)
+            {
+                if (vuoroID == k.IDtyovuoro)
+                {
+                    varatut.Add(k.IDtyontekija);
+                }
+            }
+
             foreach (Tyontekija t in tyontekijat)
             {
-                if (t.Nimike == nimike)
+                
+                if (!varatut.Contains(t.Idtyontekija))
                 {
-                    lwVapaatHenkilot.Items.Add(new ListViewItem(new string[]
+                    if (t.Nimike == nimike)
                     {
+                        lwVapaatHenkilot.Items.Add(new ListViewItem(new string[]
+                        {
                         t.Idtyontekija.ToString(),
                         t.Etunimi,
                         t.Sukunimi,
                         t.Nimike
-                    }));
+                        }));
+                    }
                 }
 
             }
@@ -149,7 +164,7 @@ namespace Projekti1
                 
             }
 
-            PopulateVapaatTyontekijat(nimike);
+            PopulateVapaatTyontekijat(nimike, tyovuoroID);
             PopulateKiinnitykset(tyovuoroID, tehtavaID);
         }
 
