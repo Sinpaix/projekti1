@@ -487,19 +487,61 @@ namespace Projekti1
             PopulatedTyotehtavaDGV();
 
         }
+        
+                                    //    btnPoistaKiinnitys.Enabled = true;
+                                    //    btn_ValitseVuoro.Enabled = false;
+                                    //        btn_ValitseTyontekija.Enabled = false;
+                                    //        ListView.SelectedListViewItemCollection valittu = lwKiinnitykset.SelectedItems;
 
+                                    //    int tyontekijaID = 0;
+                                    //    int vuoroID = 0;
+                                    //    int tehtavaID = 0;
+
+                                    //        foreach (ListViewItem item in valittu)
+                                    //        {
+                                    //            vuoroID = int.Parse(item.SubItems[0].Text);
+                                    //    tehtavaID = int.Parse(item.SubItems[1].Text);
+                                    //    tyontekijaID = int.Parse(item.SubItems[2].Text);
+
+                                    //}
+
+                                    //        // Käydään kiinnitykset läpi ja valitaan oikea
+                                    //        foreach (Kiinnitys k in kiinnitykset)
+                                    //        {
+                                    //            if (k.IDtyovuoro == vuoroID && k.IDtehtava == tehtavaID && k.IDtyontekija == tyontekijaID)
+                                    //            {
+                                    //                valittuKiinnitys = k;
+                                    //            }
+                                    //        }
+
+                                    //    }
+        
         private void AddTarve()
         {
-            if (tarve == null)
-            {
-                tarve = new Tarve(
 
-                    tarve.TyovuoroID = int.Parse(dgvTyovuorot.SelectedRows[0].Cells[1].Value + string.Empty),
-                    tarve.TehtavaID = int.Parse(comboTehtavat.Text),
-                    tarve.Maara = int.Parse(numMaara.Value.ToString())
+            //hieman vielä tekemistä tässä...
 
-                    ); 
-            }
+            //int iTyovuoroId = int.Parse(dgvTyovuorot.SelectedRows[0].Cells[0].Value + string.Empty);
+            //int iTyotehtavaId = int.Parse(dgvTyovuorot.SelectedRows[0].Cells[2].Value + string.Empty);
+            //int iMaara = int.Parse(dgvTyovuorot.SelectedRows[0].Cells[3].Value + string.Empty);
+
+            //Tarve tarve = new Tarve();
+            //tarve.TyovuoroID = iTyovuoroId;
+            //tarve.TehtavaID = int.Parse(comboTehtavat.Text);
+            //tarve.Maara = int.Parse(numMaara.Value.ToString());
+
+            
+
+            //if (tarve == null)
+            //{
+            //    tarve = new Tarve(
+
+            //        tarve.TyovuoroID = int.Parse(dgvTyovuorot.SelectedRows[0].Cells[1].Value + string.Empty),
+            //        tarve.TehtavaID = int.Parse(comboTehtavat.Text),
+            //        tarve.Maara = int.Parse(numMaara.Value.ToString())
+
+            //        ); 
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)

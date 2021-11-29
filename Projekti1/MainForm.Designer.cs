@@ -791,7 +791,7 @@ namespace Projekti1
             this.panel2.Location = new System.Drawing.Point(12, 15);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1647, 778);
+            this.panel2.Size = new System.Drawing.Size(1728, 778);
             this.panel2.TabIndex = 0;
             // 
             // tbTyovuoroValinta
@@ -800,6 +800,7 @@ namespace Projekti1
             this.tbTyovuoroValinta.Name = "tbTyovuoroValinta";
             this.tbTyovuoroValinta.Size = new System.Drawing.Size(267, 23);
             this.tbTyovuoroValinta.TabIndex = 38;
+            this.tbTyovuoroValinta.Text = "Valitse työvuorolistalta vuoro";
             // 
             // comboTehtavat
             // 
