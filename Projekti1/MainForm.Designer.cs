@@ -145,6 +145,8 @@ namespace Projekti1
             this.btnMuokkaa = new System.Windows.Forms.Button();
             this.tbTehtava = new System.Windows.Forms.TextBox();
             this.btnTallenna = new System.Windows.Forms.Button();
+            this.comboTehtavat = new System.Windows.Forms.ComboBox();
+            this.tbTyovuoroValinta = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tyontekijatdgv)).BeginInit();
@@ -762,6 +764,8 @@ namespace Projekti1
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.tbTyovuoroValinta);
+            this.panel2.Controls.Add(this.comboTehtavat);
             this.panel2.Controls.Add(this.numMaara);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.button4);
@@ -788,12 +792,12 @@ namespace Projekti1
             this.panel2.Location = new System.Drawing.Point(12, 15);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1664, 778);
+            this.panel2.Size = new System.Drawing.Size(1647, 778);
             this.panel2.TabIndex = 0;
             // 
             // numMaara
             // 
-            this.numMaara.Location = new System.Drawing.Point(178, 571);
+            this.numMaara.Location = new System.Drawing.Point(178, 546);
             this.numMaara.Margin = new System.Windows.Forms.Padding(4);
             this.numMaara.Name = "numMaara";
             this.numMaara.Size = new System.Drawing.Size(84, 23);
@@ -803,7 +807,7 @@ namespace Projekti1
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(42, 573);
+            this.label7.Location = new System.Drawing.Point(42, 548);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 25;
@@ -822,18 +826,18 @@ namespace Projekti1
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(45, 701);
+            this.button4.Location = new System.Drawing.Point(327, 621);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(117, 39);
+            this.button4.Size = new System.Drawing.Size(88, 29);
             this.button4.TabIndex = 22;
             this.button4.Text = "Tyhjennä";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // btnTyhjennaKentatVuoro
             // 
-            this.btnTyhjennaKentatVuoro.Location = new System.Drawing.Point(45, 312);
+            this.btnTyhjennaKentatVuoro.Location = new System.Drawing.Point(326, 255);
             this.btnTyhjennaKentatVuoro.Name = "btnTyhjennaKentatVuoro";
-            this.btnTyhjennaKentatVuoro.Size = new System.Drawing.Size(117, 39);
+            this.btnTyhjennaKentatVuoro.Size = new System.Drawing.Size(88, 29);
             this.btnTyhjennaKentatVuoro.TabIndex = 22;
             this.btnTyhjennaKentatVuoro.Text = "Tyhjennä";
             this.btnTyhjennaKentatVuoro.UseVisualStyleBackColor = true;
@@ -1054,10 +1058,10 @@ namespace Projekti1
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(346, 643);
+            this.button3.Location = new System.Drawing.Point(233, 621);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 39);
+            this.button3.Size = new System.Drawing.Size(88, 29);
             this.button3.TabIndex = 18;
             this.button3.Text = "Poista";
             this.button3.UseVisualStyleBackColor = true;
@@ -1065,10 +1069,10 @@ namespace Projekti1
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(195, 643);
+            this.button2.Location = new System.Drawing.Point(139, 621);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 39);
+            this.button2.Size = new System.Drawing.Size(88, 29);
             this.button2.TabIndex = 18;
             this.button2.Text = "Muokkaa";
             this.button2.UseVisualStyleBackColor = true;
@@ -1076,10 +1080,10 @@ namespace Projekti1
             // 
             // btnPoistaVuoro
             // 
-            this.btnPoistaVuoro.Location = new System.Drawing.Point(346, 254);
+            this.btnPoistaVuoro.Location = new System.Drawing.Point(232, 255);
             this.btnPoistaVuoro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPoistaVuoro.Name = "btnPoistaVuoro";
-            this.btnPoistaVuoro.Size = new System.Drawing.Size(117, 39);
+            this.btnPoistaVuoro.Size = new System.Drawing.Size(88, 29);
             this.btnPoistaVuoro.TabIndex = 18;
             this.btnPoistaVuoro.Text = "Poista";
             this.btnPoistaVuoro.UseVisualStyleBackColor = true;
@@ -1087,10 +1091,10 @@ namespace Projekti1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(45, 643);
+            this.button1.Location = new System.Drawing.Point(45, 621);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 39);
+            this.button1.Size = new System.Drawing.Size(88, 29);
             this.button1.TabIndex = 17;
             this.button1.Text = "Tallenna";
             this.button1.UseVisualStyleBackColor = true;
@@ -1098,10 +1102,10 @@ namespace Projekti1
             // 
             // btnMuokkaaVuoroa
             // 
-            this.btnMuokkaaVuoroa.Location = new System.Drawing.Point(195, 254);
+            this.btnMuokkaaVuoroa.Location = new System.Drawing.Point(138, 255);
             this.btnMuokkaaVuoroa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMuokkaaVuoroa.Name = "btnMuokkaaVuoroa";
-            this.btnMuokkaaVuoroa.Size = new System.Drawing.Size(117, 39);
+            this.btnMuokkaaVuoroa.Size = new System.Drawing.Size(88, 29);
             this.btnMuokkaaVuoroa.TabIndex = 18;
             this.btnMuokkaaVuoroa.Text = "Muokkaa";
             this.btnMuokkaaVuoroa.UseVisualStyleBackColor = true;
@@ -1109,10 +1113,10 @@ namespace Projekti1
             // 
             // btnTallennaVuoro
             // 
-            this.btnTallennaVuoro.Location = new System.Drawing.Point(45, 254);
+            this.btnTallennaVuoro.Location = new System.Drawing.Point(45, 255);
             this.btnTallennaVuoro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTallennaVuoro.Name = "btnTallennaVuoro";
-            this.btnTallennaVuoro.Size = new System.Drawing.Size(117, 39);
+            this.btnTallennaVuoro.Size = new System.Drawing.Size(88, 29);
             this.btnTallennaVuoro.TabIndex = 17;
             this.btnTallennaVuoro.Text = "Tallenna";
             this.btnTallennaVuoro.UseVisualStyleBackColor = true;
@@ -1127,13 +1131,13 @@ namespace Projekti1
             this.dgvTarpeet.AllowUserToResizeRows = false;
             this.dgvTarpeet.BackgroundColor = System.Drawing.Color.White;
             this.dgvTarpeet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTarpeet.Location = new System.Drawing.Point(502, 413);
+            this.dgvTarpeet.Location = new System.Drawing.Point(502, 388);
             this.dgvTarpeet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTarpeet.Name = "dgvTarpeet";
             this.dgvTarpeet.ReadOnly = true;
             this.dgvTarpeet.RowHeadersWidth = 60;
             this.dgvTarpeet.RowTemplate.Height = 24;
-            this.dgvTarpeet.Size = new System.Drawing.Size(1114, 325);
+            this.dgvTarpeet.Size = new System.Drawing.Size(1138, 350);
             this.dgvTarpeet.TabIndex = 13;
             // 
             // dgvTyovuorot
@@ -1151,7 +1155,7 @@ namespace Projekti1
             this.dgvTyovuorot.ReadOnly = true;
             this.dgvTyovuorot.RowHeadersWidth = 60;
             this.dgvTyovuorot.RowTemplate.Height = 24;
-            this.dgvTyovuorot.Size = new System.Drawing.Size(1114, 325);
+            this.dgvTyovuorot.Size = new System.Drawing.Size(508, 325);
             this.dgvTyovuorot.TabIndex = 13;
             // 
             // dtpPvmLoppuu
@@ -1188,7 +1192,7 @@ namespace Projekti1
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(42, 516);
+            this.label23.Location = new System.Drawing.Point(42, 491);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(60, 17);
             this.label23.TabIndex = 2;
@@ -1198,7 +1202,7 @@ namespace Projekti1
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(42, 462);
+            this.label22.Location = new System.Drawing.Point(42, 437);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(68, 17);
             this.label22.TabIndex = 2;
@@ -1218,7 +1222,7 @@ namespace Projekti1
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(41, 413);
+            this.label21.Location = new System.Drawing.Point(41, 388);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(97, 20);
             this.label21.TabIndex = 0;
@@ -1569,6 +1573,21 @@ namespace Projekti1
             this.btnTallenna.UseVisualStyleBackColor = true;
             this.btnTallenna.Click += new System.EventHandler(this.btnTallenna_Click);
             // 
+            // comboTehtavat
+            // 
+            this.comboTehtavat.FormattingEnabled = true;
+            this.comboTehtavat.Location = new System.Drawing.Point(178, 491);
+            this.comboTehtavat.Name = "comboTehtavat";
+            this.comboTehtavat.Size = new System.Drawing.Size(268, 24);
+            this.comboTehtavat.TabIndex = 37;
+            // 
+            // tbTyovuoroValinta
+            // 
+            this.tbTyovuoroValinta.Location = new System.Drawing.Point(178, 430);
+            this.tbTyovuoroValinta.Name = "tbTyovuoroValinta";
+            this.tbTyovuoroValinta.Size = new System.Drawing.Size(267, 23);
+            this.tbTyovuoroValinta.TabIndex = 38;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1732,6 +1751,8 @@ namespace Projekti1
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvTarpeet;
+        private System.Windows.Forms.ComboBox comboTehtavat;
+        private System.Windows.Forms.TextBox tbTyovuoroValinta;
     }
 }
 
