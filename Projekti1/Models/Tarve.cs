@@ -32,5 +32,6 @@ namespace Projekti1.Models
             Nimike = nimike;
             Maara = maara;
         }
+
     }
 }

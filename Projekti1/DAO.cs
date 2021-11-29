@@ -554,6 +554,40 @@ namespace Projekti1
             }
             return count;
         }
+
+        public static int InsertTarve(Tarve tarve)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "INSERT INTO  tarve (Tyovuoro_idtyovuoro, Tyotehtava_idtehtava, maara) values (?Tyovuoro_idtyovuoro, ?Tyotehtava_idtehtava, ?maara)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?Tyovuoro_idtyovuoro", MySqlDbType.Int32).Value = tarve.TyovuoroID;
+                cmd.Parameters.Add("?Tyotehtava_idtehtava", MySqlDbType.Int32).Value = tarve.TehtavaID;
+                cmd.Parameters.Add("?maara", MySqlDbType.Int32).Value = tarve.Maara;
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("tyovuoro {0} {1} {2} inserted", tarve.TyovuoroID, tarve.TehtavaID, tarve.Maara);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
     }
 }
 

@@ -382,6 +382,7 @@ namespace Projekti1
             }
         }
 
+
         private void poistabtn_Click(object sender, EventArgs e)
         {
             int rowIndex = tyontekijatdgv.CurrentRow.Index;
@@ -479,12 +480,29 @@ namespace Projekti1
         }
 
 
+        private void btnTallenna_Click(object sender, EventArgs e)
+        {
+            AddTyotehtava();
+            PopulatedTyotehtavaDGV();
+
+        }
+
+        private void comboNimike_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (Tyonimike t in tyonimikkeet)
+            {
+                if (comboNimike.Text == t.Nimike)
+                {
+                    lblidnimike.Text = t.Idnimike.ToString();
+                }
+            }
+        }
+
         private void AddTyotehtava()
         {
-
             string sTehtava = this.tbTehtava.Text;
             string sPaikka = this.comboPaikka.Text;
-            string sNimikeid = this.tbNimike.Text;
+            string sNimikeid = this.lblidnimike.Text;
             string sNimike = this.comboNimike.Text;
 
             if (null == tyotehtava)
@@ -512,10 +530,11 @@ namespace Projekti1
 
             if (count > 0)
             {
-                MessageBox.Show("tehtävä lisätty");
-
+                //MessageBox.Show("tehtävä lisätty");
                 // Haetaan kannasta työtehtävät.
                 tyotehtavat = contr.LoadTyotehtavat();
+
+                lblOhjeKentta.Text = "Uusi tehtävä lisätty";
 
             }
         }
@@ -544,7 +563,10 @@ namespace Projekti1
                 tyotehtavat = contr.LoadTyotehtavat();
                 PopulatedTyotehtavaDGV();
             }
+
         }
+
+       
 
         private Tyotehtava GetTyotehtava()
         {
@@ -556,13 +578,27 @@ namespace Projekti1
             DeleteTyotehtava();
         }
 
-        private void btnTallenna_Click(object sender, EventArgs e)
+        private void btnMuokkaa_Click(object sender, EventArgs e)
         {
-            //AddTyovuoro();    /*EI TOIMI*/
-            AddTyotehtava();
-            PopulatedTyotehtavaDGV();
-            
+           if (this.dgvTehtavat.SelectedRows.Count > 0)
+            {
+                string tehtava = dgvTehtavat.SelectedRows[0].Cells[1].Value + string.Empty;
+                string paikka = dgvTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
+                string nimike = dgvTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
+
+                Tyotehtava tyotehtava = new Tyotehtava();
+                tyotehtava.Tehtava = tehtava;
+                tyotehtava.Paikka = paikka;
+                tyotehtava.Tyonimike_idnimike = int.Parse(nimike);
+
+                tbTehtava.Text = tehtava;
+                comboPaikka.Text = paikka;
+                lblidnimike.Text = nimike;
+
+            }
         }
+
+       
 
         private void FillFieldsTyovuoro()
         {
@@ -571,6 +607,11 @@ namespace Projekti1
                 //tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
                 //tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
             }
+        }
+
+        private void btnTallennaVuoro_Click(object sender, EventArgs e)
+        {
+            AddTyovuoro();
         }
 
         private void AddTyovuoro()
@@ -609,8 +650,6 @@ namespace Projekti1
                     //tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
                     //tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
                 }
-            
-         
            
 
             Tyovuoro createdTyovuoro = LataaTyovuorot();
@@ -644,36 +683,16 @@ namespace Projekti1
             Testi();
         }
 
-        private void btnMuokkaa_Click(object sender, EventArgs e)
-        {
-            if (this.dgvTehtavat.SelectedRows.Count > 0)
-            {
-                string tehtava = dgvTehtavat.SelectedRows[0].Cells[1].Value + string.Empty;
-                string paikka = dgvTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
-                string nimike = dgvTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
-
-                Tyotehtava tyotehtava = new Tyotehtava();
-                tyotehtava.Tehtava = tehtava;
-                tyotehtava.Paikka = paikka;
-                tyotehtava.Tyonimike_idnimike = int.Parse(nimike);
-
-                tbTehtava.Text = tehtava;
-                comboPaikka.Text = paikka;
-                tbNimike.Text = nimike;
-
-                
-
-            }
-        }
+       
 
         private void btnTyhjennaKentatTehtava_Click(object sender, EventArgs e)
         {
             tbTehtava.Text = "";
             comboPaikka.Text = "";
-            tbNimike.Text = "";
             comboNimike.Text = "";
 
         }
 
+        
     }
 }

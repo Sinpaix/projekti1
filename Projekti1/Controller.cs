@@ -37,6 +37,11 @@ namespace Projekti1
             return DAO.GetTarpeet();
         }
 
+        public int AddTarve(Tarve tr)
+        {
+            return DAO.InsertTarve(tr);
+        }
+
         // Kiinnitykset
         public List<Kiinnitys> LataaKiinnitykset()
         {
