@@ -33,5 +33,11 @@ namespace Projekti1.Models
             Maara = maara;
         }
 
+        public Tarve(int tyovuoroID, int tehtavaID, int maara)
+        {
+            TyovuoroID = tyovuoroID;
+            TehtavaID = tehtavaID;
+            Maara = maara;
+        }
     }
 }

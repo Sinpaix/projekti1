@@ -22,6 +22,7 @@ namespace Projekti1
 
         private Tyotehtava tyotehtava;
         private Tyovuoro tyovuoro;
+        private Tarve tarve;
 
         private Controller contr = new Controller();
 
@@ -56,8 +57,8 @@ namespace Projekti1
             PopulateTyonimikeCombobox();
 
             //Syötetyt tiedot
-            FillFieldsTehtava();
-            FillFieldsTyovuoro();
+            //FillFieldsTehtava();
+            //FillFieldsTyovuoro();
 
         }
 
@@ -468,16 +469,16 @@ namespace Projekti1
             dgvTarpeet.Columns[6].Visible = false; // Piilotetaan nimike 
         }
 
-        private void FillFieldsTehtava()
-        {
-            if (null != this.tyotehtava)
-            {
-                this.tbTehtava.Text = tyotehtava.Tehtava;
-                this.comboPaikka.Text = tyotehtava.Paikka;
-                //this.tbNimike.Text = tyotehtava.Tyonimike_idnimike.ToString();
-                this.comboNimike.Text = tyotehtava.Nimike;
-            }
-        }
+        //private void FillFieldsTehtava()
+        //{
+        //    if (null != this.tyotehtava)
+        //    {
+        //        this.tbTehtava.Text = tyotehtava.Tehtava;
+        //        this.comboPaikka.Text = tyotehtava.Paikka;
+        //        //this.tbNimike.Text = tyotehtava.Tyonimike_idnimike.ToString();
+        //        this.comboNimike.Text = tyotehtava.Nimike;
+        //    }
+        //}
 
 
         private void btnTallenna_Click(object sender, EventArgs e)
@@ -485,6 +486,25 @@ namespace Projekti1
             AddTyotehtava();
             PopulatedTyotehtavaDGV();
 
+        }
+
+        private void AddTarve()
+        {
+            if (tarve == null)
+            {
+                tarve = new Tarve(
+
+                    tarve.TyovuoroID = int.Parse(dgvTyovuorot.SelectedRows[0].Cells[1].Value + string.Empty),
+                    tarve.TehtavaID = int.Parse(comboTehtavat.Text),
+                    tarve.Maara = int.Parse(numMaara.Value.ToString())
+
+                    ); 
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddTarve();
         }
 
         private void comboNimike_SelectedIndexChanged(object sender, EventArgs e)
@@ -600,14 +620,14 @@ namespace Projekti1
 
        
 
-        private void FillFieldsTyovuoro()
-        {
-            if (null != this.tyovuoro)
-            {
-                //tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
-                //tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
-            }
-        }
+        //private void FillFieldsTyovuoro()
+        //{
+        //    if (null != this.tyovuoro)
+        //    {
+        //        //tyovuoro.Alkaa = DateTime.Parse(this.dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
+        //        //tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
+        //    }
+        //}
 
         private void btnTallennaVuoro_Click(object sender, EventArgs e)
         {
@@ -693,6 +713,6 @@ namespace Projekti1
 
         }
 
-        
+       
     }
 }
