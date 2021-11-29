@@ -47,8 +47,9 @@ namespace Projekti1
             // Laitetaan haetut tiedot ohjelman näytöille
             PopulateTarveListView();
 
-           
-            PopulatedTyotehtavaDGW();
+            PopulatedTarpeetDGV();
+            PopulatedTyovuorotDGV();
+            PopulatedTyotehtavaDGV();
             PopulateTyonimikkeetCombobox();
 
             PopulateTyontekijaDGW();
@@ -436,20 +437,34 @@ namespace Projekti1
 
             MessageBox.Show("Työntekijä päivitetty");
 
-
-
             PopulateTyontekijaDGW();
         }
 
-        private void PopulatedTyotehtavaDGW()
+        private void PopulatedTyotehtavaDGV()
         {
             BindingSource source = new BindingSource();
             source.DataSource = tyotehtavat;
-            dgwTehtavat.DataSource = source;
+            dgvTehtavat.DataSource = source;
             //dgwTehtavat.Columns[0].Visible = false; // Piilotetaan työvuoron ID 
-            dgwTehtavat.Columns[3].Visible = false; // Piilotetaan tehtävän ID 
+            dgvTehtavat.Columns[3].Visible = false; // Piilotetaan tehtävän ID 
             //dgwTehtavat.Columns[6].Visible = false; // Piilotetaan nimikkeen ID 
+        }
 
+        private void PopulatedTyovuorotDGV()
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = tyovuorot;
+            dgvTyovuorot.DataSource = source;
+        }
+
+        private void PopulatedTarpeetDGV()
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = tarpeet;
+            dgvTarpeet.DataSource = source;
+            dgvTarpeet.Columns[3].Visible = false; // Piilotetaan tehtävän ID
+            dgvTarpeet.Columns[5].Visible = false; // Piilotetaan paikka
+            dgvTarpeet.Columns[6].Visible = false; // Piilotetaan nimike 
         }
 
         private void FillFieldsTehtava()
@@ -508,9 +523,9 @@ namespace Projekti1
         private void DeleteTyotehtava()
         {
             // poista valittu työtehtävä
-            if (this.dgwTehtavat.SelectedRows.Count > 0)
+            if (this.dgvTehtavat.SelectedRows.Count > 0)
             {
-                int rowIndex = this.dgwTehtavat.CurrentRow.Index;
+                int rowIndex = this.dgvTehtavat.CurrentRow.Index;
 
                 //poistaa tyotehtävälistasta objektin valitusta indeksistä
                 Tyotehtava tt = tyotehtavat[rowIndex];
@@ -527,7 +542,7 @@ namespace Projekti1
                 }
 
                 tyotehtavat = contr.LoadTyotehtavat();
-                PopulatedTyotehtavaDGW();
+                PopulatedTyotehtavaDGV();
             }
         }
 
@@ -545,7 +560,7 @@ namespace Projekti1
         {
             //AddTyovuoro();    /*EI TOIMI*/
             AddTyotehtava();
-            PopulatedTyotehtavaDGW();
+            PopulatedTyotehtavaDGV();
             
         }
 
@@ -631,11 +646,11 @@ namespace Projekti1
 
         private void btnMuokkaa_Click(object sender, EventArgs e)
         {
-            if (this.dgwTehtavat.SelectedRows.Count > 0)
+            if (this.dgvTehtavat.SelectedRows.Count > 0)
             {
-                string tehtava = dgwTehtavat.SelectedRows[0].Cells[1].Value + string.Empty;
-                string paikka = dgwTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
-                string nimike = dgwTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
+                string tehtava = dgvTehtavat.SelectedRows[0].Cells[1].Value + string.Empty;
+                string paikka = dgvTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
+                string nimike = dgvTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
 
                 Tyotehtava tyotehtava = new Tyotehtava();
                 tyotehtava.Tehtava = tehtava;
@@ -651,6 +666,14 @@ namespace Projekti1
             }
         }
 
+        private void btnTyhjennaKentatTehtava_Click(object sender, EventArgs e)
+        {
+            tbTehtava.Text = "";
+            comboPaikka.Text = "";
+            tbNimike.Text = "";
+            comboNimike.Text = "";
+
+        }
 
     }
 }
