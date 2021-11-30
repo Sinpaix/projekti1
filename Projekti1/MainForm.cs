@@ -332,6 +332,19 @@ namespace Projekti1
         /// <summary>
         /// Tästä alkaa työntekijän hallinta-välilehden koodit
         /// </summary>
+        /// 
+
+        private void btnLisaaNimike_Click(object sender, EventArgs e)
+        {
+            Tyonimike tyonimike = new Tyonimike();
+            tyonimike.Idnimike = 0;
+            tyonimike.Nimike = tbTyonimike.Text;
+
+            tyonimikkeet.Add(tyonimike);
+            contr.AddTyonimike(tyonimike);
+            PopulateTyonimikeCombobox();
+            PopulateTyonimikkeetCombobox();
+        }
 
         private void PopulateTyontekijaDGW()
         {

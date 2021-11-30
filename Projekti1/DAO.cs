@@ -229,6 +229,43 @@ namespace Projekti1
             return tyovuorot;
         }
 
+        //Työnimikkeen lisäys
+
+        public static int InsertTyonimike(Tyonimike tyonimike)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "INSERT INTO tyonimike(idnimike, nimike) values (?idnimike, ?nimike)";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?idnimike", MySqlDbType.VarChar).Value = tyonimike.Idnimike;
+                cmd.Parameters.Add("?nimike", MySqlDbType.VarChar).Value = tyonimike.Nimike;
+                
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("Työnimike {0} {1} lisätty", tyonimike.Idnimike, tyonimike.Nimike);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
+
         // työntekijän lisäys
         public static int InsertTyontekija(Tyontekija tyontekija)
         {
@@ -383,15 +420,7 @@ namespace Projekti1
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
                 string sql =
-
                     "SELECT idtehtava, tehtava, paikka, Tyonimike_idnimike, nimike FROM tyotehtava, tyonimike WHERE Tyonimike_idnimike = idnimike ORDER BY idtehtava";
-
-                //"SELECT Tyovuoro_idtyovuoro, alkaa, loppuu, idtehtava, tehtava, paikka, Tyonimike_idnimike, nimike, maara " +
-                //    "FROM tarve t JOIN tyovuoro tv ON t.Tyovuoro_idtyovuoro = tv.idtyovuoro " +
-                //    "JOIN tyotehtava tt ON t.Tyotehtava_idtehtava = tt.idtehtava " +
-                //    "JOIN tyonimike tn ON tt.Tyonimike_idnimike = tn.idnimike";
-                //(int.Parse(rdr[0].ToString()), DateTime.Parse(rdr[1].ToString()), DateTime.Parse(rdr[2].ToString()), int.Parse(rdr[3].ToString()), rdr[4].ToString(), rdr[5].ToString(),
-                //int.Parse(rdr[6].ToString()), (rdr[7].ToString()), int.Parse(rdr[8].ToString()))
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();

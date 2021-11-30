@@ -160,6 +160,10 @@ namespace Projekti1
             this.btnMuokkaa = new System.Windows.Forms.Button();
             this.tbTehtava = new System.Windows.Forms.TextBox();
             this.btnTallenna = new System.Windows.Forms.Button();
+            this.tbTyonimike = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.btnLisaaNimike = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabEtusivu.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -186,6 +190,7 @@ namespace Projekti1
             this.tabTehtävät.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTehtavat)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -1323,6 +1328,7 @@ namespace Projekti1
             // 
             // tabTyöntekijät
             // 
+            this.tabTyöntekijät.Controls.Add(this.groupBox6);
             this.tabTyöntekijät.Controls.Add(this.tyontekijatdgv);
             this.tabTyöntekijät.Controls.Add(this.groupBox5);
             this.tabTyöntekijät.Controls.Add(this.groupBox3);
@@ -1766,6 +1772,44 @@ namespace Projekti1
             this.btnTallenna.UseVisualStyleBackColor = true;
             this.btnTallenna.Click += new System.EventHandler(this.btnTallenna_Click);
             // 
+            // tbTyonimike
+            // 
+            this.tbTyonimike.Location = new System.Drawing.Point(79, 31);
+            this.tbTyonimike.Name = "tbTyonimike";
+            this.tbTyonimike.Size = new System.Drawing.Size(136, 20);
+            this.tbTyonimike.TabIndex = 8;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.btnLisaaNimike);
+            this.groupBox6.Controls.Add(this.label25);
+            this.groupBox6.Controls.Add(this.tbTyonimike);
+            this.groupBox6.Location = new System.Drawing.Point(1275, 18);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(317, 177);
+            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Lisää työnimike";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 30);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(55, 13);
+            this.label25.TabIndex = 9;
+            this.label25.Text = "Työnimike";
+            // 
+            // btnLisaaNimike
+            // 
+            this.btnLisaaNimike.Location = new System.Drawing.Point(9, 75);
+            this.btnLisaaNimike.Name = "btnLisaaNimike";
+            this.btnLisaaNimike.Size = new System.Drawing.Size(75, 23);
+            this.btnLisaaNimike.TabIndex = 10;
+            this.btnLisaaNimike.Text = "Lisää";
+            this.btnLisaaNimike.UseVisualStyleBackColor = true;
+            this.btnLisaaNimike.Click += new System.EventHandler(this.btnLisaaNimike_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1810,6 +1854,8 @@ namespace Projekti1
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTehtavat)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1947,6 +1993,10 @@ namespace Projekti1
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Alkaa;
         private System.Windows.Forms.ColumnHeader Loppuu;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox tbTyonimike;
+        private System.Windows.Forms.Button btnLisaaNimike;
     }
 }
 

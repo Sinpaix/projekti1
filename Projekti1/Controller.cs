@@ -9,6 +9,12 @@ namespace Projekti1
 {
     class Controller
     {
+        //Työnimike
+        public int AddTyonimike(Tyonimike tn)
+        {
+            return DAO.InsertTyonimike(tn);
+        }
+
         // Työntekijä
         public List<Tyontekija> LataaTyontekijat()
         {
