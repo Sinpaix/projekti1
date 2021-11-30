@@ -485,34 +485,6 @@ namespace Projekti1
 
         }
 
-        //    btnPoistaKiinnitys.Enabled = true;
-        //    btn_ValitseVuoro.Enabled = false;
-        //        btn_ValitseTyontekija.Enabled = false;
-        //        ListView.SelectedListViewItemCollection valittu = lwKiinnitykset.SelectedItems;
-
-        //    int tyontekijaID = 0;
-        //    int vuoroID = 0;
-        //    int tehtavaID = 0;
-
-        //        foreach (ListViewItem item in valittu)
-        //        {
-        //            vuoroID = int.Parse(item.SubItems[0].Text);
-        //    tehtavaID = int.Parse(item.SubItems[1].Text);
-        //    tyontekijaID = int.Parse(item.SubItems[2].Text);
-
-        //}
-
-        //        // Käydään kiinnitykset läpi ja valitaan oikea
-        //        foreach (Kiinnitys k in kiinnitykset)
-        //        {
-        //            if (k.IDtyovuoro == vuoroID && k.IDtehtava == tehtavaID && k.IDtyontekija == tyontekijaID)
-        //            {
-        //                valittuKiinnitys = k;
-        //            }
-        //        }
-
-        //    }
-
         private void AddTarve()
         {
 
@@ -589,11 +561,10 @@ namespace Projekti1
 
             if (count > 0)
             {
-                //MessageBox.Show("tehtävä lisätty");
                 // Haetaan kannasta työtehtävät.
                 tyotehtavat = contr.LoadTyotehtavat();
 
-                lblOhjeKentta.Text = "Uusi tehtävä lisätty";
+                lblOhjeKentta.Text = "Uusi tehtävä lisätty: " + createdTyotehtava;
 
             }
         }
@@ -610,8 +581,8 @@ namespace Projekti1
                 int count = contr.RemoveTyotehtava(tt);
                 if (count > 0)
                 {
-                    MessageBox.Show("Työtehtävä poistettu");
-                    tyontekijat.RemoveAt(rowIndex);
+                    lblOhjeKentta.Text = "Tehtävä poistettu: " + tt;
+                    tyotehtavat.RemoveAt(rowIndex);
 
                 }
                 else
@@ -655,6 +626,13 @@ namespace Projekti1
                 lblidnimike.Text = nimike;
 
             }
+        }
+
+        private void btnTyhjennaKentatTehtava_Click_1(object sender, EventArgs e)
+        {
+            tbTehtava.Text = " ";
+            comboPaikka.Text = " ";
+            comboNimike.Text = " ";
         }
 
 
@@ -820,8 +798,6 @@ namespace Projekti1
             tabControl.SelectTab(6);
         }
 
-       
-
-
-        }
+        
+    }
     }
