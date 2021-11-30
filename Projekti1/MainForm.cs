@@ -541,32 +541,36 @@ namespace Projekti1
                 // luodaan uusi tehtävä
                 // Id ei tiedossa, koska tulee kannasta
                 tyotehtava = new Tyotehtava(0, sTehtava, sPaikka, int.Parse(sNimikeid), sNimike);
+
+                Tyotehtava createdTyotehtava = GetTyotehtava();
+
+                int count = contr.AddTyotehtava(createdTyotehtava);
+
+                if (count > 0)
+                {
+                    // Haetaan kannasta työtehtävät.
+                    tyotehtavat = contr.LoadTyotehtavat();
+
+                    lblOhjeKentta.Text = "Uusi tehtävä lisätty: " + createdTyotehtava;
+                }
+
             }
             else
             {
-                //MessageBox.Show("ei toimi?");
+
+                //TEHTÄVÄN MUOKKAAMINEN EI TOIMI VIELÄ
 
                 // muokataan olemassa olevaa tehtävää
+                tyotehtava.Tehtava = this.tbTehtava.Text;
+                tyotehtava.Paikka = this.comboPaikka.Text;
+                tyotehtava.Tyonimike_idnimike = int.Parse(this.lblidnimike.Text);
 
-                //tyotehtava.Tehtava = this.tbTehtava.Text;
-                //tyotehtava.Paikka = this.comboPaikka.Text;
-                //tyotehtava.Tyonimike_idnimike = int.Parse(this.tbNimike.Text);
+                lblOhjeKentta.Text = "Tehtävää muokattu: ";
 
-                //TÄHÄN TYÖTEHTÄVÄN MUUTOSKOODI??
-
-            }
-            Tyotehtava createdTyotehtava = GetTyotehtava();
-
-            int count = contr.AddTyotehtava(createdTyotehtava);
-
-            if (count > 0)
-            {
-                // Haetaan kannasta työtehtävät.
-                tyotehtavat = contr.LoadTyotehtavat();
-
-                lblOhjeKentta.Text = "Uusi tehtävä lisätty: " + createdTyotehtava;
+                
 
             }
+           
         }
 
         private void DeleteTyotehtava()
@@ -616,10 +620,10 @@ namespace Projekti1
                 string paikka = dgvTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
                 string nimike = dgvTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
 
-                Tyotehtava tyotehtava = new Tyotehtava();
-                tyotehtava.Tehtava = tehtava;
-                tyotehtava.Paikka = paikka;
-                tyotehtava.Tyonimike_idnimike = int.Parse(nimike);
+                Tyotehtava selectedTyotehtava = new Tyotehtava();
+                selectedTyotehtava.Tehtava = tehtava;
+                selectedTyotehtava.Paikka = paikka;
+                selectedTyotehtava.Tyonimike_idnimike = int.Parse(nimike);
 
                 tbTehtava.Text = tehtava;
                 comboPaikka.Text = paikka;
