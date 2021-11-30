@@ -759,32 +759,33 @@ namespace Projekti1
         // Etusivun napit
         private void btnTyontekijat_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(1);
+            tabControl.SelectTab(5);
         }
 
         private void btnKiinnitykset_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(2);
+            tabControl.SelectTab(2);
         }
 
         private void btnTyovuorot_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(3);
+            tabControl.SelectTab(1);
         }
 
         private void btnTtVuorolista_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(4);
+            tabControl.SelectTab(3);
         }
 
         private void btnTyovuorolistat_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(5);
+            tabControl.SelectTab(4);
         }
 
         private void btnTyotehtavat_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(6);
+            tabControl.SelectTab(6);
         }
+
     }
 }
