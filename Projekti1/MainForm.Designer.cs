@@ -44,6 +44,10 @@ namespace Projekti1
             this.tbvuoroloppuu = new System.Windows.Forms.TextBox();
             this.tbvuoroalkaa = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.listviewTyoVuorot = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Alkaa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Loppuu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tbTyovuoroValinta = new System.Windows.Forms.TextBox();
             this.comboTehtavat = new System.Windows.Forms.ComboBox();
             this.numMaara = new System.Windows.Forms.NumericUpDown();
@@ -156,10 +160,6 @@ namespace Projekti1
             this.btnMuokkaa = new System.Windows.Forms.Button();
             this.tbTehtava = new System.Windows.Forms.TextBox();
             this.btnTallenna = new System.Windows.Forms.Button();
-            this.lvVuorot = new System.Windows.Forms.ListView();
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Alkaa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Loppuu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl.SuspendLayout();
             this.tabEtusivu.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -355,7 +355,7 @@ namespace Projekti1
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lvVuorot);
+            this.panel2.Controls.Add(this.listviewTyoVuorot);
             this.panel2.Controls.Add(this.tbTyovuoroValinta);
             this.panel2.Controls.Add(this.comboTehtavat);
             this.panel2.Controls.Add(this.numMaara);
@@ -385,6 +385,36 @@ namespace Projekti1
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1296, 632);
             this.panel2.TabIndex = 0;
+            // 
+            // listviewTyoVuorot
+            // 
+            this.listviewTyoVuorot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Alkaa,
+            this.Loppuu});
+            this.listviewTyoVuorot.FullRowSelect = true;
+            this.listviewTyoVuorot.HideSelection = false;
+            this.listviewTyoVuorot.Location = new System.Drawing.Point(377, 21);
+            this.listviewTyoVuorot.Name = "listviewTyoVuorot";
+            this.listviewTyoVuorot.Size = new System.Drawing.Size(399, 263);
+            this.listviewTyoVuorot.TabIndex = 39;
+            this.listviewTyoVuorot.UseCompatibleStateImageBehavior = false;
+            this.listviewTyoVuorot.View = System.Windows.Forms.View.Details;
+            this.listviewTyoVuorot.SelectedIndexChanged += new System.EventHandler(this.listviewTyoVuorot_SelectedIndexChanged);
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // Alkaa
+            // 
+            this.Alkaa.Text = "Alkaa";
+            this.Alkaa.Width = 150;
+            // 
+            // Loppuu
+            // 
+            this.Loppuu.Text = "Loppuu";
+            this.Loppuu.Width = 150;
             // 
             // tbTyovuoroValinta
             // 
@@ -1734,34 +1764,6 @@ namespace Projekti1
             this.btnTallenna.UseVisualStyleBackColor = true;
             this.btnTallenna.Click += new System.EventHandler(this.btnTallenna_Click);
             // 
-            // lvVuorot
-            // 
-            this.lvVuorot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ID,
-            this.Alkaa,
-            this.Loppuu});
-            this.lvVuorot.HideSelection = false;
-            this.lvVuorot.Location = new System.Drawing.Point(377, 21);
-            this.lvVuorot.Name = "lvVuorot";
-            this.lvVuorot.Size = new System.Drawing.Size(399, 263);
-            this.lvVuorot.TabIndex = 39;
-            this.lvVuorot.UseCompatibleStateImageBehavior = false;
-            this.lvVuorot.View = System.Windows.Forms.View.Details;
-            // 
-            // ID
-            // 
-            this.ID.Text = "ID";
-            // 
-            // Alkaa
-            // 
-            this.Alkaa.Text = "Alkaa";
-            this.Alkaa.Width = 150;
-            // 
-            // Loppuu
-            // 
-            this.Loppuu.Text = "Loppuu";
-            this.Loppuu.Width = 150;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1939,7 +1941,7 @@ namespace Projekti1
         private System.Windows.Forms.Button btnTtVuorolista;
         private System.Windows.Forms.Button btnTyovuorot;
         private System.Windows.Forms.Button btnKiinnitykset;
-        private System.Windows.Forms.ListView lvVuorot;
+        private System.Windows.Forms.ListView listviewTyoVuorot;
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Alkaa;
         private System.Windows.Forms.ColumnHeader Loppuu;
