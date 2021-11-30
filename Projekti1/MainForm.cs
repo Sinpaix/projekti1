@@ -543,14 +543,12 @@ namespace Projekti1
                 tyotehtava = new Tyotehtava(0, sTehtava, sPaikka, int.Parse(sNimikeid), sNimike);
 
                 Tyotehtava createdTyotehtava = GetTyotehtava();
-
                 int count = contr.AddTyotehtava(createdTyotehtava);
 
                 if (count > 0)
                 {
-                    // Haetaan kannasta työtehtävät.
+                    // Haetaan kannasta työtehtävät ja päivitetään info-labelin teksti
                     tyotehtavat = contr.LoadTyotehtavat();
-
                     lblOhjeKentta.Text = "Uusi tehtävä lisätty: " + createdTyotehtava;
                 }
 
@@ -561,13 +559,11 @@ namespace Projekti1
                 //TEHTÄVÄN MUOKKAAMINEN EI TOIMI VIELÄ
 
                 // muokataan olemassa olevaa tehtävää
-                tyotehtava.Tehtava = this.tbTehtava.Text;
-                tyotehtava.Paikka = this.comboPaikka.Text;
-                tyotehtava.Tyonimike_idnimike = int.Parse(this.lblidnimike.Text);
+                //tyotehtava.Tehtava = this.tbTehtava.Text;
+                //tyotehtava.Paikka = this.comboPaikka.Text;
+                //tyotehtava.Tyonimike_idnimike = int.Parse(this.lblidnimike.Text);
 
                 lblOhjeKentta.Text = "Tehtävää muokattu: ";
-
-                
 
             }
            
@@ -585,6 +581,7 @@ namespace Projekti1
                 int count = contr.RemoveTyotehtava(tt);
                 if (count > 0)
                 {
+                    
                     lblOhjeKentta.Text = "Tehtävä poistettu: " + tt;
                     tyotehtavat.RemoveAt(rowIndex);
 
@@ -596,6 +593,8 @@ namespace Projekti1
 
                 tyotehtavat = contr.LoadTyotehtavat();
                 PopulatedTyotehtavaDGV();
+
+
             }
 
         }

@@ -38,7 +38,7 @@ namespace Projekti1.Models
 
         public override string ToString()
         {
-            return Tehtava + ", " + Paikka + ", " + Nimike;
+            return /*"ID: " + Idtyotehtava + ", " + */Tehtava + ", " + Paikka + ", " + Nimike;
         }
     }
 }
