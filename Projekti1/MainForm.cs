@@ -692,7 +692,19 @@ namespace Projekti1
             }
         }
 
-        private void btnTallennaVuoro_Click(object sender, EventArgs e)
+        private void listviewTyoVuorot_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (listviewTyoVuorot.SelectedIndices.Count > 0)
+            {
+                // Haetaan valittu rivi työvuorotaulukosta
+                int selectedIndex = listviewTyoVuorot.SelectedIndices[0];
+
+                tbTyovuoroValinta.Text = selectedIndex.ToString();
+            }
+        }
+
+            private void btnTallennaVuoro_Click(object sender, EventArgs e)
         {
             AddTyovuoro();
         }
@@ -808,18 +820,8 @@ namespace Projekti1
             tabControl.SelectTab(6);
         }
 
-        private void listviewTyoVuorot_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            if (listviewTyoVuorot.SelectedIndices.Count > 0)
-            {
-                // Haetaan valittu rivi työvuorotaulukosta
-                int selectedIndex = listviewTyoVuorot.SelectedIndices[0];
-
-                tbTyovuoroValinta.Text = selectedIndex.ToString();
-            }
+       
 
 
         }
     }
-}
