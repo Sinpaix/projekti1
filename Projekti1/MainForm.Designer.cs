@@ -59,7 +59,6 @@ namespace Projekti1
             this.btnMuokkaaVuoroa = new System.Windows.Forms.Button();
             this.btnTallennaVuoro = new System.Windows.Forms.Button();
             this.dgvTarpeet = new System.Windows.Forms.DataGridView();
-            this.dgvTyovuorot = new System.Windows.Forms.DataGridView();
             this.dtpPvmLoppuu = new System.Windows.Forms.DateTimePicker();
             this.dtpPvmAlkaa = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -157,6 +156,10 @@ namespace Projekti1
             this.btnMuokkaa = new System.Windows.Forms.Button();
             this.tbTehtava = new System.Windows.Forms.TextBox();
             this.btnTallenna = new System.Windows.Forms.Button();
+            this.lvVuorot = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Alkaa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Loppuu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl.SuspendLayout();
             this.tabEtusivu.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -165,7 +168,6 @@ namespace Projekti1
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMaara)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarpeet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTyovuorot)).BeginInit();
             this.tabKiinnitys.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -353,6 +355,7 @@ namespace Projekti1
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lvVuorot);
             this.panel2.Controls.Add(this.tbTyovuoroValinta);
             this.panel2.Controls.Add(this.comboTehtavat);
             this.panel2.Controls.Add(this.numMaara);
@@ -368,7 +371,6 @@ namespace Projekti1
             this.panel2.Controls.Add(this.btnMuokkaaVuoroa);
             this.panel2.Controls.Add(this.btnTallennaVuoro);
             this.panel2.Controls.Add(this.dgvTarpeet);
-            this.panel2.Controls.Add(this.dgvTyovuorot);
             this.panel2.Controls.Add(this.dtpPvmLoppuu);
             this.panel2.Controls.Add(this.dtpPvmAlkaa);
             this.panel2.Controls.Add(this.label4);
@@ -731,24 +733,6 @@ namespace Projekti1
             this.dgvTarpeet.RowTemplate.Height = 24;
             this.dgvTarpeet.Size = new System.Drawing.Size(853, 285);
             this.dgvTarpeet.TabIndex = 13;
-            // 
-            // dgvTyovuorot
-            // 
-            this.dgvTyovuorot.AllowUserToAddRows = false;
-            this.dgvTyovuorot.AllowUserToDeleteRows = false;
-            this.dgvTyovuorot.AllowUserToOrderColumns = true;
-            this.dgvTyovuorot.AllowUserToResizeColumns = false;
-            this.dgvTyovuorot.AllowUserToResizeRows = false;
-            this.dgvTyovuorot.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTyovuorot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTyovuorot.Location = new System.Drawing.Point(377, 21);
-            this.dgvTyovuorot.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.dgvTyovuorot.Name = "dgvTyovuorot";
-            this.dgvTyovuorot.ReadOnly = true;
-            this.dgvTyovuorot.RowHeadersWidth = 60;
-            this.dgvTyovuorot.RowTemplate.Height = 24;
-            this.dgvTyovuorot.Size = new System.Drawing.Size(381, 264);
-            this.dgvTyovuorot.TabIndex = 13;
             // 
             // dtpPvmLoppuu
             // 
@@ -1750,6 +1734,34 @@ namespace Projekti1
             this.btnTallenna.UseVisualStyleBackColor = true;
             this.btnTallenna.Click += new System.EventHandler(this.btnTallenna_Click);
             // 
+            // lvVuorot
+            // 
+            this.lvVuorot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Alkaa,
+            this.Loppuu});
+            this.lvVuorot.HideSelection = false;
+            this.lvVuorot.Location = new System.Drawing.Point(377, 21);
+            this.lvVuorot.Name = "lvVuorot";
+            this.lvVuorot.Size = new System.Drawing.Size(399, 263);
+            this.lvVuorot.TabIndex = 39;
+            this.lvVuorot.UseCompatibleStateImageBehavior = false;
+            this.lvVuorot.View = System.Windows.Forms.View.Details;
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // Alkaa
+            // 
+            this.Alkaa.Text = "Alkaa";
+            this.Alkaa.Width = 150;
+            // 
+            // Loppuu
+            // 
+            this.Loppuu.Text = "Loppuu";
+            this.Loppuu.Width = 150;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1771,7 +1783,6 @@ namespace Projekti1
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMaara)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarpeet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTyovuorot)).EndInit();
             this.tabKiinnitys.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1905,7 +1916,6 @@ namespace Projekti1
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnMuokkaaVuoroa;
         private System.Windows.Forms.Button btnTallennaVuoro;
-        private System.Windows.Forms.DataGridView dgvTyovuorot;
         private System.Windows.Forms.DateTimePicker dtpPvmLoppuu;
         private System.Windows.Forms.DateTimePicker dtpPvmAlkaa;
         private System.Windows.Forms.Label label4;
@@ -1929,6 +1939,10 @@ namespace Projekti1
         private System.Windows.Forms.Button btnTtVuorolista;
         private System.Windows.Forms.Button btnTyovuorot;
         private System.Windows.Forms.Button btnKiinnitykset;
+        private System.Windows.Forms.ListView lvVuorot;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Alkaa;
+        private System.Windows.Forms.ColumnHeader Loppuu;
     }
 }
 

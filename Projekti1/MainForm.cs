@@ -49,7 +49,7 @@ namespace Projekti1
             PopulateTarveListView();
 
             PopulatedTarpeetDGV();
-            PopulatedTyovuorotDGV();
+            PopulateTyovuorotListView();
             PopulatedTyotehtavaDGV();
             PopulateTyonimikkeetCombobox();
 
@@ -127,6 +127,8 @@ namespace Projekti1
             }
 
         }
+
+       
 
         public void PopulateKiinnitykset(int tyovuoroID, int tehtavaID)
         {
@@ -452,12 +454,6 @@ namespace Projekti1
             //dgwTehtavat.Columns[6].Visible = false; // Piilotetaan nimikkeen ID 
         }
 
-        private void PopulatedTyovuorotDGV()
-        {
-            BindingSource source = new BindingSource();
-            source.DataSource = tyovuorot;
-            dgvTyovuorot.DataSource = source;
-        }
 
         private void PopulatedTarpeetDGV()
         {
@@ -660,7 +656,7 @@ namespace Projekti1
             }
         }
 
-       
+
 
         //private void FillFieldsTyovuoro()
         //{
@@ -670,6 +666,21 @@ namespace Projekti1
         //        //tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
         //    }
         //}
+
+        private void PopulateTyovuorotListView()
+        {
+            lvVuorot.Items.Clear();
+
+            foreach (Tyovuoro item in tyovuorot)
+            {
+                lvVuorot.Items.Add(new ListViewItem(new string[]{
+                    item.Idtyovuoro.ToString(),
+                    item.Alkaa.ToString(),
+                    item.Loppuu.ToString()
+                }));
+
+            }
+        }
 
         private void btnTallennaVuoro_Click(object sender, EventArgs e)
         {
