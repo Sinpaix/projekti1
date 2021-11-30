@@ -556,14 +556,9 @@ namespace Projekti1
             else
             {
 
-                //TEHTÄVÄN MUOKKAAMINEN EI TOIMI VIELÄ
+                //TEHTÄVÄN MUOKKAAMINEN TÄHÄN??
 
-                // muokataan olemassa olevaa tehtävää
-                //tyotehtava.Tehtava = this.tbTehtava.Text;
-                //tyotehtava.Paikka = this.comboPaikka.Text;
-                //tyotehtava.Tyonimike_idnimike = int.Parse(this.lblidnimike.Text);
-
-                lblOhjeKentta.Text = "Tehtävää muokattu: ";
+                
 
             }
            
@@ -606,12 +601,13 @@ namespace Projekti1
             return tyotehtava;
         }
 
+
         private void btnPoista_Click(object sender, EventArgs e)
         {
             DeleteTyotehtava();
         }
 
-        private void btnMuokkaa_Click(object sender, EventArgs e)
+        private void dgvTehtavat_SelectionChanged(object sender, EventArgs e)
         {
             if (this.dgvTehtavat.SelectedRows.Count > 0)
             {
@@ -619,16 +615,28 @@ namespace Projekti1
                 string paikka = dgvTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
                 string nimike = dgvTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
 
-                Tyotehtava selectedTyotehtava = new Tyotehtava();
-                selectedTyotehtava.Tehtava = tehtava;
-                selectedTyotehtava.Paikka = paikka;
-                selectedTyotehtava.Tyonimike_idnimike = int.Parse(nimike);
+                Tyotehtava tyotehtava = new Tyotehtava();
+                tyotehtava.Tehtava = tehtava;
+                tyotehtava.Paikka = paikka;
+                tyotehtava.Tyonimike_idnimike = int.Parse(nimike);
 
                 tbTehtava.Text = tehtava;
                 comboPaikka.Text = paikka;
                 lblidnimike.Text = nimike;
-
             }
+        }
+
+        private void btnMuokkaa_Click(object sender, EventArgs e)
+        {
+            // muokataan olemassa olevaa tehtävää
+            tyotehtava.Tehtava = tbTehtava.Text;
+            tyotehtava.Paikka = comboPaikka.Text;
+            tyotehtava.Tyonimike_idnimike = int.Parse(lblidnimike.Text);
+
+            contr.EditTyotehtava(tyotehtava);
+
+            lblOhjeKentta.Text = "Tehtävää muokattu: ";
+
         }
 
         private void btnTyhjennaKentatTehtava_Click_1(object sender, EventArgs e)

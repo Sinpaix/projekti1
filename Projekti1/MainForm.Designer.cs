@@ -1647,6 +1647,7 @@ namespace Projekti1
             this.dgvTehtavat.RowTemplate.Height = 24;
             this.dgvTehtavat.Size = new System.Drawing.Size(835, 576);
             this.dgvTehtavat.TabIndex = 35;
+            this.dgvTehtavat.SelectionChanged += new System.EventHandler(this.dgvTehtavat_SelectionChanged);
             // 
             // btnTyhjennaKentatTehtava
             // 
