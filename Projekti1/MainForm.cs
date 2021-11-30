@@ -55,6 +55,7 @@ namespace Projekti1
 
             PopulateTyontekijaDGW();
             PopulateTyonimikeCombobox();
+            PopulateTyotehtavaComboBox();
 
             //Syötetyt tiedot
             //FillFieldsTehtava();
@@ -666,6 +667,15 @@ namespace Projekti1
         //        //tyovuoro.Loppuu = DateTime.Parse(this.dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
         //    }
         //}
+
+        private void PopulateTyotehtavaComboBox()
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = tyotehtavat;
+            comboTehtavat.DataSource = source;
+            comboTehtavat.DisplayMember = "tehtava";
+            comboTehtavat.ValueMember = "idtyotehtava";
+        }
 
         private void PopulateTyovuorotListView()
         {
