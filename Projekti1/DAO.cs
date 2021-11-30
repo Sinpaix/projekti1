@@ -266,6 +266,40 @@ namespace Projekti1
             return count;
         }
 
+        //Työnimikkeen poisto
+        public static int DeleteTyonimike(Tyonimike p)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+
+                string sql = "DELETE FROM tyonimike WHERE idnimike = ?id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.Parameters.Add("?id", MySqlDbType.Int64).Value = p.Idnimike;
+
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("Työnimike id:llä {0} poistettu", p.Idnimike);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
+
         // työntekijän lisäys
         public static int InsertTyontekija(Tyontekija tyontekija)
         {

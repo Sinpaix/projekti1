@@ -56,6 +56,7 @@ namespace Projekti1
             PopulateTyontekijaDGW();
             PopulateTyonimikeCombobox();
             PopulateTyotehtavaComboBox();
+            PopulateTyonimikeListView();
 
             //Syötetyt tiedot
             //FillFieldsTehtava();
@@ -334,6 +335,20 @@ namespace Projekti1
         /// </summary>
         /// 
 
+        private void PopulateTyonimikeListView()
+        {
+            lvNimikkeet.Items.Clear();
+
+            foreach (Tyonimike item in tyonimikkeet)
+            {
+                lvNimikkeet.Items.Add(new ListViewItem(new string[]{
+                    item.Idnimike.ToString(),
+                    item.Nimike.ToString(),
+                }));
+
+            }
+        }
+
         private void btnLisaaNimike_Click(object sender, EventArgs e)
         {
             Tyonimike tyonimike = new Tyonimike();
@@ -345,6 +360,13 @@ namespace Projekti1
             PopulateTyonimikeCombobox();
             PopulateTyonimikkeetCombobox();
         }
+
+        private void btnPoistaNimike_Click(object sender, EventArgs e)
+        {
+            //nimikkeen poiston koodi
+
+        }
+
 
         private void PopulateTyontekijaDGW()
         {
@@ -768,16 +790,12 @@ namespace Projekti1
             return tyovuoro;
         }
 
-        private void Testi()
-        {
 
-            tbvuoroalkaa.Text = dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text;
-            tbvuoroloppuu.Text = dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text;
-        }
-
+        //tämä poistetaan, kun työvuorojen vieminen saadaan toimimaan
         private void dtpPvmAlkaa_ValueChanged(object sender, EventArgs e)
         {
-            Testi();
+            tbvuoroalkaa.Text = dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text;
+            tbvuoroloppuu.Text = dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text;
         }
 
 
@@ -822,6 +840,6 @@ namespace Projekti1
             tabControl.SelectTab(6);
         }
 
-        
+       
     }
     }

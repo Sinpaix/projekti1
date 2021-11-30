@@ -164,6 +164,10 @@ namespace Projekti1
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnLisaaNimike = new System.Windows.Forms.Button();
+            this.btnPoistaNimike = new System.Windows.Forms.Button();
+            this.lvNimikkeet = new System.Windows.Forms.ListView();
+            this.IdNimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Työnimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl.SuspendLayout();
             this.tabEtusivu.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -1781,12 +1785,14 @@ namespace Projekti1
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.lvNimikkeet);
+            this.groupBox6.Controls.Add(this.btnPoistaNimike);
             this.groupBox6.Controls.Add(this.btnLisaaNimike);
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.tbTyonimike);
-            this.groupBox6.Location = new System.Drawing.Point(1275, 18);
+            this.groupBox6.Location = new System.Drawing.Point(1275, 13);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(317, 177);
+            this.groupBox6.Size = new System.Drawing.Size(317, 642);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Lisää työnimike";
@@ -1802,13 +1808,44 @@ namespace Projekti1
             // 
             // btnLisaaNimike
             // 
-            this.btnLisaaNimike.Location = new System.Drawing.Point(9, 75);
+            this.btnLisaaNimike.Location = new System.Drawing.Point(9, 76);
             this.btnLisaaNimike.Name = "btnLisaaNimike";
             this.btnLisaaNimike.Size = new System.Drawing.Size(75, 23);
             this.btnLisaaNimike.TabIndex = 10;
             this.btnLisaaNimike.Text = "Lisää";
             this.btnLisaaNimike.UseVisualStyleBackColor = true;
             this.btnLisaaNimike.Click += new System.EventHandler(this.btnLisaaNimike_Click);
+            // 
+            // btnPoistaNimike
+            // 
+            this.btnPoistaNimike.Location = new System.Drawing.Point(90, 76);
+            this.btnPoistaNimike.Name = "btnPoistaNimike";
+            this.btnPoistaNimike.Size = new System.Drawing.Size(75, 23);
+            this.btnPoistaNimike.TabIndex = 10;
+            this.btnPoistaNimike.Text = "Poista";
+            this.btnPoistaNimike.UseVisualStyleBackColor = true;
+            this.btnPoistaNimike.Click += new System.EventHandler(this.btnPoistaNimike_Click);
+            // 
+            // lvNimikkeet
+            // 
+            this.lvNimikkeet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IdNimike,
+            this.Työnimike});
+            this.lvNimikkeet.HideSelection = false;
+            this.lvNimikkeet.Location = new System.Drawing.Point(7, 188);
+            this.lvNimikkeet.Name = "lvNimikkeet";
+            this.lvNimikkeet.Size = new System.Drawing.Size(303, 448);
+            this.lvNimikkeet.TabIndex = 41;
+            this.lvNimikkeet.UseCompatibleStateImageBehavior = false;
+            this.lvNimikkeet.View = System.Windows.Forms.View.Details;
+            // 
+            // IdNimike
+            // 
+            this.IdNimike.Text = "ID";
+            // 
+            // Työnimike
+            // 
+            this.Työnimike.Text = "Nimike";
             // 
             // MainForm
             // 
@@ -1997,6 +2034,10 @@ namespace Projekti1
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox tbTyonimike;
         private System.Windows.Forms.Button btnLisaaNimike;
+        private System.Windows.Forms.ListView lvNimikkeet;
+        private System.Windows.Forms.Button btnPoistaNimike;
+        private System.Windows.Forms.ColumnHeader IdNimike;
+        private System.Windows.Forms.ColumnHeader Työnimike;
     }
 }
 
