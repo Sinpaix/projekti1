@@ -47,7 +47,7 @@ namespace Projekti1
             }
             return tyontekijat;
         }
-    
+
 
         // Työvuorotarpeiden haku tietokannasta
         public static List<Tarve> GetTarpeet()
@@ -468,7 +468,7 @@ namespace Projekti1
                 cmd.Parameters.Add("?tehtava", MySqlDbType.VarChar).Value = tyotehtava.Tehtava;
                 cmd.Parameters.Add("?paikka", MySqlDbType.VarChar).Value = tyotehtava.Paikka;
                 cmd.Parameters.Add("?Tyonimike_idnimike", MySqlDbType.VarChar).Value = tyotehtava.Tyonimike_idnimike;
-                
+
 
                 count = cmd.ExecuteNonQuery();
                 if (count > 0)
