@@ -20,6 +20,7 @@ namespace Projekti1
         private List<Kiinnitys> kiinnitykset = new List<Kiinnitys>();
         private List<Tyonimike> tyonimikkeet = new List<Tyonimike>();
 
+        private Tyonimike tyonimike;
         private Tyotehtava tyotehtava;
         private Tyovuoro tyovuoro;
         private Tarve tarve;
@@ -364,8 +365,21 @@ namespace Projekti1
 
         private void btnPoistaNimike_Click(object sender, EventArgs e)
         {
-           // nimikkeen poisto koodi
+            if (lvNimikkeet.SelectedIndices.Count > 0)
+            {
 
+                int valittuIndeksi = lvNimikkeet.SelectedIndices[0];
+                Tyonimike a = tyonimikkeet[valittuIndeksi];
+
+                contr.RemoveTyonimike(a);
+
+
+                tyonimikkeet.RemoveAt(valittuIndeksi);
+                PopulateTyonimikeCombobox();
+                PopulateTyonimikkeetCombobox();
+                PopulateTyonimikeListView();
+
+            }
         }
 
 

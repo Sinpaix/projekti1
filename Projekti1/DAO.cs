@@ -11,8 +11,8 @@ namespace Projekti1
     class DAO
     {
         static MySqlConnection conn = null;
-        static string myConnectionString = "server=127.0.0.1;uid=root;" +
-             "pwd=root;database=sairaalakanta";
+        static string myConnectionString = "server=127.0.0.1;uid=ryhmä9;" +
+             "pwd=ryhmä9;database=sairaalakanta";
 
         // Työntekijöiden hakeminen tietokannasta
         public static List<Tyontekija> GetTyontekijat()

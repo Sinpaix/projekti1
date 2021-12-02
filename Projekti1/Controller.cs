@@ -82,6 +82,10 @@ namespace Projekti1
             return DAO.InsertTyonimike(tn);
         }
 
+        public int RemoveTyonimike(Tyonimike a)
+        {
+            return DAO.DeleteTyonimike(a);
+        }
 
         //Tyotehtävät
         public List<Tyotehtava> LoadTyotehtavat()
