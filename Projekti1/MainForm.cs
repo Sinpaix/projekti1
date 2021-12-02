@@ -359,11 +359,12 @@ namespace Projekti1
             contr.AddTyonimike(tyonimike);
             PopulateTyonimikeCombobox();
             PopulateTyonimikkeetCombobox();
+            PopulateTyonimikeListView();
         }
 
         private void btnPoistaNimike_Click(object sender, EventArgs e)
         {
-            //nimikkeen poiston koodi
+           // nimikkeen poisto koodi
 
         }
 
