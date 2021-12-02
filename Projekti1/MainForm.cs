@@ -686,11 +686,13 @@ namespace Projekti1
             // muokataan olemassa olevaa tehtävää
             tyotehtava.Tehtava = tbTehtava.Text;
             tyotehtava.Paikka = comboPaikka.Text;
+            tyotehtava.Nimike = comboNimike.Text;
             tyotehtava.Tyonimike_idnimike = int.Parse(lblidnimike.Text);
 
             contr.EditTyotehtava(tyotehtava);
-            PopulatedTyotehtavaDGV();
             contr.LoadTyonimikkeet();
+            PopulatedTyotehtavaDGV();
+            
 
             lblOhjeKentta.Text = "Tehtävää muokattu: ";
 
@@ -862,6 +864,5 @@ namespace Projekti1
             tabControl.SelectTab(6);
         }
 
-       
     }
     }

@@ -210,7 +210,7 @@ namespace Projekti1
             this.tabControl.Controls.Add(this.tabTyöntekijät);
             this.tabControl.Controls.Add(this.tabTehtävät);
             this.tabControl.Location = new System.Drawing.Point(5, 0);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(3185, 1659);
@@ -331,7 +331,7 @@ namespace Projekti1
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(39, 49);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(316, 54);
+            this.label24.Size = new System.Drawing.Size(262, 44);
             this.label24.TabIndex = 1;
             this.label24.Text = "SairaalaSofta";
             // 
@@ -341,9 +341,9 @@ namespace Projekti1
             this.tabVuorot.Controls.Add(this.tbvuoroalkaa);
             this.tabVuorot.Controls.Add(this.panel2);
             this.tabVuorot.Location = new System.Drawing.Point(4, 25);
-            this.tabVuorot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabVuorot.Margin = new System.Windows.Forms.Padding(4);
             this.tabVuorot.Name = "tabVuorot";
-            this.tabVuorot.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabVuorot.Padding = new System.Windows.Forms.Padding(4);
             this.tabVuorot.Size = new System.Drawing.Size(3177, 1630);
             this.tabVuorot.TabIndex = 1;
             this.tabVuorot.Text = "Työvuorojen hallinta";
@@ -352,7 +352,7 @@ namespace Projekti1
             // tbvuoroloppuu
             // 
             this.tbvuoroloppuu.Location = new System.Drawing.Point(345, 799);
-            this.tbvuoroloppuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbvuoroloppuu.Margin = new System.Windows.Forms.Padding(4);
             this.tbvuoroloppuu.Name = "tbvuoroloppuu";
             this.tbvuoroloppuu.Size = new System.Drawing.Size(324, 22);
             this.tbvuoroloppuu.TabIndex = 1;
@@ -360,7 +360,7 @@ namespace Projekti1
             // tbvuoroalkaa
             // 
             this.tbvuoroalkaa.Location = new System.Drawing.Point(12, 799);
-            this.tbvuoroalkaa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbvuoroalkaa.Margin = new System.Windows.Forms.Padding(4);
             this.tbvuoroalkaa.Name = "tbvuoroalkaa";
             this.tbvuoroalkaa.Size = new System.Drawing.Size(324, 22);
             this.tbvuoroalkaa.TabIndex = 1;
@@ -407,7 +407,7 @@ namespace Projekti1
             this.listviewTyoVuorot.FullRowSelect = true;
             this.listviewTyoVuorot.HideSelection = false;
             this.listviewTyoVuorot.Location = new System.Drawing.Point(503, 26);
-            this.listviewTyoVuorot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listviewTyoVuorot.Margin = new System.Windows.Forms.Padding(4);
             this.listviewTyoVuorot.Name = "listviewTyoVuorot";
             this.listviewTyoVuorot.Size = new System.Drawing.Size(531, 323);
             this.listviewTyoVuorot.TabIndex = 39;
@@ -434,7 +434,7 @@ namespace Projekti1
             this.tbTyovuoroValinta.Location = new System.Drawing.Point(177, 431);
             this.tbTyovuoroValinta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbTyovuoroValinta.Name = "tbTyovuoroValinta";
-            this.tbTyovuoroValinta.Size = new System.Drawing.Size(267, 26);
+            this.tbTyovuoroValinta.Size = new System.Drawing.Size(267, 23);
             this.tbTyovuoroValinta.TabIndex = 38;
             this.tbTyovuoroValinta.Text = "Valitse työvuorolistalta vuoro";
             // 
@@ -444,15 +444,15 @@ namespace Projekti1
             this.comboTehtavat.Location = new System.Drawing.Point(177, 491);
             this.comboTehtavat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboTehtavat.Name = "comboTehtavat";
-            this.comboTehtavat.Size = new System.Drawing.Size(268, 28);
+            this.comboTehtavat.Size = new System.Drawing.Size(268, 24);
             this.comboTehtavat.TabIndex = 37;
             // 
             // numMaara
             // 
             this.numMaara.Location = new System.Drawing.Point(177, 545);
-            this.numMaara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numMaara.Margin = new System.Windows.Forms.Padding(4);
             this.numMaara.Name = "numMaara";
-            this.numMaara.Size = new System.Drawing.Size(84, 26);
+            this.numMaara.Size = new System.Drawing.Size(84, 23);
             this.numMaara.TabIndex = 26;
             // 
             // label7
@@ -461,7 +461,7 @@ namespace Projekti1
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(41, 548);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 20);
+            this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 25;
             this.label7.Text = "Määrä";
             // 
@@ -586,9 +586,9 @@ namespace Projekti1
             "05:30",
             "05:45"});
             this.comboLoppuu.Location = new System.Drawing.Point(177, 198);
-            this.comboLoppuu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboLoppuu.Margin = new System.Windows.Forms.Padding(4);
             this.comboLoppuu.Name = "comboLoppuu";
-            this.comboLoppuu.Size = new System.Drawing.Size(87, 28);
+            this.comboLoppuu.Size = new System.Drawing.Size(87, 24);
             this.comboLoppuu.TabIndex = 21;
             this.comboLoppuu.SelectedValueChanged += new System.EventHandler(this.dtpPvmAlkaa_ValueChanged);
             // 
@@ -693,9 +693,9 @@ namespace Projekti1
             "05:30",
             "05:45"});
             this.comboAlkaa.Location = new System.Drawing.Point(177, 116);
-            this.comboAlkaa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboAlkaa.Margin = new System.Windows.Forms.Padding(4);
             this.comboAlkaa.Name = "comboAlkaa";
-            this.comboAlkaa.Size = new System.Drawing.Size(87, 28);
+            this.comboAlkaa.Size = new System.Drawing.Size(87, 24);
             this.comboAlkaa.TabIndex = 21;
             this.comboAlkaa.SelectedValueChanged += new System.EventHandler(this.dtpPvmAlkaa_ValueChanged);
             // 
@@ -785,7 +785,7 @@ namespace Projekti1
             this.dtpPvmLoppuu.Location = new System.Drawing.Point(177, 164);
             this.dtpPvmLoppuu.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.dtpPvmLoppuu.Name = "dtpPvmLoppuu";
-            this.dtpPvmLoppuu.Size = new System.Drawing.Size(268, 26);
+            this.dtpPvmLoppuu.Size = new System.Drawing.Size(268, 23);
             this.dtpPvmLoppuu.TabIndex = 4;
             this.dtpPvmLoppuu.ValueChanged += new System.EventHandler(this.dtpPvmAlkaa_ValueChanged);
             // 
@@ -795,7 +795,7 @@ namespace Projekti1
             this.dtpPvmAlkaa.Location = new System.Drawing.Point(177, 79);
             this.dtpPvmAlkaa.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.dtpPvmAlkaa.Name = "dtpPvmAlkaa";
-            this.dtpPvmAlkaa.Size = new System.Drawing.Size(268, 26);
+            this.dtpPvmAlkaa.Size = new System.Drawing.Size(268, 23);
             this.dtpPvmAlkaa.TabIndex = 4;
             this.dtpPvmAlkaa.ValueChanged += new System.EventHandler(this.dtpPvmAlkaa_ValueChanged);
             // 
@@ -805,7 +805,7 @@ namespace Projekti1
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(41, 167);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 20);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Loppuu";
             // 
@@ -815,7 +815,7 @@ namespace Projekti1
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(41, 491);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(68, 20);
+            this.label23.Size = new System.Drawing.Size(60, 17);
             this.label23.TabIndex = 2;
             this.label23.Text = "Tehtävä";
             // 
@@ -825,7 +825,7 @@ namespace Projekti1
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(41, 437);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(77, 20);
+            this.label22.Size = new System.Drawing.Size(68, 17);
             this.label22.TabIndex = 2;
             this.label22.Text = "Työvuoro";
             // 
@@ -835,7 +835,7 @@ namespace Projekti1
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(41, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.Size = new System.Drawing.Size(43, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Alkaa";
             // 
@@ -845,7 +845,7 @@ namespace Projekti1
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(41, 388);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(118, 25);
+            this.label21.Size = new System.Drawing.Size(97, 20);
             this.label21.TabIndex = 0;
             this.label21.Text = "Lisää tarve";
             // 
@@ -855,7 +855,7 @@ namespace Projekti1
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(41, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 25);
+            this.label1.Size = new System.Drawing.Size(125, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lisää työvuoro";
             // 
@@ -1168,9 +1168,9 @@ namespace Projekti1
             // 
             this.tabTyöntekijänVuorot.Controls.Add(this.panel3);
             this.tabTyöntekijänVuorot.Location = new System.Drawing.Point(4, 25);
-            this.tabTyöntekijänVuorot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTyöntekijänVuorot.Margin = new System.Windows.Forms.Padding(4);
             this.tabTyöntekijänVuorot.Name = "tabTyöntekijänVuorot";
-            this.tabTyöntekijänVuorot.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTyöntekijänVuorot.Padding = new System.Windows.Forms.Padding(4);
             this.tabTyöntekijänVuorot.Size = new System.Drawing.Size(3177, 1630);
             this.tabTyöntekijänVuorot.TabIndex = 2;
             this.tabTyöntekijänVuorot.Text = "Työntekijän vuorolista";
@@ -1207,7 +1207,7 @@ namespace Projekti1
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(307, 220);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 17);
+            this.label11.Size = new System.Drawing.Size(12, 16);
             this.label11.TabIndex = 5;
             this.label11.Text = "-";
             // 
@@ -1233,7 +1233,7 @@ namespace Projekti1
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(35, 175);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(173, 17);
+            this.label10.Size = new System.Drawing.Size(136, 13);
             this.label10.TabIndex = 2;
             this.label10.Text = "Näytä työvuorot ajalta:";
             // 
@@ -1253,7 +1253,7 @@ namespace Projekti1
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(31, 44);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 17);
+            this.label9.Size = new System.Drawing.Size(66, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Työntekijä";
             // 
@@ -1261,9 +1261,9 @@ namespace Projekti1
             // 
             this.tabTyövuorolista.Controls.Add(this.panel4);
             this.tabTyövuorolista.Location = new System.Drawing.Point(4, 25);
-            this.tabTyövuorolista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTyövuorolista.Margin = new System.Windows.Forms.Padding(4);
             this.tabTyövuorolista.Name = "tabTyövuorolista";
-            this.tabTyövuorolista.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTyövuorolista.Padding = new System.Windows.Forms.Padding(4);
             this.tabTyövuorolista.Size = new System.Drawing.Size(3177, 1630);
             this.tabTyövuorolista.TabIndex = 3;
             this.tabTyövuorolista.Text = "Työvuorolista";
@@ -1298,7 +1298,7 @@ namespace Projekti1
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(299, 71);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(13, 17);
+            this.label13.Size = new System.Drawing.Size(12, 16);
             this.label13.TabIndex = 3;
             this.label13.Text = "-";
             // 
@@ -1324,7 +1324,7 @@ namespace Projekti1
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(23, 20);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(198, 17);
+            this.label12.Size = new System.Drawing.Size(155, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "Näytä työvuorolista ajalta:";
             // 
@@ -1335,9 +1335,9 @@ namespace Projekti1
             this.tabTyöntekijät.Controls.Add(this.groupBox5);
             this.tabTyöntekijät.Controls.Add(this.groupBox3);
             this.tabTyöntekijät.Location = new System.Drawing.Point(4, 25);
-            this.tabTyöntekijät.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTyöntekijät.Margin = new System.Windows.Forms.Padding(4);
             this.tabTyöntekijät.Name = "tabTyöntekijät";
-            this.tabTyöntekijät.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTyöntekijät.Padding = new System.Windows.Forms.Padding(4);
             this.tabTyöntekijät.Size = new System.Drawing.Size(3177, 1630);
             this.tabTyöntekijät.TabIndex = 0;
             this.tabTyöntekijät.Text = "Työntekijähallinta";
@@ -1351,9 +1351,9 @@ namespace Projekti1
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.tbTyonimike);
             this.groupBox6.Location = new System.Drawing.Point(1700, 16);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox6.Size = new System.Drawing.Size(423, 790);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
@@ -1367,7 +1367,7 @@ namespace Projekti1
             this.lvNimikkeet.FullRowSelect = true;
             this.lvNimikkeet.HideSelection = false;
             this.lvNimikkeet.Location = new System.Drawing.Point(9, 231);
-            this.lvNimikkeet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvNimikkeet.Margin = new System.Windows.Forms.Padding(4);
             this.lvNimikkeet.Name = "lvNimikkeet";
             this.lvNimikkeet.Size = new System.Drawing.Size(403, 550);
             this.lvNimikkeet.TabIndex = 41;
@@ -1386,7 +1386,7 @@ namespace Projekti1
             // btnPoistaNimike
             // 
             this.btnPoistaNimike.Location = new System.Drawing.Point(120, 94);
-            this.btnPoistaNimike.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPoistaNimike.Margin = new System.Windows.Forms.Padding(4);
             this.btnPoistaNimike.Name = "btnPoistaNimike";
             this.btnPoistaNimike.Size = new System.Drawing.Size(100, 28);
             this.btnPoistaNimike.TabIndex = 10;
@@ -1397,7 +1397,7 @@ namespace Projekti1
             // btnLisaaNimike
             // 
             this.btnLisaaNimike.Location = new System.Drawing.Point(12, 94);
-            this.btnLisaaNimike.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLisaaNimike.Margin = new System.Windows.Forms.Padding(4);
             this.btnLisaaNimike.Name = "btnLisaaNimike";
             this.btnLisaaNimike.Size = new System.Drawing.Size(100, 28);
             this.btnLisaaNimike.TabIndex = 10;
@@ -1411,14 +1411,14 @@ namespace Projekti1
             this.label25.Location = new System.Drawing.Point(8, 37);
             this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(72, 17);
+            this.label25.Size = new System.Drawing.Size(71, 16);
             this.label25.TabIndex = 9;
             this.label25.Text = "Työnimike";
             // 
             // tbTyonimike
             // 
             this.tbTyonimike.Location = new System.Drawing.Point(105, 38);
-            this.tbTyonimike.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbTyonimike.Margin = new System.Windows.Forms.Padding(4);
             this.tbTyonimike.Name = "tbTyonimike";
             this.tbTyonimike.Size = new System.Drawing.Size(180, 22);
             this.tbTyonimike.TabIndex = 8;
@@ -1486,7 +1486,7 @@ namespace Projekti1
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(477, 121);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(59, 17);
+            this.label17.Size = new System.Drawing.Size(58, 16);
             this.label17.TabIndex = 19;
             this.label17.Text = "Idnimike";
             // 
@@ -1495,7 +1495,7 @@ namespace Projekti1
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(57, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 17);
+            this.label2.Size = new System.Drawing.Size(21, 16);
             this.label2.TabIndex = 23;
             this.label2.Text = "ID";
             // 
@@ -1514,7 +1514,7 @@ namespace Projekti1
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(57, 123);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(65, 17);
+            this.label16.Size = new System.Drawing.Size(62, 16);
             this.label16.TabIndex = 18;
             this.label16.Text = "Sukunimi";
             // 
@@ -1539,7 +1539,7 @@ namespace Projekti1
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(479, 79);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(50, 17);
+            this.label18.Size = new System.Drawing.Size(50, 16);
             this.label18.TabIndex = 16;
             this.label18.Text = "Nimike";
             // 
@@ -1548,7 +1548,7 @@ namespace Projekti1
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(57, 87);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(54, 17);
+            this.label15.Size = new System.Drawing.Size(51, 16);
             this.label15.TabIndex = 17;
             this.label15.Text = "Etunimi";
             // 
@@ -1557,7 +1557,7 @@ namespace Projekti1
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(477, 43);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 17);
+            this.label19.Size = new System.Drawing.Size(42, 16);
             this.label19.TabIndex = 15;
             this.label19.Text = "Email";
             // 
@@ -1574,7 +1574,7 @@ namespace Projekti1
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(57, 161);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(55, 17);
+            this.label14.Size = new System.Drawing.Size(52, 16);
             this.label14.TabIndex = 19;
             this.label14.Text = "Puhelin";
             // 
@@ -1697,7 +1697,7 @@ namespace Projekti1
             this.lblOhjeKentta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOhjeKentta.Location = new System.Drawing.Point(495, 740);
             this.lblOhjeKentta.Name = "lblOhjeKentta";
-            this.lblOhjeKentta.Size = new System.Drawing.Size(100, 25);
+            this.lblOhjeKentta.Size = new System.Drawing.Size(84, 20);
             this.lblOhjeKentta.TabIndex = 37;
             this.lblOhjeKentta.Text = "Info label";
             // 
@@ -1706,7 +1706,7 @@ namespace Projekti1
             this.lblidnimike.AutoSize = true;
             this.lblidnimike.Location = new System.Drawing.Point(20, 198);
             this.lblidnimike.Name = "lblidnimike";
-            this.lblidnimike.Size = new System.Drawing.Size(63, 17);
+            this.lblidnimike.Size = new System.Drawing.Size(63, 16);
             this.lblidnimike.TabIndex = 36;
             this.lblidnimike.Text = "NimikeID";
             this.lblidnimike.Visible = false;
@@ -1716,7 +1716,6 @@ namespace Projekti1
             this.dgvTehtavat.AllowUserToAddRows = false;
             this.dgvTehtavat.AllowUserToDeleteRows = false;
             this.dgvTehtavat.AllowUserToOrderColumns = true;
-            this.dgvTehtavat.AllowUserToResizeColumns = false;
             this.dgvTehtavat.AllowUserToResizeRows = false;
             this.dgvTehtavat.BackgroundColor = System.Drawing.Color.White;
             this.dgvTehtavat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1747,7 +1746,7 @@ namespace Projekti1
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(19, 15);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(170, 25);
+            this.label20.Size = new System.Drawing.Size(141, 20);
             this.label20.TabIndex = 23;
             this.label20.Text = "Lisää työtehtävä";
             // 
@@ -1755,7 +1754,7 @@ namespace Projekti1
             // 
             this.comboNimike.FormattingEnabled = true;
             this.comboNimike.Location = new System.Drawing.Point(156, 177);
-            this.comboNimike.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboNimike.Margin = new System.Windows.Forms.Padding(4);
             this.comboNimike.Name = "comboNimike";
             this.comboNimike.Size = new System.Drawing.Size(268, 24);
             this.comboNimike.TabIndex = 32;
@@ -1767,7 +1766,7 @@ namespace Projekti1
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(20, 122);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 20);
+            this.label5.Size = new System.Drawing.Size(50, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "Paikka";
             // 
@@ -1778,7 +1777,7 @@ namespace Projekti1
             "Osasto A",
             "Osasto B"});
             this.comboPaikka.Location = new System.Drawing.Point(156, 117);
-            this.comboPaikka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboPaikka.Margin = new System.Windows.Forms.Padding(4);
             this.comboPaikka.Name = "comboPaikka";
             this.comboPaikka.Size = new System.Drawing.Size(267, 24);
             this.comboPaikka.TabIndex = 33;
@@ -1789,7 +1788,7 @@ namespace Projekti1
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(20, 181);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 20);
+            this.label8.Size = new System.Drawing.Size(50, 17);
             this.label8.TabIndex = 24;
             this.label8.Text = "Nimike";
             // 
@@ -1810,7 +1809,7 @@ namespace Projekti1
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(20, 60);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 20);
+            this.label6.Size = new System.Drawing.Size(60, 17);
             this.label6.TabIndex = 26;
             this.label6.Text = "Tehtävä";
             // 
@@ -1831,7 +1830,7 @@ namespace Projekti1
             this.tbTehtava.Location = new System.Drawing.Point(156, 54);
             this.tbTehtava.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.tbTehtava.Name = "tbTehtava";
-            this.tbTehtava.Size = new System.Drawing.Size(268, 26);
+            this.tbTehtava.Size = new System.Drawing.Size(268, 23);
             this.tbTehtava.TabIndex = 28;
             // 
             // btnTallenna
@@ -1851,7 +1850,7 @@ namespace Projekti1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.tabControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Työvuorosuunnittelu";
