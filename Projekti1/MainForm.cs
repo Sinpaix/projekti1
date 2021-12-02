@@ -665,19 +665,20 @@ namespace Projekti1
         {
             if (this.dgvTehtavat.SelectedRows.Count > 0)
             {
-                string tehtava = dgvTehtavat.SelectedRows[0].Cells[1].Value + string.Empty;
-                string paikka = dgvTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
-                string nimike = dgvTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
+                    //string tehtava = dgvTehtavat.SelectedRows[0].Cells[1].Value + string.Empty;
+                    //string paikka = dgvTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
+                    //string nimike = dgvTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
 
-                Tyotehtava tyotehtava = new Tyotehtava();
-                tyotehtava.Tehtava = tehtava;
-                tyotehtava.Paikka = paikka;
-                tyotehtava.Tyonimike_idnimike = int.Parse(nimike);
+                    //Tyotehtava tyotehtava = new Tyotehtava();
+                    //tyotehtava.Tehtava = tehtava;
+                    //tyotehtava.Paikka = paikka;
+                    //tyotehtava.Tyonimike_idnimike = int.Parse(nimike);
 
-                tbTehtava.Text = tehtava;
-                comboPaikka.Text = paikka;
-                lblidnimike.Text = nimike;
-            }
+                    tyotehtava = tyotehtavat.ElementAt(dgvTehtavat.CurrentRow.Index);
+                    tbTehtava.Text = tyotehtava.Tehtava;
+                    comboPaikka.Text = tyotehtava.Paikka;
+                    comboNimike.Text = tyotehtava.Nimike;
+                }
         }
 
         private void btnMuokkaa_Click(object sender, EventArgs e)
@@ -688,6 +689,8 @@ namespace Projekti1
             tyotehtava.Tyonimike_idnimike = int.Parse(lblidnimike.Text);
 
             contr.EditTyotehtava(tyotehtava);
+            PopulatedTyotehtavaDGV();
+            contr.LoadTyonimikkeet();
 
             lblOhjeKentta.Text = "Tehtävää muokattu: ";
 
