@@ -464,6 +464,7 @@ namespace Projekti1
             emailtb.Text = tyontekija.Email;
             nimikecmb.Text = tyontekija.Nimike;
             idnimiketb.Text = tyontekija.Tyonimike_idnimike.ToString();
+
         }
 
         private void tyhjennabtn_Click(object sender, EventArgs e)
@@ -481,6 +482,7 @@ namespace Projekti1
         {
             Tyontekija tyontekija = new Tyontekija();
 
+            tyontekija.Idtyontekija = int.Parse(idtyontekijatb.Text);
             tyontekija.Etunimi = etunimitb.Text;
             tyontekija.Sukunimi = sukunimitb.Text;
             tyontekija.Puhelin = puhelintb.Text;
@@ -491,6 +493,8 @@ namespace Projekti1
             contr.EditTyontekija(tyontekija);
 
             MessageBox.Show("Työntekijä päivitetty");
+
+            tyontekijat = contr.LataaTyontekijat();
 
             PopulateTyontekijaDGW();
         }
