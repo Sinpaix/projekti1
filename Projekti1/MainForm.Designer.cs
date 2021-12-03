@@ -41,8 +41,6 @@ namespace Projekti1
             this.panel6 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.tabVuorot = new System.Windows.Forms.TabPage();
-            this.tbvuoroloppuu = new System.Windows.Forms.TextBox();
-            this.tbvuoroalkaa = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listviewTyoVuorot = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -154,7 +152,7 @@ namespace Projekti1
             this.muokkaabtn = new System.Windows.Forms.Button();
             this.tabTehtävät = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblOhjeKentta = new System.Windows.Forms.Label();
+            this.lblInfoTehtava = new System.Windows.Forms.Label();
             this.lblidnimike = new System.Windows.Forms.Label();
             this.dgvTehtavat = new System.Windows.Forms.DataGridView();
             this.btnTyhjennaKentatTehtava = new System.Windows.Forms.Button();
@@ -168,6 +166,7 @@ namespace Projekti1
             this.btnMuokkaa = new System.Windows.Forms.Button();
             this.tbTehtava = new System.Windows.Forms.TextBox();
             this.btnTallenna = new System.Windows.Forms.Button();
+            this.lblInfoVuorot = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabEtusivu.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -337,8 +336,6 @@ namespace Projekti1
             // 
             // tabVuorot
             // 
-            this.tabVuorot.Controls.Add(this.tbvuoroloppuu);
-            this.tabVuorot.Controls.Add(this.tbvuoroalkaa);
             this.tabVuorot.Controls.Add(this.panel2);
             this.tabVuorot.Location = new System.Drawing.Point(4, 25);
             this.tabVuorot.Margin = new System.Windows.Forms.Padding(4);
@@ -349,24 +346,9 @@ namespace Projekti1
             this.tabVuorot.Text = "Työvuorojen hallinta";
             this.tabVuorot.UseVisualStyleBackColor = true;
             // 
-            // tbvuoroloppuu
-            // 
-            this.tbvuoroloppuu.Location = new System.Drawing.Point(345, 799);
-            this.tbvuoroloppuu.Margin = new System.Windows.Forms.Padding(4);
-            this.tbvuoroloppuu.Name = "tbvuoroloppuu";
-            this.tbvuoroloppuu.Size = new System.Drawing.Size(324, 22);
-            this.tbvuoroloppuu.TabIndex = 1;
-            // 
-            // tbvuoroalkaa
-            // 
-            this.tbvuoroalkaa.Location = new System.Drawing.Point(12, 799);
-            this.tbvuoroalkaa.Margin = new System.Windows.Forms.Padding(4);
-            this.tbvuoroalkaa.Name = "tbvuoroalkaa";
-            this.tbvuoroalkaa.Size = new System.Drawing.Size(324, 22);
-            this.tbvuoroalkaa.TabIndex = 1;
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblInfoVuorot);
             this.panel2.Controls.Add(this.listviewTyoVuorot);
             this.panel2.Controls.Add(this.tbTyovuoroValinta);
             this.panel2.Controls.Add(this.comboTehtavat);
@@ -395,7 +377,7 @@ namespace Projekti1
             this.panel2.Location = new System.Drawing.Point(12, 15);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1728, 778);
+            this.panel2.Size = new System.Drawing.Size(1728, 836);
             this.panel2.TabIndex = 0;
             // 
             // listviewTyoVuorot
@@ -590,7 +572,6 @@ namespace Projekti1
             this.comboLoppuu.Name = "comboLoppuu";
             this.comboLoppuu.Size = new System.Drawing.Size(87, 24);
             this.comboLoppuu.TabIndex = 21;
-            this.comboLoppuu.SelectedValueChanged += new System.EventHandler(this.dtpPvmAlkaa_ValueChanged);
             // 
             // comboAlkaa
             // 
@@ -697,7 +678,6 @@ namespace Projekti1
             this.comboAlkaa.Name = "comboAlkaa";
             this.comboAlkaa.Size = new System.Drawing.Size(87, 24);
             this.comboAlkaa.TabIndex = 21;
-            this.comboAlkaa.SelectedValueChanged += new System.EventHandler(this.dtpPvmAlkaa_ValueChanged);
             // 
             // btnPoistaTarve
             // 
@@ -787,7 +767,6 @@ namespace Projekti1
             this.dtpPvmLoppuu.Name = "dtpPvmLoppuu";
             this.dtpPvmLoppuu.Size = new System.Drawing.Size(268, 23);
             this.dtpPvmLoppuu.TabIndex = 4;
-            this.dtpPvmLoppuu.ValueChanged += new System.EventHandler(this.dtpPvmAlkaa_ValueChanged);
             // 
             // dtpPvmAlkaa
             // 
@@ -797,7 +776,6 @@ namespace Projekti1
             this.dtpPvmAlkaa.Name = "dtpPvmAlkaa";
             this.dtpPvmAlkaa.Size = new System.Drawing.Size(268, 23);
             this.dtpPvmAlkaa.TabIndex = 4;
-            this.dtpPvmAlkaa.ValueChanged += new System.EventHandler(this.dtpPvmAlkaa_ValueChanged);
             // 
             // label4
             // 
@@ -1671,7 +1649,7 @@ namespace Projekti1
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.lblOhjeKentta);
+            this.panel5.Controls.Add(this.lblInfoTehtava);
             this.panel5.Controls.Add(this.lblidnimike);
             this.panel5.Controls.Add(this.dgvTehtavat);
             this.panel5.Controls.Add(this.btnTyhjennaKentatTehtava);
@@ -1691,15 +1669,15 @@ namespace Projekti1
             this.panel5.Size = new System.Drawing.Size(1713, 785);
             this.panel5.TabIndex = 35;
             // 
-            // lblOhjeKentta
+            // lblInfoTehtava
             // 
-            this.lblOhjeKentta.AutoSize = true;
-            this.lblOhjeKentta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOhjeKentta.Location = new System.Drawing.Point(495, 740);
-            this.lblOhjeKentta.Name = "lblOhjeKentta";
-            this.lblOhjeKentta.Size = new System.Drawing.Size(84, 20);
-            this.lblOhjeKentta.TabIndex = 37;
-            this.lblOhjeKentta.Text = "Info label";
+            this.lblInfoTehtava.AutoSize = true;
+            this.lblInfoTehtava.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoTehtava.Location = new System.Drawing.Point(495, 740);
+            this.lblInfoTehtava.Name = "lblInfoTehtava";
+            this.lblInfoTehtava.Size = new System.Drawing.Size(84, 20);
+            this.lblInfoTehtava.TabIndex = 37;
+            this.lblInfoTehtava.Text = "Info label";
             // 
             // lblidnimike
             // 
@@ -1846,6 +1824,16 @@ namespace Projekti1
             this.btnTallenna.UseVisualStyleBackColor = true;
             this.btnTallenna.Click += new System.EventHandler(this.btnTallenna_Click);
             // 
+            // lblInfoVuorot
+            // 
+            this.lblInfoVuorot.AutoSize = true;
+            this.lblInfoVuorot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoVuorot.Location = new System.Drawing.Point(499, 767);
+            this.lblInfoVuorot.Name = "lblInfoVuorot";
+            this.lblInfoVuorot.Size = new System.Drawing.Size(84, 20);
+            this.lblInfoVuorot.TabIndex = 40;
+            this.lblInfoVuorot.Text = "Info label";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1863,7 +1851,6 @@ namespace Projekti1
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tabVuorot.ResumeLayout(false);
-            this.tabVuorot.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMaara)).EndInit();
@@ -1933,8 +1920,6 @@ namespace Projekti1
         private System.Windows.Forms.ColumnHeader lw_Paikka;
         private System.Windows.Forms.ColumnHeader lw_Nimike;
         private System.Windows.Forms.ColumnHeader lw_Maara;
-        private System.Windows.Forms.TextBox tbvuoroloppuu;
-        private System.Windows.Forms.TextBox tbvuoroalkaa;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListView lwKiinnitykset;
         private System.Windows.Forms.ColumnHeader vuoroID;
@@ -2015,7 +2000,7 @@ namespace Projekti1
         private System.Windows.Forms.ComboBox comboTehtavat;
         private System.Windows.Forms.TextBox tbTyovuoroValinta;
         private System.Windows.Forms.Label lblidnimike;
-        private System.Windows.Forms.Label lblOhjeKentta;
+        private System.Windows.Forms.Label lblInfoTehtava;
         private System.Windows.Forms.TabPage tabEtusivu;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Button btnTyontekijat;
@@ -2038,6 +2023,7 @@ namespace Projekti1
         private System.Windows.Forms.Button btnPoistaNimike;
         private System.Windows.Forms.ColumnHeader IdNimike;
         private System.Windows.Forms.ColumnHeader Työnimike;
+        private System.Windows.Forms.Label lblInfoVuorot;
     }
 }
 
