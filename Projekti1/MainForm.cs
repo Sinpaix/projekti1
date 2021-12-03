@@ -532,12 +532,7 @@ namespace Projekti1
         //}
 
 
-        private void btnTallenna_Click(object sender, EventArgs e)
-        {
-            AddTyotehtava();
-            PopulatedTyotehtavaDGV();
-
-        }
+        
 
         private void AddTarve()
         {
@@ -567,10 +562,6 @@ namespace Projekti1
             //}
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddTarve();
-        }
 
         private void comboNimike_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -583,6 +574,13 @@ namespace Projekti1
             }
         }
 
+        private void btnTallenna_Click(object sender, EventArgs e)
+        {
+            AddTyotehtava();
+            PopulatedTyotehtavaDGV();
+
+        }
+
         private void AddTyotehtava()
         {
             string sTehtava = this.tbTehtava.Text;
@@ -590,32 +588,24 @@ namespace Projekti1
             string sNimikeid = this.lblidnimike.Text;
             string sNimike = this.comboNimike.Text;
 
-            if (null == tyotehtava)
-            {
+            //if (null == tyotehtava)
+            //{
                 // luodaan uusi tehtävä
                 // Id ei tiedossa, koska tulee kannasta
                 tyotehtava = new Tyotehtava(0, sTehtava, sPaikka, int.Parse(sNimikeid), sNimike);
 
                 Tyotehtava createdTyotehtava = GetTyotehtava();
-                int count = contr.AddTyotehtava(createdTyotehtava);
+                /*int count = */contr.AddTyotehtava(createdTyotehtava);
 
-                if (count > 0)
-                {
+                //if (count > 0)
+                //{
                     // Haetaan kannasta työtehtävät ja päivitetään info-labelin teksti
                     tyotehtavat = contr.LoadTyotehtavat();
                     lblOhjeKentta.Text = "Uusi tehtävä lisätty: " + createdTyotehtava;
-                }
+            //    }
 
-            }
-            else
-            {
+            //}
 
-                //TEHTÄVÄN MUOKKAAMINEN TÄHÄN??
-
-                
-
-            }
-           
         }
 
         private void DeleteTyotehtava()
@@ -665,14 +655,16 @@ namespace Projekti1
         {
             if (this.dgvTehtavat.SelectedRows.Count > 0)
             {
-                    //string tehtava = dgvTehtavat.SelectedRows[0].Cells[1].Value + string.Empty;
-                    //string paikka = dgvTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
-                    //string nimike = dgvTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
+                //string tehtava = dgvTehtavat.SelectedRows[0].Cells[1].Value + string.Empty;
+                //string paikka = dgvTehtavat.SelectedRows[0].Cells[2].Value + string.Empty;
+                //string nimike = dgvTehtavat.SelectedRows[0].Cells[3].Value + string.Empty;
 
-                    //Tyotehtava tyotehtava = new Tyotehtava();
-                    //tyotehtava.Tehtava = tehtava;
-                    //tyotehtava.Paikka = paikka;
-                    //tyotehtava.Tyonimike_idnimike = int.Parse(nimike);
+                //Tyotehtava tyotehtava = new Tyotehtava();
+                //tyotehtava.Tehtava = tehtava;
+                //tyotehtava.Paikka = paikka;
+                //tyotehtava.Tyonimike_idnimike = int.Parse(nimike);
+                btnMuokkaa.Enabled = true;
+                btnPoista.Enabled = true;
 
                     tyotehtava = tyotehtavat.ElementAt(dgvTehtavat.CurrentRow.Index);
                     tbTehtava.Text = tyotehtava.Tehtava;
@@ -690,7 +682,7 @@ namespace Projekti1
             tyotehtava.Tyonimike_idnimike = int.Parse(lblidnimike.Text);
 
             contr.EditTyotehtava(tyotehtava);
-            contr.LoadTyonimikkeet();
+            //contr.LoadTyonimikkeet();
             PopulatedTyotehtavaDGV();
             
 
@@ -703,6 +695,8 @@ namespace Projekti1
             tbTehtava.Text = " ";
             comboPaikka.Text = " ";
             comboNimike.Text = " ";
+
+            btnTallenna.Enabled = true;
         }
 
 
@@ -814,6 +808,11 @@ namespace Projekti1
             return tyovuoro;
         }
 
+        private void btnTallennaTarve_Click(object sender, EventArgs e)
+        {
+            AddTarve();
+        }
+
 
         //tämä poistetaan, kun työvuorojen vieminen saadaan toimimaan
         private void dtpPvmAlkaa_ValueChanged(object sender, EventArgs e)
@@ -829,7 +828,6 @@ namespace Projekti1
             tbTehtava.Text = "";
             comboPaikka.Text = "";
             comboNimike.Text = "";
-
         }
 
 
@@ -864,5 +862,6 @@ namespace Projekti1
             tabControl.SelectTab(6);
         }
 
+       
     }
     }

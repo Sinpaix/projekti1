@@ -738,7 +738,7 @@ namespace Projekti1
             this.btnTallennaTarve.TabIndex = 17;
             this.btnTallennaTarve.Text = "Tallenna";
             this.btnTallennaTarve.UseVisualStyleBackColor = true;
-            this.btnTallennaTarve.Click += new System.EventHandler(this.button1_Click);
+            this.btnTallennaTarve.Click += new System.EventHandler(this.btnTallennaTarve_Click);
             // 
             // btnMuokkaaVuoroa
             // 
@@ -1734,9 +1734,9 @@ namespace Projekti1
             this.btnTyhjennaKentatTehtava.Location = new System.Drawing.Point(23, 367);
             this.btnTyhjennaKentatTehtava.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTyhjennaKentatTehtava.Name = "btnTyhjennaKentatTehtava";
-            this.btnTyhjennaKentatTehtava.Size = new System.Drawing.Size(117, 39);
+            this.btnTyhjennaKentatTehtava.Size = new System.Drawing.Size(163, 39);
             this.btnTyhjennaKentatTehtava.TabIndex = 34;
-            this.btnTyhjennaKentatTehtava.Text = "Tyhjennä";
+            this.btnTyhjennaKentatTehtava.Text = "Tyhjennä kentät";
             this.btnTyhjennaKentatTehtava.UseVisualStyleBackColor = true;
             this.btnTyhjennaKentatTehtava.Click += new System.EventHandler(this.btnTyhjennaKentatTehtava_Click_1);
             // 
@@ -1794,10 +1794,11 @@ namespace Projekti1
             // 
             // btnPoista
             // 
-            this.btnPoista.Location = new System.Drawing.Point(324, 299);
+            this.btnPoista.Enabled = false;
+            this.btnPoista.Location = new System.Drawing.Point(202, 299);
             this.btnPoista.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnPoista.Name = "btnPoista";
-            this.btnPoista.Size = new System.Drawing.Size(117, 39);
+            this.btnPoista.Size = new System.Drawing.Size(163, 39);
             this.btnPoista.TabIndex = 30;
             this.btnPoista.Text = "Poista";
             this.btnPoista.UseVisualStyleBackColor = true;
@@ -1815,12 +1816,13 @@ namespace Projekti1
             // 
             // btnMuokkaa
             // 
-            this.btnMuokkaa.Location = new System.Drawing.Point(173, 299);
+            this.btnMuokkaa.Enabled = false;
+            this.btnMuokkaa.Location = new System.Drawing.Point(202, 367);
             this.btnMuokkaa.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnMuokkaa.Name = "btnMuokkaa";
-            this.btnMuokkaa.Size = new System.Drawing.Size(117, 39);
+            this.btnMuokkaa.Size = new System.Drawing.Size(163, 39);
             this.btnMuokkaa.TabIndex = 31;
-            this.btnMuokkaa.Text = "Muokkaa";
+            this.btnMuokkaa.Text = "Tallenna muutokset";
             this.btnMuokkaa.UseVisualStyleBackColor = true;
             this.btnMuokkaa.Click += new System.EventHandler(this.btnMuokkaa_Click);
             // 
@@ -1838,7 +1840,7 @@ namespace Projekti1
             this.btnTallenna.Location = new System.Drawing.Point(23, 299);
             this.btnTallenna.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnTallenna.Name = "btnTallenna";
-            this.btnTallenna.Size = new System.Drawing.Size(117, 39);
+            this.btnTallenna.Size = new System.Drawing.Size(163, 39);
             this.btnTallenna.TabIndex = 29;
             this.btnTallenna.Text = "Tallenna";
             this.btnTallenna.UseVisualStyleBackColor = true;
