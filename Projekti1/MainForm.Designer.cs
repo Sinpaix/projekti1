@@ -50,15 +50,11 @@ namespace Projekti1
             this.comboTehtavat = new System.Windows.Forms.ComboBox();
             this.numMaara = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnTyhjennaKentatTarve = new System.Windows.Forms.Button();
-            this.btnTyhjennaKentatVuoro = new System.Windows.Forms.Button();
             this.comboLoppuu = new System.Windows.Forms.ComboBox();
             this.comboAlkaa = new System.Windows.Forms.ComboBox();
             this.btnPoistaTarve = new System.Windows.Forms.Button();
-            this.btnMuokkaaTarve = new System.Windows.Forms.Button();
             this.btnPoistaVuoro = new System.Windows.Forms.Button();
             this.btnTallennaTarve = new System.Windows.Forms.Button();
-            this.btnMuokkaaVuoroa = new System.Windows.Forms.Button();
             this.btnTallennaVuoro = new System.Windows.Forms.Button();
             this.dgvTarpeet = new System.Windows.Forms.DataGridView();
             this.dtpPvmLoppuu = new System.Windows.Forms.DateTimePicker();
@@ -354,15 +350,11 @@ namespace Projekti1
             this.panel2.Controls.Add(this.comboTehtavat);
             this.panel2.Controls.Add(this.numMaara);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.btnTyhjennaKentatTarve);
-            this.panel2.Controls.Add(this.btnTyhjennaKentatVuoro);
             this.panel2.Controls.Add(this.comboLoppuu);
             this.panel2.Controls.Add(this.comboAlkaa);
             this.panel2.Controls.Add(this.btnPoistaTarve);
-            this.panel2.Controls.Add(this.btnMuokkaaTarve);
             this.panel2.Controls.Add(this.btnPoistaVuoro);
             this.panel2.Controls.Add(this.btnTallennaTarve);
-            this.panel2.Controls.Add(this.btnMuokkaaVuoroa);
             this.panel2.Controls.Add(this.btnTallennaVuoro);
             this.panel2.Controls.Add(this.dgvTarpeet);
             this.panel2.Controls.Add(this.dtpPvmLoppuu);
@@ -446,26 +438,6 @@ namespace Projekti1
             this.label7.Size = new System.Drawing.Size(48, 17);
             this.label7.TabIndex = 25;
             this.label7.Text = "Määrä";
-            // 
-            // btnTyhjennaKentatTarve
-            // 
-            this.btnTyhjennaKentatTarve.Location = new System.Drawing.Point(348, 620);
-            this.btnTyhjennaKentatTarve.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnTyhjennaKentatTarve.Name = "btnTyhjennaKentatTarve";
-            this.btnTyhjennaKentatTarve.Size = new System.Drawing.Size(109, 34);
-            this.btnTyhjennaKentatTarve.TabIndex = 22;
-            this.btnTyhjennaKentatTarve.Text = "Tyhjennä";
-            this.btnTyhjennaKentatTarve.UseVisualStyleBackColor = true;
-            // 
-            // btnTyhjennaKentatVuoro
-            // 
-            this.btnTyhjennaKentatVuoro.Location = new System.Drawing.Point(348, 255);
-            this.btnTyhjennaKentatVuoro.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnTyhjennaKentatVuoro.Name = "btnTyhjennaKentatVuoro";
-            this.btnTyhjennaKentatVuoro.Size = new System.Drawing.Size(109, 34);
-            this.btnTyhjennaKentatVuoro.TabIndex = 22;
-            this.btnTyhjennaKentatVuoro.Text = "Tyhjennä";
-            this.btnTyhjennaKentatVuoro.UseVisualStyleBackColor = true;
             // 
             // comboLoppuu
             // 
@@ -681,7 +653,7 @@ namespace Projekti1
             // 
             // btnPoistaTarve
             // 
-            this.btnPoistaTarve.Location = new System.Drawing.Point(245, 620);
+            this.btnPoistaTarve.Location = new System.Drawing.Point(154, 620);
             this.btnPoistaTarve.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnPoistaTarve.Name = "btnPoistaTarve";
             this.btnPoistaTarve.Size = new System.Drawing.Size(97, 34);
@@ -689,25 +661,16 @@ namespace Projekti1
             this.btnPoistaTarve.Text = "Poista";
             this.btnPoistaTarve.UseVisualStyleBackColor = true;
             // 
-            // btnMuokkaaTarve
-            // 
-            this.btnMuokkaaTarve.Location = new System.Drawing.Point(143, 620);
-            this.btnMuokkaaTarve.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.btnMuokkaaTarve.Name = "btnMuokkaaTarve";
-            this.btnMuokkaaTarve.Size = new System.Drawing.Size(97, 34);
-            this.btnMuokkaaTarve.TabIndex = 18;
-            this.btnMuokkaaTarve.Text = "Muokkaa";
-            this.btnMuokkaaTarve.UseVisualStyleBackColor = true;
-            // 
             // btnPoistaVuoro
             // 
-            this.btnPoistaVuoro.Location = new System.Drawing.Point(244, 255);
+            this.btnPoistaVuoro.Location = new System.Drawing.Point(154, 255);
             this.btnPoistaVuoro.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
             this.btnPoistaVuoro.Name = "btnPoistaVuoro";
             this.btnPoistaVuoro.Size = new System.Drawing.Size(97, 34);
             this.btnPoistaVuoro.TabIndex = 18;
             this.btnPoistaVuoro.Text = "Poista";
             this.btnPoistaVuoro.UseVisualStyleBackColor = true;
+            this.btnPoistaVuoro.Click += new System.EventHandler(this.btnPoistaVuoro_Click);
             // 
             // btnTallennaTarve
             // 
@@ -719,16 +682,6 @@ namespace Projekti1
             this.btnTallennaTarve.Text = "Tallenna";
             this.btnTallennaTarve.UseVisualStyleBackColor = true;
             this.btnTallennaTarve.Click += new System.EventHandler(this.btnTallennaTarve_Click);
-            // 
-            // btnMuokkaaVuoroa
-            // 
-            this.btnMuokkaaVuoroa.Location = new System.Drawing.Point(141, 255);
-            this.btnMuokkaaVuoroa.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
-            this.btnMuokkaaVuoroa.Name = "btnMuokkaaVuoroa";
-            this.btnMuokkaaVuoroa.Size = new System.Drawing.Size(97, 34);
-            this.btnMuokkaaVuoroa.TabIndex = 18;
-            this.btnMuokkaaVuoroa.Text = "Muokkaa";
-            this.btnMuokkaaVuoroa.UseVisualStyleBackColor = true;
             // 
             // btnTallennaVuoro
             // 
@@ -1978,15 +1931,11 @@ namespace Projekti1
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.NumericUpDown numMaara;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnTyhjennaKentatTarve;
-        private System.Windows.Forms.Button btnTyhjennaKentatVuoro;
         private System.Windows.Forms.ComboBox comboLoppuu;
         private System.Windows.Forms.ComboBox comboAlkaa;
         private System.Windows.Forms.Button btnPoistaTarve;
-        private System.Windows.Forms.Button btnMuokkaaTarve;
         private System.Windows.Forms.Button btnPoistaVuoro;
         private System.Windows.Forms.Button btnTallennaTarve;
-        private System.Windows.Forms.Button btnMuokkaaVuoroa;
         private System.Windows.Forms.Button btnTallennaVuoro;
         private System.Windows.Forms.DateTimePicker dtpPvmLoppuu;
         private System.Windows.Forms.DateTimePicker dtpPvmAlkaa;

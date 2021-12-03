@@ -70,6 +70,11 @@ namespace Projekti1
             return DAO.InsertTyovuoro(tv);
         }
 
+        public int RemoveTyovuoro(Tyovuoro tv)
+        {
+            return DAO.DeleteTyovuoro(tv);
+        }
+
 
         //työnimikkeet
         public List<Tyonimike> LoadTyonimikkeet()

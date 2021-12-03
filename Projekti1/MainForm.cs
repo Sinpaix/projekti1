@@ -733,6 +733,11 @@ namespace Projekti1
             AddTyovuoro();
         }
 
+        private void btnPoistaVuoro_Click(object sender, EventArgs e)
+        {
+            DeleteTyovuoro();
+        }
+
         private void AddTyovuoro()
         {
             //luodaan uusi työvuoro
@@ -751,6 +756,36 @@ namespace Projekti1
             tyovuorot = contr.LataaTyovuorot();
 
             PopulateTyovuorotListView();
+        }
+
+        private void DeleteTyovuoro()
+        {
+            // poista valittu vuoro
+            if (this.listviewTyoVuorot.SelectedIndices.Count > 0)
+            {
+                int selectedIndex = listviewTyoVuorot.SelectedIndices[0];
+
+                //poistaa tyotehtävälistasta objektin valitusta indeksistä
+                Tyovuoro tv = tyovuorot[selectedIndex];
+                int count = contr.RemoveTyovuoro(tv);
+                if (count > 0)
+                {
+
+                    lblInfoVuorot.Text = "Vuoro poistettu: " + tv;
+                    tyovuorot.RemoveAt(selectedIndex);
+
+                }
+                else
+                {
+                    MessageBox.Show("Vuoron poistaminen epäonnistui");
+                }
+
+                tyovuorot = contr.LataaTyovuorot();
+                PopulateTyovuorotListView();
+
+
+            }
+
         }
 
 
@@ -801,6 +836,6 @@ namespace Projekti1
             tabControl.SelectTab(6);
         }
 
-       
+        
     }
     }

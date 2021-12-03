@@ -23,6 +23,9 @@ namespace Projekti1.Models
             Loppuu = loppuu;
         }
 
-     
+        public override string ToString()
+        {
+            return Alkaa + ", " + Loppuu;
+        }
     }
 }
