@@ -58,6 +58,7 @@ namespace Projekti1
             PopulateTyonimikeCombobox();
             PopulateTyotehtavaComboBox();
             PopulateTyonimikeListView();
+            PopulateTyontekijatComboBox();
 
             //Syötetyt tiedot
             //FillFieldsTehtava();
@@ -824,7 +825,59 @@ namespace Projekti1
         }
 
 
-        // Etusivun napit
+
+        /// <summary>
+        /// Työntekijän vuorolista-sivun koodit
+        /// </summary>
+
+        private void PopulateTyontekijatComboBox()
+        {
+            BindingSource source = new BindingSource();
+            source.DataSource = tyontekijat;
+            comboTyontekijat.DataSource = source;
+
+            comboTyontekijat.DisplayMember = "Etunimi";
+            comboTyontekijat.ValueMember = "Idtyontekija";
+        }
+
+        private void btnTyontekijanLista_Click(object sender, EventArgs e)
+        {
+            DateTime alkaa = dtpAlkupvm.Value.Date;
+            DateTime loppuu = dtpLoppupvm.Value.Date;
+            int tyontekijaID = int.Parse(comboTyontekijat.SelectedValue.ToString());
+
+            lwTyontekijanVuorot.Items.Clear();
+
+            // Tallennetaan listaan työvuorot, joihin valittu työntekijä on kiinnitetty
+            foreach (Kiinnitys k in kiinnitykset)
+            {
+                if (k.IDtyontekija == tyontekijaID)
+                {
+                    foreach (Tarve t in tarpeet)
+                    {
+                        if ((t.TyovuoroID == k.IDtyovuoro) && (t.TehtavaID == k.IDtehtava) && (t.Alkaa >= alkaa && t.Alkaa <= loppuu))
+                        {
+                            lwTyontekijanVuorot.Items.Add(new ListViewItem(new string[]{
+                            t.Alkaa.ToString(),
+                            t.Loppuu.ToString(),
+                            t.Tehtava,
+                            t.Paikka
+                            }));
+                        }
+                    }
+                }
+            }
+
+            // Käydään läpi kaikki työvuorotarpeet ja tulostetaan ne joihin työntekijä on kiinnitetty, jos se on valittujen päivämäärien sisällä
+            
+
+
+        }
+
+        /// <summary>
+        /// Etusivun napit
+        /// </summary>
+        # region Etusivun napit
         private void btnTyontekijat_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(5);
@@ -854,7 +907,8 @@ namespace Projekti1
         {
             tabControl.SelectTab(6);
         }
+        #endregion
 
-       
+        
     }
 }

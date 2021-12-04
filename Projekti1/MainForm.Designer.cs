@@ -103,12 +103,10 @@ namespace Projekti1
             this.lw_Valittu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabTyöntekijänVuorot = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpLoppupvm = new System.Windows.Forms.DateTimePicker();
+            this.dtpAlkupvm = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
-            this.listBox5 = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tabTyövuorolista = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -181,6 +179,13 @@ namespace Projekti1
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label29 = new System.Windows.Forms.Label();
+            this.comboTyontekijat = new System.Windows.Forms.ComboBox();
+            this.btnTyontekijanLista = new System.Windows.Forms.Button();
+            this.lwTyontekijanVuorot = new System.Windows.Forms.ListView();
+            this.vAlkaa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.vLoppuu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.vTehtava = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.vPaikka = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabControl.SuspendLayout();
             this.tabEtusivu.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -196,7 +201,6 @@ namespace Projekti1
             this.groupBox1.SuspendLayout();
             this.tabTyöntekijänVuorot.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabTyövuorolista.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -226,11 +230,11 @@ namespace Projekti1
             this.tabControl.Controls.Add(this.tabTyöntekijät);
             this.tabControl.Controls.Add(this.tabTehtävät);
             this.tabControl.Controls.Add(this.tabVapaalista);
-            this.tabControl.Location = new System.Drawing.Point(6, 0);
+            this.tabControl.Location = new System.Drawing.Point(6, 47);
             this.tabControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(3584, 2074);
+            this.tabControl.Size = new System.Drawing.Size(3584, 2027);
             this.tabControl.TabIndex = 0;
             // 
             // tabEtusivu
@@ -350,7 +354,7 @@ namespace Projekti1
             this.tabVuorot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabVuorot.Name = "tabVuorot";
             this.tabVuorot.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabVuorot.Size = new System.Drawing.Size(3576, 2041);
+            this.tabVuorot.Size = new System.Drawing.Size(3576, 1994);
             this.tabVuorot.TabIndex = 1;
             this.tabVuorot.Text = "Työvuorojen hallinta";
             this.tabVuorot.UseVisualStyleBackColor = true;
@@ -835,7 +839,7 @@ namespace Projekti1
             this.tabKiinnitys.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabKiinnitys.Name = "tabKiinnitys";
             this.tabKiinnitys.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabKiinnitys.Size = new System.Drawing.Size(3576, 2041);
+            this.tabKiinnitys.Size = new System.Drawing.Size(3576, 1994);
             this.tabKiinnitys.TabIndex = 4;
             this.tabKiinnitys.Text = "Työntekijöiden kiinnitys";
             this.tabKiinnitys.UseVisualStyleBackColor = true;
@@ -1137,81 +1141,61 @@ namespace Projekti1
             this.tabTyöntekijänVuorot.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabTyöntekijänVuorot.Name = "tabTyöntekijänVuorot";
             this.tabTyöntekijänVuorot.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabTyöntekijänVuorot.Size = new System.Drawing.Size(3576, 2041);
+            this.tabTyöntekijänVuorot.Size = new System.Drawing.Size(3576, 1994);
             this.tabTyöntekijänVuorot.TabIndex = 2;
             this.tabTyöntekijänVuorot.Text = "Työntekijän vuorolista";
             this.tabTyöntekijänVuorot.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView2);
+            this.panel3.Controls.Add(this.lwTyontekijanVuorot);
+            this.panel3.Controls.Add(this.btnTyontekijanLista);
+            this.panel3.Controls.Add(this.comboTyontekijat);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.dateTimePicker3);
-            this.panel3.Controls.Add(this.dateTimePicker2);
+            this.panel3.Controls.Add(this.dtpLoppupvm);
+            this.panel3.Controls.Add(this.dtpAlkupvm);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.listBox5);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Location = new System.Drawing.Point(10, 9);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(712, 678);
+            this.panel3.Size = new System.Drawing.Size(979, 1269);
             this.panel3.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(42, 358);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(618, 272);
-            this.dataGridView2.TabIndex = 6;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(345, 275);
+            this.label11.Location = new System.Drawing.Point(357, 158);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(14, 20);
             this.label11.TabIndex = 5;
             this.label11.Text = "-";
             // 
-            // dateTimePicker3
+            // dtpLoppupvm
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(402, 269);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(259, 26);
-            this.dateTimePicker3.TabIndex = 4;
+            this.dtpLoppupvm.Location = new System.Drawing.Point(398, 153);
+            this.dtpLoppupvm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpLoppupvm.Name = "dtpLoppupvm";
+            this.dtpLoppupvm.Size = new System.Drawing.Size(289, 26);
+            this.dtpLoppupvm.TabIndex = 4;
             // 
-            // dateTimePicker2
+            // dtpAlkupvm
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(42, 269);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(250, 26);
-            this.dateTimePicker2.TabIndex = 3;
+            this.dtpAlkupvm.Location = new System.Drawing.Point(38, 153);
+            this.dtpAlkupvm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpAlkupvm.Name = "dtpAlkupvm";
+            this.dtpAlkupvm.Size = new System.Drawing.Size(297, 26);
+            this.dtpAlkupvm.TabIndex = 3;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(39, 218);
+            this.label10.Location = new System.Drawing.Point(35, 102);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(188, 20);
             this.label10.TabIndex = 2;
             this.label10.Text = "Näytä työvuorot ajalta:";
-            // 
-            // listBox5
-            // 
-            this.listBox5.FormattingEnabled = true;
-            this.listBox5.ItemHeight = 20;
-            this.listBox5.Location = new System.Drawing.Point(156, 55);
-            this.listBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(505, 104);
-            this.listBox5.TabIndex = 1;
             // 
             // label9
             // 
@@ -1230,7 +1214,7 @@ namespace Projekti1
             this.tabTyövuorolista.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabTyövuorolista.Name = "tabTyövuorolista";
             this.tabTyövuorolista.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabTyövuorolista.Size = new System.Drawing.Size(3576, 2041);
+            this.tabTyövuorolista.Size = new System.Drawing.Size(3576, 1994);
             this.tabTyövuorolista.TabIndex = 3;
             this.tabTyövuorolista.Text = "Työvuorolista";
             this.tabTyövuorolista.UseVisualStyleBackColor = true;
@@ -1304,7 +1288,7 @@ namespace Projekti1
             this.tabTyöntekijät.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabTyöntekijät.Name = "tabTyöntekijät";
             this.tabTyöntekijät.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabTyöntekijät.Size = new System.Drawing.Size(3576, 2041);
+            this.tabTyöntekijät.Size = new System.Drawing.Size(3576, 1994);
             this.tabTyöntekijät.TabIndex = 0;
             this.tabTyöntekijät.Text = "Työntekijähallinta";
             this.tabTyöntekijät.UseVisualStyleBackColor = true;
@@ -1630,7 +1614,7 @@ namespace Projekti1
             this.tabTehtävät.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.tabTehtävät.Name = "tabTehtävät";
             this.tabTehtävät.Padding = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.tabTehtävät.Size = new System.Drawing.Size(3576, 2041);
+            this.tabTehtävät.Size = new System.Drawing.Size(3576, 1994);
             this.tabTehtävät.TabIndex = 5;
             this.tabTehtävät.Text = "Työtehtävien hallinta";
             this.tabTehtävät.UseVisualStyleBackColor = true;
@@ -1818,7 +1802,7 @@ namespace Projekti1
             this.tabVapaalista.Controls.Add(this.panel8);
             this.tabVapaalista.Location = new System.Drawing.Point(4, 29);
             this.tabVapaalista.Name = "tabVapaalista";
-            this.tabVapaalista.Size = new System.Drawing.Size(3576, 2041);
+            this.tabVapaalista.Size = new System.Drawing.Size(3576, 1994);
             this.tabVapaalista.TabIndex = 7;
             this.tabVapaalista.Text = "Vapaalista";
             this.tabVapaalista.UseVisualStyleBackColor = true;
@@ -1831,7 +1815,7 @@ namespace Projekti1
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(0, 234);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(3576, 1807);
+            this.panel9.Size = new System.Drawing.Size(3576, 1760);
             this.panel9.TabIndex = 1;
             // 
             // listView1
@@ -1928,7 +1912,7 @@ namespace Projekti1
             this.lwVapaalista.HideSelection = false;
             this.lwVapaalista.Location = new System.Drawing.Point(36, 109);
             this.lwVapaalista.Name = "lwVapaalista";
-            this.lwVapaalista.Size = new System.Drawing.Size(1607, 912);
+            this.lwVapaalista.Size = new System.Drawing.Size(1607, 865);
             this.lwVapaalista.TabIndex = 1;
             this.lwVapaalista.UseCompatibleStateImageBehavior = false;
             // 
@@ -1967,6 +1951,63 @@ namespace Projekti1
             this.label29.TabIndex = 9;
             this.label29.Text = "Vapaat työntekijät";
             // 
+            // comboTyontekijat
+            // 
+            this.comboTyontekijat.FormattingEnabled = true;
+            this.comboTyontekijat.Location = new System.Drawing.Point(168, 47);
+            this.comboTyontekijat.Name = "comboTyontekijat";
+            this.comboTyontekijat.Size = new System.Drawing.Size(523, 28);
+            this.comboTyontekijat.TabIndex = 7;
+            // 
+            // btnTyontekijanLista
+            // 
+            this.btnTyontekijanLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTyontekijanLista.Location = new System.Drawing.Point(43, 230);
+            this.btnTyontekijanLista.Name = "btnTyontekijanLista";
+            this.btnTyontekijanLista.Size = new System.Drawing.Size(180, 39);
+            this.btnTyontekijanLista.TabIndex = 8;
+            this.btnTyontekijanLista.Text = "Näytä työvuorot";
+            this.btnTyontekijanLista.UseVisualStyleBackColor = true;
+            this.btnTyontekijanLista.Click += new System.EventHandler(this.btnTyontekijanLista_Click);
+            // 
+            // lwTyontekijanVuorot
+            // 
+            this.lwTyontekijanVuorot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lwTyontekijanVuorot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.vAlkaa,
+            this.vLoppuu,
+            this.vTehtava,
+            this.vPaikka});
+            this.lwTyontekijanVuorot.HideSelection = false;
+            this.lwTyontekijanVuorot.Location = new System.Drawing.Point(43, 306);
+            this.lwTyontekijanVuorot.Name = "lwTyontekijanVuorot";
+            this.lwTyontekijanVuorot.Size = new System.Drawing.Size(893, 753);
+            this.lwTyontekijanVuorot.TabIndex = 9;
+            this.lwTyontekijanVuorot.UseCompatibleStateImageBehavior = false;
+            this.lwTyontekijanVuorot.View = System.Windows.Forms.View.Details;
+            // 
+            // vAlkaa
+            // 
+            this.vAlkaa.Text = "Vuoro alkaa";
+            this.vAlkaa.Width = 150;
+            // 
+            // vLoppuu
+            // 
+            this.vLoppuu.Text = "Vuoro loppuu";
+            this.vLoppuu.Width = 150;
+            // 
+            // vTehtava
+            // 
+            this.vTehtava.Text = "Tehtävä";
+            this.vTehtava.Width = 150;
+            // 
+            // vPaikka
+            // 
+            this.vPaikka.Text = "Paikka";
+            this.vPaikka.Width = 150;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1997,7 +2038,6 @@ namespace Projekti1
             this.tabTyöntekijänVuorot.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabTyövuorolista.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -2031,12 +2071,10 @@ namespace Projekti1
         private System.Windows.Forms.TabPage tabTyövuorolista;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpLoppupvm;
+        private System.Windows.Forms.DateTimePicker dtpAlkupvm;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ListBox listBox5;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label13;
@@ -2176,6 +2214,13 @@ namespace Projekti1
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox comboTyontekijat;
+        private System.Windows.Forms.Button btnTyontekijanLista;
+        private System.Windows.Forms.ListView lwTyontekijanVuorot;
+        private System.Windows.Forms.ColumnHeader vAlkaa;
+        private System.Windows.Forms.ColumnHeader vLoppuu;
+        private System.Windows.Forms.ColumnHeader vTehtava;
+        private System.Windows.Forms.ColumnHeader vPaikka;
     }
 }
 

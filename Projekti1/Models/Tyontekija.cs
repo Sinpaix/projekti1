@@ -40,9 +40,11 @@ namespace Projekti1.Models
             Tyonimike_idnimike = tyonimike_idnimike;
         }
 
+        
         public override string ToString()
         {
             return $"{Etunimi}  {Sukunimi}";
         }
+        
     }
 }
