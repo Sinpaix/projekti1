@@ -91,7 +91,9 @@ namespace Projekti1
                 t.Tehtava,
                 t.Paikka,
                 t.Nimike,
-                t.Maara.ToString()}));
+                t.Maara.ToString(),
+                t.Kiinnitetty.ToString()}));
+                
             }
         }
 
@@ -248,9 +250,11 @@ namespace Projekti1
             if (count > 0)
             {
                 kiinnitykset = contr.LataaKiinnitykset();
+                tarpeet = contr.LataaTarpeet();
             }
 
             PopulateKiinnitykset(valittuVuoro.TyovuoroID, valittuVuoro.TehtavaID);
+            PopulateTarveListView();
 
             btn_ValitseTyontekija.Enabled = false;
             btn_PeruutaTyontekija.Enabled = false;
@@ -300,9 +304,11 @@ namespace Projekti1
             if (count > 0)
             {
                 kiinnitykset = contr.LataaKiinnitykset();
+                tarpeet = contr.LataaTarpeet();
             }
 
             PopulateKiinnitykset(valittuKiinnitys.IDtyovuoro, valittuKiinnitys.IDtehtava);
+            PopulateTarveListView();
 
             btn_ValitseTyontekija.Enabled = false;
             btn_PeruutaTyontekija.Enabled = false;
@@ -517,7 +523,8 @@ namespace Projekti1
             dgvTarpeet.DataSource = source;
             dgvTarpeet.Columns[3].Visible = false; // Piilotetaan tehtävän ID
             dgvTarpeet.Columns[5].Visible = false; // Piilotetaan paikka
-            dgvTarpeet.Columns[6].Visible = false; // Piilotetaan nimike 
+            dgvTarpeet.Columns[6].Visible = false; // Piilotetaan nimike
+            dgvTarpeet.Columns[8].Visible = false; // Piilotetaan "kiinnitetty" kenttä
         }
 
         private void comboTehtavat_SelectedIndexChanged(object sender, EventArgs e)
