@@ -165,15 +165,22 @@ namespace Projekti1
             this.tbTehtava = new System.Windows.Forms.TextBox();
             this.btnTallenna = new System.Windows.Forms.Button();
             this.tabVapaalista = new System.Windows.Forms.TabPage();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.dtpVapaaAlkaa = new System.Windows.Forms.DateTimePicker();
-            this.dtpVapaaLoppuu = new System.Windows.Forms.DateTimePicker();
             this.panel9 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.btnVapaalista = new System.Windows.Forms.Button();
+            this.dtpVapaaLoppuu = new System.Windows.Forms.DateTimePicker();
+            this.dtpVapaaAlkaa = new System.Windows.Forms.DateTimePicker();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lwVapaalista = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label29 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabEtusivu.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -202,8 +209,8 @@ namespace Projekti1
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTehtavat)).BeginInit();
             this.tabVapaalista.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -1816,6 +1823,29 @@ namespace Projekti1
             this.tabVapaalista.Text = "Vapaalista";
             this.tabVapaalista.UseVisualStyleBackColor = true;
             // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.label29);
+            this.panel9.Controls.Add(this.lwVapaalista);
+            this.panel9.Controls.Add(this.listView1);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(0, 234);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(3576, 1807);
+            this.panel9.TabIndex = 1;
+            // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(36, 34);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(297, 0);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.btnVapaalista);
@@ -1830,15 +1860,29 @@ namespace Projekti1
             this.panel8.Size = new System.Drawing.Size(3576, 234);
             this.panel8.TabIndex = 0;
             // 
-            // label26
+            // btnVapaalista
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(31, 32);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(360, 44);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "Valitse päivämäärät";
+            this.btnVapaalista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVapaalista.Location = new System.Drawing.Point(129, 187);
+            this.btnVapaalista.Name = "btnVapaalista";
+            this.btnVapaalista.Size = new System.Drawing.Size(299, 44);
+            this.btnVapaalista.TabIndex = 8;
+            this.btnVapaalista.Text = "Päivitä vapaalista";
+            this.btnVapaalista.UseVisualStyleBackColor = true;
+            // 
+            // dtpVapaaLoppuu
+            // 
+            this.dtpVapaaLoppuu.Location = new System.Drawing.Point(129, 142);
+            this.dtpVapaaLoppuu.Name = "dtpVapaaLoppuu";
+            this.dtpVapaaLoppuu.Size = new System.Drawing.Size(299, 26);
+            this.dtpVapaaLoppuu.TabIndex = 7;
+            // 
+            // dtpVapaaAlkaa
+            // 
+            this.dtpVapaaAlkaa.Location = new System.Drawing.Point(129, 77);
+            this.dtpVapaaAlkaa.Name = "dtpVapaaAlkaa";
+            this.dtpVapaaAlkaa.Size = new System.Drawing.Size(299, 26);
+            this.dtpVapaaAlkaa.TabIndex = 6;
             // 
             // label27
             // 
@@ -1860,50 +1904,68 @@ namespace Projekti1
             this.label28.TabIndex = 4;
             this.label28.Text = "Alkaa";
             // 
-            // dtpVapaaAlkaa
+            // label26
             // 
-            this.dtpVapaaAlkaa.Location = new System.Drawing.Point(129, 77);
-            this.dtpVapaaAlkaa.Name = "dtpVapaaAlkaa";
-            this.dtpVapaaAlkaa.Size = new System.Drawing.Size(299, 26);
-            this.dtpVapaaAlkaa.TabIndex = 6;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(31, 32);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(240, 29);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Valitse päivämäärät";
             // 
-            // dtpVapaaLoppuu
+            // lwVapaalista
             // 
-            this.dtpVapaaLoppuu.Location = new System.Drawing.Point(129, 142);
-            this.dtpVapaaLoppuu.Name = "dtpVapaaLoppuu";
-            this.dtpVapaaLoppuu.Size = new System.Drawing.Size(299, 26);
-            this.dtpVapaaLoppuu.TabIndex = 7;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.listView1);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 351);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5364, 2711);
-            this.panel9.TabIndex = 1;
-            // 
-            // listView1
-            // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lwVapaalista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(36, 34);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(2085, 869);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lwVapaalista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lwVapaalista.HideSelection = false;
+            this.lwVapaalista.Location = new System.Drawing.Point(36, 109);
+            this.lwVapaalista.Name = "lwVapaalista";
+            this.lwVapaalista.Size = new System.Drawing.Size(1607, 912);
+            this.lwVapaalista.TabIndex = 1;
+            this.lwVapaalista.UseCompatibleStateImageBehavior = false;
             // 
-            // btnVapaalista
+            // columnHeader1
             // 
-            this.btnVapaalista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVapaalista.Location = new System.Drawing.Point(129, 187);
-            this.btnVapaalista.Name = "btnVapaalista";
-            this.btnVapaalista.Size = new System.Drawing.Size(299, 44);
-            this.btnVapaalista.TabIndex = 8;
-            this.btnVapaalista.Text = "Päivitä vapaalista";
-            this.btnVapaalista.UseVisualStyleBackColor = true;
+            this.columnHeader1.Text = "Päivämäärä";
+            this.columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Etunimi";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Sukunimi";
+            this.columnHeader3.Width = 150;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Puhelinnumero";
+            this.columnHeader4.Width = 150;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Nimike";
+            this.columnHeader5.Width = 150;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(31, 53);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(327, 44);
+            this.label29.TabIndex = 9;
+            this.label29.Text = "Vapaat työntekijät";
             // 
             // MainForm
             // 
@@ -1952,9 +2014,10 @@ namespace Projekti1
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTehtavat)).EndInit();
             this.tabVapaalista.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2106,6 +2169,13 @@ namespace Projekti1
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnVapaalista;
+        private System.Windows.Forms.ListView lwVapaalista;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label label29;
     }
 }
 
