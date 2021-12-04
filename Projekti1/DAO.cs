@@ -684,6 +684,39 @@ namespace Projekti1
             }
             return count;
         }
+
+        //public static int DeleteTarve(Tarve trv)
+        //{
+        //    int count = 0;
+        //    try
+        //    {
+        //        if (conn == null)
+        //            conn = new MySqlConnection();
+        //        conn.ConnectionString = myConnectionString;
+        //        conn.Open();
+
+        //        string sql = "DELETE FROM tarve WHERE idtyovuoro = ?id";                //miten valitaan tietty tarve?
+        //        MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+        //        cmd.Parameters.Add("?id", MySqlDbType.Int64).Value = tv.Idtyovuoro;
+
+        //        count = cmd.ExecuteNonQuery();
+        //        if (count > 0)
+        //            Console.WriteLine("Työvuoro {0} poistettu", tv.Idtyovuoro);
+
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        Console.WriteLine(ex.Message);
+        //    }
+
+        //    finally
+        //    {
+        //        conn.Close();
+        //        conn = null;
+        //    }
+        //    return count;
+        //}
     }
 }
 

@@ -542,10 +542,35 @@ namespace Projekti1
             contr.AddTarve(tarve);
             contr.LataaTarpeet();
             PopulatedTarpeetDGV();
-            
-
 
         }
+
+        //private void DeleteTarve()
+        //{
+        //    if (this.dgvTarpeet.SelectedRows.Count > 0)
+        //    {
+        //        int rowIndex = this.dgvTarpeet.CurrentRow.Index;
+
+        //        //poistaa tyotehtävälistasta objektin valitusta indeksistä
+        //        Tarve trv = tarpeet[rowIndex];
+        //        int count = contr.RemoveTarve(trv);
+        //        if (count > 0)
+        //        {
+
+        //            lblInfoVuorot.Text = "Tarve poistettu: " + trv;
+        //            tarpeet.RemoveAt(rowIndex);
+
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Tarpeen poistaminen epäonnistui");
+        //        }
+
+        //        tarpeet = contr.LataaTarpeet();
+        //        PopulatedTarpeetDGV();
+
+        //    }
+        //}
 
         private void btnTallennaTarve_Click(object sender, EventArgs e)
         {
