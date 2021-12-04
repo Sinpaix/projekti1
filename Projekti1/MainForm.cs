@@ -848,11 +848,12 @@ namespace Projekti1
 
             lwTyontekijanVuorot.Items.Clear();
 
-            // Tallennetaan listaan työvuorot, joihin valittu työntekijä on kiinnitetty
+            // Käydään läpi kiinnitykset joihin valittu työntekijä on kiinnitetty
             foreach (Kiinnitys k in kiinnitykset)
             {
                 if (k.IDtyontekija == tyontekijaID)
                 {
+                    // Käydään läpi kaikki työvuorotarpeet ja tulostetaan ne joihin työntekijä on kiinnitetty, jos se on valittujen päivämäärien sisällä
                     foreach (Tarve t in tarpeet)
                     {
                         if ((t.TyovuoroID == k.IDtyovuoro) && (t.TehtavaID == k.IDtehtava) && (t.Alkaa >= alkaa && t.Alkaa <= loppuu))
@@ -868,7 +869,7 @@ namespace Projekti1
                 }
             }
 
-            // Käydään läpi kaikki työvuorotarpeet ja tulostetaan ne joihin työntekijä on kiinnitetty, jos se on valittujen päivämäärien sisällä
+            
             
 
 
