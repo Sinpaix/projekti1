@@ -543,12 +543,13 @@ namespace Projekti1
         {
             //luodaan uusi tarve
             tarve = new Tarve();
-            tarve.TyovuoroID = int.Parse(tbTyovuoroValinta.Text);                       //tähän valitan vuorolistasta
-            tarve.TehtavaID = int.Parse(comboTehtavat.SelectedIndex.ToString());        
-            tarve.Maara = int.Parse(numMaara.Value.ToString());
+            tarve.TyovuoroID = int.Parse(tbTyovuoroValinta.Text);                       
+            tarve.TehtavaID = int.Parse(lblTehtavaID.Text);        
+            tarve.Maara = (int)numMaara.Value;
 
             contr.AddTarve(tarve);
-            contr.LataaTarpeet();
+
+            tarpeet = contr.LataaTarpeet();
             PopulatedTarpeetDGV();
 
         }
@@ -746,13 +747,14 @@ namespace Projekti1
 
         private void listviewTyoVuorot_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (listviewTyoVuorot.SelectedIndices.Count > 0)
             {
-                // Haetaan valittu rivi työvuorotaulukosta
+                
+                // Haetaan valittu rivi työvuorotaulukosta ja viedään se tarve valikon textboxiin
                 int selectedIndex = listviewTyoVuorot.SelectedIndices[0];
+                Tyovuoro vuoro = tyovuorot[selectedIndex];
 
-                tbTyovuoroValinta.Text = selectedIndex.ToString();
+                tbTyovuoroValinta.Text = vuoro.Idtyovuoro.ToString();
             }
         }
 
@@ -816,12 +818,6 @@ namespace Projekti1
 
         }
 
-
-      
-
-
-
-
         private void btnTyhjennaKentatTehtava_Click(object sender, EventArgs e)
         {
             tbTehtava.Text = "";
@@ -873,10 +869,6 @@ namespace Projekti1
                     }
                 }
             }
-
-            
-            
-
 
         }
 

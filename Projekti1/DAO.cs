@@ -695,10 +695,11 @@ namespace Projekti1
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
 
-                string sql = "DELETE FROM tarve WHERE Tyovuoro_idtyovuoro = ?id AND Tyotehtava_idtehtava = ?id";                
+                string sql = "DELETE FROM tarve WHERE Tyovuoro_idtyovuoro = ?id AND Tyotehtava_idtehtava = ?idtehtava";                
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 cmd.Parameters.Add("?id", MySqlDbType.Int64).Value = trv.TyovuoroID;
+                cmd.Parameters.Add("?idtehtava", MySqlDbType.Int64).Value = trv.TehtavaID;
 
                 count = cmd.ExecuteNonQuery();
                 if (count > 0)

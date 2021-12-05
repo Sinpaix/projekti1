@@ -41,5 +41,10 @@ namespace Projekti1.Models
             TehtavaID = tehtavaID;
             Maara = maara;
         }
+
+        public override string ToString()
+        {
+            return TyovuoroID + " " + TehtavaID;
+        }
     }
 }
