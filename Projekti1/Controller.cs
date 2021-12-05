@@ -43,6 +43,11 @@ namespace Projekti1
             return DAO.InsertTarve(tr);
         }
 
+        public int RemoveTarve(Tarve trv)
+        {
+            return DAO.DeleteTarve(trv);
+        }
+
         // Kiinnitykset
         public List<Kiinnitys> LataaKiinnitykset()
         {

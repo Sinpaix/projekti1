@@ -553,36 +553,41 @@ namespace Projekti1
 
         }
 
-        //private void DeleteTarve()
-        //{
-        //    if (this.dgvTarpeet.SelectedRows.Count > 0)
-        //    {
-        //        int rowIndex = this.dgvTarpeet.CurrentRow.Index;
+        private void DeleteTarve()
+        {
+            if (this.dgvTarpeet.SelectedRows.Count > 0)
+            {
+                int rowIndex = this.dgvTarpeet.CurrentRow.Index;
 
-        //        //poistaa tyotehtävälistasta objektin valitusta indeksistä
-        //        Tarve trv = tarpeet[rowIndex];
-        //        int count = contr.RemoveTarve(trv);
-        //        if (count > 0)
-        //        {
+                //poistaa tarvelistasta objektin valitusta indeksistä
+                Tarve trv = tarpeet[rowIndex];
+                int count = contr.RemoveTarve(trv);
+                if (count > 0)
+                {
 
-        //            lblInfoVuorot.Text = "Tarve poistettu: " + trv;
-        //            tarpeet.RemoveAt(rowIndex);
+                    lblInfoVuorot.Text = "Tarve poistettu: " + trv;
+                    tarpeet.RemoveAt(rowIndex);
 
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Tarpeen poistaminen epäonnistui");
-        //        }
+                }
+                else
+                {
+                    lblInfoVuorot.Text = "Tarpeen poistaminen epäonnistui!";
+                }
 
-        //        tarpeet = contr.LataaTarpeet();
-        //        PopulatedTarpeetDGV();
+                tarpeet = contr.LataaTarpeet();
+                PopulatedTarpeetDGV();
 
-        //    }
-        //}
+            }
+        }
 
         private void btnTallennaTarve_Click(object sender, EventArgs e)
         {
             AddTarve();
+        }
+
+        private void btnPoistaTarve_Click(object sender, EventArgs e)
+        {
+            DeleteTarve();
         }
 
 
@@ -908,8 +913,9 @@ namespace Projekti1
         {
             tabControl.SelectTab(6);
         }
+
         #endregion
 
-        
+       
     }
 }

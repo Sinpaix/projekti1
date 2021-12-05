@@ -685,38 +685,38 @@ namespace Projekti1
             return count;
         }
 
-        //public static int DeleteTarve(Tarve trv)
-        //{
-        //    int count = 0;
-        //    try
-        //    {
-        //        if (conn == null)
-        //            conn = new MySqlConnection();
-        //        conn.ConnectionString = myConnectionString;
-        //        conn.Open();
+        public static int DeleteTarve(Tarve trv)
+        {
+            int count = 0;
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
 
-        //        string sql = "DELETE FROM tarve WHERE idtyovuoro = ?id";                //miten valitaan tietty tarve?
-        //        MySqlCommand cmd = new MySqlCommand(sql, conn);
+                string sql = "DELETE FROM tarve WHERE Tyovuoro_idtyovuoro = ?id AND Tyotehtava_idtehtava = ?id";                
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-        //        cmd.Parameters.Add("?id", MySqlDbType.Int64).Value = tv.Idtyovuoro;
+                cmd.Parameters.Add("?id", MySqlDbType.Int64).Value = trv.TyovuoroID;
 
-        //        count = cmd.ExecuteNonQuery();
-        //        if (count > 0)
-        //            Console.WriteLine("Työvuoro {0} poistettu", tv.Idtyovuoro);
+                count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    Console.WriteLine("Työvuoro {0} poistettu", trv.TyovuoroID);
 
-        //    }
-        //    catch (MySqlException ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //    }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
-        //    finally
-        //    {
-        //        conn.Close();
-        //        conn = null;
-        //    }
-        //    return count;
-        //}
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return count;
+        }
     }
 }
 
