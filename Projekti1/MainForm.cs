@@ -356,14 +356,17 @@ namespace Projekti1
         private void btnLisaaNimike_Click(object sender, EventArgs e)
         {
             Tyonimike tyonimike = new Tyonimike();
-            tyonimike.Idnimike = 0;
+            //tyonimike.Idnimike = null;
             tyonimike.Nimike = tbTyonimike.Text;
 
             tyonimikkeet.Add(tyonimike);
             contr.AddTyonimike(tyonimike);
+            tyonimikkeet = contr.LoadTyonimikkeet();
             PopulateTyonimikeCombobox();
             PopulateTyonimikkeetCombobox();
             PopulateTyonimikeListView();
+
+            tbTyonimike.Text = "";
         }
 
         private void btnPoistaNimike_Click(object sender, EventArgs e)
@@ -677,9 +680,6 @@ namespace Projekti1
         }
 
 
-    
-
-
         private void btnPoista_Click(object sender, EventArgs e)
         {
             DeleteTyotehtava();
@@ -880,10 +880,11 @@ namespace Projekti1
         /// <summary>
         /// Etusivun napit
         /// </summary>
-        # region Etusivun napit
-        private void btnTyontekijat_Click(object sender, EventArgs e)
+        #region Etusivun napit
+
+        private void btnTyovuorot_Click(object sender, EventArgs e)
         {
-            tabControl.SelectTab(5);
+            tabControl.SelectTab(1);
         }
 
         private void btnKiinnitykset_Click(object sender, EventArgs e)
@@ -891,10 +892,6 @@ namespace Projekti1
             tabControl.SelectTab(2);
         }
 
-        private void btnTyovuorot_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab(1);
-        }
 
         private void btnTtVuorolista_Click(object sender, EventArgs e)
         {
@@ -906,13 +903,25 @@ namespace Projekti1
             tabControl.SelectTab(4);
         }
 
-        private void btnTyotehtavat_Click(object sender, EventArgs e)
+        private void btnVapaatLista_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(5);
+        }
+
+        private void btnTyontekijat_Click(object sender, EventArgs e)
         {
             tabControl.SelectTab(6);
         }
 
+        private void btnTyotehtavat_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(7);
+        }
+
+
+
         #endregion
 
-       
+
     }
 }
