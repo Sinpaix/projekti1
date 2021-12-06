@@ -60,10 +60,6 @@ namespace Projekti1
             PopulateTyonimikeListView();
             PopulateTyontekijatComboBox();
 
-            //Syötetyt tiedot
-            //FillFieldsTehtava();
-            //FillFieldsTyovuoro();
-
         }
 
         private void PopulateTyonimikkeetCombobox()
@@ -524,7 +520,7 @@ namespace Projekti1
             dgvTarpeet.DataSource = source;
             dgvTarpeet.Columns[3].Visible = false; // Piilotetaan tehtävän ID
             dgvTarpeet.Columns[5].Visible = false; // Piilotetaan paikka
-            dgvTarpeet.Columns[6].Visible = false; // Piilotetaan nimike
+            //dgvTarpeet.Columns[6].Visible = false; // Piilotetaan nimike
             dgvTarpeet.Columns[8].Visible = false; // Piilotetaan "kiinnitetty" kenttä
         }
 
@@ -551,6 +547,7 @@ namespace Projekti1
 
             tarpeet = contr.LataaTarpeet();
             PopulatedTarpeetDGV();
+            PopulateTarveListView();
 
         }
 
@@ -577,6 +574,7 @@ namespace Projekti1
 
                 tarpeet = contr.LataaTarpeet();
                 PopulatedTarpeetDGV();
+                PopulateTarveListView();
 
             }
         }
@@ -584,6 +582,7 @@ namespace Projekti1
         private void btnTallennaTarve_Click(object sender, EventArgs e)
         {
             AddTarve();
+
         }
 
         private void btnPoistaTarve_Click(object sender, EventArgs e)
