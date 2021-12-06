@@ -539,11 +539,12 @@ namespace Projekti1
         {
             //luodaan uusi tarve
             tarve = new Tarve();
-            tarve.TyovuoroID = int.Parse(tbTyovuoroValinta.Text);                       
-            tarve.TehtavaID = int.Parse(lblTehtavaID.Text);        
+            tarve.TyovuoroID = int.Parse(tbTyovuoroValinta.Text);
+            tarve.TehtavaID = int.Parse(lblTehtavaID.Text);
             tarve.Maara = (int)numMaara.Value;
 
             contr.AddTarve(tarve);
+            lblInfoVuorot.Text = "Uusi tarve lisätty";
 
             tarpeet = contr.LataaTarpeet();
             PopulatedTarpeetDGV();
@@ -563,7 +564,7 @@ namespace Projekti1
                 if (count > 0)
                 {
 
-                    lblInfoVuorot.Text = "Tarve poistettu: " + trv;
+                    lblInfoVuorot.Text = "Tarve poistettu";
                     tarpeet.RemoveAt(rowIndex);
 
                 }
@@ -806,7 +807,7 @@ namespace Projekti1
                 }
                 else
                 {
-                    MessageBox.Show("Vuoron poistaminen epäonnistui");
+                    lblInfoVuorot.Text = "Vuoron poistaminen epäonnistui!";
                 }
 
                 tyovuorot = contr.LataaTyovuorot();
