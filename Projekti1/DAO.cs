@@ -377,6 +377,7 @@ namespace Projekti1
             return count;
         }
 
+        //työntekijän poisto
         public static int DeleteTyontekija(Tyontekija a)
         {
             int count = 0;
@@ -443,6 +444,7 @@ namespace Projekti1
             return tyonimikkeet;
         }
 
+        //työtehtävien haku
         public static List<Tyotehtava> GetTyotehtavat()
         {
             List<Tyotehtava> tyotehtavat = new List<Tyotehtava>();
@@ -478,6 +480,7 @@ namespace Projekti1
             return tyotehtavat;
         }
 
+        //työtehtävien lisääminen
         public static int InsertTyotehtava(Tyotehtava tyotehtava)
         {
             int count = 0;
@@ -514,6 +517,7 @@ namespace Projekti1
             return count;
         }
 
+        //työtehtävien päivitys
         public static int UpdateTyotehtava(Tyotehtava tyotehtava)
         {
             int count = 0;
@@ -551,6 +555,7 @@ namespace Projekti1
             return count;
         }
 
+        //työtehtävien poisto
         public static int DeleteTyotehtava(Tyotehtava tt)
         {
             int count = 0;
@@ -584,6 +589,7 @@ namespace Projekti1
             return count;
         }
 
+        //työvuorojen lisääminen
         public static int InsertTyovuoro(Tyovuoro tyovuoro)
         {
             int count = 0;
@@ -618,6 +624,7 @@ namespace Projekti1
             return count;
         }
 
+        //työvuorojen poisto
         public static int DeleteTyovuoro(Tyovuoro tv)
         {
             int count = 0;
@@ -651,6 +658,7 @@ namespace Projekti1
             return count;
         }
 
+        //tarpeiden lisääminen
         public static int InsertTarve(Tarve tarve)
         {
             int count = 0;
@@ -685,6 +693,7 @@ namespace Projekti1
             return count;
         }
 
+        //tarpeiden poisto
         public static int DeleteTarve(Tarve trv)
         {
             int count = 0;
@@ -718,6 +727,7 @@ namespace Projekti1
             }
             return count;
         }
+
     }
 }
 
