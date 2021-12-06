@@ -606,7 +606,7 @@ namespace Projekti1
         private void btnTallenna_Click(object sender, EventArgs e)
         {
             AddTyotehtava();
-            PopulatedTyotehtavaDGV();
+            
 
         }
 
@@ -635,6 +635,14 @@ namespace Projekti1
 
             //}
 
+            PopulatedTyotehtavaDGV();
+            PopulateTyotehtavaComboBox();
+
+        }
+
+        private Tyotehtava GetTyotehtava()
+        {
+            return tyotehtava;
         }
 
         private void DeleteTyotehtava()
@@ -656,7 +664,7 @@ namespace Projekti1
                 }
                 else
                 {
-                    MessageBox.Show("Tehtävän poistaminen epäonnistui");
+                    lblInfoTehtava.Text = "Tehtävän poisto epäonnistui!";
                 }
 
                 tyotehtavat = contr.LoadTyotehtavat();
@@ -669,10 +677,7 @@ namespace Projekti1
         }
 
 
-        private Tyotehtava GetTyotehtava()
-        {
-            return tyotehtava;
-        }
+    
 
 
         private void btnPoista_Click(object sender, EventArgs e)

@@ -395,14 +395,14 @@ namespace Projekti1
             this.panel2.Location = new System.Drawing.Point(9, 12);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1395, 782);
+            this.panel2.Size = new System.Drawing.Size(1415, 782);
             this.panel2.TabIndex = 0;
             // 
             // lblTehtavaID
             // 
             this.lblTehtavaID.AutoSize = true;
             this.lblTehtavaID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTehtavaID.Location = new System.Drawing.Point(584, 122);
+            this.lblTehtavaID.Location = new System.Drawing.Point(586, 122);
             this.lblTehtavaID.Name = "lblTehtavaID";
             this.lblTehtavaID.Size = new System.Drawing.Size(58, 13);
             this.lblTehtavaID.TabIndex = 41;
@@ -428,9 +428,9 @@ namespace Projekti1
             this.Loppuu});
             this.listviewTyoVuorot.FullRowSelect = true;
             this.listviewTyoVuorot.HideSelection = false;
-            this.listviewTyoVuorot.Location = new System.Drawing.Point(3, 242);
+            this.listviewTyoVuorot.Location = new System.Drawing.Point(3, 215);
             this.listviewTyoVuorot.Name = "listviewTyoVuorot";
-            this.listviewTyoVuorot.Size = new System.Drawing.Size(578, 495);
+            this.listviewTyoVuorot.Size = new System.Drawing.Size(578, 534);
             this.listviewTyoVuorot.TabIndex = 39;
             this.listviewTyoVuorot.UseCompatibleStateImageBehavior = false;
             this.listviewTyoVuorot.View = System.Windows.Forms.View.Details;
@@ -452,7 +452,7 @@ namespace Projekti1
             // 
             // tbTyovuoroValinta
             // 
-            this.tbTyovuoroValinta.Location = new System.Drawing.Point(684, 56);
+            this.tbTyovuoroValinta.Location = new System.Drawing.Point(684, 68);
             this.tbTyovuoroValinta.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbTyovuoroValinta.Name = "tbTyovuoroValinta";
             this.tbTyovuoroValinta.Size = new System.Drawing.Size(201, 23);
@@ -463,7 +463,7 @@ namespace Projekti1
             // 
             this.comboTehtavat.DisplayMember = "1";
             this.comboTehtavat.FormattingEnabled = true;
-            this.comboTehtavat.Location = new System.Drawing.Point(684, 105);
+            this.comboTehtavat.Location = new System.Drawing.Point(684, 107);
             this.comboTehtavat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboTehtavat.Name = "comboTehtavat";
             this.comboTehtavat.Size = new System.Drawing.Size(202, 24);
@@ -486,7 +486,7 @@ namespace Projekti1
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(582, 151);
+            this.label7.Location = new System.Drawing.Point(586, 149);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 17);
@@ -705,7 +705,7 @@ namespace Projekti1
             // 
             // btnPoistaTarve
             // 
-            this.btnPoistaTarve.Location = new System.Drawing.Point(667, 210);
+            this.btnPoistaTarve.Location = new System.Drawing.Point(917, 107);
             this.btnPoistaTarve.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnPoistaTarve.Name = "btnPoistaTarve";
             this.btnPoistaTarve.Size = new System.Drawing.Size(73, 28);
@@ -716,7 +716,7 @@ namespace Projekti1
             // 
             // btnPoistaVuoro
             // 
-            this.btnPoistaVuoro.Location = new System.Drawing.Point(116, 207);
+            this.btnPoistaVuoro.Location = new System.Drawing.Point(367, 107);
             this.btnPoistaVuoro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnPoistaVuoro.Name = "btnPoistaVuoro";
             this.btnPoistaVuoro.Size = new System.Drawing.Size(73, 28);
@@ -727,7 +727,7 @@ namespace Projekti1
             // 
             // btnTallennaTarve
             // 
-            this.btnTallennaTarve.Location = new System.Drawing.Point(581, 210);
+            this.btnTallennaTarve.Location = new System.Drawing.Point(917, 68);
             this.btnTallennaTarve.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnTallennaTarve.Name = "btnTallennaTarve";
             this.btnTallennaTarve.Size = new System.Drawing.Size(73, 28);
@@ -738,7 +738,7 @@ namespace Projekti1
             // 
             // btnTallennaVuoro
             // 
-            this.btnTallennaVuoro.Location = new System.Drawing.Point(30, 207);
+            this.btnTallennaVuoro.Location = new System.Drawing.Point(367, 68);
             this.btnTallennaVuoro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnTallennaVuoro.Name = "btnTallennaVuoro";
             this.btnTallennaVuoro.Size = new System.Drawing.Size(73, 28);
@@ -755,13 +755,13 @@ namespace Projekti1
             this.dgvTarpeet.AllowUserToResizeRows = false;
             this.dgvTarpeet.BackgroundColor = System.Drawing.Color.White;
             this.dgvTarpeet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTarpeet.Location = new System.Drawing.Point(585, 242);
+            this.dgvTarpeet.Location = new System.Drawing.Point(589, 215);
             this.dgvTarpeet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgvTarpeet.Name = "dgvTarpeet";
             this.dgvTarpeet.ReadOnly = true;
             this.dgvTarpeet.RowHeadersWidth = 60;
             this.dgvTarpeet.RowTemplate.Height = 24;
-            this.dgvTarpeet.Size = new System.Drawing.Size(807, 495);
+            this.dgvTarpeet.Size = new System.Drawing.Size(807, 534);
             this.dgvTarpeet.TabIndex = 13;
             // 
             // dtpPvmLoppuu
@@ -797,7 +797,7 @@ namespace Projekti1
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(582, 105);
+            this.label23.Location = new System.Drawing.Point(584, 105);
             this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(60, 17);
@@ -808,7 +808,7 @@ namespace Projekti1
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(582, 61);
+            this.label22.Location = new System.Drawing.Point(584, 68);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(68, 17);
@@ -830,7 +830,7 @@ namespace Projekti1
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(582, 21);
+            this.label21.Location = new System.Drawing.Point(585, 21);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(97, 20);
