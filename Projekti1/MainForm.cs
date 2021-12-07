@@ -77,6 +77,7 @@ namespace Projekti1
         /// Tästä alkaa kiinnitys-välilehden koodit
         /// </summary>
         /// 
+        # region Kiinnitys
         // Esitetään tarve-taulun tiedot listviewissä
         public void PopulateTarveListView()
         {
@@ -334,13 +335,13 @@ namespace Projekti1
             tb_tyontekijavalittu.Text = null;
         }
 
-
+        #endregion
 
         /// <summary>
         /// Tästä alkaa työntekijän hallinta-välilehden koodit
         /// </summary>
         /// 
-
+        #region Työntekijän hallinta
         private void PopulateTyonimikeListView()
         {
             lvNimikkeet.Items.Clear();
@@ -506,6 +507,14 @@ namespace Projekti1
 
             PopulateTyontekijaDGW();
         }
+
+        #endregion
+
+        /// <summary>
+        /// Tästä alkaa työvuorojen sekä työtehtävien hallinta-välilehtien koodit
+        /// </summary>
+        ///
+        #region Työvuorojen ja työtehtävien hallinta
 
         private void PopulatedTyotehtavaDGV()
         {
@@ -826,12 +835,13 @@ namespace Projekti1
             comboPaikka.Text = "";
             comboNimike.Text = "";
         }
-
+        #endregion
 
 
         /// <summary>
         /// Työntekijän vuorolista-sivun koodit
         /// </summary>
+        # region Työntekijän vuorolista
 
         private void PopulateTyontekijatComboBox()
         {
@@ -874,6 +884,13 @@ namespace Projekti1
 
         }
 
+        #endregion
+
+        /// <summary>
+        /// Työvuorolista
+        /// </summary>
+        /// 
+        #region Työvuorolista
         private void btnHaeTyovuorolista_Click(object sender, EventArgs e)
         {
             vuorolista = contr.LoadVuorolista();
@@ -895,6 +912,8 @@ namespace Projekti1
 
             }
         }
+
+        #endregion
 
         /// <summary>
         /// Etusivun napit
