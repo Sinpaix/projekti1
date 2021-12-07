@@ -2018,7 +2018,6 @@ namespace Projekti1
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1812, 765);
             this.panel7.TabIndex = 3;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // btnTyotehtavat
             // 
@@ -2128,7 +2127,6 @@ namespace Projekti1
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1812, 127);
             this.panel6.TabIndex = 2;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // label24
             // 
@@ -2160,7 +2158,6 @@ namespace Projekti1
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1820, 918);
             this.tabControl.TabIndex = 0;
-            this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // MainForm
             // 

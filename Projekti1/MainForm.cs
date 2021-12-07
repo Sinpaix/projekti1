@@ -964,19 +964,5 @@ namespace Projekti1
 
         #endregion
 
-        private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel7_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
