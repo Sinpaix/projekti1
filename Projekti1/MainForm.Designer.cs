@@ -2024,11 +2024,11 @@ namespace Projekti1
             // 
             this.btnTyotehtavat.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTyotehtavat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTyotehtavat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTyotehtavat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTyotehtavat.Location = new System.Drawing.Point(1210, 10);
             this.btnTyotehtavat.Margin = new System.Windows.Forms.Padding(2);
             this.btnTyotehtavat.Name = "btnTyotehtavat";
-            this.btnTyotehtavat.Size = new System.Drawing.Size(360, 210);
+            this.btnTyotehtavat.Size = new System.Drawing.Size(300, 150);
             this.btnTyotehtavat.TabIndex = 5;
             this.btnTyotehtavat.Text = "Työtehtävien hallinta";
             this.btnTyotehtavat.UseVisualStyleBackColor = false;
@@ -2038,11 +2038,11 @@ namespace Projekti1
             // 
             this.btnVapaatLista.BackColor = System.Drawing.Color.Gainsboro;
             this.btnVapaatLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVapaatLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVapaatLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVapaatLista.Location = new System.Drawing.Point(819, 259);
             this.btnVapaatLista.Margin = new System.Windows.Forms.Padding(2);
             this.btnVapaatLista.Name = "btnVapaatLista";
-            this.btnVapaatLista.Size = new System.Drawing.Size(360, 210);
+            this.btnVapaatLista.Size = new System.Drawing.Size(300, 150);
             this.btnVapaatLista.TabIndex = 4;
             this.btnVapaatLista.Text = "Vapaalista";
             this.btnVapaatLista.UseVisualStyleBackColor = false;
@@ -2052,11 +2052,11 @@ namespace Projekti1
             // 
             this.btnTyovuorolistat.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTyovuorolistat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTyovuorolistat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTyovuorolistat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTyovuorolistat.Location = new System.Drawing.Point(428, 259);
             this.btnTyovuorolistat.Margin = new System.Windows.Forms.Padding(2);
             this.btnTyovuorolistat.Name = "btnTyovuorolistat";
-            this.btnTyovuorolistat.Size = new System.Drawing.Size(360, 210);
+            this.btnTyovuorolistat.Size = new System.Drawing.Size(300, 150);
             this.btnTyovuorolistat.TabIndex = 4;
             this.btnTyovuorolistat.Text = "Työvuorolista";
             this.btnTyovuorolistat.UseVisualStyleBackColor = false;
@@ -2066,11 +2066,11 @@ namespace Projekti1
             // 
             this.btnTtVuorolista.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTtVuorolista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTtVuorolista.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTtVuorolista.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTtVuorolista.Location = new System.Drawing.Point(37, 259);
             this.btnTtVuorolista.Margin = new System.Windows.Forms.Padding(2);
             this.btnTtVuorolista.Name = "btnTtVuorolista";
-            this.btnTtVuorolista.Size = new System.Drawing.Size(360, 210);
+            this.btnTtVuorolista.Size = new System.Drawing.Size(300, 150);
             this.btnTtVuorolista.TabIndex = 3;
             this.btnTtVuorolista.Text = "Työntekijän vuorolista";
             this.btnTtVuorolista.UseVisualStyleBackColor = false;
@@ -2080,11 +2080,11 @@ namespace Projekti1
             // 
             this.btnTyovuorot.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTyovuorot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTyovuorot.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTyovuorot.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTyovuorot.Location = new System.Drawing.Point(37, 10);
             this.btnTyovuorot.Margin = new System.Windows.Forms.Padding(2);
             this.btnTyovuorot.Name = "btnTyovuorot";
-            this.btnTyovuorot.Size = new System.Drawing.Size(360, 210);
+            this.btnTyovuorot.Size = new System.Drawing.Size(300, 150);
             this.btnTyovuorot.TabIndex = 2;
             this.btnTyovuorot.Text = "Työvuorojen hallinta";
             this.btnTyovuorot.UseVisualStyleBackColor = false;
@@ -2094,11 +2094,11 @@ namespace Projekti1
             // 
             this.btnKiinnitykset.BackColor = System.Drawing.Color.Gainsboro;
             this.btnKiinnitykset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKiinnitykset.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKiinnitykset.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKiinnitykset.Location = new System.Drawing.Point(428, 10);
             this.btnKiinnitykset.Margin = new System.Windows.Forms.Padding(2);
             this.btnKiinnitykset.Name = "btnKiinnitykset";
-            this.btnKiinnitykset.Size = new System.Drawing.Size(360, 210);
+            this.btnKiinnitykset.Size = new System.Drawing.Size(300, 150);
             this.btnKiinnitykset.TabIndex = 1;
             this.btnKiinnitykset.Text = "Työntekijöiden kiinnitys";
             this.btnKiinnitykset.UseVisualStyleBackColor = false;
@@ -2108,11 +2108,11 @@ namespace Projekti1
             // 
             this.btnTyontekijat.BackColor = System.Drawing.Color.Gainsboro;
             this.btnTyontekijat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTyontekijat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTyontekijat.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTyontekijat.Location = new System.Drawing.Point(819, 10);
             this.btnTyontekijat.Margin = new System.Windows.Forms.Padding(2);
             this.btnTyontekijat.Name = "btnTyontekijat";
-            this.btnTyontekijat.Size = new System.Drawing.Size(360, 210);
+            this.btnTyontekijat.Size = new System.Drawing.Size(300, 150);
             this.btnTyontekijat.TabIndex = 0;
             this.btnTyontekijat.Text = "Työntekijöiden hallinta";
             this.btnTyontekijat.UseVisualStyleBackColor = false;
