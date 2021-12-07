@@ -26,6 +26,9 @@ namespace Projekti1
         private Tyovuoro tyovuoro;
         private Tarve tarve;
 
+        private DateTime alkaa;
+        private DateTime loppuu;
+
         private Controller contr = new Controller();
 
         // kiinnityksen apuoliot
@@ -40,7 +43,7 @@ namespace Projekti1
             // Tähän funktiot millä ladataan tarvittavat tiedot tietokannasta heti kun ohjelma ajetaan
             tyontekijat = contr.LataaTyontekijat();
             tarpeet = contr.LataaTarpeet();
-            vuorolista = contr.LoadVuorolista();
+            vuorolista = contr.LoadVuorolista(DateTime.Now, DateTime.Now);
             tyovuorot = contr.LataaTyovuorot();
             tyotehtavat = contr.LoadTyotehtavat();
             tyonimikkeet = contr.LoadTyonimikkeet();
@@ -893,7 +896,7 @@ namespace Projekti1
         #region Työvuorolista
         private void btnHaeTyovuorolista_Click(object sender, EventArgs e)
         {
-            vuorolista = contr.LoadVuorolista();
+            vuorolista = contr.LoadVuorolista(alkaa, loppuu);
             lvVuorolista.Items.Clear();
 
             
@@ -901,8 +904,8 @@ namespace Projekti1
             foreach (Tarve item in vuorolista)
             {
                 lvVuorolista.Items.Add(new ListViewItem(new string[] { 
-                item.Alkaa.ToString(),
-                item.Loppuu.ToString(),
+                item.Alkaa.ToString("dd.MM.yy HH:mm"),
+                item.Loppuu.ToString("dd.MM.yy HH:mm"),
                 item.Paikka,
                 item.Tehtava,
                 item.Etunimi,
@@ -911,6 +914,16 @@ namespace Projekti1
                 item.Nimike}));
 
             }
+        }
+
+        private void dtpVuorolistaAlkaa_ValueChanged(object sender, EventArgs e)
+        {
+            this.alkaa = dtpVuorolistaAlkaa.Value;
+        }
+
+        private void dtpVuorolistaLoppuu_ValueChanged(object sender, EventArgs e)
+        {
+            this.loppuu = dtpVuorolistaLoppuu.Value;
         }
 
         #endregion
@@ -964,5 +977,6 @@ namespace Projekti1
 
         #endregion
 
+       
     }
 }

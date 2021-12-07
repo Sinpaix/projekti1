@@ -119,9 +119,9 @@ namespace Projekti1
         }
 
         //työvuorolista
-        public List<Tarve> LoadVuorolista()
+        public List<Tarve> LoadVuorolista(DateTime alku, DateTime loppu)
         {
-            return DAO.GetVuorolista();
+            return DAO.GetVuorolista(alku, loppu);
         }
     }
 }

@@ -729,7 +729,7 @@ namespace Projekti1
         }
 
         //työvuorolistan haku
-        public static List<Tarve> GetVuorolista()
+        public static List<Tarve> GetVuorolista(DateTime alku, DateTime loppu)
         {
             List<Tarve> vuorolista = new List<Tarve>();
 
@@ -749,7 +749,7 @@ namespace Projekti1
                     "ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro " +
                     "JOIN Tyonimike tn " +
                     "ON t.Tyonimike_idnimike = tn.idnimike " +
-                    "WHERE (tv.alkaa BETWEEN '2021-11-17' AND '2021-12-14') " +
+                    "WHERE tv.alkaa BETWEEN '" + alku.ToString("yyyy-MM-dd") + "' AND '" + loppu.ToString("yyyy-MM-dd") + "' " +
                     "ORDER BY tv.alkaa, t.sukunimi";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);

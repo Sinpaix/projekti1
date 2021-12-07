@@ -1025,6 +1025,7 @@ namespace Projekti1
             this.dtpVuorolistaLoppuu.Name = "dtpVuorolistaLoppuu";
             this.dtpVuorolistaLoppuu.Size = new System.Drawing.Size(245, 23);
             this.dtpVuorolistaLoppuu.TabIndex = 2;
+            this.dtpVuorolistaLoppuu.ValueChanged += new System.EventHandler(this.dtpVuorolistaLoppuu_ValueChanged);
             // 
             // dtpVuorolistaAlkaa
             // 
@@ -1033,6 +1034,7 @@ namespace Projekti1
             this.dtpVuorolistaAlkaa.Name = "dtpVuorolistaAlkaa";
             this.dtpVuorolistaAlkaa.Size = new System.Drawing.Size(245, 23);
             this.dtpVuorolistaAlkaa.TabIndex = 1;
+            this.dtpVuorolistaAlkaa.ValueChanged += new System.EventHandler(this.dtpVuorolistaAlkaa_ValueChanged);
             // 
             // label12
             // 
