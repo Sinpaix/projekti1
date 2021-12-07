@@ -117,5 +117,11 @@ namespace Projekti1
         {
             return DAO.UpdateTyotehtava(tt);
         }
+
+        //työvuorolista
+        public List<Tarve> LoadVuorolista()
+        {
+            return DAO.GetVuorolista();
+        }
     }
 }

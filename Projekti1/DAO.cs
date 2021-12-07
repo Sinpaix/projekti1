@@ -728,6 +728,44 @@ namespace Projekti1
             return count;
         }
 
+        //työvuorolistan haku
+        public static List<Tarve> GetVuorolista()
+        {
+            List<Tarve> vuorolista = new List<Tarve>();
+
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+                string sql = "SELECT tv.alkaa, tv.loppuu, tt.paikka, tt.tehtava, t.etunimi, t.sukunimi, t.puhelin, tn.nimike FROM Kiinnitys k JOIN Tyotehtava tt ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava JOIN Tyontekija t ON k.Tyontekija_idTyontekija = t.idTyontekija JOIN Tyovuoro tv ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro JOIN Tyonimike tn ON t.Tyonimike_idnimike = tn.idnimike WHERE (tv.alkaa BETWEEN '2021-11-17' AND '2021-11-18') ORDER BY tv.alkaa, t.sukunimi";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Tarve t = new Tarve(DateTime.Parse(rdr[0].ToString()), DateTime.Parse(rdr[1].ToString()), rdr[2].ToString(), rdr[3].ToString(), rdr[4].ToString(),
+                        rdr[5].ToString(), rdr[6].ToString(), rdr[7].ToString());
+                    vuorolista.Add(t);
+
+                }
+
+                rdr.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return vuorolista;
+        }
+
     }
 }
 

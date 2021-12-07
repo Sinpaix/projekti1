@@ -95,7 +95,7 @@ namespace Projekti1
             this.muokkaabtn = new System.Windows.Forms.Button();
             this.tabTyövuorolista = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.lvVuorolista = new System.Windows.Forms.ListView();
             this.Enimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sNimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TyövuoroAlku = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -194,6 +194,9 @@ namespace Projekti1
             this.panel6 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.Paikka = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Puhnumero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Tehtavanimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabVapaalista.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -925,7 +928,7 @@ namespace Projekti1
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.listView2);
+            this.panel4.Controls.Add(this.lvVuorolista);
             this.panel4.Controls.Add(this.btnHaeTyovuorolista);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.dtpVuorolistaLoppuu);
@@ -938,29 +941,34 @@ namespace Projekti1
             this.panel4.Size = new System.Drawing.Size(1146, 829);
             this.panel4.TabIndex = 0;
             // 
-            // listView2
+            // lvVuorolista
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Enimi,
-            this.sNimi,
+            this.lvVuorolista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.TyövuoroAlku,
             this.TyövuoroLoppu,
-            this.Tehtävä});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(20, 163);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(920, 563);
-            this.listView2.TabIndex = 6;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
+            this.Paikka,
+            this.Tehtävä,
+            this.Enimi,
+            this.sNimi,
+            this.Puhnumero,
+            this.Tehtavanimike});
+            this.lvVuorolista.HideSelection = false;
+            this.lvVuorolista.Location = new System.Drawing.Point(20, 163);
+            this.lvVuorolista.Name = "lvVuorolista";
+            this.lvVuorolista.Size = new System.Drawing.Size(920, 563);
+            this.lvVuorolista.TabIndex = 6;
+            this.lvVuorolista.UseCompatibleStateImageBehavior = false;
+            this.lvVuorolista.View = System.Windows.Forms.View.Details;
             // 
             // Enimi
             // 
+            this.Enimi.DisplayIndex = 0;
             this.Enimi.Text = "Etunimi";
             this.Enimi.Width = 74;
             // 
             // sNimi
             // 
+            this.sNimi.DisplayIndex = 1;
             this.sNimi.Text = "Sukunimi";
             this.sNimi.Width = 106;
             // 
@@ -2121,6 +2129,18 @@ namespace Projekti1
             this.tabControl.Size = new System.Drawing.Size(1820, 899);
             this.tabControl.TabIndex = 0;
             // 
+            // Paikka
+            // 
+            this.Paikka.Text = "Paikka";
+            // 
+            // Puhnumero
+            // 
+            this.Puhnumero.Text = "Puhelinnumero";
+            // 
+            // Tehtavanimike
+            // 
+            this.Tehtavanimike.Text = "Nimike";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2333,13 +2353,16 @@ namespace Projekti1
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.Button btnVapaatLista;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView lvVuorolista;
         private System.Windows.Forms.ColumnHeader Enimi;
         private System.Windows.Forms.ColumnHeader sNimi;
         private System.Windows.Forms.ColumnHeader TyövuoroAlku;
         private System.Windows.Forms.ColumnHeader TyövuoroLoppu;
         private System.Windows.Forms.ColumnHeader Tehtävä;
         private System.Windows.Forms.Label lblVuoroId;
+        private System.Windows.Forms.ColumnHeader Paikka;
+        private System.Windows.Forms.ColumnHeader Puhnumero;
+        private System.Windows.Forms.ColumnHeader Tehtavanimike;
     }
 }
 

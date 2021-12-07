@@ -19,6 +19,7 @@ namespace Projekti1
         private List<Tarve> tarpeet = new List<Tarve>();
         private List<Kiinnitys> kiinnitykset = new List<Kiinnitys>();
         private List<Tyonimike> tyonimikkeet = new List<Tyonimike>();
+        private List<Tarve> vuorolista = new List<Tarve>();
 
         private Tyonimike tyonimike;
         private Tyotehtava tyotehtava;
@@ -39,6 +40,7 @@ namespace Projekti1
             // Tähän funktiot millä ladataan tarvittavat tiedot tietokannasta heti kun ohjelma ajetaan
             tyontekijat = contr.LataaTyontekijat();
             tarpeet = contr.LataaTarpeet();
+            vuorolista = contr.LataaTarpeet();
             tyovuorot = contr.LataaTyovuorot();
             tyotehtavat = contr.LoadTyotehtavat();
             tyonimikkeet = contr.LoadTyonimikkeet();
@@ -884,7 +886,21 @@ namespace Projekti1
 
         private void btnHaeTyovuorolista_Click(object sender, EventArgs e)
         {
+            lvVuorolista.Items.Clear();
 
+            foreach (Tarve item in vuorolista)
+            {
+                lvVuorolista.Items.Add(new ListViewItem(new string[] { 
+                item.Alkaa.ToString(),
+                item.Loppuu.ToString(),
+                item.Paikka,
+                item.Tehtava,
+                item.Etunimi,
+                item.Sukunimi,
+                item.Puhelin,
+                item.Nimike}));
+
+            }
         }
 
         /// <summary>

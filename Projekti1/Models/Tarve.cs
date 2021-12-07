@@ -17,6 +17,10 @@ namespace Projekti1.Models
         public string Nimike { get; set; }
         public int Maara { get; set; }
         public int Kiinnitetty { get; set; }
+        public string Etunimi { get; set; }
+        public string Sukunimi { get; set; }
+        public string Puhelin { get; set; }
+
 
         public Tarve()
         {
@@ -40,6 +44,18 @@ namespace Projekti1.Models
             TyovuoroID = tyovuoroID;
             TehtavaID = tehtavaID;
             Maara = maara;
+        }
+
+        public Tarve(DateTime alkaa, DateTime loppuu, string paikka, string tehtava, string etunimi, string sukunimi, string puhelin, string nimike)
+        {
+            Alkaa = alkaa;
+            Loppuu = loppuu;
+            Paikka = paikka;
+            Tehtava = tehtava;
+            Etunimi = etunimi;
+            Sukunimi = sukunimi;
+            Puhelin = puhelin;
+            Nimike = nimike;
         }
 
         public override string ToString()
