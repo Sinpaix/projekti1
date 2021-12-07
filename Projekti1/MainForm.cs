@@ -542,7 +542,7 @@ namespace Projekti1
         {
             //luodaan uusi tarve
             tarve = new Tarve();
-            tarve.TyovuoroID = int.Parse(tbTyovuoroValinta.Text);
+            tarve.TyovuoroID = int.Parse(lblVuoroId.Text);
             tarve.TehtavaID = int.Parse(lblTehtavaID.Text);
             tarve.Maara = (int)numMaara.Value;
 
@@ -750,6 +750,7 @@ namespace Projekti1
             }
         }
 
+
         private void listviewTyoVuorot_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listviewTyoVuorot.SelectedIndices.Count > 0)
@@ -757,9 +758,13 @@ namespace Projekti1
                 
                 // Haetaan valittu rivi työvuorotaulukosta ja viedään se tarve valikon textboxiin
                 int selectedIndex = listviewTyoVuorot.SelectedIndices[0];
+                //string alkaa = listviewTyoVuorot.SelectedIndices[1].ToString("dd.MM.yy");
+                //string loppuu = listviewTyoVuorot.SelectedIndices[2].ToString("dd.MM.yy");
                 Tyovuoro vuoro = tyovuorot[selectedIndex];
 
-                tbTyovuoroValinta.Text = vuoro.Idtyovuoro.ToString();
+                lblVuoroId.Text = vuoro.Idtyovuoro.ToString();
+                tbTyovuoroValinta.Text = vuoro.Alkaa.ToString("dd.MM.yy HH:mm") + " - " + vuoro.Loppuu.ToString("dd.MM.yy HH:mm");
+
             }
         }
 
@@ -877,15 +882,16 @@ namespace Projekti1
 
         }
 
+        private void btnHaeTyovuorolista_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /// <summary>
         /// Etusivun napit
         /// </summary>
         #region Etusivun napit
 
-        private void btnTyovuorot_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab(1);
-        }
 
         private void btnKiinnitykset_Click(object sender, EventArgs e)
         {
@@ -920,8 +926,10 @@ namespace Projekti1
 
 
 
+
+
         #endregion
 
-
+        
     }
 }
