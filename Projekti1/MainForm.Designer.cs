@@ -96,11 +96,14 @@ namespace Projekti1
             this.tabTyövuorolista = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lvVuorolista = new System.Windows.Forms.ListView();
-            this.Enimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sNimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TyövuoroAlku = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TyövuoroLoppu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Paikka = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tehtävä = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Enimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sNimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Puhnumero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Tehtavanimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnHaeTyovuorolista = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpVuorolistaLoppuu = new System.Windows.Forms.DateTimePicker();
@@ -194,9 +197,6 @@ namespace Projekti1
             this.panel6 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.Paikka = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Puhnumero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Tehtavanimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabVapaalista.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -234,7 +234,7 @@ namespace Projekti1
             this.tabVapaalista.Location = new System.Drawing.Point(4, 22);
             this.tabVapaalista.Margin = new System.Windows.Forms.Padding(2);
             this.tabVapaalista.Name = "tabVapaalista";
-            this.tabVapaalista.Size = new System.Drawing.Size(1812, 873);
+            this.tabVapaalista.Size = new System.Drawing.Size(1812, 892);
             this.tabVapaalista.TabIndex = 7;
             this.tabVapaalista.Text = "Vapaalista";
             this.tabVapaalista.UseVisualStyleBackColor = true;
@@ -248,7 +248,7 @@ namespace Projekti1
             this.panel9.Location = new System.Drawing.Point(0, 152);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1812, 721);
+            this.panel9.Size = new System.Drawing.Size(1812, 740);
             this.panel9.TabIndex = 1;
             // 
             // label29
@@ -277,7 +277,7 @@ namespace Projekti1
             this.lwVapaalista.Location = new System.Drawing.Point(24, 71);
             this.lwVapaalista.Margin = new System.Windows.Forms.Padding(2);
             this.lwVapaalista.Name = "lwVapaalista";
-            this.lwVapaalista.Size = new System.Drawing.Size(2649, 1281);
+            this.lwVapaalista.Size = new System.Drawing.Size(2649, 1300);
             this.lwVapaalista.TabIndex = 1;
             this.lwVapaalista.UseCompatibleStateImageBehavior = false;
             // 
@@ -315,7 +315,7 @@ namespace Projekti1
             this.listView1.Location = new System.Drawing.Point(24, 22);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1775, 721);
+            this.listView1.Size = new System.Drawing.Size(1775, 740);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -401,7 +401,7 @@ namespace Projekti1
             this.tabTehtävät.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tabTehtävät.Name = "tabTehtävät";
             this.tabTehtävät.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.tabTehtävät.Size = new System.Drawing.Size(1812, 873);
+            this.tabTehtävät.Size = new System.Drawing.Size(1812, 892);
             this.tabTehtävät.TabIndex = 5;
             this.tabTehtävät.Text = "Työtehtävien hallinta";
             this.tabTehtävät.UseVisualStyleBackColor = true;
@@ -457,6 +457,7 @@ namespace Projekti1
             this.dgvTehtavat.AllowUserToOrderColumns = true;
             this.dgvTehtavat.AllowUserToResizeRows = false;
             this.dgvTehtavat.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTehtavat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTehtavat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTehtavat.Location = new System.Drawing.Point(373, 12);
             this.dgvTehtavat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -596,7 +597,7 @@ namespace Projekti1
             this.tabTyöntekijät.Location = new System.Drawing.Point(4, 22);
             this.tabTyöntekijät.Name = "tabTyöntekijät";
             this.tabTyöntekijät.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTyöntekijät.Size = new System.Drawing.Size(1812, 873);
+            this.tabTyöntekijät.Size = new System.Drawing.Size(1812, 892);
             this.tabTyöntekijät.TabIndex = 0;
             this.tabTyöntekijät.Text = "Työntekijähallinta";
             this.tabTyöntekijät.UseVisualStyleBackColor = true;
@@ -921,7 +922,7 @@ namespace Projekti1
             this.tabTyövuorolista.Location = new System.Drawing.Point(4, 22);
             this.tabTyövuorolista.Name = "tabTyövuorolista";
             this.tabTyövuorolista.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTyövuorolista.Size = new System.Drawing.Size(1812, 873);
+            this.tabTyövuorolista.Size = new System.Drawing.Size(1812, 892);
             this.tabTyövuorolista.TabIndex = 3;
             this.tabTyövuorolista.Text = "Työvuorolista";
             this.tabTyövuorolista.UseVisualStyleBackColor = true;
@@ -960,18 +961,6 @@ namespace Projekti1
             this.lvVuorolista.UseCompatibleStateImageBehavior = false;
             this.lvVuorolista.View = System.Windows.Forms.View.Details;
             // 
-            // Enimi
-            // 
-            this.Enimi.DisplayIndex = 0;
-            this.Enimi.Text = "Etunimi";
-            this.Enimi.Width = 74;
-            // 
-            // sNimi
-            // 
-            this.sNimi.DisplayIndex = 1;
-            this.sNimi.Text = "Sukunimi";
-            this.sNimi.Width = 106;
-            // 
             // TyövuoroAlku
             // 
             this.TyövuoroAlku.Text = "Vuoro alkaa";
@@ -982,10 +971,32 @@ namespace Projekti1
             this.TyövuoroLoppu.Text = "Vuoro loppuu";
             this.TyövuoroLoppu.Width = 120;
             // 
+            // Paikka
+            // 
+            this.Paikka.Text = "Paikka";
+            // 
             // Tehtävä
             // 
             this.Tehtävä.Text = "Tehtävä";
             this.Tehtävä.Width = 85;
+            // 
+            // Enimi
+            // 
+            this.Enimi.Text = "Etunimi";
+            this.Enimi.Width = 74;
+            // 
+            // sNimi
+            // 
+            this.sNimi.Text = "Sukunimi";
+            this.sNimi.Width = 106;
+            // 
+            // Puhnumero
+            // 
+            this.Puhnumero.Text = "Puhelinnumero";
+            // 
+            // Tehtavanimike
+            // 
+            this.Tehtavanimike.Text = "Nimike";
             // 
             // btnHaeTyovuorolista
             // 
@@ -1040,7 +1051,7 @@ namespace Projekti1
             this.tabTyöntekijänVuorot.Location = new System.Drawing.Point(4, 22);
             this.tabTyöntekijänVuorot.Name = "tabTyöntekijänVuorot";
             this.tabTyöntekijänVuorot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTyöntekijänVuorot.Size = new System.Drawing.Size(1812, 873);
+            this.tabTyöntekijänVuorot.Size = new System.Drawing.Size(1812, 892);
             this.tabTyöntekijänVuorot.TabIndex = 2;
             this.tabTyöntekijänVuorot.Text = "Työntekijän vuorolista";
             this.tabTyöntekijänVuorot.UseVisualStyleBackColor = true;
@@ -1179,7 +1190,7 @@ namespace Projekti1
             this.tabKiinnitys.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tabKiinnitys.Name = "tabKiinnitys";
             this.tabKiinnitys.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tabKiinnitys.Size = new System.Drawing.Size(1812, 873);
+            this.tabKiinnitys.Size = new System.Drawing.Size(1812, 892);
             this.tabKiinnitys.TabIndex = 4;
             this.tabKiinnitys.Text = "Työntekijöiden kiinnitys";
             this.tabKiinnitys.UseVisualStyleBackColor = true;
@@ -1480,7 +1491,7 @@ namespace Projekti1
             this.tabVuorot.Location = new System.Drawing.Point(4, 22);
             this.tabVuorot.Name = "tabVuorot";
             this.tabVuorot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabVuorot.Size = new System.Drawing.Size(1812, 873);
+            this.tabVuorot.Size = new System.Drawing.Size(1812, 892);
             this.tabVuorot.TabIndex = 1;
             this.tabVuorot.Text = "Työvuorojen hallinta";
             this.tabVuorot.UseVisualStyleBackColor = true;
@@ -1985,13 +1996,14 @@ namespace Projekti1
             this.tabEtusivu.Location = new System.Drawing.Point(4, 22);
             this.tabEtusivu.Margin = new System.Windows.Forms.Padding(2);
             this.tabEtusivu.Name = "tabEtusivu";
-            this.tabEtusivu.Size = new System.Drawing.Size(1812, 873);
+            this.tabEtusivu.Size = new System.Drawing.Size(1812, 892);
             this.tabEtusivu.TabIndex = 6;
             this.tabEtusivu.Text = "Etusivu";
             this.tabEtusivu.UseVisualStyleBackColor = true;
             // 
             // panel7
             // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(121)))), ((int)(((byte)(135)))));
             this.panel7.Controls.Add(this.btnTyotehtavat);
             this.panel7.Controls.Add(this.btnVapaatLista);
             this.panel7.Controls.Add(this.btnTyovuorolistat);
@@ -1999,115 +2011,132 @@ namespace Projekti1
             this.panel7.Controls.Add(this.btnTyovuorot);
             this.panel7.Controls.Add(this.btnKiinnitykset);
             this.panel7.Controls.Add(this.btnTyontekijat);
+            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 135);
+            this.panel7.Location = new System.Drawing.Point(0, 127);
             this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1812, 738);
+            this.panel7.Size = new System.Drawing.Size(1812, 765);
             this.panel7.TabIndex = 3;
             // 
             // btnTyotehtavat
             // 
-            this.btnTyotehtavat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTyotehtavat.Location = new System.Drawing.Point(1004, 10);
+            this.btnTyotehtavat.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnTyotehtavat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTyotehtavat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTyotehtavat.Location = new System.Drawing.Point(1210, 10);
             this.btnTyotehtavat.Margin = new System.Windows.Forms.Padding(2);
             this.btnTyotehtavat.Name = "btnTyotehtavat";
-            this.btnTyotehtavat.Size = new System.Drawing.Size(146, 84);
+            this.btnTyotehtavat.Size = new System.Drawing.Size(360, 210);
             this.btnTyotehtavat.TabIndex = 5;
             this.btnTyotehtavat.Text = "Työtehtävien hallinta";
-            this.btnTyotehtavat.UseVisualStyleBackColor = true;
+            this.btnTyotehtavat.UseVisualStyleBackColor = false;
             this.btnTyotehtavat.Click += new System.EventHandler(this.btnTyotehtavat_Click);
             // 
             // btnVapaatLista
             // 
-            this.btnVapaatLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVapaatLista.Location = new System.Drawing.Point(679, 10);
+            this.btnVapaatLista.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnVapaatLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVapaatLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVapaatLista.Location = new System.Drawing.Point(819, 259);
             this.btnVapaatLista.Margin = new System.Windows.Forms.Padding(2);
             this.btnVapaatLista.Name = "btnVapaatLista";
-            this.btnVapaatLista.Size = new System.Drawing.Size(146, 84);
+            this.btnVapaatLista.Size = new System.Drawing.Size(360, 210);
             this.btnVapaatLista.TabIndex = 4;
             this.btnVapaatLista.Text = "Vapaalista";
-            this.btnVapaatLista.UseVisualStyleBackColor = true;
+            this.btnVapaatLista.UseVisualStyleBackColor = false;
             this.btnVapaatLista.Click += new System.EventHandler(this.btnVapaatLista_Click);
             // 
             // btnTyovuorolistat
             // 
-            this.btnTyovuorolistat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTyovuorolistat.Location = new System.Drawing.Point(517, 10);
+            this.btnTyovuorolistat.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnTyovuorolistat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTyovuorolistat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTyovuorolistat.Location = new System.Drawing.Point(428, 259);
             this.btnTyovuorolistat.Margin = new System.Windows.Forms.Padding(2);
             this.btnTyovuorolistat.Name = "btnTyovuorolistat";
-            this.btnTyovuorolistat.Size = new System.Drawing.Size(146, 84);
+            this.btnTyovuorolistat.Size = new System.Drawing.Size(360, 210);
             this.btnTyovuorolistat.TabIndex = 4;
             this.btnTyovuorolistat.Text = "Työvuorolista";
-            this.btnTyovuorolistat.UseVisualStyleBackColor = true;
+            this.btnTyovuorolistat.UseVisualStyleBackColor = false;
             this.btnTyovuorolistat.Click += new System.EventHandler(this.btnTyovuorolistat_Click);
             // 
             // btnTtVuorolista
             // 
-            this.btnTtVuorolista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTtVuorolista.Location = new System.Drawing.Point(356, 10);
+            this.btnTtVuorolista.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnTtVuorolista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTtVuorolista.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTtVuorolista.Location = new System.Drawing.Point(37, 259);
             this.btnTtVuorolista.Margin = new System.Windows.Forms.Padding(2);
             this.btnTtVuorolista.Name = "btnTtVuorolista";
-            this.btnTtVuorolista.Size = new System.Drawing.Size(146, 84);
+            this.btnTtVuorolista.Size = new System.Drawing.Size(360, 210);
             this.btnTtVuorolista.TabIndex = 3;
             this.btnTtVuorolista.Text = "Työntekijän vuorolista";
-            this.btnTtVuorolista.UseVisualStyleBackColor = true;
+            this.btnTtVuorolista.UseVisualStyleBackColor = false;
             this.btnTtVuorolista.Click += new System.EventHandler(this.btnTtVuorolista_Click);
             // 
             // btnTyovuorot
             // 
-            this.btnTyovuorot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTyovuorot.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnTyovuorot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTyovuorot.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTyovuorot.Location = new System.Drawing.Point(37, 10);
             this.btnTyovuorot.Margin = new System.Windows.Forms.Padding(2);
             this.btnTyovuorot.Name = "btnTyovuorot";
-            this.btnTyovuorot.Size = new System.Drawing.Size(146, 84);
+            this.btnTyovuorot.Size = new System.Drawing.Size(360, 210);
             this.btnTyovuorot.TabIndex = 2;
             this.btnTyovuorot.Text = "Työvuorojen hallinta";
-            this.btnTyovuorot.UseVisualStyleBackColor = true;
+            this.btnTyovuorot.UseVisualStyleBackColor = false;
             this.btnTyovuorot.Click += new System.EventHandler(this.btnTyovuorot_Click);
             // 
             // btnKiinnitykset
             // 
-            this.btnKiinnitykset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnKiinnitykset.Location = new System.Drawing.Point(195, 10);
+            this.btnKiinnitykset.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnKiinnitykset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKiinnitykset.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKiinnitykset.Location = new System.Drawing.Point(428, 10);
             this.btnKiinnitykset.Margin = new System.Windows.Forms.Padding(2);
             this.btnKiinnitykset.Name = "btnKiinnitykset";
-            this.btnKiinnitykset.Size = new System.Drawing.Size(146, 84);
+            this.btnKiinnitykset.Size = new System.Drawing.Size(360, 210);
             this.btnKiinnitykset.TabIndex = 1;
             this.btnKiinnitykset.Text = "Työntekijöiden kiinnitys";
-            this.btnKiinnitykset.UseVisualStyleBackColor = true;
+            this.btnKiinnitykset.UseVisualStyleBackColor = false;
             this.btnKiinnitykset.Click += new System.EventHandler(this.btnKiinnitykset_Click);
             // 
             // btnTyontekijat
             // 
-            this.btnTyontekijat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTyontekijat.Location = new System.Drawing.Point(843, 10);
+            this.btnTyontekijat.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnTyontekijat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTyontekijat.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTyontekijat.Location = new System.Drawing.Point(819, 10);
             this.btnTyontekijat.Margin = new System.Windows.Forms.Padding(2);
             this.btnTyontekijat.Name = "btnTyontekijat";
-            this.btnTyontekijat.Size = new System.Drawing.Size(146, 84);
+            this.btnTyontekijat.Size = new System.Drawing.Size(360, 210);
             this.btnTyontekijat.TabIndex = 0;
             this.btnTyontekijat.Text = "Työntekijöiden hallinta";
-            this.btnTyontekijat.UseVisualStyleBackColor = true;
+            this.btnTyontekijat.UseVisualStyleBackColor = false;
             this.btnTyontekijat.Click += new System.EventHandler(this.btnTyontekijat_Click);
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(121)))), ((int)(((byte)(135)))));
             this.panel6.Controls.Add(this.label24);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1812, 135);
+            this.panel6.Size = new System.Drawing.Size(1812, 127);
             this.panel6.TabIndex = 2;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label24.Location = new System.Drawing.Point(29, 40);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(262, 44);
+            this.label24.Size = new System.Drawing.Size(273, 46);
             this.label24.TabIndex = 1;
             this.label24.Text = "SairaalaSofta";
             // 
@@ -2124,34 +2153,23 @@ namespace Projekti1
             this.tabControl.Controls.Add(this.tabVapaalista);
             this.tabControl.Controls.Add(this.tabTyöntekijät);
             this.tabControl.Controls.Add(this.tabTehtävät);
-            this.tabControl.Location = new System.Drawing.Point(4, 31);
+            this.tabControl.Location = new System.Drawing.Point(4, 12);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1820, 899);
+            this.tabControl.Size = new System.Drawing.Size(1820, 918);
             this.tabControl.TabIndex = 0;
-            // 
-            // Paikka
-            // 
-            this.Paikka.Text = "Paikka";
-            // 
-            // Puhnumero
-            // 
-            this.Puhnumero.Text = "Puhelinnumero";
-            // 
-            // Tehtavanimike
-            // 
-            this.Tehtavanimike.Text = "Nimike";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(121)))), ((int)(((byte)(135)))));
             this.ClientSize = new System.Drawing.Size(1824, 931);
             this.Controls.Add(this.tabControl);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Työvuorosuunnittelu";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabVapaalista.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
