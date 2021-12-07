@@ -879,6 +879,8 @@ namespace Projekti1
             vuorolista = contr.LoadVuorolista();
             lvVuorolista.Items.Clear();
 
+            
+
             foreach (Tarve item in vuorolista)
             {
                 lvVuorolista.Items.Add(new ListViewItem(new string[] { 
@@ -899,6 +901,10 @@ namespace Projekti1
         /// </summary>
         #region Etusivun napit
 
+        private void btnTyovuorot_Click(object sender, EventArgs e)
+        {
+            tabControl.SelectTab(1);
+        }
 
         private void btnKiinnitykset_Click(object sender, EventArgs e)
         {
@@ -935,8 +941,9 @@ namespace Projekti1
 
 
 
+
         #endregion
 
-        
+      
     }
 }

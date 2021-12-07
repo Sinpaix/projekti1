@@ -739,7 +739,18 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = "SELECT tv.alkaa, tv.loppuu, tt.paikka, tt.tehtava, t.etunimi, t.sukunimi, t.puhelin, tn.nimike FROM Kiinnitys k JOIN Tyotehtava tt ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava JOIN Tyontekija t ON k.Tyontekija_idTyontekija = t.idTyontekija JOIN Tyovuoro tv ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro JOIN Tyonimike tn ON t.Tyonimike_idnimike = tn.idnimike WHERE (tv.alkaa BETWEEN '2021-11-17' AND '2021-11-18') ORDER BY tv.alkaa, t.sukunimi";
+                string sql = "SELECT tv.alkaa, tv.loppuu, tt.paikka, tt.tehtava, t.etunimi, t.sukunimi, t.puhelin, tn.nimike " +
+                    "FROM Kiinnitys k " +
+                    "JOIN Tyotehtava tt " +
+                    "ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava " +
+                    "JOIN Tyontekija t " +
+                    "ON k.Tyontekija_idTyontekija = t.idTyontekija " +
+                    "JOIN Tyovuoro tv " +
+                    "ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro " +
+                    "JOIN Tyonimike tn " +
+                    "ON t.Tyonimike_idnimike = tn.idnimike " +
+                    "WHERE (tv.alkaa BETWEEN '2021-11-17' AND '2021-12-14') " +
+                    "ORDER BY tv.alkaa, t.sukunimi";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();

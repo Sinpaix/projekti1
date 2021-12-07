@@ -2064,6 +2064,7 @@ namespace Projekti1
             this.btnTyovuorot.TabIndex = 2;
             this.btnTyovuorot.Text = "Työvuorojen hallinta";
             this.btnTyovuorot.UseVisualStyleBackColor = true;
+            this.btnTyovuorot.Click += new System.EventHandler(this.btnTyovuorot_Click);
             // 
             // btnKiinnitykset
             // 
