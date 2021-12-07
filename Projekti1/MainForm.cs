@@ -40,7 +40,7 @@ namespace Projekti1
             // Tähän funktiot millä ladataan tarvittavat tiedot tietokannasta heti kun ohjelma ajetaan
             tyontekijat = contr.LataaTyontekijat();
             tarpeet = contr.LataaTarpeet();
-            vuorolista = contr.LataaTarpeet();
+            vuorolista = contr.LoadVuorolista();
             tyovuorot = contr.LataaTyovuorot();
             tyotehtavat = contr.LoadTyotehtavat();
             tyonimikkeet = contr.LoadTyonimikkeet();
@@ -622,23 +622,15 @@ namespace Projekti1
             string sNimikeid = this.lblidnimike.Text;
             string sNimike = this.comboNimike.Text;
 
-            //if (null == tyotehtava)
-            //{
-                // luodaan uusi tehtävä
-                // Id ei tiedossa, koska tulee kannasta
-                tyotehtava = new Tyotehtava(0, sTehtava, sPaikka, int.Parse(sNimikeid), sNimike);
 
-                Tyotehtava createdTyotehtava = GetTyotehtava();
-                /*int count = */contr.AddTyotehtava(createdTyotehtava);
+            tyotehtava = new Tyotehtava(0, sTehtava, sPaikka, int.Parse(sNimikeid), sNimike);
 
-                //if (count > 0)
-                //{
-                    // Haetaan kannasta työtehtävät ja päivitetään info-labelin teksti
-                    tyotehtavat = contr.LoadTyotehtavat();
-                    lblInfoTehtava.Text = "Uusi tehtävä lisätty: " + createdTyotehtava;
-            //    }
+            Tyotehtava createdTyotehtava = GetTyotehtava();
+            contr.AddTyotehtava(createdTyotehtava);
 
-            //}
+            tyotehtavat = contr.LoadTyotehtavat();
+            lblInfoTehtava.Text = "Uusi tehtävä lisätty: " + createdTyotehtava;
+
 
             PopulatedTyotehtavaDGV();
             PopulateTyotehtavaComboBox();
@@ -824,8 +816,6 @@ namespace Projekti1
 
                 tyovuorot = contr.LataaTyovuorot();
                 PopulateTyovuorotListView();
-
-
             }
 
         }
@@ -886,6 +876,7 @@ namespace Projekti1
 
         private void btnHaeTyovuorolista_Click(object sender, EventArgs e)
         {
+            vuorolista = contr.LoadVuorolista();
             lvVuorolista.Items.Clear();
 
             foreach (Tarve item in vuorolista)
