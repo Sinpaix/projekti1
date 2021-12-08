@@ -48,10 +48,8 @@ namespace Projekti1
             this.label26 = new System.Windows.Forms.Label();
             this.tabTehtävät = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.lblInfoTehtava = new System.Windows.Forms.Label();
             this.lblidnimike = new System.Windows.Forms.Label();
             this.dgvTehtavat = new System.Windows.Forms.DataGridView();
-            this.btnTyhjennaKentatTehtava = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.comboNimike = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -408,10 +406,8 @@ namespace Projekti1
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.lblInfoTehtava);
             this.panel5.Controls.Add(this.lblidnimike);
             this.panel5.Controls.Add(this.dgvTehtavat);
-            this.panel5.Controls.Add(this.btnTyhjennaKentatTehtava);
             this.panel5.Controls.Add(this.label20);
             this.panel5.Controls.Add(this.comboNimike);
             this.panel5.Controls.Add(this.label5);
@@ -427,17 +423,6 @@ namespace Projekti1
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1285, 638);
             this.panel5.TabIndex = 35;
-            // 
-            // lblInfoTehtava
-            // 
-            this.lblInfoTehtava.AutoSize = true;
-            this.lblInfoTehtava.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoTehtava.Location = new System.Drawing.Point(369, 589);
-            this.lblInfoTehtava.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblInfoTehtava.Name = "lblInfoTehtava";
-            this.lblInfoTehtava.Size = new System.Drawing.Size(39, 20);
-            this.lblInfoTehtava.TabIndex = 37;
-            this.lblInfoTehtava.Text = "info";
             // 
             // lblidnimike
             // 
@@ -468,17 +453,6 @@ namespace Projekti1
             this.dgvTehtavat.Size = new System.Drawing.Size(835, 576);
             this.dgvTehtavat.TabIndex = 35;
             this.dgvTehtavat.SelectionChanged += new System.EventHandler(this.dgvTehtavat_SelectionChanged);
-            // 
-            // btnTyhjennaKentatTehtava
-            // 
-            this.btnTyhjennaKentatTehtava.Location = new System.Drawing.Point(17, 298);
-            this.btnTyhjennaKentatTehtava.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btnTyhjennaKentatTehtava.Name = "btnTyhjennaKentatTehtava";
-            this.btnTyhjennaKentatTehtava.Size = new System.Drawing.Size(122, 32);
-            this.btnTyhjennaKentatTehtava.TabIndex = 34;
-            this.btnTyhjennaKentatTehtava.Text = "Tyhjennä kentät";
-            this.btnTyhjennaKentatTehtava.UseVisualStyleBackColor = true;
-            this.btnTyhjennaKentatTehtava.Click += new System.EventHandler(this.btnTyhjennaKentatTehtava_Click_1);
             // 
             // label20
             // 
@@ -513,6 +487,7 @@ namespace Projekti1
             // 
             // comboPaikka
             // 
+            this.comboPaikka.DisplayMember = "1";
             this.comboPaikka.FormattingEnabled = true;
             this.comboPaikka.Items.AddRange(new object[] {
             "Osasto A",
@@ -559,7 +534,7 @@ namespace Projekti1
             // btnMuokkaa
             // 
             this.btnMuokkaa.Enabled = false;
-            this.btnMuokkaa.Location = new System.Drawing.Point(152, 298);
+            this.btnMuokkaa.Location = new System.Drawing.Point(17, 291);
             this.btnMuokkaa.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnMuokkaa.Name = "btnMuokkaa";
             this.btnMuokkaa.Size = new System.Drawing.Size(122, 32);
@@ -1565,6 +1540,7 @@ namespace Projekti1
             // 
             // listviewTyoVuorot
             // 
+            this.listviewTyoVuorot.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listviewTyoVuorot.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Alkaa,
@@ -1897,6 +1873,7 @@ namespace Projekti1
             this.dgvTarpeet.AllowUserToOrderColumns = true;
             this.dgvTarpeet.AllowUserToResizeRows = false;
             this.dgvTarpeet.BackgroundColor = System.Drawing.Color.White;
+            this.dgvTarpeet.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTarpeet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTarpeet.Location = new System.Drawing.Point(589, 215);
             this.dgvTarpeet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
@@ -2235,10 +2212,8 @@ namespace Projekti1
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TabPage tabTehtävät;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label lblInfoTehtava;
         private System.Windows.Forms.Label lblidnimike;
         private System.Windows.Forms.DataGridView dgvTehtavat;
-        private System.Windows.Forms.Button btnTyhjennaKentatTehtava;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox comboNimike;
         private System.Windows.Forms.Label label5;

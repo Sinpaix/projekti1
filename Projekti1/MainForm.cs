@@ -537,8 +537,10 @@ namespace Projekti1
             dgvTarpeet.DataSource = source;
             dgvTarpeet.Columns[3].Visible = false; // Piilotetaan tehtävän ID
             dgvTarpeet.Columns[5].Visible = false; // Piilotetaan paikka
-            //dgvTarpeet.Columns[6].Visible = false; // Piilotetaan nimike
-            dgvTarpeet.Columns[8].Visible = false; // Piilotetaan "kiinnitetty" kenttä
+            dgvTarpeet.Columns[8].Visible = false; // Piilotetaan Kiinnitys
+            dgvTarpeet.Columns[9].Visible = false; // Piilotetaan Etunimi
+            dgvTarpeet.Columns[10].Visible = false; // Piilotetaan Sukunimi
+            dgvTarpeet.Columns[11].Visible = false; // Piilotetaan puhelinnumero 
         }
 
         private void comboTehtavat_SelectedIndexChanged(object sender, EventArgs e)
@@ -561,11 +563,6 @@ namespace Projekti1
             tarve.Maara = (int)numMaara.Value;
 
             contr.AddTarve(tarve);
-            lblInfoVuorot.Text = "Uusi tarve lisätty";
-
-            tarpeet = contr.LataaTarpeet();
-            PopulatedTarpeetDGV();
-            PopulateTarveListView();
 
         }
 
@@ -581,13 +578,12 @@ namespace Projekti1
                 if (count > 0)
                 {
 
-                    lblInfoVuorot.Text = "Tarve poistettu";
                     tarpeet.RemoveAt(rowIndex);
 
                 }
                 else
                 {
-                    lblInfoVuorot.Text = "Tarpeen poistaminen epäonnistui!";
+                    MessageBox.Show("Tarpeen poistaminen epäonnistui!");
                 }
 
                 tarpeet = contr.LataaTarpeet();
@@ -599,8 +595,17 @@ namespace Projekti1
 
         private void btnTallennaTarve_Click(object sender, EventArgs e)
         {
-            AddTarve();
-
+            if(lblVuoroId.Text == "VuoroID" || lblTehtavaID.Text == "TehtavaID" || numMaara.Value == 0)
+            {
+                MessageBox.Show("Täytä kaikki kentät");
+            }
+            else
+            {
+                AddTarve();
+                tarpeet = contr.LataaTarpeet();
+                PopulatedTarpeetDGV();
+                PopulateTarveListView();
+            }
         }
 
         private void btnPoistaTarve_Click(object sender, EventArgs e)
@@ -622,9 +627,12 @@ namespace Projekti1
 
         private void btnTallenna_Click(object sender, EventArgs e)
         {
-            AddTyotehtava();
-            
-
+            if (tbTehtava.Text == "" || comboPaikka.Text == "" || lblidnimike.Text == "NimikeID")
+                MessageBox.Show("Täytä kaikki kentät");
+            else
+            {
+                AddTyotehtava();
+            }
         }
 
         private void AddTyotehtava()
@@ -641,7 +649,6 @@ namespace Projekti1
             contr.AddTyotehtava(createdTyotehtava);
 
             tyotehtavat = contr.LoadTyotehtavat();
-            lblInfoTehtava.Text = "Uusi tehtävä lisätty: " + createdTyotehtava;
 
 
             PopulatedTyotehtavaDGV();
@@ -667,13 +674,12 @@ namespace Projekti1
                 if (count > 0)
                 {
                     
-                    lblInfoTehtava.Text = "Tehtävä poistettu: " + tt;
                     tyotehtavat.RemoveAt(rowIndex);
 
                 }
                 else
                 {
-                    lblInfoTehtava.Text = "Tehtävän poisto epäonnistui!";
+                    MessageBox.Show("Tehtävän poisto epäonnistui!");
                 }
 
                 tyotehtavat = contr.LoadTyotehtavat();
@@ -715,22 +721,8 @@ namespace Projekti1
 
             contr.EditTyotehtava(tyotehtava);
             PopulatedTyotehtavaDGV();
-            
-
-            lblInfoTehtava.Text = "Tehtävää muokattu: ";
 
         }
-
-        private void btnTyhjennaKentatTehtava_Click_1(object sender, EventArgs e)
-        {
-            tbTehtava.Text = " ";
-            comboPaikka.Text = " ";
-            comboNimike.Text = " ";
-
-            btnTallenna.Enabled = true;
-        }
-
-
 
         private void PopulateTyotehtavaComboBox()
         {
@@ -764,8 +756,6 @@ namespace Projekti1
                 
                 // Haetaan valittu rivi työvuorotaulukosta ja viedään se tarve valikon textboxiin
                 int selectedIndex = listviewTyoVuorot.SelectedIndices[0];
-                //string alkaa = listviewTyoVuorot.SelectedIndices[1].ToString("dd.MM.yy");
-                //string loppuu = listviewTyoVuorot.SelectedIndices[2].ToString("dd.MM.yy");
                 Tyovuoro vuoro = tyovuorot[selectedIndex];
 
                 lblVuoroId.Text = vuoro.Idtyovuoro.ToString();
@@ -777,11 +767,15 @@ namespace Projekti1
             private void btnTallennaVuoro_Click(object sender, EventArgs e)
         {
             AddTyovuoro();
+            tyovuorot = contr.LataaTyovuorot();
+            PopulateTyovuorotListView();
         }
 
         private void btnPoistaVuoro_Click(object sender, EventArgs e)
         {
             DeleteTyovuoro();
+            tyovuorot = contr.LataaTyovuorot();
+            PopulateTyovuorotListView();
         }
 
         private void AddTyovuoro()
@@ -797,11 +791,7 @@ namespace Projekti1
             tyovuorot.Add(tyovuoro);
             contr.AddTyovuoro(tyovuoro);
 
-            lblInfoVuorot.Text = "Työvuoro lisätty: " + alkaa + " " + loppuu; 
-
-            tyovuorot = contr.LataaTyovuorot();
-
-            PopulateTyovuorotListView();
+            
         }
 
         private void DeleteTyovuoro()
@@ -817,27 +807,16 @@ namespace Projekti1
                 if (count > 0)
                 {
 
-                    lblInfoVuorot.Text = "Vuoro poistettu: " + tv;
                     tyovuorot.RemoveAt(selectedIndex);
 
                 }
                 else
                 {
-                    lblInfoVuorot.Text = "Vuoron poistaminen epäonnistui!";
+                    MessageBox.Show("Vuoron poistaminen epäonnistui!");
                 }
-
-                tyovuorot = contr.LataaTyovuorot();
-                PopulateTyovuorotListView();
             }
-
         }
 
-        private void btnTyhjennaKentatTehtava_Click(object sender, EventArgs e)
-        {
-            tbTehtava.Text = "";
-            comboPaikka.Text = "";
-            comboNimike.Text = "";
-        }
         #endregion
 
 
