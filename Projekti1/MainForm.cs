@@ -831,7 +831,7 @@ namespace Projekti1
             source.DataSource = tyontekijat;
             comboTyontekijat.DataSource = source;
 
-            comboTyontekijat.DisplayMember = "Etunimi";
+            comboTyontekijat.DisplayMember = "Tiedot";
             comboTyontekijat.ValueMember = "Idtyontekija";
         }
 

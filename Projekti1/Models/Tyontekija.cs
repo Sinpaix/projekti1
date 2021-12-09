@@ -15,6 +15,7 @@ namespace Projekti1.Models
         public string Email { get; set; }
         public string Nimike { get; set; }
         public int Tyonimike_idnimike { get; set; }
+        public string Tiedot { get; private set; }
 
         public Tyontekija()
         {
@@ -27,6 +28,7 @@ namespace Projekti1.Models
             Puhelin = puhelin;
             Email = email;
             Tyonimike_idnimike = tyonimike_idnimike;
+            Tiedot = $"{Etunimi} {Sukunimi}, {Nimike}";
         }
 
         public Tyontekija(int idtyontekija, string etunimi, string sukunimi, string puhelin, string email, string nimike, int tyonimike_idnimike) : this()
@@ -38,6 +40,7 @@ namespace Projekti1.Models
             Email = email;
             Nimike = nimike;
             Tyonimike_idnimike = tyonimike_idnimike;
+            Tiedot = $"{Etunimi} {Sukunimi}, {Nimike}";
         }
 
         
