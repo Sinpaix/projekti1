@@ -521,12 +521,22 @@ namespace Projekti1
 
         private void PopulatedTyotehtavaDGV()
         {
+
             BindingSource source = new BindingSource();
             source.DataSource = tyotehtavat;
             dgvTehtavat.DataSource = source;
             //dgwTehtavat.Columns[0].Visible = false; // Piilotetaan työvuoron ID 
             dgvTehtavat.Columns[3].Visible = false; // Piilotetaan tehtävän ID 
             //dgwTehtavat.Columns[6].Visible = false; // Piilotetaan nimikkeen ID 
+
+
+
+            //dgvTehtavat.Columns[0].Width = 100;
+            //dgvTehtavat.Columns[1].Width = 150;
+            //dgvTehtavat.Columns[2].Width = 150;
+            //dgvTehtavat.Columns[4].Width = 150;
+
+
         }
 
 
