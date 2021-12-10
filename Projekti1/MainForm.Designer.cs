@@ -160,7 +160,6 @@ namespace Projekti1
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblVuoroId = new System.Windows.Forms.Label();
             this.lblTehtavaID = new System.Windows.Forms.Label();
-            this.lblInfoVuorot = new System.Windows.Forms.Label();
             this.listviewTyoVuorot = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Alkaa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -478,6 +477,7 @@ namespace Projekti1
             // 
             // comboNimike
             // 
+            this.comboNimike.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboNimike.FormattingEnabled = true;
             this.comboNimike.Location = new System.Drawing.Point(117, 177);
             this.comboNimike.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -500,6 +500,7 @@ namespace Projekti1
             // comboPaikka
             // 
             this.comboPaikka.DisplayMember = "1";
+            this.comboPaikka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPaikka.FormattingEnabled = true;
             this.comboPaikka.Items.AddRange(new object[] {
             "Osasto A",
@@ -872,6 +873,7 @@ namespace Projekti1
             // 
             // nimikecmb
             // 
+            this.nimikecmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nimikecmb.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nimikecmb.FormattingEnabled = true;
             this.nimikecmb.Location = new System.Drawing.Point(416, 64);
@@ -1204,6 +1206,7 @@ namespace Projekti1
             // 
             // comboTyontekijat
             // 
+            this.comboTyontekijat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTyontekijat.FormattingEnabled = true;
             this.comboTyontekijat.Location = new System.Drawing.Point(116, 39);
             this.comboTyontekijat.Margin = new System.Windows.Forms.Padding(2);
@@ -1633,7 +1636,6 @@ namespace Projekti1
             this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.Controls.Add(this.lblVuoroId);
             this.panel2.Controls.Add(this.lblTehtavaID);
-            this.panel2.Controls.Add(this.lblInfoVuorot);
             this.panel2.Controls.Add(this.listviewTyoVuorot);
             this.panel2.Controls.Add(this.tbTyovuoroValinta);
             this.panel2.Controls.Add(this.comboTehtavat);
@@ -1672,7 +1674,6 @@ namespace Projekti1
             this.lblVuoroId.Size = new System.Drawing.Size(46, 13);
             this.lblVuoroId.TabIndex = 42;
             this.lblVuoroId.Text = "VuoroID";
-            this.lblVuoroId.Visible = false;
             // 
             // lblTehtavaID
             // 
@@ -1683,18 +1684,6 @@ namespace Projekti1
             this.lblTehtavaID.Size = new System.Drawing.Size(58, 13);
             this.lblTehtavaID.TabIndex = 41;
             this.lblTehtavaID.Text = "TehtavaID";
-            this.lblTehtavaID.Visible = false;
-            // 
-            // lblInfoVuorot
-            // 
-            this.lblInfoVuorot.AutoSize = true;
-            this.lblInfoVuorot.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoVuorot.Location = new System.Drawing.Point(36, 926);
-            this.lblInfoVuorot.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblInfoVuorot.Name = "lblInfoVuorot";
-            this.lblInfoVuorot.Size = new System.Drawing.Size(33, 20);
-            this.lblInfoVuorot.TabIndex = 40;
-            this.lblInfoVuorot.Text = "info";
             // 
             // listviewTyoVuorot
             // 
@@ -1741,6 +1730,7 @@ namespace Projekti1
             // comboTehtavat
             // 
             this.comboTehtavat.DisplayMember = "1";
+            this.comboTehtavat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTehtavat.FormattingEnabled = true;
             this.comboTehtavat.Location = new System.Drawing.Point(684, 132);
             this.comboTehtavat.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
@@ -1881,6 +1871,7 @@ namespace Projekti1
             // 
             // comboAlkaa
             // 
+            this.comboAlkaa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboAlkaa.FormattingEnabled = true;
             this.comboAlkaa.Items.AddRange(new object[] {
             "06:00",
@@ -2499,7 +2490,6 @@ namespace Projekti1
         private System.Windows.Forms.TabPage tabVuorot;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTehtavaID;
-        private System.Windows.Forms.Label lblInfoVuorot;
         private System.Windows.Forms.ListView listviewTyoVuorot;
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Alkaa;

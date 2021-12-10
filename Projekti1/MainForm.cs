@@ -709,6 +709,7 @@ namespace Projekti1
 
         private void dgvTehtavat_SelectionChanged(object sender, EventArgs e)
         {
+
             if (this.dgvTehtavat.SelectedRows.Count > 0)
             {
                 btnMuokkaa.Enabled = true;
@@ -719,6 +720,7 @@ namespace Projekti1
                 comboPaikka.Text = tyotehtava.Paikka;
                 comboNimike.Text = tyotehtava.Nimike;
             }
+
         }
 
         private void btnMuokkaa_Click(object sender, EventArgs e)
@@ -776,9 +778,16 @@ namespace Projekti1
 
             private void btnTallennaVuoro_Click(object sender, EventArgs e)
         {
-            AddTyovuoro();
-            tyovuorot = contr.LataaTyovuorot();
-            PopulateTyovuorotListView();
+            if(dtpPvmAlkaa.Value == null || dtpPvmLoppuu.Value == null || comboAlkaa.SelectedItem == null || comboLoppuu.SelectedItem == null)
+            {
+                MessageBox.Show("Täytä kaikki kentät");
+            }
+            else
+            {
+                AddTyovuoro();
+                tyovuorot = contr.LataaTyovuorot();
+                PopulateTyovuorotListView();
+            }
         }
 
         private void btnPoistaVuoro_Click(object sender, EventArgs e)
@@ -964,8 +973,8 @@ namespace Projekti1
 
 
 
+
         #endregion
 
-       
     }
 }
