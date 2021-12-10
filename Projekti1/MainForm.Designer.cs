@@ -29,7 +29,8 @@ namespace Projekti1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabVapaalista = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
@@ -445,14 +446,14 @@ namespace Projekti1
             this.dgvTehtavat.BackgroundColor = System.Drawing.Color.White;
             this.dgvTehtavat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTehtavat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTehtavat.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTehtavat.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTehtavat.Location = new System.Drawing.Point(373, 15);
             this.dgvTehtavat.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgvTehtavat.Name = "dgvTehtavat";
@@ -1629,6 +1630,7 @@ namespace Projekti1
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.Controls.Add(this.lblVuoroId);
             this.panel2.Controls.Add(this.lblTehtavaID);
             this.panel2.Controls.Add(this.lblInfoVuorot);
@@ -1654,6 +1656,7 @@ namespace Projekti1
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Location = new System.Drawing.Point(3, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.panel2.Name = "panel2";
@@ -1984,46 +1987,50 @@ namespace Projekti1
             // 
             // btnPoistaTarve
             // 
+            this.btnPoistaTarve.BackColor = System.Drawing.Color.Gray;
             this.btnPoistaTarve.Location = new System.Drawing.Point(917, 132);
             this.btnPoistaTarve.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnPoistaTarve.Name = "btnPoistaTarve";
             this.btnPoistaTarve.Size = new System.Drawing.Size(73, 34);
             this.btnPoistaTarve.TabIndex = 18;
             this.btnPoistaTarve.Text = "Poista";
-            this.btnPoistaTarve.UseVisualStyleBackColor = true;
+            this.btnPoistaTarve.UseVisualStyleBackColor = false;
             this.btnPoistaTarve.Click += new System.EventHandler(this.btnPoistaTarve_Click);
             // 
             // btnPoistaVuoro
             // 
+            this.btnPoistaVuoro.BackColor = System.Drawing.Color.Gray;
             this.btnPoistaVuoro.Location = new System.Drawing.Point(367, 132);
             this.btnPoistaVuoro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnPoistaVuoro.Name = "btnPoistaVuoro";
             this.btnPoistaVuoro.Size = new System.Drawing.Size(73, 34);
             this.btnPoistaVuoro.TabIndex = 18;
             this.btnPoistaVuoro.Text = "Poista";
-            this.btnPoistaVuoro.UseVisualStyleBackColor = true;
+            this.btnPoistaVuoro.UseVisualStyleBackColor = false;
             this.btnPoistaVuoro.Click += new System.EventHandler(this.btnPoistaVuoro_Click);
             // 
             // btnTallennaTarve
             // 
+            this.btnTallennaTarve.BackColor = System.Drawing.Color.Gray;
             this.btnTallennaTarve.Location = new System.Drawing.Point(917, 84);
             this.btnTallennaTarve.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnTallennaTarve.Name = "btnTallennaTarve";
             this.btnTallennaTarve.Size = new System.Drawing.Size(73, 34);
             this.btnTallennaTarve.TabIndex = 17;
             this.btnTallennaTarve.Text = "Tallenna";
-            this.btnTallennaTarve.UseVisualStyleBackColor = true;
+            this.btnTallennaTarve.UseVisualStyleBackColor = false;
             this.btnTallennaTarve.Click += new System.EventHandler(this.btnTallennaTarve_Click);
             // 
             // btnTallennaVuoro
             // 
+            this.btnTallennaVuoro.BackColor = System.Drawing.Color.Gray;
             this.btnTallennaVuoro.Location = new System.Drawing.Point(367, 84);
             this.btnTallennaVuoro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnTallennaVuoro.Name = "btnTallennaVuoro";
             this.btnTallennaVuoro.Size = new System.Drawing.Size(73, 34);
             this.btnTallennaVuoro.TabIndex = 17;
             this.btnTallennaVuoro.Text = "Tallenna";
-            this.btnTallennaVuoro.UseVisualStyleBackColor = true;
+            this.btnTallennaVuoro.UseVisualStyleBackColor = false;
             this.btnTallennaVuoro.Click += new System.EventHandler(this.btnTallennaVuoro_Click);
             // 
             // dgvTarpeet
@@ -2036,13 +2043,21 @@ namespace Projekti1
             this.dgvTarpeet.BackgroundColor = System.Drawing.Color.White;
             this.dgvTarpeet.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvTarpeet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTarpeet.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTarpeet.Location = new System.Drawing.Point(589, 265);
             this.dgvTarpeet.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dgvTarpeet.Name = "dgvTarpeet";
             this.dgvTarpeet.ReadOnly = true;
             this.dgvTarpeet.RowHeadersWidth = 60;
             this.dgvTarpeet.RowTemplate.Height = 24;
-            this.dgvTarpeet.Size = new System.Drawing.Size(693, 657);
+            this.dgvTarpeet.Size = new System.Drawing.Size(984, 657);
             this.dgvTarpeet.TabIndex = 13;
             // 
             // dtpPvmLoppuu
