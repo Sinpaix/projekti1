@@ -63,7 +63,6 @@ namespace Projekti1
             this.label14 = new System.Windows.Forms.Label();
             this.etunimitb = new System.Windows.Forms.TextBox();
             this.tabTyövuorolista = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.lvVuorolista = new System.Windows.Forms.ListView();
             this.TyövuoroAlku = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TyövuoroLoppu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -187,6 +186,7 @@ namespace Projekti1
             this.lwVapaalista = new System.Windows.Forms.ListView();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.tabVapaalista.SuspendLayout();
             this.tabTehtävät.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTehtavat)).BeginInit();
@@ -194,7 +194,6 @@ namespace Projekti1
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabTyövuorolista.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.tabTyöntekijänVuorot.SuspendLayout();
             this.tabKiinnitys.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -214,6 +213,7 @@ namespace Projekti1
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabVapaalista
@@ -233,17 +233,17 @@ namespace Projekti1
             this.btnVapaalista.BackColor = System.Drawing.Color.Gray;
             this.btnVapaalista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVapaalista.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnVapaalista.Location = new System.Drawing.Point(22, 165);
+            this.btnVapaalista.Location = new System.Drawing.Point(22, 134);
             this.btnVapaalista.Margin = new System.Windows.Forms.Padding(2);
             this.btnVapaalista.Name = "btnVapaalista";
-            this.btnVapaalista.Size = new System.Drawing.Size(120, 36);
+            this.btnVapaalista.Size = new System.Drawing.Size(120, 37);
             this.btnVapaalista.TabIndex = 8;
             this.btnVapaalista.Text = "Hae";
             this.btnVapaalista.UseVisualStyleBackColor = false;
             // 
             // dtpVapaaLoppuu
             // 
-            this.dtpVapaaLoppuu.Location = new System.Drawing.Point(288, 63);
+            this.dtpVapaaLoppuu.Location = new System.Drawing.Point(288, 71);
             this.dtpVapaaLoppuu.Margin = new System.Windows.Forms.Padding(2);
             this.dtpVapaaLoppuu.Name = "dtpVapaaLoppuu";
             this.dtpVapaaLoppuu.Size = new System.Drawing.Size(240, 26);
@@ -251,10 +251,10 @@ namespace Projekti1
             // 
             // dtpVapaaAlkaa
             // 
-            this.dtpVapaaAlkaa.Location = new System.Drawing.Point(22, 63);
+            this.dtpVapaaAlkaa.Location = new System.Drawing.Point(20, 71);
             this.dtpVapaaAlkaa.Margin = new System.Windows.Forms.Padding(2);
             this.dtpVapaaAlkaa.Name = "dtpVapaaAlkaa";
-            this.dtpVapaaAlkaa.Size = new System.Drawing.Size(240, 26);
+            this.dtpVapaaAlkaa.Size = new System.Drawing.Size(242, 26);
             this.dtpVapaaAlkaa.TabIndex = 6;
             // 
             // label26
@@ -262,7 +262,7 @@ namespace Projekti1
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label26.Location = new System.Drawing.Point(18, 27);
+            this.label26.Location = new System.Drawing.Point(17, 31);
             this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(124, 20);
@@ -650,7 +650,7 @@ namespace Projekti1
             // tabTyövuorolista
             // 
             this.tabTyövuorolista.BackColor = System.Drawing.Color.DimGray;
-            this.tabTyövuorolista.Controls.Add(this.panel4);
+            this.tabTyövuorolista.Controls.Add(this.groupBox11);
             this.tabTyövuorolista.Location = new System.Drawing.Point(4, 29);
             this.tabTyövuorolista.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabTyövuorolista.Name = "tabTyövuorolista";
@@ -658,22 +658,6 @@ namespace Projekti1
             this.tabTyövuorolista.Size = new System.Drawing.Size(1896, 1008);
             this.tabTyövuorolista.TabIndex = 3;
             this.tabTyövuorolista.Text = "Työvuorolista";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.lvVuorolista);
-            this.panel4.Controls.Add(this.btnHaeTyovuorolista);
-            this.panel4.Controls.Add(this.label13);
-            this.panel4.Controls.Add(this.dtpVuorolistaLoppuu);
-            this.panel4.Controls.Add(this.dtpVuorolistaAlkaa);
-            this.panel4.Controls.Add(this.label12);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(3, 4);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1076, 1000);
-            this.panel4.TabIndex = 0;
             // 
             // lvVuorolista
             // 
@@ -690,10 +674,10 @@ namespace Projekti1
             this.Tehtavanimike});
             this.lvVuorolista.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvVuorolista.HideSelection = false;
-            this.lvVuorolista.Location = new System.Drawing.Point(20, 201);
+            this.lvVuorolista.Location = new System.Drawing.Point(20, 190);
             this.lvVuorolista.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lvVuorolista.Name = "lvVuorolista";
-            this.lvVuorolista.Size = new System.Drawing.Size(964, 776);
+            this.lvVuorolista.Size = new System.Drawing.Size(964, 801);
             this.lvVuorolista.TabIndex = 6;
             this.lvVuorolista.UseCompatibleStateImageBehavior = false;
             this.lvVuorolista.View = System.Windows.Forms.View.Details;
@@ -744,7 +728,7 @@ namespace Projekti1
             this.btnHaeTyovuorolista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHaeTyovuorolista.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHaeTyovuorolista.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnHaeTyovuorolista.Location = new System.Drawing.Point(20, 121);
+            this.btnHaeTyovuorolista.Location = new System.Drawing.Point(21, 134);
             this.btnHaeTyovuorolista.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHaeTyovuorolista.Name = "btnHaeTyovuorolista";
             this.btnHaeTyovuorolista.Size = new System.Drawing.Size(120, 37);
@@ -757,7 +741,7 @@ namespace Projekti1
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(269, 65);
+            this.label13.Location = new System.Drawing.Point(269, 71);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(18, 25);
@@ -767,7 +751,7 @@ namespace Projekti1
             // dtpVuorolistaLoppuu
             // 
             this.dtpVuorolistaLoppuu.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpVuorolistaLoppuu.Location = new System.Drawing.Point(291, 65);
+            this.dtpVuorolistaLoppuu.Location = new System.Drawing.Point(291, 71);
             this.dtpVuorolistaLoppuu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dtpVuorolistaLoppuu.Name = "dtpVuorolistaLoppuu";
             this.dtpVuorolistaLoppuu.Size = new System.Drawing.Size(245, 26);
@@ -777,7 +761,7 @@ namespace Projekti1
             // dtpVuorolistaAlkaa
             // 
             this.dtpVuorolistaAlkaa.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpVuorolistaAlkaa.Location = new System.Drawing.Point(20, 65);
+            this.dtpVuorolistaAlkaa.Location = new System.Drawing.Point(20, 71);
             this.dtpVuorolistaAlkaa.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.dtpVuorolistaAlkaa.Name = "dtpVuorolistaAlkaa";
             this.dtpVuorolistaAlkaa.Size = new System.Drawing.Size(245, 26);
@@ -789,7 +773,7 @@ namespace Projekti1
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(17, 20);
+            this.label12.Location = new System.Drawing.Point(17, 31);
             this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(124, 20);
@@ -2247,10 +2231,10 @@ namespace Projekti1
             this.columnHeader5});
             this.lwVapaalista.ForeColor = System.Drawing.Color.Black;
             this.lwVapaalista.HideSelection = false;
-            this.lwVapaalista.Location = new System.Drawing.Point(22, 244);
+            this.lwVapaalista.Location = new System.Drawing.Point(22, 191);
             this.lwVapaalista.Margin = new System.Windows.Forms.Padding(2);
             this.lwVapaalista.Name = "lwVapaalista";
-            this.lwVapaalista.Size = new System.Drawing.Size(1025, 738);
+            this.lwVapaalista.Size = new System.Drawing.Size(1025, 791);
             this.lwVapaalista.TabIndex = 1;
             this.lwVapaalista.UseCompatibleStateImageBehavior = false;
             // 
@@ -2276,12 +2260,30 @@ namespace Projekti1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(266, 64);
+            this.label1.Location = new System.Drawing.Point(266, 71);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 25);
             this.label1.TabIndex = 9;
             this.label1.Text = "-";
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox11.Controls.Add(this.lvVuorolista);
+            this.groupBox11.Controls.Add(this.label12);
+            this.groupBox11.Controls.Add(this.btnHaeTyovuorolista);
+            this.groupBox11.Controls.Add(this.dtpVuorolistaAlkaa);
+            this.groupBox11.Controls.Add(this.label13);
+            this.groupBox11.Controls.Add(this.dtpVuorolistaLoppuu);
+            this.groupBox11.ForeColor = System.Drawing.Color.Black;
+            this.groupBox11.Location = new System.Drawing.Point(8, 3);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(995, 998);
+            this.groupBox11.TabIndex = 1;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Työvuorolista";
             // 
             // MainForm
             // 
@@ -2306,8 +2308,6 @@ namespace Projekti1
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabTyövuorolista.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.tabTyöntekijänVuorot.ResumeLayout(false);
             this.tabKiinnitys.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -2335,6 +2335,8 @@ namespace Projekti1
             this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2375,7 +2377,6 @@ namespace Projekti1
         private System.Windows.Forms.Button poistabtn;
         private System.Windows.Forms.Button muokkaabtn;
         private System.Windows.Forms.TabPage tabTyövuorolista;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnHaeTyovuorolista;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtpVuorolistaLoppuu;
@@ -2499,6 +2500,7 @@ namespace Projekti1
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.GroupBox groupBox11;
     }
 }
 
