@@ -558,7 +558,7 @@ namespace Projekti1
         {
             foreach (Tyotehtava item in tyotehtavat)
             {
-                if (comboTehtavat.Text == item.Tehtava)
+                if (comboTehtavat.Text == item.Tiedot)
                 {
                     lblTehtavaID.Text = item.Idtyotehtava.ToString();
                 }
@@ -574,6 +574,7 @@ namespace Projekti1
             tarve.Maara = (int)numMaara.Value;
 
             contr.AddTarve(tarve);
+            PopulatedTarpeetDGV();
 
         }
 
@@ -742,8 +743,8 @@ namespace Projekti1
             BindingSource source = new BindingSource();
             source.DataSource = tyotehtavat;
             comboTehtavat.DataSource = source;
-            comboTehtavat.DisplayMember = "tehtava";
-            comboTehtavat.ValueMember = "idtyotehtava";
+            comboTehtavat.DisplayMember = "Tiedot";
+            comboTehtavat.ValueMember = "Idtyotehtava";
         }
 
         private void PopulateTyovuorotListView()

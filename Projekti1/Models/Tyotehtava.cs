@@ -13,7 +13,8 @@ namespace Projekti1.Models
         public string Paikka { get; set; }
         public int Tyonimike_idnimike { get; set; }
         public string Nimike { get; set; }
-        
+        public string Tiedot { get; set; }
+
 
         public Tyotehtava()
         {
@@ -26,6 +27,7 @@ namespace Projekti1.Models
             Paikka = paikka;
             Tyonimike_idnimike = tyonimike_idnimike;
             Nimike = nimike;
+            Tiedot = $"{Tehtava}. {Nimike}";
         }
 
         public Tyotehtava(int idtyotehtava, string tehtava, string paikka, string nimike)
@@ -34,6 +36,7 @@ namespace Projekti1.Models
             Tehtava = tehtava;
             Paikka = paikka;
             Nimike = nimike;
+            Tiedot = $"{Tehtava}. {Nimike}";
         }
 
         public override string ToString()

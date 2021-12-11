@@ -1351,7 +1351,7 @@ namespace Projekti1
             this.tbTyovuoroValinta.Location = new System.Drawing.Point(150, 30);
             this.tbTyovuoroValinta.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.tbTyovuoroValinta.Name = "tbTyovuoroValinta";
-            this.tbTyovuoroValinta.Size = new System.Drawing.Size(201, 26);
+            this.tbTyovuoroValinta.Size = new System.Drawing.Size(250, 26);
             this.tbTyovuoroValinta.TabIndex = 38;
             this.tbTyovuoroValinta.Text = "Valitse vuoro työvuorolistalta";
             // 
@@ -1363,7 +1363,7 @@ namespace Projekti1
             this.comboTehtavat.Location = new System.Drawing.Point(150, 83);
             this.comboTehtavat.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.comboTehtavat.Name = "comboTehtavat";
-            this.comboTehtavat.Size = new System.Drawing.Size(201, 28);
+            this.comboTehtavat.Size = new System.Drawing.Size(250, 28);
             this.comboTehtavat.TabIndex = 37;
             this.comboTehtavat.SelectedIndexChanged += new System.EventHandler(this.comboTehtavat_SelectedIndexChanged);
             // 
@@ -1374,11 +1374,6 @@ namespace Projekti1
             this.numMaara.Name = "numMaara";
             this.numMaara.Size = new System.Drawing.Size(63, 26);
             this.numMaara.TabIndex = 26;
-            this.numMaara.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label7
             // 
@@ -1611,7 +1606,7 @@ namespace Projekti1
             this.btnPoistaTarve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPoistaTarve.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPoistaTarve.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPoistaTarve.Location = new System.Drawing.Point(391, 77);
+            this.btnPoistaTarve.Location = new System.Drawing.Point(420, 77);
             this.btnPoistaTarve.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnPoistaTarve.Name = "btnPoistaTarve";
             this.btnPoistaTarve.Size = new System.Drawing.Size(73, 34);
@@ -1641,7 +1636,7 @@ namespace Projekti1
             this.btnTallennaTarve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTallennaTarve.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTallennaTarve.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTallennaTarve.Location = new System.Drawing.Point(391, 30);
+            this.btnTallennaTarve.Location = new System.Drawing.Point(420, 22);
             this.btnTallennaTarve.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.btnTallennaTarve.Name = "btnTallennaTarve";
             this.btnTallennaTarve.Size = new System.Drawing.Size(73, 34);
