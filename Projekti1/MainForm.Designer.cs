@@ -2017,11 +2017,13 @@ namespace Projekti1
             // 
             // tbTehtava
             // 
-            this.tbTehtava.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTehtava.BackColor = System.Drawing.Color.White;
+            this.tbTehtava.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTehtava.ForeColor = System.Drawing.Color.Black;
             this.tbTehtava.Location = new System.Drawing.Point(119, 39);
             this.tbTehtava.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.tbTehtava.Name = "tbTehtava";
-            this.tbTehtava.Size = new System.Drawing.Size(202, 23);
+            this.tbTehtava.Size = new System.Drawing.Size(202, 26);
             this.tbTehtava.TabIndex = 28;
             // 
             // btnMuokkaa
@@ -2044,7 +2046,7 @@ namespace Projekti1
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(18, 42);
+            this.label6.Location = new System.Drawing.Point(17, 45);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 20);
@@ -2071,7 +2073,7 @@ namespace Projekti1
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(18, 111);
+            this.label8.Location = new System.Drawing.Point(19, 119);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 20);
@@ -2080,13 +2082,15 @@ namespace Projekti1
             // 
             // comboPaikka
             // 
+            this.comboPaikka.BackColor = System.Drawing.Color.White;
             this.comboPaikka.DisplayMember = "1";
             this.comboPaikka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPaikka.ForeColor = System.Drawing.Color.Black;
             this.comboPaikka.FormattingEnabled = true;
             this.comboPaikka.Items.AddRange(new object[] {
             "Osasto A",
             "Osasto B"});
-            this.comboPaikka.Location = new System.Drawing.Point(119, 67);
+            this.comboPaikka.Location = new System.Drawing.Point(119, 74);
             this.comboPaikka.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboPaikka.Name = "comboPaikka";
             this.comboPaikka.Size = new System.Drawing.Size(201, 28);
@@ -2097,7 +2101,7 @@ namespace Projekti1
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(19, 75);
+            this.label5.Location = new System.Drawing.Point(19, 82);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 20);
@@ -2106,9 +2110,10 @@ namespace Projekti1
             // 
             // comboNimike
             // 
+            this.comboNimike.BackColor = System.Drawing.Color.White;
             this.comboNimike.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboNimike.FormattingEnabled = true;
-            this.comboNimike.Location = new System.Drawing.Point(120, 103);
+            this.comboNimike.Location = new System.Drawing.Point(119, 111);
             this.comboNimike.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboNimike.Name = "comboNimike";
             this.comboNimike.Size = new System.Drawing.Size(202, 28);
@@ -2120,7 +2125,7 @@ namespace Projekti1
             this.lblidnimike.AutoSize = true;
             this.lblidnimike.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblidnimike.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblidnimike.Location = new System.Drawing.Point(18, 131);
+            this.lblidnimike.Location = new System.Drawing.Point(19, 139);
             this.lblidnimike.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblidnimike.Name = "lblidnimike";
             this.lblidnimike.Size = new System.Drawing.Size(50, 16);
