@@ -401,6 +401,7 @@ namespace Projekti1
             source.DataSource = tyontekijat;
             tyontekijatdgv.DataSource = source;
             tyontekijatdgv.Columns[6].Visible = false;
+            tyontekijatdgv.Columns[7].Visible = false;
 
         }
         private void PopulateTyonimikeCombobox()
