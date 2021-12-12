@@ -711,10 +711,12 @@ namespace Projekti1
                     MessageBox.Show("Poisto epäonnistui! Tehtävä on kiinnitetty työvuoroon.");
                 }
 
+                /*
                 tyotehtavat = contr.LoadTyotehtavat();
                 PopulatedTyotehtavaDGV();
                 PopulateTyotehtavaComboBox();
-
+                */
+                UpdateAll();
 
             }
 
