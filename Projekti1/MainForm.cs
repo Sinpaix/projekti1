@@ -67,6 +67,31 @@ namespace Projekti1
 
         }
 
+        private void UpdateAll()
+        {
+            tyontekijat = contr.LataaTyontekijat();
+            tarpeet = contr.LataaTarpeet();
+            vuorolista = contr.LoadVuorolista(DateTime.Now, DateTime.Now);
+            tyovuorot = contr.LataaTyovuorot();
+            tyotehtavat = contr.LoadTyotehtavat();
+            tyonimikkeet = contr.LoadTyonimikkeet();
+            kiinnitykset = contr.LataaKiinnitykset();
+
+            PopulateTarveListView();
+
+            PopulatedTarpeetDGV();
+            PopulateTyovuorotListView();
+            PopulatedTyotehtavaDGV();
+            PopulateTyonimikkeetCombobox();
+
+            PopulateTyontekijaDGW();
+            PopulateTyonimikeCombobox();
+            PopulateTyotehtavaComboBox();
+            PopulateTyonimikeListView();
+            PopulateTyontekijatComboBox();
+
+        }
+
         private void PopulateTyonimikkeetCombobox()
         {
             BindingSource source = new BindingSource();
@@ -655,9 +680,7 @@ namespace Projekti1
 
             tyotehtavat = contr.LoadTyotehtavat();
 
-
-            PopulatedTyotehtavaDGV();
-            PopulateTyotehtavaComboBox();
+            UpdateAll();
 
         }
 
@@ -726,10 +749,8 @@ namespace Projekti1
             tyotehtava.Nimike = comboNimike.Text;
             tyotehtava.Tyonimike_idnimike = int.Parse(lblidnimike.Text);
 
-            contr.EditTyotehtava(tyotehtava);
-            contr.LoadTyotehtavat();
-            PopulatedTyotehtavaDGV();
-            PopulateTarveListView();
+            //Päivitetään kaikki listat, datagridit ja listviewit
+            UpdateAll();
             
 
         }
