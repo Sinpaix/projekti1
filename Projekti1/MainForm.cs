@@ -708,7 +708,7 @@ namespace Projekti1
                 }
                 else
                 {
-                    MessageBox.Show("Poisto epäonnistui! Tehtävä on kiinnitetty työvuoroon.");
+                    MessageBox.Show("Poisto epäonnistui!");
                 }
 
                 /*
