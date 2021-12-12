@@ -43,8 +43,8 @@ CREATE TABLE IF NOT EXISTS `Sairaalakanta`.`Tyontekija` (
   CONSTRAINT `fk_työntekijä_nimike`
     FOREIGN KEY (`Tyonimike_idnimike`)
     REFERENCES `Sairaalakanta`.`Tyonimike` (`idnimike`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -76,8 +76,8 @@ CREATE TABLE IF NOT EXISTS `Sairaalakanta`.`Tyotehtava` (
   CONSTRAINT `fk_tehtävä_nimike1`
     FOREIGN KEY (`Tyonimike_idnimike`)
     REFERENCES `Sairaalakanta`.`Tyonimike` (`idnimike`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -96,13 +96,13 @@ CREATE TABLE IF NOT EXISTS `Sairaalakanta`.`Tarve` (
   CONSTRAINT `fk_työvuoro_has_tehtävä_työvuoro1`
     FOREIGN KEY (`Tyovuoro_idtyovuoro`)
     REFERENCES `Sairaalakanta`.`Tyovuoro` (`idtyovuoro`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_työvuoro_has_tehtävä_tehtävä1`
     FOREIGN KEY (`Tyotehtava_idtehtava`)
     REFERENCES `Sairaalakanta`.`Tyotehtava` (`idtehtava`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
@@ -120,13 +120,13 @@ CREATE TABLE IF NOT EXISTS `Sairaalakanta`.`Kiinnitys` (
   CONSTRAINT `fk_kiinnitys_tarve1`
     FOREIGN KEY (`Tarve_Tyovuoro_idtyovuoro` , `Tarve_Tyotehtava_idtehtava`)
     REFERENCES `Sairaalakanta`.`Tarve` (`Tyovuoro_idtyovuoro` , `Tyotehtava_idtehtava`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_kiinnitys_työntekijä1`
     FOREIGN KEY (`Tyontekija_idtyontekija`)
     REFERENCES `Sairaalakanta`.`Tyontekija` (`idtyontekija`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
