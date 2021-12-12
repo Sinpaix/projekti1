@@ -777,6 +777,59 @@ namespace Projekti1
             return vuorolista;
         }
 
+        //vapaalistan haku
+        public static List<Tarve> GetVapaalista(DateTime valku, DateTime vloppu)
+        {
+            List<Tarve> vapaalista = new List<Tarve>();
+
+            try
+            {
+                if (conn == null)
+                    conn = new MySqlConnection();
+                conn.ConnectionString = myConnectionString;
+                conn.Open();
+                string sql = "SELECT tv.alkaa, t.etunimi, t.sukunimi, t.puhelin, tn.nimike " +
+                    "FROM Kiinnitys k " +
+                    "JOIN Tyotehtava tt " +
+                    "ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava " +
+                    "JOIN Tyontekija t " +
+                    "ON k.Tyontekija_idTyontekija = t.idTyontekija " +
+                    "JOIN Tyovuoro tv " +
+                    "ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro " +
+                    "JOIN Tyonimike tn " +
+                    "ON t.Tyonimike_idnimike = tn.idnimike " +
+                    "WHERE idtyontekija NOT IN(SELECT k.Tyontekija_idtyontekija " +
+                    "FROM Kiinnitys k JOIN Tyontekija t ON k.Tyontekija_idTyontekija = t.idTyontekija " +
+                    "JOIN Tyovuoro tv ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro WHERE tv.alkaa BETWEEN '" + valku.ToString("yyyy-MM-dd") + "' AND '" + vloppu.ToString("yyyy-MM-dd") + "' " +
+                    "ORDER BY tv.alkaa, t.sukunimi)";
+
+
+
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    Tarve v = new Tarve(DateTime.Parse(rdr[0].ToString()), rdr[1].ToString(),
+                        rdr[2].ToString(), rdr[3].ToString(), rdr[4].ToString());
+                    vapaalista.Add(v);
+
+                }
+
+                rdr.Close();
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+                conn = null;
+            }
+            return vapaalista;
+        }
     }
 }
 

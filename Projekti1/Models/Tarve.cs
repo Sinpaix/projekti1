@@ -62,5 +62,14 @@ namespace Projekti1.Models
         {
             return TyovuoroID + " " + TehtavaID;
         }
+
+        public Tarve(DateTime alkaa, string etunimi, string sukunimi, string puhelin, string nimike)
+        {
+            Alkaa = alkaa;
+            Etunimi = etunimi;
+            Sukunimi = sukunimi;
+            Puhelin = puhelin;
+            Nimike = nimike;
+        }
     }
 }

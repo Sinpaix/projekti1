@@ -123,5 +123,11 @@ namespace Projekti1
         {
             return DAO.GetVuorolista(alku, loppu);
         }
+
+        //vapaalista
+        public List<Tarve> LoadVapaalista(DateTime valku, DateTime vloppu)
+        {
+            return DAO.GetVapaalista(valku, vloppu);
+        }
     }
 }

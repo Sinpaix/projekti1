@@ -20,6 +20,7 @@ namespace Projekti1
         private List<Kiinnitys> kiinnitykset = new List<Kiinnitys>();
         private List<Tyonimike> tyonimikkeet = new List<Tyonimike>();
         private List<Tarve> vuorolista = new List<Tarve>();
+        private List<Tarve> vapaalista = new List<Tarve>();
 
         private Tyonimike tyonimike;
         private Tyotehtava tyotehtava;
@@ -28,6 +29,9 @@ namespace Projekti1
 
         private DateTime alkaa;
         private DateTime loppuu;
+
+        private DateTime valkaa;
+        private DateTime vloppuu;
 
         private Controller contr = new Controller();
 
@@ -48,6 +52,7 @@ namespace Projekti1
             tyotehtavat = contr.LoadTyotehtavat();
             tyonimikkeet = contr.LoadTyonimikkeet();
             kiinnitykset = contr.LataaKiinnitykset();
+            vapaalista = contr.LoadVapaalista(DateTime.Now, DateTime.Now);
 
 
 
@@ -944,6 +949,44 @@ namespace Projekti1
         private void dtpVuorolistaLoppuu_ValueChanged(object sender, EventArgs e)
         {
             this.loppuu = dtpVuorolistaLoppuu.Value;
+        }
+
+        #endregion
+
+        /// <summary>
+        /// Vapaalista
+        /// </summary>
+
+        #region Vapaalista
+
+        private void btnVapaalista_Click(object sender, EventArgs e)
+        {
+
+            vapaalista = contr.LoadVapaalista(valkaa, vloppuu);
+            lwVapaalista.Items.Clear();
+
+
+
+            foreach (Tarve item in vapaalista)
+            {
+                lwVapaalista.Items.Add(new ListViewItem(new string[] {
+                item.Alkaa.ToString("dd.MM.yy HH:mm"),
+                item.Etunimi,
+                item.Sukunimi,
+                item.Puhelin,
+                item.Nimike}));
+
+            }
+        }
+
+        private void dtpVapaaAlkaa_ValueChanged(object sender, EventArgs e)
+        {
+            this.valkaa = dtpVapaaAlkaa.Value;
+        }
+
+        private void dtpVapaaLoppuu_ValueChanged(object sender, EventArgs e)
+        {
+            this.vloppuu = dtpVapaaLoppuu.Value;
         }
 
         #endregion
