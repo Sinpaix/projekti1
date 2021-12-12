@@ -553,7 +553,8 @@ namespace Projekti1
             dgvTehtavat.DataSource = source;
             //dgwTehtavat.Columns[0].Visible = false; // Piilotetaan työvuoron ID 
             dgvTehtavat.Columns[3].Visible = false; // Piilotetaan tehtävän ID 
-            //dgwTehtavat.Columns[6].Visible = false; // Piilotetaan nimikkeen ID 
+            //dgwTehtavat.Columns[6].Visible = false; // Piilotetaan nimikkeen ID
+            dgvTehtavat.Columns[5].Visible = false; // Piilotetaan Tiedot kenttä
 
 
         }
