@@ -531,13 +531,6 @@ namespace Projekti1
             //dgwTehtavat.Columns[6].Visible = false; // Piilotetaan nimikkeen ID 
 
 
-
-            //dgvTehtavat.Columns[0].Width = 100;
-            //dgvTehtavat.Columns[1].Width = 150;
-            //dgvTehtavat.Columns[2].Width = 150;
-            //dgvTehtavat.Columns[4].Width = 150;
-
-
         }
 
 
@@ -595,7 +588,7 @@ namespace Projekti1
                 }
                 else
                 {
-                    MessageBox.Show("Tarpeen poistaminen epäonnistui!");
+                    MessageBox.Show("Poisto epäonnistui! Poista ensin tarpeen kiinnitykset.");
                 }
 
                 tarpeet = contr.LataaTarpeet();
@@ -691,7 +684,7 @@ namespace Projekti1
                 }
                 else
                 {
-                    MessageBox.Show("Tehtävän poisto epäonnistui!");
+                    MessageBox.Show("Poisto epäonnistui! Tehtävä on kiinnitetty työvuoroon.");
                 }
 
                 tyotehtavat = contr.LoadTyotehtavat();
@@ -734,7 +727,10 @@ namespace Projekti1
             tyotehtava.Tyonimike_idnimike = int.Parse(lblidnimike.Text);
 
             contr.EditTyotehtava(tyotehtava);
+            contr.LoadTyotehtavat();
             PopulatedTyotehtavaDGV();
+            PopulateTarveListView();
+            
 
         }
 
@@ -833,7 +829,7 @@ namespace Projekti1
                 }
                 else
                 {
-                    MessageBox.Show("Vuoron poistaminen epäonnistui!");
+                    MessageBox.Show("Poisto epäonnistui! Poista ensin vuoron kiinnitykset ja tarpeet.");
                 }
             }
         }

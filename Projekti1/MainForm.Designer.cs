@@ -30,19 +30,42 @@ namespace Projekti1
         private void InitializeComponent()
         {
             this.tabVapaalista = new System.Windows.Forms.TabPage();
-            this.btnVapaalista = new System.Windows.Forms.Button();
-            this.dtpVapaaLoppuu = new System.Windows.Forms.DateTimePicker();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lwVapaalista = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dtpVapaaAlkaa = new System.Windows.Forms.DateTimePicker();
+            this.btnVapaalista = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
+            this.dtpVapaaLoppuu = new System.Windows.Forms.DateTimePicker();
             this.tabTehtävät = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblidnimike = new System.Windows.Forms.Label();
             this.dgvTehtavat = new System.Windows.Forms.DataGridView();
+            this.comboNimike = new System.Windows.Forms.ComboBox();
+            this.btnTallenna = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbTehtava = new System.Windows.Forms.TextBox();
+            this.comboPaikka = new System.Windows.Forms.ComboBox();
+            this.btnMuokkaa = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnPoista = new System.Windows.Forms.Button();
             this.tabTyöntekijät = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lvNimikkeet = new System.Windows.Forms.ListView();
+            this.IdNimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Työnimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnPoistaNimike = new System.Windows.Forms.Button();
             this.btnLisaaNimike = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.tbTyonimike = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.tyontekijatdgv = new System.Windows.Forms.DataGridView();
             this.tyhjennabtn = new System.Windows.Forms.Button();
             this.tallennabtn = new System.Windows.Forms.Button();
             this.idnimiketb = new System.Windows.Forms.TextBox();
@@ -63,6 +86,7 @@ namespace Projekti1
             this.label14 = new System.Windows.Forms.Label();
             this.etunimitb = new System.Windows.Forms.TextBox();
             this.tabTyövuorolista = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.lvVuorolista = new System.Windows.Forms.ListView();
             this.TyövuoroAlku = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TyövuoroLoppu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -72,24 +96,25 @@ namespace Projekti1
             this.sNimi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Puhnumero = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tehtavanimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label12 = new System.Windows.Forms.Label();
             this.btnHaeTyovuorolista = new System.Windows.Forms.Button();
+            this.dtpVuorolistaAlkaa = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpVuorolistaLoppuu = new System.Windows.Forms.DateTimePicker();
-            this.dtpVuorolistaAlkaa = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
             this.tabTyöntekijänVuorot = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnTyontekijanLista = new System.Windows.Forms.Button();
             this.lwTyontekijanVuorot = new System.Windows.Forms.ListView();
             this.vAlkaa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.vLoppuu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.vTehtava = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.vPaikka = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnTyontekijanLista = new System.Windows.Forms.Button();
             this.comboTyontekijat = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.dtpLoppupvm = new System.Windows.Forms.DateTimePicker();
             this.dtpAlkupvm = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.tabKiinnitys = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lwKiinnitykset = new System.Windows.Forms.ListView();
@@ -125,29 +150,31 @@ namespace Projekti1
             this.btn_ValitseVuoro = new System.Windows.Forms.Button();
             this.tabVuorot = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblVuoroId = new System.Windows.Forms.Label();
-            this.lblTehtavaID = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dtpPvmAlkaa = new System.Windows.Forms.DateTimePicker();
             this.listviewTyoVuorot = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Alkaa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Loppuu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tbTyovuoroValinta = new System.Windows.Forms.TextBox();
-            this.comboTehtavat = new System.Windows.Forms.ComboBox();
-            this.numMaara = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboLoppuu = new System.Windows.Forms.ComboBox();
             this.comboAlkaa = new System.Windows.Forms.ComboBox();
-            this.btnPoistaTarve = new System.Windows.Forms.Button();
-            this.btnPoistaVuoro = new System.Windows.Forms.Button();
-            this.btnTallennaTarve = new System.Windows.Forms.Button();
             this.btnTallennaVuoro = new System.Windows.Forms.Button();
-            this.dgvTarpeet = new System.Windows.Forms.DataGridView();
-            this.dtpPvmLoppuu = new System.Windows.Forms.DateTimePicker();
-            this.dtpPvmAlkaa = new System.Windows.Forms.DateTimePicker();
+            this.btnPoistaVuoro = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.dtpPvmLoppuu = new System.Windows.Forms.DateTimePicker();
+            this.comboLoppuu = new System.Windows.Forms.ComboBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.dgvTarpeet = new System.Windows.Forms.DataGridView();
+            this.btnPoistaTarve = new System.Windows.Forms.Button();
+            this.tbTyovuoroValinta = new System.Windows.Forms.TextBox();
+            this.btnTallennaTarve = new System.Windows.Forms.Button();
+            this.comboTehtavat = new System.Windows.Forms.ComboBox();
+            this.lblVuoroId = new System.Windows.Forms.Label();
+            this.numMaara = new System.Windows.Forms.NumericUpDown();
             this.label22 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblTehtavaID = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabEtusivu = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnTyotehtavat = new System.Windows.Forms.Button();
@@ -160,60 +187,33 @@ namespace Projekti1
             this.panel6 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.tyontekijatdgv = new System.Windows.Forms.DataGridView();
-            this.lvNimikkeet = new System.Windows.Forms.ListView();
-            this.IdNimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Työnimike = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnTallenna = new System.Windows.Forms.Button();
-            this.tbTehtava = new System.Windows.Forms.TextBox();
-            this.btnMuokkaa = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnPoista = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboPaikka = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboNimike = new System.Windows.Forms.ComboBox();
-            this.lblidnimike = new System.Windows.Forms.Label();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lwVapaalista = new System.Windows.Forms.ListView();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.tabVapaalista.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.tabTehtävät.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTehtavat)).BeginInit();
             this.tabTyöntekijät.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tyontekijatdgv)).BeginInit();
             this.tabTyövuorolista.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.tabTyöntekijänVuorot.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.tabKiinnitys.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabVuorot.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMaara)).BeginInit();
+            this.groupBox8.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarpeet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMaara)).BeginInit();
             this.tabEtusivu.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tabControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tyontekijatdgv)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabVapaalista
@@ -228,6 +228,87 @@ namespace Projekti1
             this.tabVapaalista.TabIndex = 7;
             this.tabVapaalista.Text = "Vapaalista";
             // 
+            // groupBox10
+            // 
+            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox10.Controls.Add(this.label1);
+            this.groupBox10.Controls.Add(this.lwVapaalista);
+            this.groupBox10.Controls.Add(this.dtpVapaaAlkaa);
+            this.groupBox10.Controls.Add(this.btnVapaalista);
+            this.groupBox10.Controls.Add(this.label26);
+            this.groupBox10.Controls.Add(this.dtpVapaaLoppuu);
+            this.groupBox10.ForeColor = System.Drawing.Color.Black;
+            this.groupBox10.Location = new System.Drawing.Point(8, 3);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(1065, 997);
+            this.groupBox10.TabIndex = 1;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Vapaalista";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(266, 71);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 25);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "-";
+            // 
+            // lwVapaalista
+            // 
+            this.lwVapaalista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lwVapaalista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lwVapaalista.ForeColor = System.Drawing.Color.Black;
+            this.lwVapaalista.HideSelection = false;
+            this.lwVapaalista.Location = new System.Drawing.Point(22, 191);
+            this.lwVapaalista.Margin = new System.Windows.Forms.Padding(2);
+            this.lwVapaalista.Name = "lwVapaalista";
+            this.lwVapaalista.Size = new System.Drawing.Size(1025, 791);
+            this.lwVapaalista.TabIndex = 1;
+            this.lwVapaalista.UseCompatibleStateImageBehavior = false;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Päivämäärä";
+            this.columnHeader1.Width = 150;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Etunimi";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Sukunimi";
+            this.columnHeader3.Width = 150;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Puhelinnumero";
+            this.columnHeader4.Width = 150;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Nimike";
+            this.columnHeader5.Width = 150;
+            // 
+            // dtpVapaaAlkaa
+            // 
+            this.dtpVapaaAlkaa.Location = new System.Drawing.Point(20, 71);
+            this.dtpVapaaAlkaa.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpVapaaAlkaa.Name = "dtpVapaaAlkaa";
+            this.dtpVapaaAlkaa.Size = new System.Drawing.Size(242, 26);
+            this.dtpVapaaAlkaa.TabIndex = 6;
+            // 
             // btnVapaalista
             // 
             this.btnVapaalista.BackColor = System.Drawing.Color.Gray;
@@ -241,22 +322,6 @@ namespace Projekti1
             this.btnVapaalista.Text = "Hae";
             this.btnVapaalista.UseVisualStyleBackColor = false;
             // 
-            // dtpVapaaLoppuu
-            // 
-            this.dtpVapaaLoppuu.Location = new System.Drawing.Point(288, 71);
-            this.dtpVapaaLoppuu.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpVapaaLoppuu.Name = "dtpVapaaLoppuu";
-            this.dtpVapaaLoppuu.Size = new System.Drawing.Size(240, 26);
-            this.dtpVapaaLoppuu.TabIndex = 7;
-            // 
-            // dtpVapaaAlkaa
-            // 
-            this.dtpVapaaAlkaa.Location = new System.Drawing.Point(20, 71);
-            this.dtpVapaaAlkaa.Margin = new System.Windows.Forms.Padding(2);
-            this.dtpVapaaAlkaa.Name = "dtpVapaaAlkaa";
-            this.dtpVapaaAlkaa.Size = new System.Drawing.Size(242, 26);
-            this.dtpVapaaAlkaa.TabIndex = 6;
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -268,6 +333,14 @@ namespace Projekti1
             this.label26.Size = new System.Drawing.Size(124, 20);
             this.label26.TabIndex = 1;
             this.label26.Text = "Valitse päivämäärät";
+            // 
+            // dtpVapaaLoppuu
+            // 
+            this.dtpVapaaLoppuu.Location = new System.Drawing.Point(288, 71);
+            this.dtpVapaaLoppuu.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpVapaaLoppuu.Name = "dtpVapaaLoppuu";
+            this.dtpVapaaLoppuu.Size = new System.Drawing.Size(240, 26);
+            this.dtpVapaaLoppuu.TabIndex = 7;
             // 
             // tabTehtävät
             // 
@@ -281,13 +354,49 @@ namespace Projekti1
             this.tabTehtävät.TabIndex = 5;
             this.tabTehtävät.Text = "Työtehtävien hallinta";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.Controls.Add(this.lblidnimike);
+            this.groupBox3.Controls.Add(this.dgvTehtavat);
+            this.groupBox3.Controls.Add(this.comboNimike);
+            this.groupBox3.Controls.Add(this.btnTallenna);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.tbTehtava);
+            this.groupBox3.Controls.Add(this.comboPaikka);
+            this.groupBox3.Controls.Add(this.btnMuokkaa);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.btnPoista);
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
+            this.groupBox3.Location = new System.Drawing.Point(8, 7);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(742, 994);
+            this.groupBox3.TabIndex = 36;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Lisää työtehtävä";
+            // 
+            // lblidnimike
+            // 
+            this.lblidnimike.AutoSize = true;
+            this.lblidnimike.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblidnimike.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblidnimike.Location = new System.Drawing.Point(19, 139);
+            this.lblidnimike.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblidnimike.Name = "lblidnimike";
+            this.lblidnimike.Size = new System.Drawing.Size(50, 16);
+            this.lblidnimike.TabIndex = 36;
+            this.lblidnimike.Text = "NimikeID";
+            this.lblidnimike.Visible = false;
+            // 
             // dgvTehtavat
             // 
             this.dgvTehtavat.AllowUserToAddRows = false;
             this.dgvTehtavat.AllowUserToDeleteRows = false;
             this.dgvTehtavat.AllowUserToOrderColumns = true;
             this.dgvTehtavat.AllowUserToResizeRows = false;
-            this.dgvTehtavat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTehtavat.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvTehtavat.BackgroundColor = System.Drawing.Color.White;
             this.dgvTehtavat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTehtavat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -298,9 +407,128 @@ namespace Projekti1
             this.dgvTehtavat.RowHeadersWidth = 30;
             this.dgvTehtavat.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTehtavat.RowTemplate.Height = 24;
-            this.dgvTehtavat.Size = new System.Drawing.Size(735, 666);
+            this.dgvTehtavat.Size = new System.Drawing.Size(695, 666);
             this.dgvTehtavat.TabIndex = 35;
             this.dgvTehtavat.SelectionChanged += new System.EventHandler(this.dgvTehtavat_SelectionChanged);
+            // 
+            // comboNimike
+            // 
+            this.comboNimike.BackColor = System.Drawing.Color.White;
+            this.comboNimike.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboNimike.FormattingEnabled = true;
+            this.comboNimike.Location = new System.Drawing.Point(119, 111);
+            this.comboNimike.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboNimike.Name = "comboNimike";
+            this.comboNimike.Size = new System.Drawing.Size(202, 28);
+            this.comboNimike.TabIndex = 32;
+            this.comboNimike.SelectedIndexChanged += new System.EventHandler(this.comboNimike_SelectedIndexChanged);
+            // 
+            // btnTallenna
+            // 
+            this.btnTallenna.BackColor = System.Drawing.Color.Gray;
+            this.btnTallenna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTallenna.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTallenna.Location = new System.Drawing.Point(23, 180);
+            this.btnTallenna.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnTallenna.Name = "btnTallenna";
+            this.btnTallenna.Size = new System.Drawing.Size(135, 39);
+            this.btnTallenna.TabIndex = 29;
+            this.btnTallenna.Text = "Tallenna";
+            this.btnTallenna.UseVisualStyleBackColor = false;
+            this.btnTallenna.Click += new System.EventHandler(this.btnTallenna_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label5.Location = new System.Drawing.Point(19, 82);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Paikka";
+            // 
+            // tbTehtava
+            // 
+            this.tbTehtava.BackColor = System.Drawing.Color.White;
+            this.tbTehtava.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTehtava.ForeColor = System.Drawing.Color.Black;
+            this.tbTehtava.Location = new System.Drawing.Point(119, 39);
+            this.tbTehtava.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.tbTehtava.Name = "tbTehtava";
+            this.tbTehtava.Size = new System.Drawing.Size(202, 26);
+            this.tbTehtava.TabIndex = 28;
+            // 
+            // comboPaikka
+            // 
+            this.comboPaikka.BackColor = System.Drawing.Color.White;
+            this.comboPaikka.DisplayMember = "1";
+            this.comboPaikka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboPaikka.ForeColor = System.Drawing.Color.Black;
+            this.comboPaikka.FormattingEnabled = true;
+            this.comboPaikka.Items.AddRange(new object[] {
+            "Osasto A",
+            "Osasto B"});
+            this.comboPaikka.Location = new System.Drawing.Point(119, 74);
+            this.comboPaikka.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboPaikka.Name = "comboPaikka";
+            this.comboPaikka.Size = new System.Drawing.Size(201, 28);
+            this.comboPaikka.TabIndex = 33;
+            // 
+            // btnMuokkaa
+            // 
+            this.btnMuokkaa.BackColor = System.Drawing.Color.Gray;
+            this.btnMuokkaa.Enabled = false;
+            this.btnMuokkaa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMuokkaa.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMuokkaa.Location = new System.Drawing.Point(23, 238);
+            this.btnMuokkaa.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnMuokkaa.Name = "btnMuokkaa";
+            this.btnMuokkaa.Size = new System.Drawing.Size(300, 39);
+            this.btnMuokkaa.TabIndex = 31;
+            this.btnMuokkaa.Text = "Tallenna muutokset";
+            this.btnMuokkaa.UseVisualStyleBackColor = false;
+            this.btnMuokkaa.Click += new System.EventHandler(this.btnMuokkaa_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label8.Location = new System.Drawing.Point(19, 119);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 20);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Nimike";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label6.Location = new System.Drawing.Point(17, 45);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Tehtävä";
+            // 
+            // btnPoista
+            // 
+            this.btnPoista.BackColor = System.Drawing.Color.Gray;
+            this.btnPoista.Enabled = false;
+            this.btnPoista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPoista.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPoista.Location = new System.Drawing.Point(187, 180);
+            this.btnPoista.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnPoista.Name = "btnPoista";
+            this.btnPoista.Size = new System.Drawing.Size(135, 39);
+            this.btnPoista.TabIndex = 30;
+            this.btnPoista.Text = "Poista";
+            this.btnPoista.UseVisualStyleBackColor = false;
+            this.btnPoista.Click += new System.EventHandler(this.btnPoista_Click);
             // 
             // tabTyöntekijät
             // 
@@ -334,6 +562,33 @@ namespace Projekti1
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Lisää työnimike";
+            // 
+            // lvNimikkeet
+            // 
+            this.lvNimikkeet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lvNimikkeet.BackColor = System.Drawing.Color.White;
+            this.lvNimikkeet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.IdNimike,
+            this.Työnimike});
+            this.lvNimikkeet.FullRowSelect = true;
+            this.lvNimikkeet.HideSelection = false;
+            this.lvNimikkeet.Location = new System.Drawing.Point(6, 222);
+            this.lvNimikkeet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lvNimikkeet.Name = "lvNimikkeet";
+            this.lvNimikkeet.Size = new System.Drawing.Size(305, 766);
+            this.lvNimikkeet.TabIndex = 41;
+            this.lvNimikkeet.UseCompatibleStateImageBehavior = false;
+            this.lvNimikkeet.View = System.Windows.Forms.View.Details;
+            // 
+            // IdNimike
+            // 
+            this.IdNimike.Text = "ID";
+            // 
+            // Työnimike
+            // 
+            this.Työnimike.Text = "Nimike";
+            this.Työnimike.Width = 124;
             // 
             // btnPoistaNimike
             // 
@@ -419,6 +674,26 @@ namespace Projekti1
             this.groupBox5.TabIndex = 6;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Työntekijöiden hallinta";
+            // 
+            // tyontekijatdgv
+            // 
+            this.tyontekijatdgv.AllowUserToAddRows = false;
+            this.tyontekijatdgv.AllowUserToDeleteRows = false;
+            this.tyontekijatdgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.tyontekijatdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tyontekijatdgv.BackgroundColor = System.Drawing.Color.White;
+            this.tyontekijatdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tyontekijatdgv.Location = new System.Drawing.Point(4, 222);
+            this.tyontekijatdgv.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.tyontekijatdgv.MultiSelect = false;
+            this.tyontekijatdgv.Name = "tyontekijatdgv";
+            this.tyontekijatdgv.ReadOnly = true;
+            this.tyontekijatdgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.tyontekijatdgv.RowTemplate.Height = 24;
+            this.tyontekijatdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tyontekijatdgv.Size = new System.Drawing.Size(984, 766);
+            this.tyontekijatdgv.TabIndex = 7;
             // 
             // tyhjennabtn
             // 
@@ -659,6 +934,24 @@ namespace Projekti1
             this.tabTyövuorolista.TabIndex = 3;
             this.tabTyövuorolista.Text = "Työvuorolista";
             // 
+            // groupBox11
+            // 
+            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox11.Controls.Add(this.lvVuorolista);
+            this.groupBox11.Controls.Add(this.label12);
+            this.groupBox11.Controls.Add(this.btnHaeTyovuorolista);
+            this.groupBox11.Controls.Add(this.dtpVuorolistaAlkaa);
+            this.groupBox11.Controls.Add(this.label13);
+            this.groupBox11.Controls.Add(this.dtpVuorolistaLoppuu);
+            this.groupBox11.ForeColor = System.Drawing.Color.Black;
+            this.groupBox11.Location = new System.Drawing.Point(8, 3);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(995, 998);
+            this.groupBox11.TabIndex = 1;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Työvuorolista";
+            // 
             // lvVuorolista
             // 
             this.lvVuorolista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -722,6 +1015,18 @@ namespace Projekti1
             this.Tehtavanimike.Text = "Nimike";
             this.Tehtavanimike.Width = 120;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(17, 31);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(124, 20);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Valitse päivämäärät";
+            // 
             // btnHaeTyovuorolista
             // 
             this.btnHaeTyovuorolista.BackColor = System.Drawing.Color.Gray;
@@ -736,6 +1041,16 @@ namespace Projekti1
             this.btnHaeTyovuorolista.Text = "Hae";
             this.btnHaeTyovuorolista.UseVisualStyleBackColor = false;
             this.btnHaeTyovuorolista.Click += new System.EventHandler(this.btnHaeTyovuorolista_Click);
+            // 
+            // dtpVuorolistaAlkaa
+            // 
+            this.dtpVuorolistaAlkaa.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpVuorolistaAlkaa.Location = new System.Drawing.Point(20, 71);
+            this.dtpVuorolistaAlkaa.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.dtpVuorolistaAlkaa.Name = "dtpVuorolistaAlkaa";
+            this.dtpVuorolistaAlkaa.Size = new System.Drawing.Size(245, 26);
+            this.dtpVuorolistaAlkaa.TabIndex = 1;
+            this.dtpVuorolistaAlkaa.ValueChanged += new System.EventHandler(this.dtpVuorolistaAlkaa_ValueChanged);
             // 
             // label13
             // 
@@ -758,28 +1073,6 @@ namespace Projekti1
             this.dtpVuorolistaLoppuu.TabIndex = 2;
             this.dtpVuorolistaLoppuu.ValueChanged += new System.EventHandler(this.dtpVuorolistaLoppuu_ValueChanged);
             // 
-            // dtpVuorolistaAlkaa
-            // 
-            this.dtpVuorolistaAlkaa.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpVuorolistaAlkaa.Location = new System.Drawing.Point(20, 71);
-            this.dtpVuorolistaAlkaa.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.dtpVuorolistaAlkaa.Name = "dtpVuorolistaAlkaa";
-            this.dtpVuorolistaAlkaa.Size = new System.Drawing.Size(245, 26);
-            this.dtpVuorolistaAlkaa.TabIndex = 1;
-            this.dtpVuorolistaAlkaa.ValueChanged += new System.EventHandler(this.dtpVuorolistaAlkaa_ValueChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(17, 31);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(124, 20);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Valitse päivämäärät";
-            // 
             // tabTyöntekijänVuorot
             // 
             this.tabTyöntekijänVuorot.BackColor = System.Drawing.Color.DimGray;
@@ -791,6 +1084,41 @@ namespace Projekti1
             this.tabTyöntekijänVuorot.Size = new System.Drawing.Size(1896, 1008);
             this.tabTyöntekijänVuorot.TabIndex = 2;
             this.tabTyöntekijänVuorot.Text = "Työntekijän vuorolista";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox7.Controls.Add(this.btnTyontekijanLista);
+            this.groupBox7.Controls.Add(this.lwTyontekijanVuorot);
+            this.groupBox7.Controls.Add(this.comboTyontekijat);
+            this.groupBox7.Controls.Add(this.label9);
+            this.groupBox7.Controls.Add(this.label11);
+            this.groupBox7.Controls.Add(this.label10);
+            this.groupBox7.Controls.Add(this.dtpLoppupvm);
+            this.groupBox7.Controls.Add(this.dtpAlkupvm);
+            this.groupBox7.ForeColor = System.Drawing.Color.Black;
+            this.groupBox7.Location = new System.Drawing.Point(8, 7);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(637, 993);
+            this.groupBox7.TabIndex = 1;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Työntekijän vuorolista";
+            // 
+            // btnTyontekijanLista
+            // 
+            this.btnTyontekijanLista.BackColor = System.Drawing.Color.Gray;
+            this.btnTyontekijanLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTyontekijanLista.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTyontekijanLista.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTyontekijanLista.Location = new System.Drawing.Point(14, 173);
+            this.btnTyontekijanLista.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTyontekijanLista.Name = "btnTyontekijanLista";
+            this.btnTyontekijanLista.Size = new System.Drawing.Size(120, 37);
+            this.btnTyontekijanLista.TabIndex = 8;
+            this.btnTyontekijanLista.Text = "Hae";
+            this.btnTyontekijanLista.UseVisualStyleBackColor = false;
+            this.btnTyontekijanLista.Click += new System.EventHandler(this.btnTyontekijanLista_Click);
             // 
             // lwTyontekijanVuorot
             // 
@@ -831,21 +1159,6 @@ namespace Projekti1
             this.vPaikka.Text = "Paikka";
             this.vPaikka.Width = 150;
             // 
-            // btnTyontekijanLista
-            // 
-            this.btnTyontekijanLista.BackColor = System.Drawing.Color.Gray;
-            this.btnTyontekijanLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTyontekijanLista.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTyontekijanLista.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTyontekijanLista.Location = new System.Drawing.Point(14, 173);
-            this.btnTyontekijanLista.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTyontekijanLista.Name = "btnTyontekijanLista";
-            this.btnTyontekijanLista.Size = new System.Drawing.Size(120, 37);
-            this.btnTyontekijanLista.TabIndex = 8;
-            this.btnTyontekijanLista.Text = "Hae";
-            this.btnTyontekijanLista.UseVisualStyleBackColor = false;
-            this.btnTyontekijanLista.Click += new System.EventHandler(this.btnTyontekijanLista_Click);
-            // 
             // comboTyontekijat
             // 
             this.comboTyontekijat.BackColor = System.Drawing.Color.White;
@@ -858,6 +1171,18 @@ namespace Projekti1
             this.comboTyontekijat.Size = new System.Drawing.Size(350, 28);
             this.comboTyontekijat.TabIndex = 7;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(12, 47);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(69, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Työntekijä";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -868,6 +1193,18 @@ namespace Projekti1
             this.label11.Size = new System.Drawing.Size(18, 25);
             this.label11.TabIndex = 5;
             this.label11.Text = "-";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(12, 82);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(124, 20);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Valitse päivämäärät";
             // 
             // dtpLoppupvm
             // 
@@ -884,30 +1221,6 @@ namespace Projekti1
             this.dtpAlkupvm.Name = "dtpAlkupvm";
             this.dtpAlkupvm.Size = new System.Drawing.Size(237, 26);
             this.dtpAlkupvm.TabIndex = 3;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(12, 82);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(124, 20);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Valitse päivämäärät";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(12, 47);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(69, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Työntekijä";
             // 
             // tabKiinnitys
             // 
@@ -1289,27 +1602,49 @@ namespace Projekti1
             this.panel2.Size = new System.Drawing.Size(1890, 1000);
             this.panel2.TabIndex = 0;
             // 
-            // lblVuoroId
+            // groupBox8
             // 
-            this.lblVuoroId.AutoSize = true;
-            this.lblVuoroId.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVuoroId.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblVuoroId.Location = new System.Drawing.Point(28, 57);
-            this.lblVuoroId.Name = "lblVuoroId";
-            this.lblVuoroId.Size = new System.Drawing.Size(43, 16);
-            this.lblVuoroId.TabIndex = 42;
-            this.lblVuoroId.Text = "VuoroID";
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox8.Controls.Add(this.label3);
+            this.groupBox8.Controls.Add(this.dtpPvmAlkaa);
+            this.groupBox8.Controls.Add(this.listviewTyoVuorot);
+            this.groupBox8.Controls.Add(this.comboAlkaa);
+            this.groupBox8.Controls.Add(this.btnTallennaVuoro);
+            this.groupBox8.Controls.Add(this.btnPoistaVuoro);
+            this.groupBox8.Controls.Add(this.label4);
+            this.groupBox8.Controls.Add(this.dtpPvmLoppuu);
+            this.groupBox8.Controls.Add(this.comboLoppuu);
+            this.groupBox8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.ForeColor = System.Drawing.Color.Black;
+            this.groupBox8.Location = new System.Drawing.Point(5, 3);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(468, 993);
+            this.groupBox8.TabIndex = 43;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Lisää työvuoro";
             // 
-            // lblTehtavaID
+            // label3
             // 
-            this.lblTehtavaID.AutoSize = true;
-            this.lblTehtavaID.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTehtavaID.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTehtavaID.Location = new System.Drawing.Point(28, 112);
-            this.lblTehtavaID.Name = "lblTehtavaID";
-            this.lblTehtavaID.Size = new System.Drawing.Size(51, 16);
-            this.lblTehtavaID.TabIndex = 41;
-            this.lblTehtavaID.Text = "TehtavaID";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Location = new System.Drawing.Point(15, 36);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 20);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Alkaa";
+            // 
+            // dtpPvmAlkaa
+            // 
+            this.dtpPvmAlkaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPvmAlkaa.Location = new System.Drawing.Point(128, 33);
+            this.dtpPvmAlkaa.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.dtpPvmAlkaa.MinDate = new System.DateTime(2021, 12, 12, 0, 0, 0, 0);
+            this.dtpPvmAlkaa.Name = "dtpPvmAlkaa";
+            this.dtpPvmAlkaa.Size = new System.Drawing.Size(202, 23);
+            this.dtpPvmAlkaa.TabIndex = 4;
             // 
             // listviewTyoVuorot
             // 
@@ -1345,153 +1680,6 @@ namespace Projekti1
             // 
             this.Loppuu.Text = "Loppuu";
             this.Loppuu.Width = 150;
-            // 
-            // tbTyovuoroValinta
-            // 
-            this.tbTyovuoroValinta.Location = new System.Drawing.Point(150, 30);
-            this.tbTyovuoroValinta.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.tbTyovuoroValinta.Name = "tbTyovuoroValinta";
-            this.tbTyovuoroValinta.Size = new System.Drawing.Size(250, 26);
-            this.tbTyovuoroValinta.TabIndex = 38;
-            this.tbTyovuoroValinta.Text = "Valitse vuoro työvuorolistalta";
-            // 
-            // comboTehtavat
-            // 
-            this.comboTehtavat.DisplayMember = "1";
-            this.comboTehtavat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboTehtavat.FormattingEnabled = true;
-            this.comboTehtavat.Location = new System.Drawing.Point(150, 83);
-            this.comboTehtavat.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.comboTehtavat.Name = "comboTehtavat";
-            this.comboTehtavat.Size = new System.Drawing.Size(250, 28);
-            this.comboTehtavat.TabIndex = 37;
-            this.comboTehtavat.SelectedIndexChanged += new System.EventHandler(this.comboTehtavat_SelectedIndexChanged);
-            // 
-            // numMaara
-            // 
-            this.numMaara.Location = new System.Drawing.Point(150, 138);
-            this.numMaara.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.numMaara.Name = "numMaara";
-            this.numMaara.Size = new System.Drawing.Size(63, 26);
-            this.numMaara.TabIndex = 26;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(27, 144);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 20);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Määrä";
-            // 
-            // comboLoppuu
-            // 
-            this.comboLoppuu.FormattingEnabled = true;
-            this.comboLoppuu.Items.AddRange(new object[] {
-            "06:00",
-            "06:15",
-            "06:30",
-            "06:45",
-            "07:00",
-            "07:15",
-            "07:30",
-            "07:45",
-            "08:00",
-            "08:15",
-            "08:30",
-            "08:45",
-            "09:00",
-            "09:15",
-            "09:30",
-            "09:45",
-            "10:00",
-            "10:15",
-            "10:30",
-            "10:45",
-            "11:00",
-            "11:15",
-            "11:30",
-            "11:45",
-            "12:00",
-            "12:15",
-            "12:30",
-            "12:45",
-            "13:00",
-            "13:15",
-            "13:30",
-            "13:45",
-            "14:00",
-            "14:15",
-            "14:30",
-            "14:45",
-            "15:00",
-            "15:15",
-            "15:30",
-            "15:45",
-            "16:00",
-            "16:15",
-            "16:30",
-            "16:45",
-            "17:00",
-            "17:15",
-            "17:30",
-            "17:45",
-            "18:00",
-            "18:15",
-            "18:30",
-            "18:45",
-            "19:00",
-            "19:15",
-            "19:30",
-            "19:45",
-            "20:00",
-            "20:15",
-            "20:30",
-            "20:45",
-            "21:00",
-            "21:15",
-            "21:30",
-            "21:45",
-            "22:00",
-            "22:15",
-            "22:30",
-            "22:45",
-            "23:00",
-            "23:15",
-            "23:30",
-            "23:45",
-            "00:00",
-            "00:15",
-            "00:30",
-            "00:45",
-            "01:00",
-            "01:15",
-            "01:30",
-            "01:45",
-            "02:00",
-            "02:15",
-            "02:30",
-            "02:45",
-            "03:00",
-            "03:15",
-            "03:30",
-            "03:45",
-            "04:00",
-            "04:15",
-            "04:30",
-            "04:45",
-            "05:00",
-            "05:15",
-            "05:30",
-            "05:45"});
-            this.comboLoppuu.Location = new System.Drawing.Point(128, 155);
-            this.comboLoppuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboLoppuu.Name = "comboLoppuu";
-            this.comboLoppuu.Size = new System.Drawing.Size(66, 28);
-            this.comboLoppuu.TabIndex = 21;
             // 
             // comboAlkaa
             // 
@@ -1600,20 +1788,20 @@ namespace Projekti1
             this.comboAlkaa.Size = new System.Drawing.Size(66, 28);
             this.comboAlkaa.TabIndex = 21;
             // 
-            // btnPoistaTarve
+            // btnTallennaVuoro
             // 
-            this.btnPoistaTarve.BackColor = System.Drawing.Color.Gray;
-            this.btnPoistaTarve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPoistaTarve.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPoistaTarve.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPoistaTarve.Location = new System.Drawing.Point(420, 77);
-            this.btnPoistaTarve.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnPoistaTarve.Name = "btnPoistaTarve";
-            this.btnPoistaTarve.Size = new System.Drawing.Size(73, 34);
-            this.btnPoistaTarve.TabIndex = 18;
-            this.btnPoistaTarve.Text = "Poista";
-            this.btnPoistaTarve.UseVisualStyleBackColor = false;
-            this.btnPoistaTarve.Click += new System.EventHandler(this.btnPoistaTarve_Click);
+            this.btnTallennaVuoro.BackColor = System.Drawing.Color.Gray;
+            this.btnTallennaVuoro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTallennaVuoro.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTallennaVuoro.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTallennaVuoro.Location = new System.Drawing.Point(373, 33);
+            this.btnTallennaVuoro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnTallennaVuoro.Name = "btnTallennaVuoro";
+            this.btnTallennaVuoro.Size = new System.Drawing.Size(73, 34);
+            this.btnTallennaVuoro.TabIndex = 17;
+            this.btnTallennaVuoro.Text = "Tallenna";
+            this.btnTallennaVuoro.UseVisualStyleBackColor = false;
+            this.btnTallennaVuoro.Click += new System.EventHandler(this.btnTallennaVuoro_Click);
             // 
             // btnPoistaVuoro
             // 
@@ -1630,35 +1818,157 @@ namespace Projekti1
             this.btnPoistaVuoro.UseVisualStyleBackColor = false;
             this.btnPoistaVuoro.Click += new System.EventHandler(this.btnPoistaVuoro_Click);
             // 
-            // btnTallennaTarve
+            // label4
             // 
-            this.btnTallennaTarve.BackColor = System.Drawing.Color.Gray;
-            this.btnTallennaTarve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTallennaTarve.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTallennaTarve.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTallennaTarve.Location = new System.Drawing.Point(420, 22);
-            this.btnTallennaTarve.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnTallennaTarve.Name = "btnTallennaTarve";
-            this.btnTallennaTarve.Size = new System.Drawing.Size(73, 34);
-            this.btnTallennaTarve.TabIndex = 17;
-            this.btnTallennaTarve.Text = "Tallenna";
-            this.btnTallennaTarve.UseVisualStyleBackColor = false;
-            this.btnTallennaTarve.Click += new System.EventHandler(this.btnTallennaTarve_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Location = new System.Drawing.Point(15, 119);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Loppuu";
             // 
-            // btnTallennaVuoro
+            // dtpPvmLoppuu
             // 
-            this.btnTallennaVuoro.BackColor = System.Drawing.Color.Gray;
-            this.btnTallennaVuoro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTallennaVuoro.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTallennaVuoro.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTallennaVuoro.Location = new System.Drawing.Point(373, 33);
-            this.btnTallennaVuoro.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnTallennaVuoro.Name = "btnTallennaVuoro";
-            this.btnTallennaVuoro.Size = new System.Drawing.Size(73, 34);
-            this.btnTallennaVuoro.TabIndex = 17;
-            this.btnTallennaVuoro.Text = "Tallenna";
-            this.btnTallennaVuoro.UseVisualStyleBackColor = false;
-            this.btnTallennaVuoro.Click += new System.EventHandler(this.btnTallennaVuoro_Click);
+            this.dtpPvmLoppuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpPvmLoppuu.Location = new System.Drawing.Point(128, 117);
+            this.dtpPvmLoppuu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.dtpPvmLoppuu.MinDate = new System.DateTime(2021, 12, 12, 0, 0, 0, 0);
+            this.dtpPvmLoppuu.Name = "dtpPvmLoppuu";
+            this.dtpPvmLoppuu.Size = new System.Drawing.Size(202, 23);
+            this.dtpPvmLoppuu.TabIndex = 4;
+            // 
+            // comboLoppuu
+            // 
+            this.comboLoppuu.FormattingEnabled = true;
+            this.comboLoppuu.Items.AddRange(new object[] {
+            "06:00",
+            "06:15",
+            "06:30",
+            "06:45",
+            "07:00",
+            "07:15",
+            "07:30",
+            "07:45",
+            "08:00",
+            "08:15",
+            "08:30",
+            "08:45",
+            "09:00",
+            "09:15",
+            "09:30",
+            "09:45",
+            "10:00",
+            "10:15",
+            "10:30",
+            "10:45",
+            "11:00",
+            "11:15",
+            "11:30",
+            "11:45",
+            "12:00",
+            "12:15",
+            "12:30",
+            "12:45",
+            "13:00",
+            "13:15",
+            "13:30",
+            "13:45",
+            "14:00",
+            "14:15",
+            "14:30",
+            "14:45",
+            "15:00",
+            "15:15",
+            "15:30",
+            "15:45",
+            "16:00",
+            "16:15",
+            "16:30",
+            "16:45",
+            "17:00",
+            "17:15",
+            "17:30",
+            "17:45",
+            "18:00",
+            "18:15",
+            "18:30",
+            "18:45",
+            "19:00",
+            "19:15",
+            "19:30",
+            "19:45",
+            "20:00",
+            "20:15",
+            "20:30",
+            "20:45",
+            "21:00",
+            "21:15",
+            "21:30",
+            "21:45",
+            "22:00",
+            "22:15",
+            "22:30",
+            "22:45",
+            "23:00",
+            "23:15",
+            "23:30",
+            "23:45",
+            "00:00",
+            "00:15",
+            "00:30",
+            "00:45",
+            "01:00",
+            "01:15",
+            "01:30",
+            "01:45",
+            "02:00",
+            "02:15",
+            "02:30",
+            "02:45",
+            "03:00",
+            "03:15",
+            "03:30",
+            "03:45",
+            "04:00",
+            "04:15",
+            "04:30",
+            "04:45",
+            "05:00",
+            "05:15",
+            "05:30",
+            "05:45"});
+            this.comboLoppuu.Location = new System.Drawing.Point(128, 155);
+            this.comboLoppuu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboLoppuu.Name = "comboLoppuu";
+            this.comboLoppuu.Size = new System.Drawing.Size(66, 28);
+            this.comboLoppuu.TabIndex = 21;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox9.Controls.Add(this.dgvTarpeet);
+            this.groupBox9.Controls.Add(this.btnPoistaTarve);
+            this.groupBox9.Controls.Add(this.tbTyovuoroValinta);
+            this.groupBox9.Controls.Add(this.btnTallennaTarve);
+            this.groupBox9.Controls.Add(this.comboTehtavat);
+            this.groupBox9.Controls.Add(this.lblVuoroId);
+            this.groupBox9.Controls.Add(this.numMaara);
+            this.groupBox9.Controls.Add(this.label22);
+            this.groupBox9.Controls.Add(this.lblTehtavaID);
+            this.groupBox9.Controls.Add(this.label23);
+            this.groupBox9.Controls.Add(this.label7);
+            this.groupBox9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox9.ForeColor = System.Drawing.Color.Black;
+            this.groupBox9.Location = new System.Drawing.Point(479, 3);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(1048, 994);
+            this.groupBox9.TabIndex = 44;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Lisää tarve";
             // 
             // dgvTarpeet
             // 
@@ -1681,47 +1991,76 @@ namespace Projekti1
             this.dgvTarpeet.Size = new System.Drawing.Size(998, 770);
             this.dgvTarpeet.TabIndex = 13;
             // 
-            // dtpPvmLoppuu
+            // btnPoistaTarve
             // 
-            this.dtpPvmLoppuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpPvmLoppuu.Location = new System.Drawing.Point(128, 117);
-            this.dtpPvmLoppuu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.dtpPvmLoppuu.Name = "dtpPvmLoppuu";
-            this.dtpPvmLoppuu.Size = new System.Drawing.Size(202, 23);
-            this.dtpPvmLoppuu.TabIndex = 4;
+            this.btnPoistaTarve.BackColor = System.Drawing.Color.Gray;
+            this.btnPoistaTarve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPoistaTarve.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPoistaTarve.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPoistaTarve.Location = new System.Drawing.Point(420, 77);
+            this.btnPoistaTarve.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnPoistaTarve.Name = "btnPoistaTarve";
+            this.btnPoistaTarve.Size = new System.Drawing.Size(73, 34);
+            this.btnPoistaTarve.TabIndex = 18;
+            this.btnPoistaTarve.Text = "Poista";
+            this.btnPoistaTarve.UseVisualStyleBackColor = false;
+            this.btnPoistaTarve.Click += new System.EventHandler(this.btnPoistaTarve_Click);
             // 
-            // dtpPvmAlkaa
+            // tbTyovuoroValinta
             // 
-            this.dtpPvmAlkaa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpPvmAlkaa.Location = new System.Drawing.Point(128, 33);
-            this.dtpPvmAlkaa.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.dtpPvmAlkaa.Name = "dtpPvmAlkaa";
-            this.dtpPvmAlkaa.Size = new System.Drawing.Size(202, 23);
-            this.dtpPvmAlkaa.TabIndex = 4;
+            this.tbTyovuoroValinta.Location = new System.Drawing.Point(150, 30);
+            this.tbTyovuoroValinta.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.tbTyovuoroValinta.Name = "tbTyovuoroValinta";
+            this.tbTyovuoroValinta.Size = new System.Drawing.Size(250, 26);
+            this.tbTyovuoroValinta.TabIndex = 38;
+            this.tbTyovuoroValinta.Text = "Valitse vuoro työvuorolistalta";
             // 
-            // label4
+            // btnTallennaTarve
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Location = new System.Drawing.Point(15, 119);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Loppuu";
+            this.btnTallennaTarve.BackColor = System.Drawing.Color.Gray;
+            this.btnTallennaTarve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTallennaTarve.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTallennaTarve.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTallennaTarve.Location = new System.Drawing.Point(420, 22);
+            this.btnTallennaTarve.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.btnTallennaTarve.Name = "btnTallennaTarve";
+            this.btnTallennaTarve.Size = new System.Drawing.Size(73, 34);
+            this.btnTallennaTarve.TabIndex = 17;
+            this.btnTallennaTarve.Text = "Tallenna";
+            this.btnTallennaTarve.UseVisualStyleBackColor = false;
+            this.btnTallennaTarve.Click += new System.EventHandler(this.btnTallennaTarve_Click);
             // 
-            // label23
+            // comboTehtavat
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label23.Location = new System.Drawing.Point(26, 91);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(55, 20);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Tehtävä";
+            this.comboTehtavat.DisplayMember = "1";
+            this.comboTehtavat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboTehtavat.FormattingEnabled = true;
+            this.comboTehtavat.Location = new System.Drawing.Point(150, 83);
+            this.comboTehtavat.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.comboTehtavat.Name = "comboTehtavat";
+            this.comboTehtavat.Size = new System.Drawing.Size(250, 28);
+            this.comboTehtavat.TabIndex = 37;
+            this.comboTehtavat.SelectedIndexChanged += new System.EventHandler(this.comboTehtavat_SelectedIndexChanged);
+            // 
+            // lblVuoroId
+            // 
+            this.lblVuoroId.AutoSize = true;
+            this.lblVuoroId.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVuoroId.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblVuoroId.Location = new System.Drawing.Point(28, 57);
+            this.lblVuoroId.Name = "lblVuoroId";
+            this.lblVuoroId.Size = new System.Drawing.Size(43, 16);
+            this.lblVuoroId.TabIndex = 42;
+            this.lblVuoroId.Text = "VuoroID";
+            this.lblVuoroId.Visible = false;
+            // 
+            // numMaara
+            // 
+            this.numMaara.Location = new System.Drawing.Point(150, 138);
+            this.numMaara.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numMaara.Name = "numMaara";
+            this.numMaara.Size = new System.Drawing.Size(63, 26);
+            this.numMaara.TabIndex = 26;
             // 
             // label22
             // 
@@ -1735,17 +2074,41 @@ namespace Projekti1
             this.label22.TabIndex = 2;
             this.label22.Text = "Työvuoro";
             // 
-            // label3
+            // lblTehtavaID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(15, 36);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Alkaa";
+            this.lblTehtavaID.AutoSize = true;
+            this.lblTehtavaID.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTehtavaID.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTehtavaID.Location = new System.Drawing.Point(28, 112);
+            this.lblTehtavaID.Name = "lblTehtavaID";
+            this.lblTehtavaID.Size = new System.Drawing.Size(51, 16);
+            this.lblTehtavaID.TabIndex = 41;
+            this.lblTehtavaID.Text = "TehtavaID";
+            this.lblTehtavaID.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label23.Location = new System.Drawing.Point(26, 91);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(55, 20);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Tehtävä";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label7.Location = new System.Drawing.Point(27, 144);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(45, 20);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Määrä";
             // 
             // tabEtusivu
             // 
@@ -1926,365 +2289,6 @@ namespace Projekti1
             this.tabControl.Size = new System.Drawing.Size(1904, 1041);
             this.tabControl.TabIndex = 0;
             // 
-            // tyontekijatdgv
-            // 
-            this.tyontekijatdgv.AllowUserToAddRows = false;
-            this.tyontekijatdgv.AllowUserToDeleteRows = false;
-            this.tyontekijatdgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.tyontekijatdgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tyontekijatdgv.BackgroundColor = System.Drawing.Color.White;
-            this.tyontekijatdgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tyontekijatdgv.Location = new System.Drawing.Point(4, 222);
-            this.tyontekijatdgv.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.tyontekijatdgv.MultiSelect = false;
-            this.tyontekijatdgv.Name = "tyontekijatdgv";
-            this.tyontekijatdgv.ReadOnly = true;
-            this.tyontekijatdgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.tyontekijatdgv.RowTemplate.Height = 24;
-            this.tyontekijatdgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tyontekijatdgv.Size = new System.Drawing.Size(984, 766);
-            this.tyontekijatdgv.TabIndex = 7;
-            // 
-            // lvNimikkeet
-            // 
-            this.lvNimikkeet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lvNimikkeet.BackColor = System.Drawing.Color.White;
-            this.lvNimikkeet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.IdNimike,
-            this.Työnimike});
-            this.lvNimikkeet.FullRowSelect = true;
-            this.lvNimikkeet.HideSelection = false;
-            this.lvNimikkeet.Location = new System.Drawing.Point(6, 222);
-            this.lvNimikkeet.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.lvNimikkeet.Name = "lvNimikkeet";
-            this.lvNimikkeet.Size = new System.Drawing.Size(305, 766);
-            this.lvNimikkeet.TabIndex = 41;
-            this.lvNimikkeet.UseCompatibleStateImageBehavior = false;
-            this.lvNimikkeet.View = System.Windows.Forms.View.Details;
-            // 
-            // IdNimike
-            // 
-            this.IdNimike.Text = "ID";
-            // 
-            // Työnimike
-            // 
-            this.Työnimike.Text = "Nimike";
-            this.Työnimike.Width = 124;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox3.Controls.Add(this.lblidnimike);
-            this.groupBox3.Controls.Add(this.dgvTehtavat);
-            this.groupBox3.Controls.Add(this.comboNimike);
-            this.groupBox3.Controls.Add(this.btnTallenna);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.tbTehtava);
-            this.groupBox3.Controls.Add(this.comboPaikka);
-            this.groupBox3.Controls.Add(this.btnMuokkaa);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.btnPoista);
-            this.groupBox3.ForeColor = System.Drawing.Color.Black;
-            this.groupBox3.Location = new System.Drawing.Point(8, 7);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(769, 994);
-            this.groupBox3.TabIndex = 36;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Lisää työtehtävä";
-            // 
-            // btnTallenna
-            // 
-            this.btnTallenna.BackColor = System.Drawing.Color.Gray;
-            this.btnTallenna.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTallenna.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTallenna.Location = new System.Drawing.Point(23, 180);
-            this.btnTallenna.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnTallenna.Name = "btnTallenna";
-            this.btnTallenna.Size = new System.Drawing.Size(135, 39);
-            this.btnTallenna.TabIndex = 29;
-            this.btnTallenna.Text = "Tallenna";
-            this.btnTallenna.UseVisualStyleBackColor = false;
-            this.btnTallenna.Click += new System.EventHandler(this.btnTallenna_Click);
-            // 
-            // tbTehtava
-            // 
-            this.tbTehtava.BackColor = System.Drawing.Color.White;
-            this.tbTehtava.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTehtava.ForeColor = System.Drawing.Color.Black;
-            this.tbTehtava.Location = new System.Drawing.Point(119, 39);
-            this.tbTehtava.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.tbTehtava.Name = "tbTehtava";
-            this.tbTehtava.Size = new System.Drawing.Size(202, 26);
-            this.tbTehtava.TabIndex = 28;
-            // 
-            // btnMuokkaa
-            // 
-            this.btnMuokkaa.BackColor = System.Drawing.Color.Gray;
-            this.btnMuokkaa.Enabled = false;
-            this.btnMuokkaa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMuokkaa.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnMuokkaa.Location = new System.Drawing.Point(23, 238);
-            this.btnMuokkaa.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnMuokkaa.Name = "btnMuokkaa";
-            this.btnMuokkaa.Size = new System.Drawing.Size(300, 39);
-            this.btnMuokkaa.TabIndex = 31;
-            this.btnMuokkaa.Text = "Tallenna muutokset";
-            this.btnMuokkaa.UseVisualStyleBackColor = false;
-            this.btnMuokkaa.Click += new System.EventHandler(this.btnMuokkaa_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(17, 45);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 20);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Tehtävä";
-            // 
-            // btnPoista
-            // 
-            this.btnPoista.BackColor = System.Drawing.Color.Gray;
-            this.btnPoista.Enabled = false;
-            this.btnPoista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPoista.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnPoista.Location = new System.Drawing.Point(187, 180);
-            this.btnPoista.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.btnPoista.Name = "btnPoista";
-            this.btnPoista.Size = new System.Drawing.Size(135, 39);
-            this.btnPoista.TabIndex = 30;
-            this.btnPoista.Text = "Poista";
-            this.btnPoista.UseVisualStyleBackColor = false;
-            this.btnPoista.Click += new System.EventHandler(this.btnPoista_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(19, 119);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 20);
-            this.label8.TabIndex = 24;
-            this.label8.Text = "Nimike";
-            // 
-            // comboPaikka
-            // 
-            this.comboPaikka.BackColor = System.Drawing.Color.White;
-            this.comboPaikka.DisplayMember = "1";
-            this.comboPaikka.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboPaikka.ForeColor = System.Drawing.Color.Black;
-            this.comboPaikka.FormattingEnabled = true;
-            this.comboPaikka.Items.AddRange(new object[] {
-            "Osasto A",
-            "Osasto B"});
-            this.comboPaikka.Location = new System.Drawing.Point(119, 74);
-            this.comboPaikka.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboPaikka.Name = "comboPaikka";
-            this.comboPaikka.Size = new System.Drawing.Size(201, 28);
-            this.comboPaikka.TabIndex = 33;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(19, 82);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Paikka";
-            // 
-            // comboNimike
-            // 
-            this.comboNimike.BackColor = System.Drawing.Color.White;
-            this.comboNimike.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboNimike.FormattingEnabled = true;
-            this.comboNimike.Location = new System.Drawing.Point(119, 111);
-            this.comboNimike.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboNimike.Name = "comboNimike";
-            this.comboNimike.Size = new System.Drawing.Size(202, 28);
-            this.comboNimike.TabIndex = 32;
-            this.comboNimike.SelectedIndexChanged += new System.EventHandler(this.comboNimike_SelectedIndexChanged);
-            // 
-            // lblidnimike
-            // 
-            this.lblidnimike.AutoSize = true;
-            this.lblidnimike.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblidnimike.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblidnimike.Location = new System.Drawing.Point(19, 139);
-            this.lblidnimike.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblidnimike.Name = "lblidnimike";
-            this.lblidnimike.Size = new System.Drawing.Size(50, 16);
-            this.lblidnimike.TabIndex = 36;
-            this.lblidnimike.Text = "NimikeID";
-            this.lblidnimike.Visible = false;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox7.Controls.Add(this.btnTyontekijanLista);
-            this.groupBox7.Controls.Add(this.lwTyontekijanVuorot);
-            this.groupBox7.Controls.Add(this.comboTyontekijat);
-            this.groupBox7.Controls.Add(this.label9);
-            this.groupBox7.Controls.Add(this.label11);
-            this.groupBox7.Controls.Add(this.label10);
-            this.groupBox7.Controls.Add(this.dtpLoppupvm);
-            this.groupBox7.Controls.Add(this.dtpAlkupvm);
-            this.groupBox7.ForeColor = System.Drawing.Color.Black;
-            this.groupBox7.Location = new System.Drawing.Point(8, 7);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(637, 993);
-            this.groupBox7.TabIndex = 1;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Työntekijän vuorolista";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox8.Controls.Add(this.label3);
-            this.groupBox8.Controls.Add(this.dtpPvmAlkaa);
-            this.groupBox8.Controls.Add(this.listviewTyoVuorot);
-            this.groupBox8.Controls.Add(this.comboAlkaa);
-            this.groupBox8.Controls.Add(this.btnTallennaVuoro);
-            this.groupBox8.Controls.Add(this.btnPoistaVuoro);
-            this.groupBox8.Controls.Add(this.label4);
-            this.groupBox8.Controls.Add(this.dtpPvmLoppuu);
-            this.groupBox8.Controls.Add(this.comboLoppuu);
-            this.groupBox8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.ForeColor = System.Drawing.Color.Black;
-            this.groupBox8.Location = new System.Drawing.Point(5, 3);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(468, 993);
-            this.groupBox8.TabIndex = 43;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Lisää työvuoro";
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox9.Controls.Add(this.dgvTarpeet);
-            this.groupBox9.Controls.Add(this.btnPoistaTarve);
-            this.groupBox9.Controls.Add(this.tbTyovuoroValinta);
-            this.groupBox9.Controls.Add(this.btnTallennaTarve);
-            this.groupBox9.Controls.Add(this.comboTehtavat);
-            this.groupBox9.Controls.Add(this.lblVuoroId);
-            this.groupBox9.Controls.Add(this.numMaara);
-            this.groupBox9.Controls.Add(this.label22);
-            this.groupBox9.Controls.Add(this.lblTehtavaID);
-            this.groupBox9.Controls.Add(this.label23);
-            this.groupBox9.Controls.Add(this.label7);
-            this.groupBox9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.ForeColor = System.Drawing.Color.Black;
-            this.groupBox9.Location = new System.Drawing.Point(479, 3);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(1048, 994);
-            this.groupBox9.TabIndex = 44;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Lisää tarve";
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Päivämäärä";
-            this.columnHeader1.Width = 150;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Etunimi";
-            this.columnHeader2.Width = 150;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Sukunimi";
-            this.columnHeader3.Width = 150;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Puhelinnumero";
-            this.columnHeader4.Width = 150;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Nimike";
-            this.columnHeader5.Width = 150;
-            // 
-            // lwVapaalista
-            // 
-            this.lwVapaalista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.lwVapaalista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.lwVapaalista.ForeColor = System.Drawing.Color.Black;
-            this.lwVapaalista.HideSelection = false;
-            this.lwVapaalista.Location = new System.Drawing.Point(22, 191);
-            this.lwVapaalista.Margin = new System.Windows.Forms.Padding(2);
-            this.lwVapaalista.Name = "lwVapaalista";
-            this.lwVapaalista.Size = new System.Drawing.Size(1025, 791);
-            this.lwVapaalista.TabIndex = 1;
-            this.lwVapaalista.UseCompatibleStateImageBehavior = false;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox10.Controls.Add(this.label1);
-            this.groupBox10.Controls.Add(this.lwVapaalista);
-            this.groupBox10.Controls.Add(this.dtpVapaaAlkaa);
-            this.groupBox10.Controls.Add(this.btnVapaalista);
-            this.groupBox10.Controls.Add(this.label26);
-            this.groupBox10.Controls.Add(this.dtpVapaaLoppuu);
-            this.groupBox10.ForeColor = System.Drawing.Color.Black;
-            this.groupBox10.Location = new System.Drawing.Point(8, 3);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1065, 997);
-            this.groupBox10.TabIndex = 1;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Vapaalista";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(266, 71);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 25);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "-";
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox11.Controls.Add(this.lvVuorolista);
-            this.groupBox11.Controls.Add(this.label12);
-            this.groupBox11.Controls.Add(this.btnHaeTyovuorolista);
-            this.groupBox11.Controls.Add(this.dtpVuorolistaAlkaa);
-            this.groupBox11.Controls.Add(this.label13);
-            this.groupBox11.Controls.Add(this.dtpVuorolistaLoppuu);
-            this.groupBox11.ForeColor = System.Drawing.Color.Black;
-            this.groupBox11.Location = new System.Drawing.Point(8, 3);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(995, 998);
-            this.groupBox11.TabIndex = 1;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Työvuorolista";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -2300,15 +2304,24 @@ namespace Projekti1
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Työvuorosuunnittelu";
             this.tabVapaalista.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.tabTehtävät.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTehtavat)).EndInit();
             this.tabTyöntekijät.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tyontekijatdgv)).EndInit();
             this.tabTyövuorolista.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.tabTyöntekijänVuorot.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.tabKiinnitys.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -2317,26 +2330,17 @@ namespace Projekti1
             this.groupBox1.PerformLayout();
             this.tabVuorot.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numMaara)).EndInit();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTarpeet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMaara)).EndInit();
             this.tabEtusivu.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tabControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tyontekijatdgv)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
-            this.groupBox9.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
 
         }
