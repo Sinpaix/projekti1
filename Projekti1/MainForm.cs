@@ -73,6 +73,7 @@ namespace Projekti1
 
         }
 
+        //metodi kaikkien listojen ja kenttien päivitykseen
         private void UpdateAll()
         {
             tyontekijat = contr.LataaTyontekijat();
@@ -82,6 +83,7 @@ namespace Projekti1
             tyotehtavat = contr.LoadTyotehtavat();
             tyonimikkeet = contr.LoadTyonimikkeet();
             kiinnitykset = contr.LataaKiinnitykset();
+            vapaalista = contr.LoadVapaalista(DateTime.Now, DateTime.Now);
 
             PopulateTarveListView();
 
@@ -98,6 +100,7 @@ namespace Projekti1
 
         }
 
+        //haetaan työnimikelista comboboxiin
         private void PopulateTyonimikkeetCombobox()
         {
             BindingSource source = new BindingSource();
@@ -942,9 +945,8 @@ namespace Projekti1
 
         #region Vapaalista
 
-        private void btnVapaalista_Click(object sender, EventArgs e)
+        private void btnVapaalista_Click_1(object sender, EventArgs e)
         {
-
             vapaalista = contr.LoadVapaalista(valkaa, vloppuu);
             lwVapaalista.Items.Clear();
 
@@ -954,12 +956,14 @@ namespace Projekti1
             {
                 lwVapaalista.Items.Add(new ListViewItem(new string[] {
                 item.Alkaa.ToString("dd.MM.yy HH:mm"),
+                item.Loppuu.ToString("dd.MM.yy HH:mm"),
                 item.Etunimi,
                 item.Sukunimi,
                 item.Puhelin,
                 item.Nimike}));
 
             }
+
         }
 
         private void dtpVapaaAlkaa_ValueChanged(object sender, EventArgs e)
@@ -1024,5 +1028,6 @@ namespace Projekti1
 
         #endregion
 
+       
     }
 }

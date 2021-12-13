@@ -187,6 +187,7 @@ namespace Projekti1
             this.panel6 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabVapaalista.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.tabTehtävät.SuspendLayout();
@@ -263,6 +264,7 @@ namespace Projekti1
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lwVapaalista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
+            this.columnHeader6,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
@@ -275,10 +277,11 @@ namespace Projekti1
             this.lwVapaalista.Size = new System.Drawing.Size(1025, 791);
             this.lwVapaalista.TabIndex = 1;
             this.lwVapaalista.UseCompatibleStateImageBehavior = false;
+            this.lwVapaalista.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Päivämäärä";
+            this.columnHeader1.Text = "Alkaa";
             this.columnHeader1.Width = 150;
             // 
             // columnHeader2
@@ -321,6 +324,7 @@ namespace Projekti1
             this.btnVapaalista.TabIndex = 8;
             this.btnVapaalista.Text = "Hae";
             this.btnVapaalista.UseVisualStyleBackColor = false;
+            this.btnVapaalista.Click += new System.EventHandler(this.btnVapaalista_Click_1);
             // 
             // label26
             // 
@@ -2289,6 +2293,11 @@ namespace Projekti1
             this.tabControl.Size = new System.Drawing.Size(1904, 1041);
             this.tabControl.TabIndex = 0;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Loppuu";
+            this.columnHeader6.Width = 150;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -2505,6 +2514,7 @@ namespace Projekti1
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
 

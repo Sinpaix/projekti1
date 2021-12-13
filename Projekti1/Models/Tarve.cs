@@ -58,18 +58,19 @@ namespace Projekti1.Models
             Nimike = nimike;
         }
 
-        public override string ToString()
-        {
-            return TyovuoroID + " " + TehtavaID;
-        }
-
-        public Tarve(DateTime alkaa, string etunimi, string sukunimi, string puhelin, string nimike)
+        public Tarve(DateTime alkaa, DateTime loppuu, string etunimi, string sukunimi, string puhelin, string nimike)
         {
             Alkaa = alkaa;
+            Loppuu = loppuu;
             Etunimi = etunimi;
             Sukunimi = sukunimi;
             Puhelin = puhelin;
             Nimike = nimike;
+        }
+
+        public override string ToString()
+        {
+            return TyovuoroID + " " + TehtavaID;
         }
     }
 }
