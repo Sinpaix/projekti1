@@ -921,7 +921,6 @@ namespace Projekti1
                 item.Sukunimi,
                 item.Puhelin,
                 item.Nimike}));
-
             }
         }
 
@@ -950,20 +949,16 @@ namespace Projekti1
             vapaalista = contr.LoadVapaalista(valkaa, vloppuu);
             lwVapaalista.Items.Clear();
 
-
-
             foreach (Tarve item in vapaalista)
             {
                 lwVapaalista.Items.Add(new ListViewItem(new string[] {
                 item.Alkaa.ToString("dd.MM.yy HH:mm"),
-                item.Loppuu.ToString("dd.MM.yy HH:mm"),
                 item.Etunimi,
                 item.Sukunimi,
                 item.Puhelin,
                 item.Nimike}));
 
             }
-
         }
 
         private void dtpVapaaAlkaa_ValueChanged(object sender, EventArgs e)

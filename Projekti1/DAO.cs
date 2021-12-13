@@ -788,7 +788,7 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = "SELECT tv.alkaa, tv.loppuu, t.etunimi, t.sukunimi, t.puhelin, tn.nimike " +
+                string sql = "SELECT tv.alkaa, t.etunimi, t.sukunimi, t.puhelin, tn.nimike " +
                     "FROM Kiinnitys k " +
                     "JOIN Tyotehtava tt " +
                     "ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava " +
@@ -807,8 +807,8 @@ namespace Projekti1
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Tarve v = new Tarve(DateTime.Parse(rdr[0].ToString()), DateTime.Parse(rdr[1].ToString()), rdr[2].ToString(),
-                        rdr[3].ToString(), rdr[4].ToString(), rdr[5].ToString());
+                    Tarve v = new Tarve(DateTime.Parse(rdr[0].ToString()), rdr[1].ToString(),
+                        rdr[2].ToString(), rdr[3].ToString(), rdr[4].ToString());
                     vapaalista.Add(v);
 
                 }

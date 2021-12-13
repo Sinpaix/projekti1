@@ -187,7 +187,6 @@ namespace Projekti1
             this.panel6 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabVapaalista.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.tabTehtävät.SuspendLayout();
@@ -264,7 +263,6 @@ namespace Projekti1
             | System.Windows.Forms.AnchorStyles.Left)));
             this.lwVapaalista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader6,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
@@ -2293,11 +2291,6 @@ namespace Projekti1
             this.tabControl.Size = new System.Drawing.Size(1904, 1041);
             this.tabControl.TabIndex = 0;
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Loppuu";
-            this.columnHeader6.Width = 150;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -2514,7 +2507,6 @@ namespace Projekti1
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }
 
