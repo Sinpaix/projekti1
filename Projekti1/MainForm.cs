@@ -22,12 +22,13 @@ namespace Projekti1
         private List<Tarve> vuorolista = new List<Tarve>();
         private List<Tarve> vapaalista = new List<Tarve>();
 
-        private Tyonimike tyonimike;
+        //private Tyonimike tyonimike;
         private Tyotehtava tyotehtava;
-        private Tyovuoro tyovuoro;
+        //private Tyovuoro tyovuoro;
         private Tarve tarve;
 
-        private DateTime alkaa;
+        //apumuuttujat työvuorolistan datetimepickerien valinnalle
+        private DateTime alkaa;          
         private DateTime loppuu;
 
         private DateTime valkaa;
@@ -47,7 +48,7 @@ namespace Projekti1
             // Tähän funktiot millä ladataan tarvittavat tiedot tietokannasta heti kun ohjelma ajetaan
             tyontekijat = contr.LataaTyontekijat();
             tarpeet = contr.LataaTarpeet();
-            vuorolista = contr.LoadVuorolista(DateTime.Now, DateTime.Now);
+            vuorolista = contr.LoadVuorolista(DateTime.Now, DateTime.Now); //vuorolistan muuttujien alustus
             tyovuorot = contr.LataaTyovuorot();
             tyotehtavat = contr.LoadTyotehtavat();
             tyonimikkeet = contr.LoadTyonimikkeet();
@@ -550,9 +551,9 @@ namespace Projekti1
         ///
         #region Työvuorojen ja työtehtävien hallinta
 
+        //haetaan työtehtävät työtehtävälistasta datagridviewiin
         private void PopulatedTyotehtavaDGV()
         {
-
             BindingSource source = new BindingSource();
             source.DataSource = tyotehtavat;
             dgvTehtavat.DataSource = source;
@@ -560,11 +561,9 @@ namespace Projekti1
             dgvTehtavat.Columns[3].Visible = false; // Piilotetaan tehtävän ID 
             //dgwTehtavat.Columns[6].Visible = false; // Piilotetaan nimikkeen ID
             dgvTehtavat.Columns[5].Visible = false; // Piilotetaan Tiedot kenttä
-
-
         }
 
-
+        //haetaan tarpeet tarvelistasta datagridviewiin
         private void PopulatedTarpeetDGV()
         {
             BindingSource source = new BindingSource();
@@ -578,6 +577,8 @@ namespace Projekti1
             dgvTarpeet.Columns[11].Visible = false; // Piilotetaan puhelinnumero 
         }
 
+        //haetaan tehtävän ID labeliin, kun tehtävää vaihdetaan comboboxissa
+        //tätä käytetään, kun viedään tarpeen tietoja kantaan
         private void comboTehtavat_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (Tyotehtava item in tyotehtavat)
@@ -589,6 +590,7 @@ namespace Projekti1
             }
         }
 
+        //tarpeen tallennus
         private void AddTarve()
         {
             //luodaan uusi tarve
@@ -602,8 +604,27 @@ namespace Projekti1
 
         }
 
-        private void DeleteTarve()
+        //tarkistetaan, että tarpeen kentät on täytetty ja kutsutaan AddTarve-metodia
+        //päivitetään dgvTarpeet ja kiinnityksen lwVuorot
+        private void btnTallennaTarve_Click(object sender, EventArgs e)
         {
+            if (lblVuoroId.Text == "VuoroID" || lblTehtavaID.Text == "TehtavaID" || numMaara.Value == 0)
+            {
+                MessageBox.Show("Täytä kaikki kentät");
+            }
+            else
+            {
+                AddTarve();
+                tarpeet = contr.LataaTarpeet();
+                PopulatedTarpeetDGV();
+                PopulateTarveListView();
+            }
+        }
+
+        //tarpeen poisto
+        private void btnPoistaTarve_Click(object sender, EventArgs e)
+        {
+            //tarkistetaan, että joku rivi on valittuna
             if (this.dgvTarpeet.SelectedRows.Count > 0)
             {
                 int rowIndex = this.dgvTarpeet.CurrentRow.Index;
@@ -622,6 +643,7 @@ namespace Projekti1
                     MessageBox.Show("Poisto epäonnistui! Poista ensin tarpeen kiinnitykset.");
                 }
 
+                //päivitetään listat
                 tarpeet = contr.LataaTarpeet();
                 PopulatedTarpeetDGV();
                 PopulateTarveListView();
@@ -629,27 +651,8 @@ namespace Projekti1
             }
         }
 
-        private void btnTallennaTarve_Click(object sender, EventArgs e)
-        {
-            if(lblVuoroId.Text == "VuoroID" || lblTehtavaID.Text == "TehtavaID" || numMaara.Value == 0)
-            {
-                MessageBox.Show("Täytä kaikki kentät");
-            }
-            else
-            {
-                AddTarve();
-                tarpeet = contr.LataaTarpeet();
-                PopulatedTarpeetDGV();
-                PopulateTarveListView();
-            }
-        }
-
-        private void btnPoistaTarve_Click(object sender, EventArgs e)
-        {
-            DeleteTarve();
-        }
-
-
+        //haetaan työnimikkeen ID labeliin, kun työnimikettä vaihdetaan comboboxissa
+        //tätä käytetään, kun viedään tehtävän tietoja kantaan
         private void comboNimike_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (Tyonimike t in tyonimikkeet)
@@ -661,6 +664,29 @@ namespace Projekti1
             }
         }
 
+        //työtehtävän lisääminen
+        private void AddTyotehtava()
+        {
+            string sTehtava = this.tbTehtava.Text;
+            string sPaikka = this.comboPaikka.Text;
+            string sNimikeid = this.lblidnimike.Text;
+            string sNimike = this.comboNimike.Text;
+
+            tyotehtava = new Tyotehtava(0, sTehtava, sPaikka, int.Parse(sNimikeid), sNimike);
+
+            Tyotehtava createdTyotehtava = GetTyotehtava();
+            contr.AddTyotehtava(createdTyotehtava);
+
+            //päivitetää kaikki listat
+            UpdateAll();
+        }
+
+        private Tyotehtava GetTyotehtava()
+        {
+            return tyotehtava;
+        }
+
+        //tarkistetaan, että tehtävän kentät on valittu/täytetty ja kutsutaan AddTyotehtava-metodia
         private void btnTallenna_Click(object sender, EventArgs e)
         {
             if (tbTehtava.Text == "" || comboPaikka.Text == "" || lblidnimike.Text == "NimikeID")
@@ -671,33 +697,9 @@ namespace Projekti1
             }
         }
 
-        private void AddTyotehtava()
+        //työtehtävän poisto
+        private void btnPoista_Click(object sender, EventArgs e)
         {
-            string sTehtava = this.tbTehtava.Text;
-            string sPaikka = this.comboPaikka.Text;
-            string sNimikeid = this.lblidnimike.Text;
-            string sNimike = this.comboNimike.Text;
-
-
-            tyotehtava = new Tyotehtava(0, sTehtava, sPaikka, int.Parse(sNimikeid), sNimike);
-
-            Tyotehtava createdTyotehtava = GetTyotehtava();
-            contr.AddTyotehtava(createdTyotehtava);
-
-            tyotehtavat = contr.LoadTyotehtavat();
-
-            UpdateAll();
-
-        }
-
-        private Tyotehtava GetTyotehtava()
-        {
-            return tyotehtava;
-        }
-
-        private void DeleteTyotehtava()
-        {
-            // poista valittu työtehtävä
             if (this.dgvTehtavat.SelectedRows.Count > 0)
             {
                 int rowIndex = this.dgvTehtavat.CurrentRow.Index;
@@ -707,35 +709,21 @@ namespace Projekti1
                 int count = contr.RemoveTyotehtava(tt);
                 if (count > 0)
                 {
-                    
                     tyotehtavat.RemoveAt(rowIndex);
-
                 }
                 else
                 {
-                    MessageBox.Show("Poisto epäonnistui!");
+                    MessageBox.Show("Poisto epäonnistui! Tehtävä on kiinnitetty vuoroon.");
                 }
 
-                /*
-                tyotehtavat = contr.LoadTyotehtavat();
-                PopulatedTyotehtavaDGV();
-                PopulateTyotehtavaComboBox();
-                */
+                //päivitetään listat, gridviewit ja comboboxit
                 UpdateAll();
-
             }
-
         }
 
-
-        private void btnPoista_Click(object sender, EventArgs e)
-        {
-            DeleteTyotehtava();
-        }
-
+        //haetaan tehtävien tiedot kenttiin, kun rivi valitaan listalta
         private void dgvTehtavat_SelectionChanged(object sender, EventArgs e)
         {
-
             if (this.dgvTehtavat.SelectedRows.Count > 0)
             {
                 btnMuokkaa.Enabled = true;
@@ -746,9 +734,9 @@ namespace Projekti1
                 comboPaikka.Text = tyotehtava.Paikka;
                 comboNimike.Text = tyotehtava.Nimike;
             }
-
         }
 
+        //tallennetaan muutokset kantaan
         private void btnMuokkaa_Click(object sender, EventArgs e)
         {
             // muokataan olemassa olevaa tehtävää
@@ -757,12 +745,13 @@ namespace Projekti1
             tyotehtava.Nimike = comboNimike.Text;
             tyotehtava.Tyonimike_idnimike = int.Parse(lblidnimike.Text);
 
+            contr.EditTyotehtava(tyotehtava);
+
             //Päivitetään kaikki listat, datagridit ja listviewit
             UpdateAll();
-            
-
         }
 
+        //haetaan comboboxiin työtehtävät työtehtävälistasta
         private void PopulateTyotehtavaComboBox()
         {
             BindingSource source = new BindingSource();
@@ -772,6 +761,7 @@ namespace Projekti1
             comboTehtavat.ValueMember = "Idtyotehtava";
         }
 
+        //haetaan listviewiin työvuorot työvuorolistalta
         private void PopulateTyovuorotListView()
         {
             listviewTyoVuorot.Items.Clear();
@@ -783,27 +773,40 @@ namespace Projekti1
                     item.Alkaa.ToString(),
                     item.Loppuu.ToString()
                 }));
-
             }
         }
-
 
         private void listviewTyoVuorot_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listviewTyoVuorot.SelectedIndices.Count > 0)
             {
-                
                 // Haetaan valittu rivi työvuorotaulukosta ja viedään se tarve valikon textboxiin
                 int selectedIndex = listviewTyoVuorot.SelectedIndices[0];
                 Tyovuoro vuoro = tyovuorot[selectedIndex];
 
                 lblVuoroId.Text = vuoro.Idtyovuoro.ToString();
                 tbTyovuoroValinta.Text = vuoro.Alkaa.ToString("dd.MM.yy HH:mm") + " - " + vuoro.Loppuu.ToString("dd.MM.yy HH:mm");
-
             }
         }
 
-            private void btnTallennaVuoro_Click(object sender, EventArgs e)
+        //vuorojen tallennus kantaan
+        private void AddTyovuoro()
+        {
+            //luodaan uusi työvuoro
+            Tyovuoro tyovuoro = new Tyovuoro();
+            tyovuoro.Idtyovuoro = 0;
+            DateTime alkaa = DateTime.Parse(dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
+            DateTime loppuu = DateTime.Parse(dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
+
+            tyovuoro.Alkaa = alkaa;
+            tyovuoro.Loppuu = loppuu;
+            tyovuorot.Add(tyovuoro);
+            contr.AddTyovuoro(tyovuoro);
+        }
+
+        //Tarkistetaan, että vuoron kentät on täytetty ja kutsutaan AddTyovuoro-metodia
+        //päivitetään listviewTyovuorot
+        private void btnTallennaVuoro_Click(object sender, EventArgs e)
         {
             if(dtpPvmAlkaa.Value == null || dtpPvmLoppuu.Value == null || comboAlkaa.SelectedItem == null || comboLoppuu.SelectedItem == null)
             {
@@ -817,32 +820,9 @@ namespace Projekti1
             }
         }
 
+        //vuoron poisto
         private void btnPoistaVuoro_Click(object sender, EventArgs e)
         {
-            DeleteTyovuoro();
-            tyovuorot = contr.LataaTyovuorot();
-            PopulateTyovuorotListView();
-        }
-
-        private void AddTyovuoro()
-        {
-            //luodaan uusi työvuoro
-            Tyovuoro tyovuoro = new Tyovuoro();
-            tyovuoro.Idtyovuoro = 0;
-            DateTime alkaa = DateTime.Parse(dtpPvmAlkaa.Value.ToString("yyyy-MM-dd") + " " + comboAlkaa.Text);
-            DateTime loppuu = DateTime.Parse(dtpPvmLoppuu.Value.ToString("yyyy-MM-dd") + " " + comboLoppuu.Text);
-
-            tyovuoro.Alkaa = alkaa;
-            tyovuoro.Loppuu = loppuu;
-            tyovuorot.Add(tyovuoro);
-            contr.AddTyovuoro(tyovuoro);
-
-            
-        }
-
-        private void DeleteTyovuoro()
-        {
-            // poista valittu vuoro
             if (this.listviewTyoVuorot.SelectedIndices.Count > 0)
             {
                 int selectedIndex = listviewTyoVuorot.SelectedIndices[0];
@@ -852,15 +832,16 @@ namespace Projekti1
                 int count = contr.RemoveTyovuoro(tv);
                 if (count > 0)
                 {
-
                     tyovuorot.RemoveAt(selectedIndex);
-
                 }
                 else
                 {
                     MessageBox.Show("Poisto epäonnistui! Poista ensin vuoron kiinnitykset ja tarpeet.");
                 }
             }
+
+            tyovuorot = contr.LataaTyovuorot();
+            PopulateTyovuorotListView();
         }
 
         #endregion
@@ -919,12 +900,12 @@ namespace Projekti1
         /// </summary>
         /// 
         #region Työvuorolista
+
+        //työvuorolistan haku
         private void btnHaeTyovuorolista_Click(object sender, EventArgs e)
         {
             vuorolista = contr.LoadVuorolista(alkaa, loppuu);
             lvVuorolista.Items.Clear();
-
-            
 
             foreach (Tarve item in vuorolista)
             {
@@ -941,11 +922,13 @@ namespace Projekti1
             }
         }
 
+        //viedään valittu päivä alkaa-muuttujaan
         private void dtpVuorolistaAlkaa_ValueChanged(object sender, EventArgs e)
         {
             this.alkaa = dtpVuorolistaAlkaa.Value;
         }
 
+        //viedään valittu päivä loppuu-muuttujaan
         private void dtpVuorolistaLoppuu_ValueChanged(object sender, EventArgs e)
         {
             this.loppuu = dtpVuorolistaLoppuu.Value;
