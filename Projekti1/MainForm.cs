@@ -31,6 +31,7 @@ namespace Projekti1
         private DateTime alkaa;          
         private DateTime loppuu;
 
+        //apumuuttujat vapaalistan datetimepickerien valinnalle
         private DateTime valkaa;
         private DateTime vloppuu;
 
@@ -48,12 +49,12 @@ namespace Projekti1
             // Tähän funktiot millä ladataan tarvittavat tiedot tietokannasta heti kun ohjelma ajetaan
             tyontekijat = contr.LataaTyontekijat();
             tarpeet = contr.LataaTarpeet();
-            vuorolista = contr.LoadVuorolista(DateTime.Now, DateTime.Now); //vuorolistan muuttujien alustus
+            vuorolista = contr.LoadVuorolista(DateTime.Now, DateTime.Now);  //vuorolistan muuttujien alustus
             tyovuorot = contr.LataaTyovuorot();
             tyotehtavat = contr.LoadTyotehtavat();
             tyonimikkeet = contr.LoadTyonimikkeet();
             kiinnitykset = contr.LataaKiinnitykset();
-            vapaalista = contr.LoadVapaalista(DateTime.Now, DateTime.Now);
+            vapaalista = contr.LoadVapaalista(DateTime.Now, DateTime.Now);  //vuorolistan muuttujien alustus
 
 
 

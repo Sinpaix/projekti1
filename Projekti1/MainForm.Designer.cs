@@ -309,6 +309,7 @@ namespace Projekti1
             this.dtpVapaaAlkaa.Name = "dtpVapaaAlkaa";
             this.dtpVapaaAlkaa.Size = new System.Drawing.Size(242, 26);
             this.dtpVapaaAlkaa.TabIndex = 6;
+            this.dtpVapaaAlkaa.ValueChanged += new System.EventHandler(this.dtpVapaaAlkaa_ValueChanged);
             // 
             // btnVapaalista
             // 
@@ -343,6 +344,7 @@ namespace Projekti1
             this.dtpVapaaLoppuu.Name = "dtpVapaaLoppuu";
             this.dtpVapaaLoppuu.Size = new System.Drawing.Size(240, 26);
             this.dtpVapaaLoppuu.TabIndex = 7;
+            this.dtpVapaaLoppuu.ValueChanged += new System.EventHandler(this.dtpVapaaLoppuu_ValueChanged);
             // 
             // tabTehtävät
             // 
