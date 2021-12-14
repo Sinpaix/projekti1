@@ -60,7 +60,11 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = "SELECT Tyovuoro_idtyovuoro, alkaa, loppuu, idtehtava, tehtava, paikka, nimike, maara, (SELECT COUNT(k.Tyontekija_idtyontekija) FROM kiinnitys k WHERE k.Tarve_Tyotehtava_idtehtava = t.Tyotehtava_idtehtava AND k.Tarve_Tyovuoro_idtyovuoro = t.Tyovuoro_idtyovuoro) FROM tarve t JOIN tyovuoro tv ON t.Tyovuoro_idtyovuoro = tv.idtyovuoro JOIN tyotehtava tt ON t.Tyotehtava_idtehtava = tt.idtehtava JOIN tyonimike tn ON tt.Tyonimike_idnimike = tn.idnimike";
+                string sql = "SELECT Tyovuoro_idtyovuoro, alkaa, loppuu, idtehtava, tehtava, paikka, nimike, maara, (SELECT COUNT(k.Tyontekija_idtyontekija) " +
+                    "FROM kiinnitys k WHERE k.Tarve_Tyotehtava_idtehtava = t.Tyotehtava_idtehtava AND k.Tarve_Tyovuoro_idtyovuoro = t.Tyovuoro_idtyovuoro) " +
+                    "FROM tarve t JOIN tyovuoro tv ON t.Tyovuoro_idtyovuoro = tv.idtyovuoro " +
+                    "JOIN tyotehtava tt ON t.Tyotehtava_idtehtava = tt.idtehtava " +
+                    "JOIN tyonimike tn ON tt.Tyonimike_idnimike = tn.idnimike";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
@@ -97,7 +101,10 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = "SELECT Tyontekija_idtyontekija, Tarve_Tyovuoro_idtyovuoro, Tarve_Tyotehtava_idtehtava, etunimi, sukunimi, nimike FROM kiinnitys k JOIN tyontekija t ON k.Tyontekija_idtyontekija = t.idtyontekija JOIN tyotehtava tt ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava JOIN tyonimike tn ON tt.Tyonimike_idnimike = tn.idnimike;";
+                string sql = "SELECT Tyontekija_idtyontekija, Tarve_Tyovuoro_idtyovuoro, Tarve_Tyotehtava_idtehtava, etunimi, sukunimi, nimike " +
+                    "FROM kiinnitys k JOIN tyontekija t ON k.Tyontekija_idtyontekija = t.idtyontekija " +
+                    "JOIN tyotehtava tt ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava " +
+                    "JOIN tyonimike tn ON tt.Tyonimike_idnimike = tn.idnimike";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
