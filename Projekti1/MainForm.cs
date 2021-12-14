@@ -32,8 +32,8 @@ namespace Projekti1
         private DateTime loppuu;
 
         //apumuuttujat vapaalistan datetimepickerien valinnalle
-        private DateTime valkaa;
-        private DateTime vloppuu;
+        private DateTime valkaa = DateTime.Now;
+        private DateTime vloppuu = DateTime.Now;
 
         private Controller contr = new Controller();
 
@@ -947,29 +947,22 @@ namespace Projekti1
 
         private void btnVapaalista_Click_1(object sender, EventArgs e)
         {
+            this.valkaa = DateTime.Parse(dtpVapaaAlkaa.Value.ToString("yyyy-MM-dd") + " " + cbAlkaa.Text);
+            this.vloppuu = DateTime.Parse(dtpVapaaLoppuu.Value.ToString("yyyy-MM-dd") + " " + cbLoppuu.Text);
+
             vapaalista = contr.LoadVapaalista(valkaa, vloppuu);
             lwVapaalista.Items.Clear();
+            
 
             foreach (Tarve item in vapaalista)
             {
                 lwVapaalista.Items.Add(new ListViewItem(new string[] {
-                item.Alkaa.ToString("dd.MM.yy HH:mm"),
                 item.Etunimi,
                 item.Sukunimi,
                 item.Puhelin,
                 item.Nimike}));
 
             }
-        }
-
-        private void dtpVapaaAlkaa_ValueChanged(object sender, EventArgs e)
-        {
-            this.valkaa = dtpVapaaAlkaa.Value;
-        }
-
-        private void dtpVapaaLoppuu_ValueChanged(object sender, EventArgs e)
-        {
-            this.vloppuu = dtpVapaaLoppuu.Value;
         }
 
         #endregion

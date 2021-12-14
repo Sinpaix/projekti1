@@ -58,9 +58,8 @@ namespace Projekti1.Models
             Nimike = nimike;
         }
 
-        public Tarve(DateTime alkaa, string etunimi, string sukunimi, string puhelin, string nimike)
+        public Tarve(string etunimi, string sukunimi, string puhelin, string nimike)
         {
-            Alkaa = alkaa;
             Etunimi = etunimi;
             Sukunimi = sukunimi;
             Puhelin = puhelin;

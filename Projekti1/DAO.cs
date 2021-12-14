@@ -788,27 +788,23 @@ namespace Projekti1
                     conn = new MySqlConnection();
                 conn.ConnectionString = myConnectionString;
                 conn.Open();
-                string sql = "SELECT tv.alkaa, t.etunimi, t.sukunimi, t.puhelin, tn.nimike " +
-                    "FROM Kiinnitys k " +
-                    "JOIN Tyotehtava tt " +
-                    "ON k.Tarve_Tyotehtava_idtehtava = tt.idtehtava " +
-                    "JOIN Tyontekija t " +
-                    "ON k.Tyontekija_idTyontekija = t.idTyontekija " +
-                    "JOIN Tyovuoro tv " +
-                    "ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro " +
+                string sql = "SELECT t.etunimi, t.sukunimi, t.puhelin, tn.nimike " +
+                    "FROM Tyontekija t " +
                     "JOIN Tyonimike tn " +
                     "ON t.Tyonimike_idnimike = tn.idnimike " +
-                    "WHERE idtyontekija NOT IN(SELECT k.Tyontekija_idtyontekija " +
-                    "FROM Kiinnitys k JOIN Tyontekija t ON k.Tyontekija_idTyontekija = t.idTyontekija " +
-                    "JOIN Tyovuoro tv ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro WHERE tv.alkaa BETWEEN '" + valku.ToString("yyyy-MM-dd") + "' AND '" + vloppu.ToString("yyyy-MM-dd") + "' " +
-                    "ORDER BY tv.alkaa, t.sukunimi)";
+                    "WHERE t.idtyontekija NOT IN(SELECT k.Tyontekija_idTyontekija " +
+                    "FROM Kiinnitys k " +
+                    "JOIN Tyovuoro tv ON k.Tarve_Tyovuoro_idtyovuoro = tv.idtyovuoro " +
+                    "WHERE(tv.alkaa BETWEEN '" + valku.ToString("yyyy-MM-dd HH-mm-ss") + "' AND '" + vloppu.ToString("yyyy-MM-dd HH-mm-ss") + "') " +
+                    "AND t.idtyontekija = k.Tyontekija_idTyontekija) " +
+                    "ORDER BY tn.nimike";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Tarve v = new Tarve(DateTime.Parse(rdr[0].ToString()), rdr[1].ToString(),
-                        rdr[2].ToString(), rdr[3].ToString(), rdr[4].ToString());
+                    Tarve v = new Tarve(rdr[0].ToString(),
+                        rdr[1].ToString(), rdr[2].ToString(), rdr[3].ToString());
                     vapaalista.Add(v);
 
                 }
